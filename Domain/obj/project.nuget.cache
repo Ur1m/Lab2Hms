@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "YCvIGB0t8gjakz7ImufabQQh+dRQtw2ENGMAy1kVU/MxoEe3sw13ge3jRu6P9kkuNYyad+vLRCcQOQzDomc4xQ==",
+  "dgSpecHash": "Aj+Ovw/Cm66sZxWtnIV8oqWH+SYbYXdkPoxz11e3Drkb4ftXdUdRxlDoPp/8sJwfgNVS4tiRUsdX9EPvBAA2TQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }
