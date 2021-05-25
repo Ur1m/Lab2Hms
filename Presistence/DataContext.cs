@@ -12,17 +12,16 @@ namespace Presistence
 
         }
         public  DbSet<prov> prova{ get; set;}
-    
+        public DbSet<Department> Department{get;set;}
+        public DbSet<Doktori> doktori{get;set;}
         
-        
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Department>()
+                .HasKey(d => d.Department_id );
 
-        /*protected override void OnModelCreating(ModelBuilder builder) {
-                builder.Entity<Citys>().HasData(
-                new Citys { Id = 1, Name = "Prishtina" },
-                new Citys {  Id=2,Name="Mitrovic"}
-
-            );
-    }*/
-    
-}
+            modelBuilder.Entity<Doktori>()
+                .HasKey(d => d.Doktori_id );
+        }
+    }
 }
