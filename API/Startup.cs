@@ -7,6 +7,8 @@ using Microsoft.Extensions.Hosting;
 using Presistence;
 using MediatR;
 using Application.Departmentet;
+using Application.Core;
+using AutoMapper;
 
 namespace API
 {
@@ -34,6 +36,7 @@ namespace API
             });
             services.AddMediatR(typeof(List.Handler).Assembly);
             services.AddControllers();
+            services.AddAutoMapper(typeof(MappingProfiles).Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
