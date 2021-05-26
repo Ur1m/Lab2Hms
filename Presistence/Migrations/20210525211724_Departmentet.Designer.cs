@@ -9,7 +9,7 @@ using Presistence;
 namespace Presistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210525211724_Department")]
+    [Migration("20210525211724_Departmentet")]
     partial class Department
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
