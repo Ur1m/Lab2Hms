@@ -13,18 +13,19 @@ namespace Presistence{
 
     public static void SeedData(DataContext context){
 
-            if(!context.prova.Any()){
-                   var Prova=new List<prov>{
-                    new prov{
-                        prova2="berat"
-                    }
+             if(!context.Departmentet.Any()){
+                    var Departmentet=new List<Department>{
+                     new Department{
+                         Name = "Stomatologjia",
+                         Description = "Departmenti i stomatologjise"
+                     }
                 
-                    };
+                     };
                 
-                //param
-                context.prova.AddRange(Prova);
-                context.SaveChanges();
-            };
+                 //param
+                 context.Departmentet.AddRange(Departmentet);
+                 context.SaveChanges();
+             };
         }
     }
 

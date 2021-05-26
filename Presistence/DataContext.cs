@@ -12,7 +12,7 @@ namespace Presistence
 
         }
         public  DbSet<prov> prova{ get; set;}
-        public DbSet<Department> Department{get;set;}
+        public DbSet<Department> Departmentet{get;set;}
         public DbSet<Doktori> doktori{get;set;}
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)

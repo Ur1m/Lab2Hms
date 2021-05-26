@@ -8,7 +8,7 @@ namespace Presistence.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Department",
+                name: "Departmentet",
                 columns: table => new
                 {
                     Department_id = table.Column<Guid>(nullable: false),
@@ -24,7 +24,7 @@ namespace Presistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Department");
+                name: "Departmentet");
         }
     }
 }

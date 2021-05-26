@@ -30,7 +30,7 @@ namespace Presistence.Migrations
 
                     b.HasKey("Department_id");
 
-                    b.ToTable("Department");
+                    b.ToTable("Departmentet");
                 });
 
             modelBuilder.Entity("Domain.Doktori", b =>
