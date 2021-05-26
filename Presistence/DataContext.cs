@@ -13,7 +13,9 @@ namespace Presistence
         }
         public  DbSet<prov> prova{ get; set;}
         public DbSet<Department> Departmentet{get;set;}
-        public DbSet<Doktori> doktori{get;set;}
+        public DbSet<Doktori> Doktoret{get;set;}
+
+        public DbSet<Pacienti> Pacientat {get;set;}
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -22,6 +24,9 @@ namespace Presistence
 
             modelBuilder.Entity<Doktori>()
                 .HasKey(d => d.Doktori_id );
+
+            modelBuilder.Entity<Pacienti>()
+                .HasKey(p => p.Pacienti_Id );
         }
     }
 }
