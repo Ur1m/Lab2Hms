@@ -17,6 +17,8 @@ namespace Presistence
         public DbSet<Mjeku> Mjeket{get;set;}
 
         public DbSet<Pacient> pacientet{get;set;}
+
+        public DbSet<Fatura> Faturat {get; set;}
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -28,6 +30,15 @@ namespace Presistence
 
             modelBuilder.Entity<Pacient>()
                 .HasKey(p => p.Pacient_Id );
+
+            modelBuilder.Entity<Fatura>()
+                .HasKey(f => f.Fatura_Id );
+
+            modelBuilder.Entity<Fatura>()
+                .HasOne(p => p.Pacient)
+                .WithMany()
+                .HasForeignKey(p => p.Pacient_id)
+                .HasConstraintName("FK_Fatura_Pacient_id");
 
         }
     }
