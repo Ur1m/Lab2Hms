@@ -15,6 +15,8 @@ namespace Presistence
         public DbSet<Department> Departmentet{get;set;}
 
         public DbSet<Mjeku> Mjeket{get;set;}
+
+        public DbSet<Pacient> pacientet{get;set;}
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -23,6 +25,9 @@ namespace Presistence
 
             modelBuilder.Entity<Mjeku>()
                 .HasKey(m => m.Mjeku_Id );
+
+            modelBuilder.Entity<Pacient>()
+                .HasKey(p => p.Pacient_Id );
 
         }
     }
