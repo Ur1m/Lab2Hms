@@ -35,35 +35,6 @@ namespace Presistence.Migrations
                     b.ToTable("Department");
                 });
 
-            modelBuilder.Entity("Domain.Doktori", b =>
-                {
-                    b.Property<Guid>("Doktori_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Address")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("City")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Emri")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Profile")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Doktori_id");
-
-                    b.ToTable("doktori");
-                });
-
             modelBuilder.Entity("Domain.prov", b =>
                 {
                     b.Property<Guid>("id")

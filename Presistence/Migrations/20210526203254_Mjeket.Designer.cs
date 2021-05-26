@@ -9,8 +9,8 @@ using Presistence;
 namespace Presistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210526180345_Doktoret")]
-    partial class Doktoret
+    [Migration("20210526203254_Mjeket")]
+    partial class Mjeket
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -35,65 +35,30 @@ namespace Presistence.Migrations
                     b.ToTable("Departmentet");
                 });
 
-            modelBuilder.Entity("Domain.Doktori", b =>
+            modelBuilder.Entity("Domain.Mjeku", b =>
                 {
-                    b.Property<Guid>("Doktori_id")
+                    b.Property<Guid>("Mjeku_Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Address")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Department_name")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Email")
+                    b.Property<DateTime>("Ditlindja")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Emri")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Password")
+                    b.Property<string>("Mbimeri")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Profile")
+                    b.Property<string>("Specializimi")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Doktori_id");
-
-                    b.ToTable("Doktoret");
-                });
-
-            modelBuilder.Entity("Domain.Pacienti", b =>
-                {
-                    b.Property<Guid>("Pacienti_Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<string>("depName")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("Birthday")
-                        .HasColumnType("TEXT");
+                    b.HasKey("Mjeku_Id");
 
-                    b.Property<string>("BloodGroup")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Emri")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("addres")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("city")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("email")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("password")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Pacienti_Id");
-
-                    b.ToTable("Pacientat");
+                    b.ToTable("Mjeket");
                 });
 
             modelBuilder.Entity("Domain.prov", b =>
