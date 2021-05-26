@@ -11,6 +11,7 @@ namespace Domain
         public string Password{get;set;}
         public string Address{get;set;}
         public string City{get;set;}
+        public string department_name{get;set;}
         public string Profile{get;set;}
     }
     
