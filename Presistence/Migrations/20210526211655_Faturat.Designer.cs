@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Presistence;
 
 namespace Presistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210526211655_Faturat")]
+    partial class Faturat
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -62,29 +64,6 @@ namespace Presistence.Migrations
                     b.HasIndex("Pacient_id");
 
                     b.ToTable("Faturat");
-                });
-
-            modelBuilder.Entity("Domain.Infermierja", b =>
-                {
-                    b.Property<Guid>("Infermierja_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Departamenti")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Emri")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Koeficienti")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Mbiemri")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Infermierja_Id");
-
-                    b.ToTable("Infermieret");
                 });
 
             modelBuilder.Entity("Domain.Mjeku", b =>

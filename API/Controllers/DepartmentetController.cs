@@ -36,7 +36,7 @@ namespace API.Controllers
         }
 
         [HttpDelete("{Department_id}")]
-        public async Task<IActionResult> DeleteActivity(Guid Department_id)
+        public async Task<IActionResult> DeleteDepartmentet(Guid Department_id)
         {
             return Ok(await Mediator.Send(new Delete.Command { Department_Id = Department_id }));
         }

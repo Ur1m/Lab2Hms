@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Application\\Application.csproj": {}
   },
   "projects": {
@@ -15,6 +16,28 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+    "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Application\\Application.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Application\\Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Application\\Application.csproj",
+        "projectName": "Application",
+        "projectPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\TECHCOM\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\TECHCOM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+>>>>>>> 9a74821e98e30ac3f2f5c2621d36cd2e88db8baf
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
@@ -26,11 +49,19 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj"
               },
               "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Presistence\\Presistence.csproj": {
                 "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Presistence\\Presistence.csproj"
+=======
+              "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj"
+              },
+              "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj": {
+                "projectPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj"
+>>>>>>> 9a74821e98e30ac3f2f5c2621d36cd2e88db8baf
               }
             }
           }
@@ -74,10 +105,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< HEAD
     "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -89,6 +121,25 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+    "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\TECHCOM\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\TECHCOM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+>>>>>>> 9a74821e98e30ac3f2f5c2621d36cd2e88db8baf
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
@@ -129,10 +180,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< HEAD
     "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Presistence\\Presistence.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -144,6 +196,25 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+    "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj",
+        "projectName": "Presistence",
+        "projectPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj",
+        "packagesPath": "C:\\Users\\TECHCOM\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Presistence\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\TECHCOM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+>>>>>>> 9a74821e98e30ac3f2f5c2621d36cd2e88db8baf
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
@@ -155,8 +226,13 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj"
+=======
+              "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj"
+>>>>>>> 9a74821e98e30ac3f2f5c2621d36cd2e88db8baf
               }
             }
           }
@@ -196,7 +272,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
