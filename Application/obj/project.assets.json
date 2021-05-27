@@ -1771,23 +1771,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\": {},
+    "C:\\Users\\PULSE Electronics\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHMS\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Application\\Application.csproj",
-      "packagesPath": "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Application\\obj\\",
+      "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHMS\\Application\\Application.csproj",
+      "packagesPath": "C:\\Users\\PULSE Electronics\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHMS\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Rinor Hyseni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PULSE Electronics\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1802,11 +1802,11 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj"
+            "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHMS\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHMS\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj": {
-              "projectPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj"
+            "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHMS\\Presistence\\Presistence.csproj": {
+              "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHMS\\Presistence\\Presistence.csproj"
             }
           }
         }
@@ -1850,7 +1850,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

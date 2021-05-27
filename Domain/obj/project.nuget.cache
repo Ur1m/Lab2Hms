@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "nODHpfWoXoVK5yWmDiBoMxLCDaGlr2GL5nWnEDw6EDj3gX0MFglO6QEiZzNrtu4hHf2WMXwfJC4hSMLYwb+O1A==",
+  "dgSpecHash": "V8+7szmHgchYQuao6+kVuaDCXV1BO3Sz6t8sYVtPTRmMJlu+MhAStjI4IG+pWYK54Au1kapZsDzKFAxOvzxMNA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHMS\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\PULSE Electronics\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\PULSE Electronics\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }
