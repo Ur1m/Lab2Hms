@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Container, Menu, Segment } from 'semantic-ui-react'
-import '../../app/layout/styles.css';
+import '../../App/layout/styles.css';
 export default function Navbar(){
   return(
     <div className="sss">
