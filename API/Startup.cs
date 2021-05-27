@@ -10,6 +10,7 @@ using Application.Departmentet;
 using Application.Core;
 using AutoMapper;
 
+
 namespace API
 {
     public class Startup
@@ -36,6 +37,7 @@ namespace API
             });
             services.AddMediatR(typeof(List.Handler).Assembly);
             services.AddControllers();
+           // services.AddMvc().AddFluentValidation(cfg =>cfg.RegisterValidatorsFromAssemblyContaining<Create>());
             services.AddAutoMapper(typeof(MappingProfiles).Assembly);
         }
 
