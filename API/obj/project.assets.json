@@ -1377,23 +1377,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PULSE Electronics\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\TECHCOM\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHMS\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHMS\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\PULSE Electronics\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHMS\\API\\obj\\",
+      "projectPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\TECHCOM\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\PULSE Electronics\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\TECHCOM\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1408,8 +1410,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHMS\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHMS\\Application\\Application.csproj"
+            "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Application\\Application.csproj"
             }
           }
         }
@@ -1463,7 +1465,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

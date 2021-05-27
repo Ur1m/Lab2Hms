@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "V8+7szmHgchYQuao6+kVuaDCXV1BO3Sz6t8sYVtPTRmMJlu+MhAStjI4IG+pWYK54Au1kapZsDzKFAxOvzxMNA==",
+  "dgSpecHash": "lpQN+7NvDwFD1AcHSWc0kj0G4PDorDHpaiQXNRkZx0WI2Gto9tlUGrp6CC2Zn9xHUUxayFfElGYy29SJesZOxw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHMS\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\PULSE Electronics\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\PULSE Electronics\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }
