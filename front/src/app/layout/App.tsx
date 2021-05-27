@@ -1,12 +1,20 @@
-import React, { Fragment } from 'react'; 
-import Navbar from '../../Features/Nav/Navbar';
-import '../../app/layout/styles.css';
-function App() {
-  return ( 
-    <div>
-   <Navbar/>
+import React from 'react';
+import './styles.css';
+import Navbar from '../../Components/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-   </div>
+function App() {
+  return (
+    <>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path='/' />
+          <Route path='/reports'/>
+          <Route path='/products' />
+        </Switch>
+      </Router>
+    </>
   );
 }
 
