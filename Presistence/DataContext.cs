@@ -39,7 +39,11 @@ namespace Presistence
                 .WithMany()
                 .HasForeignKey(p => p.Pacient_id)
                 .HasConstraintName("FK_Fatura_Pacient_id");
+            
+            modelBuilder.Entity<Infermierja>()
+                .HasKey(i => i.Infermierja_Id);
 
         }
+        public DbSet <Infermierja> Infermieret {get; set;}
     }
 }
