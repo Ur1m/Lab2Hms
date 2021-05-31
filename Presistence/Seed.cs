@@ -26,6 +26,33 @@ namespace Presistence{
                  context.Departmentet.AddRange(Departmentet);
                  context.SaveChanges();
              };
+
+             if(!context.Infermieret.Any()){
+                    var Infermieret=new List<Infermierja>{
+                     new Infermierja{
+                         Emri = "Ana",
+                         Mbiemri = "Smith",
+                         Koeficienti = 4,
+                         Departamenti = "Radiologji"
+
+
+                     }
+                /*
+                         new Infermierja{
+                        Emri = "Nicole",
+                         Mbiemri = "Ford",
+                         Koeficienti = 5,
+                         Departamenti = "Stomatologji"
+                    }
+                     };
+                
+                */
+                     };
+                
+                 //param
+                 context.Infermieret.AddRange(Infermieret);
+                 context.SaveChanges();
+             };
         }
     }
 

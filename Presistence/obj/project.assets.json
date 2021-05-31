@@ -908,7 +908,6 @@
       "path": "netstandard.library/2.0.3",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "build/netstandard2.0/NETStandard.Library.targets",
@@ -1455,17 +1454,31 @@
     ]
   },
   "packageFolders": {
+<<<<<<< Updated upstream
     "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+=======
+    "C:\\Users\\TECHCOM\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+>>>>>>> Stashed changes
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< Updated upstream
       "projectUniqueName": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj",
       "projectName": "Presistence",
       "projectPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj",
       "packagesPath": "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Presistence\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj",
+      "projectName": "Presistence",
+      "projectPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj",
+      "packagesPath": "C:\\Users\\TECHCOM\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Presistence\\obj\\",
+>>>>>>> Stashed changes
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
@@ -1486,8 +1499,13 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
+<<<<<<< Updated upstream
             "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj": {
               "projectPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj"
+=======
+            "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj"
+>>>>>>> Stashed changes
             }
           }
         }
