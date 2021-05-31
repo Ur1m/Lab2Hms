@@ -2,17 +2,24 @@ import React from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
+import * as RiIcons from 'react-icons/ri';
 
 export const SidebarData = [
   {
-    title: 'Home',
+    title: 'Ballina',
     path: '/',
     icon: <AiIcons.AiFillHome />,
     cName: 'nav-text'
   },
   {
-    title: 'Reports',
-    path: '/reports',
+    title: 'Departamentet',
+    path: '/Departamentet/',
+    icon: <FaIcons.FaRegBuilding />,
+    cName: 'nav-text'
+  },
+  {
+    title: 'Raportet',
+    path: '/',
     icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text'
   },
@@ -23,20 +30,26 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Doctors ose stafi',
+    title: 'Mjeket',
     path: '/doctor',
     icon: <IoIcons.IoMdPeople />,
     cName: 'nav-text'
   },
   {
-    title: 'Therapy',
+    title: 'Terapia',
     path: '/therapy',
     icon: <FaIcons.FaEnvelopeOpenText />,
     cName: 'nav-text'
   },
   {
-    title: 'Support',
-    path: '/support',
+    title: 'Fatura',
+    path: '/',
+    icon: <RiIcons.RiBillLine />,
+    cName: 'nav-text'
+  },
+  {
+    title: 'Ndihma teknike',
+    path: '/',
     icon: <IoIcons.IoMdHelpCircle />,
     cName: 'nav-text'
   }

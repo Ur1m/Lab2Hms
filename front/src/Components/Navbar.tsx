@@ -6,8 +6,10 @@ import { SidebarData } from './SidebarData';
 import './Navbar.css';
 import { IconContext } from 'react-icons';
 import { Button, Menu, Segment } from 'semantic-ui-react';
+import { useStore } from '../app/stores/store';
 
 function Navbar() {
+  const {departmentStore} = useStore();
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
@@ -17,13 +19,11 @@ function Navbar() {
       <IconContext.Provider value={{ color: '#fff' }}>
         
         <div className='navbar'>
-       
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
           <div className="navi">
-          <Button inverted > Login</Button>
-          <Button inverted className="register" > Register</Button>
+          <Button inverted className="Log out" > Log Out</Button>
         </div>
        
         </div>
