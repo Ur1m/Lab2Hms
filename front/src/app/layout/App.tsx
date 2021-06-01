@@ -6,6 +6,10 @@ import { Container } from 'semantic-ui-react';
 import DepartmentDashboard from '../../Features/Departmentet/Dashboard/DepartmentDashboard';
 import { observer } from 'mobx-react-lite';
 import HomePage from '../../Features/home/HomePage';
+import TestErrors from '../../Features/errors/TestError';
+import { ToastContainer } from 'react-toastify';
+import NotFound from '../../Features/errors/NotFound';
+import ServerError from '../../Features/errors/ServerError';
 
 function App() {
 
@@ -30,12 +34,18 @@ useEffect(() =>{
 */
   return (
    <>
+      <ToastContainer position='bottom-right' hideProgressBar />
       <Router>
         <Navbar/>
         <Switch>
         <Container style={{marginTop: '4em'}}>
+          <Switch>
           <Route exact path='/' component={HomePage}/>
           <Route path='/Departamentet' component={DepartmentDashboard}/>
+          <Route path='/errors' component={TestErrors} /> 
+          <Route path='/server-error' component={ServerError} />
+          <Route component={NotFound}/>
+          </Switch>
         </Container>
         </Switch>
       </Router>

@@ -34,13 +34,13 @@ namespace API.Controllers
         public async Task<IActionResult> EditDepartment(Guid Department_id, Department department)
         {
             department.Department_id = Department_id;
-            return Ok(await Mediator.Send(new Edit.Command { Department = department }));
+            return HandleResult(await Mediator.Send(new Edit.Command { Department = department }));
         }
 
         [HttpDelete("{Department_id}")]
         public async Task<IActionResult> DeleteDepartmentet(Guid Department_id)
         {
-            return Ok(await Mediator.Send(new Delete.Command { Department_Id = Department_id }));
+            return HandleResult(await Mediator.Send(new Delete.Command { Department_Id = Department_id }));
         }
 
 
