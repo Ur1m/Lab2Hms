@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Domain;
+using FluentValidation;
 using MediatR;
 using Presistence;
 using System.Threading;
@@ -13,6 +14,14 @@ namespace Application.Departmentet
         public class Command : IRequest
         {
             public Department Department { get; set; }
+        }
+
+        public class CommandValidator : AbstractValidator<Command>
+        {
+            public CommandValidator()
+            {
+                RuleFor(x => x.Department).SetValidator(new DepartmentValidator());
+            }
         }
 
         public class Handler : IRequestHandler<Command>

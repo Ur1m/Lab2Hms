@@ -11,21 +11,23 @@ namespace API.Controllers
     {
         
         [HttpGet]
-        public async Task<ActionResult<List<Department>>> GetDepartmentet()
+        public async Task<IActionResult> GetDepartmentet()
         {
-            return await Mediator.Send(new List.Query());
+            return HandleResult(await Mediator.Send(new List.Query()));
         }
 
         [HttpGet("{Department_id}")]
-        public async Task<ActionResult<Department>> GetDepartment(Guid Department_id)
+        public async Task<IActionResult> GetDepartment(Guid Department_id)
         {
-            return await Mediator.Send(new Details.Query { Department_Id = Department_id });
+            var result = await Mediator.Send(new Details.Query { Department_Id = Department_id });
+        
+            return HandleResult(result);
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateDepartment(Department department)
         {
-            return Ok(await Mediator.Send(new Create.Command { Department = department }));
+            return HandleResult(await Mediator.Send(new Create.Command { Department = department }));
         }
 
         [HttpPut("{Department_id}")]

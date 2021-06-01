@@ -9,7 +9,7 @@ using MediatR;
 using Application.Departmentet;
 using Application.Core;
 using AutoMapper;
-
+using FluentValidation.AspNetCore;
 
 namespace API
 {
@@ -36,7 +36,10 @@ namespace API
                 });
             });
             services.AddMediatR(typeof(List.Handler).Assembly);
-            services.AddControllers();
+            services.AddControllers().AddFluentValidation(config =>
+            {
+                config.RegisterValidatorsFromAssemblyContaining<Create>();
+            });
            // services.AddMvc().AddFluentValidation(cfg =>cfg.RegisterValidatorsFromAssemblyContaining<Create>());
             services.AddAutoMapper(typeof(MappingProfiles).Assembly);
         }
