@@ -1,7 +1,17 @@
-import React from 'react'
-import { Button, Container, Menu, Segment } from 'semantic-ui-react'
+import { observer } from 'mobx-react-lite';
+import  { useContext } from 'react'
+import { NavLink } from 'react-router-dom';
+import { Button, Container, Menu } from 'semantic-ui-react'
 import '../../app/layout/styles.css';
-export default function Navbar(){
+
+import doktoretStor from '../../app/store/doktoretStor';
+interface IProps{
+  opencreateform:()=>void;
+}
+
+const Navbar:React.FC<IProps>=({opencreateform})=>{
+ const doktoretStore=useContext(doktoretStor);
+
   return(
     <div className="sss">
     <Menu inverted fixed="top">
@@ -14,8 +24,7 @@ export default function Navbar(){
           
           <Menu.Item>
             <Button color='google plus' content='DEPARTAMENTI'style={{marginLeft:'250px'}}/>
-            <Button color='google plus' content='DOKTORI'style={{marginLeft:'50px',width:'150px'}}/>
-            <Button color='google plus' content='PACIENTI'style={{marginLeft:'50px',width:'150px'}}/>
+            <Button color='google plus'content='DOKTORI'style={{marginLeft:'50px',width:'150px'}}  onClick={opencreateform}/>
 
           </Menu.Item>
               
@@ -24,3 +33,4 @@ export default function Navbar(){
     </div>
   )
 }
+export default observer(Navbar);

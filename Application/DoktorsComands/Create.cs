@@ -14,11 +14,11 @@ namespace Application.DoktorsComands
         public class Command : IRequest
         {
        public Guid Mjeku_Id{get;set;}
-       [Required]
+     
         public string Emri{get;set;}
          [Required]
         public string Mbimeri{get;set;}
-         [Required]
+        
         public DateTime Ditlindja{get;set;}
          [Required]
         public string Specializimi{get;set;}

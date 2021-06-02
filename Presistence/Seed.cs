@@ -26,6 +26,23 @@ namespace Presistence{
                  context.Departmentet.AddRange(Departmentet);
                  context.SaveChanges();
              };
+             if(!context.Mjeket.Any()){
+                    var Mjeki=new List<Mjeku>{
+                     new Mjeku{
+                         Emri="Berat",
+                        Mbimeri="Latifi",
+                        Ditlindja=DateTime.Now,
+                        Specializimi="MSC",
+                        depName="Emergjenc"
+                      
+                     }
+                
+                     };
+                
+                 //param
+                 context.Mjeket.AddRange(Mjeki);
+                 context.SaveChanges();
+             };
         }
     }
 

@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter}from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css'
+import "react-widgets/styles.css";
 import App from './app/layout/App';
+//import dateFnsLocalizer from  'react-widgets-date-fns';
+
+//dateFnsLocalizer();
 
 import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
