@@ -1,11 +1,21 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "dZySNpN+3ybxi50uST4NFoPg5kR6U/qjS6dvt5CLFMRn5/9NWYfBickw5GJbo0TP0jlwmJ7iiZWzlKthf9ihBw==",
+=======
+  "dgSpecHash": "Xne0rG2PiTDjBn0YGmQQxlXmM3lXZlSJe408QyW8KiqBN+46Oty6Y37ZBJ8kxLOM+HwUSdCjJF0mIJxTDzDDwQ==",
+>>>>>>> ed6c089d2b03aa2626588a28c839ca8f6ae218f8
   "success": true,
-  "projectFilePath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
+<<<<<<< HEAD
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+=======
+    "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+>>>>>>> ed6c089d2b03aa2626588a28c839ca8f6ae218f8
   ],
   "logs": [
     {

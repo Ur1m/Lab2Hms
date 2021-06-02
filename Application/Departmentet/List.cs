@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 using System.Threading;
 using Presistence;
 using Microsoft.EntityFrameworkCore;
+using Application.Core;
 
 namespace Application.Departmentet
 {
     public class List
     {
-        public class Query : IRequest<List<Department>> { }
+        public class Query : IRequest<Result<List<Department>>> { }
 
-        public class Handler : IRequestHandler<Query, List<Department>>
+        public class Handler : IRequestHandler<Query, Result<List<Department>>>
         {
             private readonly DataContext _context;
 
@@ -23,9 +24,9 @@ namespace Application.Departmentet
                 _context = context;
             }
 
-            public async Task<List<Department>> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<Result<List<Department>>> Handle(Query request, CancellationToken cancellationToken)
             {
-                return await _context.Departmentet.ToListAsync();
+                return Result<List<Department>>.Success(await _context.Departmentet.ToListAsync(cancellationToken));
             }
         }
     }

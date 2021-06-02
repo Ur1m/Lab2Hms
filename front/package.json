@@ -10,24 +10,43 @@
     "@types/node": "^12.20.13",
     "@types/react": "^17.0.7",
     "@types/react-dom": "^17.0.5",
+<<<<<<< HEAD
     "@types/react-router-dom": "^5.1.7",
     "@types/uuid": "^8.3.0",
     "axios": "^0.21.1",
     "final-form": "^4.20.2",
+=======
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "formik": "^2.2.8",
+>>>>>>> ed6c089d2b03aa2626588a28c839ca8f6ae218f8
     "mobx": "^6.3.2",
     "mobx-react-lite": "^3.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+<<<<<<< HEAD
     "react-final-form": "^6.5.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
     "react-semantic-ui": "^0.2.0",
     "react-widgets-date-fns": "^5.0.6",
+=======
+    "react-icons": "^4.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.3",
+    "react-semantic-ui": "^0.2.0",
+    "react-toastify": "^7.0.4",
+>>>>>>> ed6c089d2b03aa2626588a28c839ca8f6ae218f8
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3",
     "typescript": "^4.2.4",
     "uuid": "^8.3.2",
+<<<<<<< HEAD
     "web-vitals": "^1.1.2"
+=======
+    "web-vitals": "^1.1.2",
+    "yup": "^0.32.9"
+>>>>>>> ed6c089d2b03aa2626588a28c839ca8f6ae218f8
   },
   "scripts": {
     "start": "react-scripts start",
@@ -52,5 +71,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.1.7",
+    "@types/uuid": "^8.3.0",
+    "@types/yup": "^0.29.11"
   }
 }

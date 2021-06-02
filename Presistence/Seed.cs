@@ -26,6 +26,7 @@ namespace Presistence{
                  context.Departmentet.AddRange(Departmentet);
                  context.SaveChanges();
              };
+<<<<<<< HEAD
              if(!context.Mjeket.Any()){
                     var Mjeki=new List<Mjeku>{
                      new Mjeku{
@@ -41,6 +42,33 @@ namespace Presistence{
                 
                  //param
                  context.Mjeket.AddRange(Mjeki);
+=======
+
+             if(!context.Infermieret.Any()){
+                    var Infermieret=new List<Infermierja>{
+                     new Infermierja{
+                         Emri = "Ana",
+                         Mbiemri = "Smith",
+                         Koeficienti = 4,
+                         Departamenti = "Radiologji"
+
+
+                     }
+                /*
+                         new Infermierja{
+                        Emri = "Nicole",
+                         Mbiemri = "Ford",
+                         Koeficienti = 5,
+                         Departamenti = "Stomatologji"
+                    }
+                     };
+                
+                */
+                     };
+                
+                 //param
+                 context.Infermieret.AddRange(Infermieret);
+>>>>>>> ed6c089d2b03aa2626588a28c839ca8f6ae218f8
                  context.SaveChanges();
              };
         }
