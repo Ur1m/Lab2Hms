@@ -44,7 +44,7 @@ export const DoktoriForm:React.FC<IProps> = ({seteditmode,selectedDoktori:innit,
     
         setselectedDoktori({...selectedDoktori,[event.currentTarget.name]:event.currentTarget.value});
     };
-   /* const handlesubmit=()=>{
+    const handlesubmit=()=>{
        if(selectedDoktori.mjeku_Id.length ===0){
           let newselectedDoktor ={
               ...selectedDoktori,mjeku_Id: uuid()
@@ -56,7 +56,7 @@ export const DoktoriForm:React.FC<IProps> = ({seteditmode,selectedDoktori:innit,
           editDoktor(selectedDoktori);
           }
        
-    }*/
+    }
     const FinalFormSubmit=(values:any)=>{
         console.log(values);
 
@@ -69,8 +69,8 @@ export const DoktoriForm:React.FC<IProps> = ({seteditmode,selectedDoktori:innit,
         <Segment clearing>
             <FinalForm  onSubmit={FinalFormSubmit}
             initialValues={selectedDoktori}
-            render={({handleSubmit})=>(
-            <Form onSubmit={handleSubmit}>
+            render={({})=>(
+            <Form onSubmit={handlesubmit}>
                 <Field name='emri'placeholder='Emri'  children={TextInput} />
                     <Field placeholder="Mbimeri..."name="mbimeri"  children={TextInput} />
                     <Field children={DateTimeP} placeholder="Datalindjes" name="ditlindja"/>

@@ -1,7 +1,9 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import { toast } from 'react-toastify';
 import { history } from '../..';
-import { IDepartment } from '../Models/IDepartment';
+import { IDoktori } from '../models/Doktori';
+import { IDepartment } from '../models/IDepartment';
+
 import { store } from '../stores/store';
 
 const sleep = (delay: number) => {
@@ -68,9 +70,25 @@ const Departmentet = {
     update: (Department: IDepartment) => axios.put<void>(`/departmentet/${Department.department_id}`, Department),
     delete: (department_id: string) => axios.delete<void>(`/departmentet/${department_id}`)
 }
+const request={
+    get:(url:string)=>axios.get(url).then(responseBody),
+    post:(url:string,body :{})=> axios.post(url,body).then(responseBody),
+    put:(url:string,body :{})=> axios.put(url,body).then(responseBody),
+    del:(url:string)=>axios.delete(url).then(responseBody)
+    
+
+}
+const doktoret={
+    list:() :Promise<IDoktori[]>=>request.get('/Mjeket'),
+    details:(id:string):Promise<IDoktori>=> request.get(`/Mjeket/${id}`),
+    create:(doktori :IDoktori)=>request.post('/Mjeket/',doktori),
+    update:(doktori:IDoktori)=>request.put(`/Mjeket/${doktori.mjeku_Id}`,doktori),
+    delete:(id:string)=>request.del(`/Mjeket/${id}`)
+}
 
 const agent = {
-    Departmentet
+    Departmentet,
+    doktoret
 }
 
 export default agent;

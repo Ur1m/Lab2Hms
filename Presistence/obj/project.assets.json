@@ -1459,17 +1459,11 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\hp\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
->>>>>>> ed6c089d2b03aa2626588a28c839ca8f6ae218f8
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Presistence\\Presistence.csproj",
       "projectName": "Presistence",
       "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Presistence\\Presistence.csproj",
@@ -1478,40 +1472,19 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config"
-=======
-      "projectUniqueName": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj",
-      "projectName": "Presistence",
-      "projectPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj",
-      "packagesPath": "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Presistence\\obj\\",
-      "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
-      "configFilePaths": [
-        "C:\\Users\\Rinor Hyseni\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
->>>>>>> ed6c089d2b03aa2626588a28c839ca8f6ae218f8
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-<<<<<<< HEAD
             "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj": {
               "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj"
-=======
-            "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj"
->>>>>>> ed6c089d2b03aa2626588a28c839ca8f6ae218f8
             }
           }
         }
