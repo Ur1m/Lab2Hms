@@ -17,9 +17,10 @@ import './styles.css';
 import DepartmentDashboard from '../../Features/Departmentet/Dashboard/DepartmentDashboard';
 import HomePage from '../../Features/home/HomePage';
 import TestErrors from '../../Features/errors/TestError';
-import { ToastContainer } from 'react-toastify';
+import { Slide, ToastContainer } from 'react-toastify';
 import NotFound from '../../Features/errors/NotFound';
 import ServerError from '../../Features/errors/ServerError';
+import Navbar from '../../Components/Navbar';
 
 const App=()=> {
  
@@ -50,9 +51,10 @@ useEffect(() =>{
 */
   return (
    <>
+   
       <ToastContainer position='bottom-right' hideProgressBar />
       <Router>
-        
+        <Navbar/>
         <Switch>
         <Container style={{marginTop: '4em'}}>
           <Switch>

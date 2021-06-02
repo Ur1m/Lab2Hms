@@ -31,7 +31,7 @@ export const SidebarData = [
   },
   {
     title: 'Mjeket',
-    path: '/Doctorat',
+    path: '/Doktorat',
     icon: <IoIcons.IoMdPeople />,
     cName: 'nav-text'
   },
