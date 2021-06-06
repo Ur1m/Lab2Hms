@@ -16,26 +16,6 @@ namespace Presistence.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.1");
 
-            modelBuilder.Entity("Domain.Barna", b =>
-                {
-                    b.Property<Guid>("Barnat_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("BName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("DataRegjistrimit")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Barnat_Id");
-
-                    b.ToTable("Barnat");
-                });
-
             modelBuilder.Entity("Domain.Department", b =>
                 {
                     b.Property<Guid>("Department_id")
@@ -61,6 +41,9 @@ namespace Presistence.Migrations
 
                     b.Property<int>("KrijuarMe")
                         .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("KrijuarNe")
+                        .HasColumnType("TEXT");
 
                     b.Property<Guid>("Pacient_id")
                         .HasColumnType("TEXT");
@@ -162,28 +145,6 @@ namespace Presistence.Migrations
                     b.ToTable("pacientet");
                 });
 
-            modelBuilder.Entity("Domain.Therapy", b =>
-                {
-                    b.Property<Guid>("Therapy_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("OnGoing")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("Pacient_id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("terapia")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Therapy_Id");
-
-                    b.HasIndex("Pacient_id");
-
-                    b.ToTable("Therapies");
-                });
-
             modelBuilder.Entity("Domain.prov", b =>
                 {
                     b.Property<Guid>("id")
@@ -204,16 +165,6 @@ namespace Presistence.Migrations
                         .WithMany()
                         .HasForeignKey("Pacient_id")
                         .HasConstraintName("FK_Fatura_Pacient_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Domain.Therapy", b =>
-                {
-                    b.HasOne("Domain.Pacient", "Pacient")
-                        .WithMany()
-                        .HasForeignKey("Pacient_id")
-                        .HasConstraintName("FK_Therapy_Pacient_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
