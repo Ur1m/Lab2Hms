@@ -25,7 +25,12 @@ namespace API.Controllers
         {
             return await Mediator.Send(new Detalis.Query{Barnat_Id = id});
         }
+      
 
+        [HttpPost]
+        public async Task<IActionResult> CreateBarna(Barna barna){
+          return Ok(await Mediator.Send(new Create.Command{Barna=barna}));
+        }
 
     }
 }
