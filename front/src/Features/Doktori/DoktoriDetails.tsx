@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Card , ButtonGroup, Button} from 'semantic-ui-react';
 import agent from '../../app/api/agent';
-import { IDoktori } from '../../app/models/Doktori';
+import { IDoktori } from '../../app/Models/Doktori';
 import doktoretStor from '../../app/store/doktoretStor';
 interface IProps{
   selectedDoktori:IDoktori ;

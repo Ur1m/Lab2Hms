@@ -1,6 +1,6 @@
 import { makeAutoObservable, runInAction } from "mobx";
 import agent from "../api/agent";
-import { IDepartment } from "../models/IDepartment";
+import { IDepartment } from "../Models/IDepartment";
 import {v4 as uuid} from 'uuid';
 
 export default class DepartmentStore {

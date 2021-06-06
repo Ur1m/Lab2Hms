@@ -6,7 +6,7 @@ import { useStore } from '../../../app/stores/store';
 import * as Yup from 'yup';
 import MyTextInput from '../../../app/common/form/MyTextInput';
 import MyTextArea from '../../../app/common/form/MyTextArea';
-import { IDepartment } from '../../../app/models/IDepartment';
+import { IDepartment } from '../../../app/Models/IDepartment';
 
 export default observer(function DepartmentForm() {
     const { departmentStore } = useStore();
