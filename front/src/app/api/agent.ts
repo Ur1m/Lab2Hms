@@ -1,8 +1,8 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import { toast } from 'react-toastify';
 import { history } from '../..';
-import { IDoktori } from '../Models/Doktori';
-import { IDepartment } from '../Models/IDepartment';
+import { IDoktori } from '../models/Doktori';
+import { IDepartment } from '../models/IDepartment';
 
 import { store } from '../stores/store';
 

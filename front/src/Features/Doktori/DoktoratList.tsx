@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Item,Button,Label, Segment } from 'semantic-ui-react';
 import agent from '../../app/api/agent';
-import { IDoktori } from '../../app/Models/Doktori';
+import { IDoktori } from '../../app/models/Doktori';
 
 import doktoretStor from '../../app/store/doktoretStor';
 

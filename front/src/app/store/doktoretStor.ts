@@ -1,7 +1,7 @@
 import { action, observable,configure, runInAction } from "mobx";
 import { createContext, SyntheticEvent } from "react";
 import agent from "../api/agent";
-import { IDoktori } from "../Models/Doktori";
+import { IDoktori } from "../models/Doktori";
 configure({enforceActions:'always'});
 
 class DokoretStore{

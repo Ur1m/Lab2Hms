@@ -20,7 +20,5 @@ namespace Domain
 
         public Pacient Pacient{get; set;}
 
-        public DateTime KrijuarNe {get;set;}
-
         }
 }

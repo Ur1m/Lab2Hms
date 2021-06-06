@@ -3,7 +3,7 @@ import React ,{  FormEvent, useContext, useEffect, useState}from 'react'
 import { Button, Form ,Input,Segment, TextArea} from 'semantic-ui-react'
 import { Link, RouteComponentProps } from 'react-router-dom';
 import {v4 as uuid} from 'uuid';
-import { IDoktori } from '../../app/Models/Doktori';
+import { IDoktori } from '../../app/models/Doktori';
 import doktoretStor from '../../app/store/doktoretStor';
 import {Form as FinalForm,Field} from 'react-final-form';
 import TextInput from '../../app/FormElements/TextInput';

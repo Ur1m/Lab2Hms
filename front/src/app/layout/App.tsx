@@ -8,7 +8,7 @@ import { BrowserRouter as Router,Switch, Route, RouteComponentProps,withRouter }
 import{ DoktoriForm} from '../../Features/Doktori/DoktoriForm';
 import {DoktoratDetails} from '../../Features/Doktori/DoktoriDetails';
 import {DoktoratList }from '../../Features/Doktori/DoktoratList';
-import { IDoktori } from '../Models/Doktori';
+import { IDoktori } from '../models/Doktori';
 import agent from '../api/agent';
 
 import React, { useEffect, useState } from 'react';
