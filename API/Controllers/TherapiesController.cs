@@ -20,7 +20,7 @@ namespace API.Controllers
         }
 
         [HttpGet("{Therapy_Id}")]
-        public async Task<ActionResult<Therapy>> GetTherapies(Guid Therapy_Id)
+        public async Task<ActionResult<Therapy>> GetTherapy(Guid Therapy_Id)
         {
          return await Mediator.Send(new Details.Query {Therapy_Id = Therapy_Id});
            

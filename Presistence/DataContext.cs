@@ -19,7 +19,12 @@ namespace Presistence
         public DbSet<Pacient> pacientet{get;set;}
 
         public DbSet<Fatura> Faturat {get; set;}
-         public DbSet<Therapy> Therapies {get; set;}
+
+        public DbSet<Therapy> Therapies {get; set;}
+
+        public DbSet <Infermierja> Infermieret {get; set;}
+
+        public DbSet<Barna> Barnat {get; set;}
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -43,6 +48,9 @@ namespace Presistence
     //-----------------------------------------------------------------------------        
             modelBuilder.Entity<Infermierja>()
                 .HasKey(i => i.Infermierja_Id);
+ //-----------------------------------------------------------------------------        
+            modelBuilder.Entity<Barna>()
+                .HasKey(d => d.Barnat_Id );
 //----------------------------------------------------------------------------- 
              modelBuilder.Entity<Therapy>()
                 .HasKey(f => f.Therapy_Id );
@@ -55,6 +63,6 @@ namespace Presistence
                 //----------------------------------------------------------------------------- 
 
         }
-        public DbSet <Infermierja> Infermieret {get; set;}
+      
     }
 }
