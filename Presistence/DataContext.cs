@@ -19,18 +19,19 @@ namespace Presistence
         public DbSet<Pacient> pacientet{get;set;}
 
         public DbSet<Fatura> Faturat {get; set;}
+         public DbSet<Therapy> Therapies {get; set;}
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Department>()
                 .HasKey(d => d.Department_id );
-
+//-----------------------------------------------------------------------------
             modelBuilder.Entity<Mjeku>()
                 .HasKey(m => m.Mjeku_Id );
-
+//-----------------------------------------------------------------------------
             modelBuilder.Entity<Pacient>()
                 .HasKey(p => p.Pacient_Id );
-
+//-----------------------------------------------------------------------------
             modelBuilder.Entity<Fatura>()
                 .HasKey(f => f.Fatura_Id );
 
@@ -39,9 +40,19 @@ namespace Presistence
                 .WithMany()
                 .HasForeignKey(p => p.Pacient_id)
                 .HasConstraintName("FK_Fatura_Pacient_id");
-            
+    //-----------------------------------------------------------------------------        
             modelBuilder.Entity<Infermierja>()
                 .HasKey(i => i.Infermierja_Id);
+//----------------------------------------------------------------------------- 
+             modelBuilder.Entity<Therapy>()
+                .HasKey(f => f.Therapy_Id );
+
+            modelBuilder.Entity<Therapy>()
+                .HasOne(p => p.Pacient)
+                .WithMany()
+                .HasForeignKey(p => p.Pacient_id)
+                .HasConstraintName("FK_Therapy_Pacient_id");
+                //----------------------------------------------------------------------------- 
 
         }
         public DbSet <Infermierja> Infermieret {get; set;}
