@@ -25,7 +25,7 @@ export const SidebarData = [
   },
   {
     title: 'Pacientet',
-    path: '/pacientet',
+    path: '/Pacientat',
     icon: <FaIcons.FaUserAlt />,
     cName: 'nav-text'
   },

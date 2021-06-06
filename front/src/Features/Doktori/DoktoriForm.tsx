@@ -1,89 +1,80 @@
-import { observer } from 'mobx-react-lite';
-import React ,{  FormEvent, useContext, useEffect, useState}from 'react'
+
+import React ,{  FormEvent, useState}from 'react'
 import { Button, Form ,Input,Segment, TextArea} from 'semantic-ui-react'
-import { Link, RouteComponentProps } from 'react-router-dom';
-import {v4 as uuid} from 'uuid';
 import { IDoktori } from '../../app/models/Doktori';
-import doktoretStor from '../../app/store/doktoretStor';
-import {Form as FinalForm,Field} from 'react-final-form';
-import TextInput from '../../app/FormElements/TextInput';
-import SelectInput from '../../app/FormElements/Select';
 import { departamentet } from '../../app/FormElements/DoktoriOptions';
 import {specializimet} from '../../app/FormElements/SpecializimiOptions';
-import DateTimeP from '../../app/FormElements/DateTimePic';
 
-interface IProps{
-    seteditmode:(editmode:boolean)=>void;
-    selectedDoktori:IDoktori;
-    createDoktor:(doktori:IDoktori)=>void;
-    editDoktor:(doktori:IDoktori)=>void;
+import { Formik } from 'formik';
+import MyTextInput from '../../app/common/form/MyTextInput';
+import * as yup from 'yup';
+import MyDateInput from '../../app/common/form/MyDateInput';
+import MySelectInput from '../../app/common/form/MySelectInput';
+import { useStoreDoktorat } from '../../app/stores/store';
 
-}
 
-export const DoktoriForm:React.FC<IProps> = ({seteditmode,selectedDoktori:innit,createDoktor,editDoktor}) => {
-    const InitializeForm=()=>{
-        if(innit){
-            return innit;
-        }
-        else{
-           return{
-            mjeku_Id:'',
-            emri:'',
-            mbimeri:'',
-             ditlindja:'',
-             specializimi:'',
-             depName:''
-
-           }
-           
-
-        }
+export const DoktoriForm = () => {
+    const {DoktoratStore}=useStoreDoktorat();
+    const{doktorat,selectedDoktori,openForm,closeForm,updateDoktori,createDoktori}=DoktoratStore;
+    
+   
+    const initialState = selectedDoktori ?? {
+        mjeku_Id:'',
+        emri: '',
+        mbimeri: '',
+        ditlindja:null,
+        specializimi:'',
+        depName:''
     }
-    const [selectedDoktori,setselectedDoktori]=useState<IDoktori>(InitializeForm)
+    const [Doktori,setDoktori]=useState<IDoktori>(initialState)
     const handleinputchange =(event:FormEvent<HTMLInputElement | HTMLTextAreaElement>)=>{
     
-        setselectedDoktori({...selectedDoktori,[event.currentTarget.name]:event.currentTarget.value});
+        setDoktori({...Doktori,[event.currentTarget.name]:event.currentTarget.value});
     };
-    const handlesubmit=()=>{
-       if(selectedDoktori.mjeku_Id.length ===0){
-          let newselectedDoktor ={
-              ...selectedDoktori,mjeku_Id: uuid()
-          }
-          createDoktor(newselectedDoktor);
-        }
-         
-          else{
-          editDoktor(selectedDoktori);
-          }
-       
+    const handleFormsubmit=(Doktori:IDoktori)=>{
+        Doktori.mjeku_Id? updateDoktori(Doktori) : createDoktori(Doktori);
+      
     }
-    const FinalFormSubmit=(values:any)=>{
-        console.log(values);
+    const validationSchema=yup.object({
+        emri:yup.string().required("Emri eshte i domosdoshem"),
+        mbimeri:yup.string().required("Mbimeri nuk duhet te jete i zbrazet"),
+        ditlindja:yup.string().required().nullable(),
+        specializimi:yup.string().required('ju lutem selektoni specializimin'),
+        depName:yup.string().required()
+        
 
-    }
-    const handleData=(Date:string)=>{
-        var date=Date.split("T")[0];
-        return date;;
-    }
+
+    })
     return (
         <Segment clearing>
-            <FinalForm  onSubmit={FinalFormSubmit}
-            initialValues={selectedDoktori}
-            render={({})=>(
-            <Form onSubmit={handlesubmit}>
-                <Field name='emri'placeholder='Emri'  children={TextInput} />
-                    <Field placeholder="Mbimeri..."name="mbimeri"  children={TextInput} />
-                    <Field children={DateTimeP} placeholder="Datalindjes" name="ditlindja"/>
-                    <Field placeholder="Specializimi"name="specializimi"options={specializimet} children={SelectInput}/>
-                    <Field  placeholder='departamnti' name='depName' children={SelectInput}  options={departamentet} />
-                    <Button floated="right" positive type='subimit' content='submit'/>
-                    <Button onClick={()=>seteditmode(false)}floated="right"  type='subimit' content='cancel'/>
-                </Form>
+              <Formik validationSchema={validationSchema}
+            enableReinitialize initialValues={Doktori!} onSubmit={values => handleFormsubmit(values)}>
+            {({handleSubmit,isSubmitting,dirty,isValid})=>(
+                <Form className='ui form' onSubmit={handleSubmit}>
+                  <MyTextInput placeholder='Emri' name="emri"/>
+                  <MyTextInput placeholder="Mbimeri" name="mbimeri"/>
+                  <MyDateInput  placeholderText='ditlindja' name="ditlindja" />
+                  <MySelectInput options={specializimet} placeholder='Specializimi' name='specializimi'/>
+                  <MySelectInput options={departamentet} placeholder="Departamenti" name="depName"/>
+                <Button 
+                disabled={isSubmitting || !dirty || !isValid}
+                floated="right" positive type='subimit' content='submit'/>
+                <Button onClick={()=>openForm}floated="right"  type='subimit' content='cancel'/>
+            </Form>
 
-            )
 
-            }/>
+             )
+
+             }
+            </Formik>
             
         </Segment>
     )
+          
+            
+
+            
+            
+       
+    
 }

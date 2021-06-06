@@ -1,148 +1,89 @@
-import { action, observable,configure, runInAction } from "mobx";
-import { createContext, SyntheticEvent } from "react";
+
 import agent from "../api/agent";
 import { IDoktori } from "../models/Doktori";
-configure({enforceActions:'always'});
+import {v4 as uuid} from 'uuid';
+import { makeAutoObservable, runInAction } from "mobx";
 
-class DokoretStore{
-
-    @observable doktoretRegistry=new Map();
-@observable doktoret:IDoktori[]=[];
-@observable selectedDoktori:IDoktori | null=null;
-@observable editMode=false;
-@observable loading=false;
-@observable submmitting=false;
-@observable target='';
-
-@action loadDoktoret = async()=>{
-    try{
-        const doktorett=await agent.doktoret.list();
+export default class DoktoretStore{
+    //pacientat:IPacienti[]=[];
+    selectedDoktori:IDoktori | undefined=undefined;
+    editmode=false;
+    doktoratRegistry=new Map<string,IDoktori>()
+    constructor(){
+        makeAutoObservable(this)
+    }
+    loadDoktorat= async ()=>{
+       try{
+        const doktorat=await agent.doktoret.list();
         runInAction(()=>{
-            doktorett.forEach((doktori)=>{
-                doktori.ditlindja=doktori.ditlindja.split('.')[0];
-                this.doktoretRegistry.set(doktori.mjeku_Id,doktori);
+            
+            doktorat.forEach(doktori=>{
+                doktori.ditlindja=new Date(doktori.ditlindja!)
+                this.doktoratRegistry.set(doktori.mjeku_Id,doktori);
         })
         
-
-   /* agent.doktoret.list().then(dok =>{
-        dok.forEach((doktori)=>{
-            doktori.ditlindja=doktori.ditlindja.split('.')[0];
-            this.doktoret.push(doktori);*/
-        });
+        })
+       }
+       catch(error){
+           console.log(error);
+       }
     }
+    get doktorat(){
+        return Array.from(this.doktoratRegistry.values());
+    }
+    selectDoktori=(id:string)=>{
+      this.selectedDoktori=this.doktoratRegistry.get(id);
+    }
+    canceleSelectedDoktori=()=>{
+        this.selectedDoktori=undefined;
+    }
+    openForm=(id?:string)=>{
+        id? this.selectDoktori(id) : this.canceleSelectedDoktori();
+        this.editmode=(true);
+    }
+    closeForm=()=>{
+        this.editmode=false;
+    }
+    createDoktori=async(Doktori :IDoktori)=>{
+        Doktori.mjeku_Id=uuid();
+        try{
+            await agent.doktoret.create(Doktori);
+            runInAction(()=>{
+                this.doktoratRegistry.set(Doktori.mjeku_Id,Doktori);
+                this.selectedDoktori=Doktori;
+                this.editmode=false;
+            })
+        }
         catch(error){
             console.log(error);
         }
-        
-        
-    };
-    @action createDoktori= async(Doktori :IDoktori)=>{
-this.submmitting=true;
-try{
-    await agent.doktoret.create(Doktori);
-    runInAction(()=>{
-        this.doktoretRegistry.set(Doktori.mjeku_Id,Doktori);
-        this.editMode=false;
-        this.submmitting=false;
-    })
- 
-
-}
-catch(error){
-    runInAction(()=>{
-        this.submmitting=false;
- console.log(error);
-    })
- 
-}
     }
-    @action editDoktori= async (doktori :IDoktori)=>{
-        this.submmitting=true;
+    updateDoktori=async(Doktori:IDoktori)=>{
         try{
-            await  agent.doktoret.update(doktori);
-            runInAction( () => {
-                this.doktoretRegistry.set(doktori.mjeku_Id,doktori)
-                this.selectedDoktori=doktori;
-                this.editMode=false;
-                this.submmitting=false;
-
-            })
-           
+           await agent.doktoret.update(Doktori);
+           runInAction(()=>{
+            // this.pacientat=[...this.pacientat.filter(a => a.pacient_Id !== Pacienti.pacient_Id),Pacienti];
+            this.doktoratRegistry.set(Doktori.mjeku_Id,Doktori)
+             this.selectedDoktori=Doktori;
+             this.editmode=false;
+           })
         }
         catch(error){
-            runInAction(()=>{
-                console.log(error);
-                this.editMode=false;
-                this.submmitting=false;
-
-            })
-            
+            console.log(error);
         }
+    }
+    deleteDoktori=async(id:string)=>{
+        try{
+           await agent.doktoret.delete(id);
+           runInAction(()=>{
+            //this.pacientat=[...this.pacientat.filter(a => a.pacient_Id !== id)]
+            this.doktoratRegistry.delete(id);
+            ;if(this.selectedDoktori!.mjeku_Id==id)this.canceleSelectedDoktori();
 
+           })
+        }
+        catch(error){
+            console.log(error);
+        }
     }
-    @action cleareDoktorin(){
-        this.selectedDoktori=null;
-    }
-    @action opereditform=(id:string)=>{
-        this.selectedDoktori=this.doktoretRegistry.get(id);
-    }
-    @action opencreateForm =() =>{
-        this.editMode=true;
-        this.selectedDoktori=null;
-    }
-    @action canceleSelectedDoktori=()=>{
-        this.selectedDoktori=null;
-    }
-    @action canceleFormOpen=()=>{
-        this.editMode=false;
-    }
-    @action loadDoktorin= async (id:string)=>{
-       let doktori=this.getDoktorin(id);
-       if(doktori){
-           this.selectedDoktori=doktori;
-//selectedDoktori as Doktori
-       }
-       else{
-           try{
-               doktori= await agent.doktoret.details(id);
-               runInAction(()=>{
-                   this.selectedDoktori=doktori;
-               })
-           }
-           catch(error){
-               console.log(error);
-           }
-       }
-    }
-    getDoktorin(id:string){
-       return this.doktoretRegistry.get(id);
-    }
-
-@action selectDoktori =(id:string)=>{
-    this.selectedDoktori=this.doktoretRegistry.get(id);
-    this.editMode=false;
 }
-@action deleteDoktori=async(event:SyntheticEvent<HTMLButtonElement>,id:string)=>{
-this.submmitting=true;
-this.target=event.currentTarget.name;
-try{
- await agent.doktoret.delete(id);
- runInAction(()=>{
-    this.doktoretRegistry.delete(id);
-    this.submmitting=false;
-    this.target='';
- })
-
-}
-catch(error){
-    runInAction(()=>{
-        this.submmitting=false;
-        this.target='';
-        console.log(error);
-    })
-  
-
-}
-}
-}
-export default createContext(new DokoretStore());

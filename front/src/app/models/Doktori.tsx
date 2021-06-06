@@ -5,11 +5,12 @@ export interface IDoktori
     mjeku_Id:string ;
     emri:string;
     mbimeri:string;
-     ditlindja:string;
+     ditlindja?:Date | null;
      specializimi:string;
      depName:string;
 }
-export class  DoktoriValues implements IDoktori{
+
+/*export class  DoktoriValues implements IDoktori{
     mjeku_Id:string='';
     emri:string='';
     mbimeri:string='';
@@ -23,4 +24,4 @@ export class  DoktoriValues implements IDoktori{
      }
 
 }
-const [doktori,setdoktori]=useState(new DoktoriValues() );
+const [doktori,setdoktori]=useState(new DoktoriValues() )*/;

@@ -9,17 +9,20 @@ interface IProps extends  FieldRenderProps<Date,HTMLTextAreaElement >,FormFieldP
 const DateTimeP:React.FC<IProps> = ({
     input,
     width,
-    rows,
+   
     placeholder,
     meta:{touched,error},
     ...rest
 }) => {
     return (
-        <Form.Field error={touched && !!error} rows={rows} width={width}>
+        <Form.Field error={touched && !!error}  width={width}>
         <DateTimePicker 
          placeholder={placeholder}
        value={input.value || null}
          onChange={input.onChange}
+
+         
+         
         
          />
         {touched && error && (<Label basic color='red'>{error}</Label>)}

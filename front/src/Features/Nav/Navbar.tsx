@@ -3,6 +3,7 @@ import  { useContext } from 'react'
 import { NavLink } from 'react-router-dom';
 import { Button, Container, Menu } from 'semantic-ui-react'
 import '../../app/layout/styles.css';
+import DoktoretStore from '../../app/store/doktoretStor';
 
 import doktoretStor from '../../app/store/doktoretStor';
 interface IProps{
@@ -10,7 +11,7 @@ interface IProps{
 }
 
 const Navbar:React.FC<IProps>=({opencreateform})=>{
- const doktoretStore=useContext(doktoretStor);
+ 
 
   return(
     <div className="sss">

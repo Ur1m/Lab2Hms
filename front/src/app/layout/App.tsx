@@ -1,14 +1,12 @@
 
 import '../../app/layout/styles.css';
-import {DoktoriDashboard}  from '../../Features/Doktori/DoktoriDashbord';
+import DoktoriDashboard  from '../../Features/Doktori/DoktoriDashbord';
 import doktoretStor from '../store/doktoretStor';
 import { observer } from 'mobx-react-lite';
 import { Container } from 'semantic-ui-react';
 import { BrowserRouter as Router,Switch, Route, RouteComponentProps,withRouter } from 'react-router-dom';
-import{ DoktoriForm} from '../../Features/Doktori/DoktoriForm';
-import {DoktoratDetails} from '../../Features/Doktori/DoktoriDetails';
-import {DoktoratList }from '../../Features/Doktori/DoktoratList';
-import { IDoktori } from '../models/Doktori';
+
+
 import agent from '../api/agent';
 
 import React, { useEffect, useState } from 'react';
@@ -21,6 +19,7 @@ import { Slide, ToastContainer } from 'react-toastify';
 import NotFound from '../../Features/errors/NotFound';
 import ServerError from '../../Features/errors/ServerError';
 import Navbar from '../../Components/Navbar';
+import PacientiDashboard  from '../../Features/Pacineti/PacinetiDashboard';
 
 const App=()=> {
  
@@ -53,14 +52,17 @@ useEffect(() =>{
    <>
    
       <ToastContainer position='bottom-right' hideProgressBar />
+      
       <Router>
-        <Navbar/>
+      <Navbar/>
+        
         <Switch>
         <Container style={{marginTop: '4em'}}>
           <Switch>
           <Route exact path='/' component={HomePage}/>
           <Route path='/Departamentet' component={DepartmentDashboard}/>
           <Route path={'/Doktorat'} component={DoktoriDashboard}/>
+          <Route path={'/Pacientat'} component={PacientiDashboard}/>
           <Route path='/errors' component={TestErrors} /> 
           <Route path='/server-error' component={ServerError} />
           <Route component={NotFound}/>

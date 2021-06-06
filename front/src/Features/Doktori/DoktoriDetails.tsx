@@ -1,42 +1,42 @@
+import { format } from 'date-fns';
 import { observer } from 'mobx-react-lite';
-import React, { useContext, useEffect, useState } from 'react'
-import { Link, RouteComponentProps } from 'react-router-dom';
+import React from 'react'
 import { Card , ButtonGroup, Button} from 'semantic-ui-react';
 import agent from '../../app/api/agent';
 import { IDoktori } from '../../app/models/Doktori';
-import doktoretStor from '../../app/store/doktoretStor';
-interface IProps{
-  selectedDoktori:IDoktori ;
-  seteditmode:(editmode:boolean)=>void;
-  setselectedDoktori:(lajm:IDoktori |null)=>void;
-}
+import { useStoreDoktorat } from '../../app/stores/store';
 
-export const DoktoratDetails: React.FC<IProps> = ({selectedDoktori,seteditmode,setselectedDoktori}) => {
+
+
+export default observer( function DoktoratDetails(){
+  const {DoktoratStore}=useStoreDoktorat();
+  const{selectedDoktori}=DoktoratStore;
+
     return (
         <Card fluid>
     
     <Card.Content>
-      <Card.Header>{selectedDoktori.emri}</Card.Header>
+      <Card.Header>{selectedDoktori!.emri}</Card.Header>
       
       <Card.Description>
-        {selectedDoktori.mbimeri}.
+        {selectedDoktori!.mbimeri}.
       </Card.Description>
       <Card.Description>
-        {selectedDoktori.ditlindja}.
+        {format(selectedDoktori!.ditlindja!,'dd mmm yyyy')}
       </Card.Description>
       <Card.Description>
-        {selectedDoktori.specializimi}.
+        {selectedDoktori!.specializimi}.
       </Card.Description>
       <Card.Description>
-        {selectedDoktori.depName}.
+        {selectedDoktori!.depName}.
       </Card.Description>
     </Card.Content>
     <Card.Content extra>
       <ButtonGroup widths={2}>
-          <Button  onClick={()=> seteditmode(true)}basic color='blue' content="Edit"/>
-          <Button  onClick={()=>setselectedDoktori(null)}basic color='grey' content="Cancele"/>
+          <Button  onClick={()=>DoktoratStore.openForm(selectedDoktori!.mjeku_Id)}basic color='blue' content="Edit"/>
+          <Button  onClick={()=>DoktoratStore.canceleSelectedDoktori()}basic color='grey' content="Cancele"/>
       </ButtonGroup>
     </Card.Content>
   </Card>
     )
-}
+})

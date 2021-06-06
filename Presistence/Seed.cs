@@ -5,7 +5,7 @@ using System;
 using Presistence;
 
 namespace Presistence{
-}
+
 
     public class Seed
     {
@@ -42,6 +42,26 @@ namespace Presistence{
                 
                  //param
                  context.Mjeket.AddRange(Mjeki);
+             };
+              if(!context.pacientet.Any()){
+                    var Pacienti=new List<Pacient>{
+                     new Pacient{
+                         emri="Pacineti",
+                        mbimeri="Pacienti",
+                        adresa="Tomorri33",
+                        qyteti="Prishtine",
+                         ditlindja=DateTime.Now,
+                         grupigjakut="A+"
+                      
+                     }
+                
+                     };
+                
+                 //param
+                 context.pacientet.AddRange(Pacienti);
+                 context.SaveChanges();
+
+             };
 
 
              if(!context.Infermieret.Any()){
@@ -71,7 +91,8 @@ namespace Presistence{
 
                  context.SaveChanges();
              };
-        }
+        
     }
     }
+}
 
