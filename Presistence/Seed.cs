@@ -17,17 +17,17 @@ namespace Presistence{
             if(!context.Therapies.Any()) return;
                    var therapies =new List<Therapy>{
 
-                     new Therapy{                         
+                     new Therapy{                     
                           terapia= "Momox MONALIZ",
-                          OnGoing= "Ilaq ndaj alergjis",
-                          Pacient_id= "43E764FE-8485-4E85-A315-A526D1D77692"
+                          OnGoing= "Ilaq ndaj alergjis"
+                         
                      }
                 
                      };
                 
                  //param
-              await context.Therapies.AddRangeAsync(therapies);
-                await context.SaveChangesAsync();
+                 context.Therapies.AddRange(therapies);
+                 context.SaveChanges();
             
         }
     }
