@@ -1,6 +1,6 @@
 import React, { useEffect}  from 'react'
 import { Grid } from 'semantic-ui-react'
-import { ILaboratori } from '../../../app/Models/ILaboratori'
+import { ILaboratori } from '../../../app/models/ILaboratori'
 import LaboratoriDetails from '../Details/LaboratoriDetails'
 import LaboratoriForm from '../Form/LaboratoriForm'
 import LaboratoriList from './LaboratoriList'
@@ -18,7 +18,7 @@ interface IProps{
 
 }
 
-const LaboratoriDashboard: React.FC<IProps> = ({
+const LaboratoriDashboard : React.FC<IProps> = ({
     laboratoret,
     selectLaboratori,
     selectedLaboratori,

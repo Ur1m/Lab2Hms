@@ -280,39 +280,23 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\PC-STYLE\\.nuget\\packages\\": {},
-=======
-    "C:\\Users\\PULSE Electronics\\.nuget\\packages\\": {},
->>>>>>> 467954cd740e1b62e617dad8eaaab2bcc24be021
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\Domain\\Domain.csproj",
       "projectName": "Domain",
       "projectPath": "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\PC-STYLE\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\Domain\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Domain\\Domain.csproj",
-      "projectName": "Domain",
-      "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Domain\\Domain.csproj",
-      "packagesPath": "C:\\Users\\PULSE Electronics\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Domain\\obj\\",
->>>>>>> 467954cd740e1b62e617dad8eaaab2bcc24be021
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\PC-STYLE\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-        "C:\\Users\\PULSE Electronics\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 467954cd740e1b62e617dad8eaaab2bcc24be021
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

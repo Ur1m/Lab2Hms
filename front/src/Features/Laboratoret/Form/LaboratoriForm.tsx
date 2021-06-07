@@ -2,7 +2,7 @@ import React,{FormEvent, useState, useEffect} from 'react'
 import { Button, Form, Segment } from 'semantic-ui-react';
 import {v4 as uuid} from 'uuid';
 import { Formik } from 'formik';
-import { ILaboratori } from '../../../app/Models/ILaboratori';
+import { ILaboratori } from '../../../app/models/ILaboratori';
 
 interface IProps{
     setEditMode:(editMode: boolean) => void;

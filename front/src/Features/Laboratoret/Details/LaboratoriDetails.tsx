@@ -1,6 +1,6 @@
 import React, { useEffect }  from 'react'
 import { Button, Card, Image } from 'semantic-ui-react'
-import { ILaboratori } from '../../../app/Models/ILaboratori';
+import { ILaboratori } from '../../../app/models/ILaboratori';
 
 interface IProps{
     laboratori: ILaboratori

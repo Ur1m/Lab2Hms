@@ -15,17 +15,23 @@ import Navbar from '../../Components/Navbar';
 
 import DepartmentDashboard from '../../Features/Departmentet/Dashboard/DepartmentDashboard';
 import HomePage from '../../Features/home/HomePage';
-import { ILaboratori } from '../Models/ILaboratori';
+import { ILaboratori } from '../models/ILaboratori';
 import axios from 'axios';
 import LaboratoriDashboard from '../../Features/Laboratoret/Dashboard/LaboratoriDashboard';
+import TestErrors from '../../Features/errors/TestError';
+import { Slide, ToastContainer } from 'react-toastify';
+import NotFound from '../../Features/errors/NotFound';
+import ServerError from '../../Features/errors/ServerError';
+import PacientiDashboard from '../../Features/Pacineti/PacinetiDashboard'
+import FaturaDashboard from '../../Features/Faturat/Dashboard/FaturaDashboard';
 
 // greta
 
 const App = () => {
+
   const[laboratoret, setLaboratoret]=useState<ILaboratori[]>([]);
   const [selectedLaboratori, setSelectedLaboratori]= useState<ILaboratori|null>(
     null);
-
   const [editMode, setEditMode]=useState(false);
 
   const handleSelectLaboratori= (id: string) => {
@@ -33,7 +39,6 @@ const App = () => {
     setEditMode(false);
 
   };
-
   
   const handleOpenCreateForm=() => {
     setSelectedLaboratori(null);
@@ -68,17 +73,6 @@ const App = () => {
       setLaboratoret(laboratoret);
       });
   }, []);
-
-//greta
-import TestErrors from '../../Features/errors/TestError';
-import { Slide, ToastContainer } from 'react-toastify';
-import NotFound from '../../Features/errors/NotFound';
-import ServerError from '../../Features/errors/ServerError';
-import Navbar from '../../Components/Navbar';
-import PacientiDashboard  from '../../Features/Pacineti/PacinetiDashboard';
-import FaturaDashboard from '../../Features/Faturat/Dashboard/FaturaDashboard';
-
-const App=()=> {
  
  
 
@@ -105,35 +99,33 @@ useEffect(() =>{
     </List>
     </div>
 */
-  return (
+
+return (
    <>
    
       <ToastContainer position='bottom-right' hideProgressBar />
       
       <Router>
-        <Navbar openCreateForm={handleOpenCreateForm}/>
-        <Switch>
-        <Container style={{marginTop: '4em'}}>
-        <LaboratoriDashboard laboratoret={laboratoret}
-         selectLaboratori={handleSelectLaboratori}
-         selectedLaboratori={selectedLaboratori}
-         editMode={editMode}
-         setEditMode={setEditMode}
-         setSelectedLaboratori={setSelectedLaboratori}
-         createLaboratori={handleCreateLaboratori}
-         editLaboratori={handleEditLaboratori}
-         deleteLaboratori={handleDeleteLaboratori}
-         />
-      <Navbar/>
+      <Navbar  openCreateForm={handleOpenCreateForm}/>
         
         <Switch>
         <Container style={{marginTop: '4em'}}>
+        <LaboratoriDashboard laboratoret={laboratoret}
+          selectLaboratori={handleSelectLaboratori}
+          selectedLaboratori={selectedLaboratori}
+          editMode={editMode}
+          setEditMode={setEditMode}
+          setSelectedLaboratori={setSelectedLaboratori}
+          createLaboratori={handleCreateLaboratori}
+          editLaboratori={handleEditLaboratori}
+          deleteLaboratori={handleDeleteLaboratori} />
           <Switch>
           <Route exact path='/' component={HomePage}/>
           <Route path='/Departamentet' component={DepartmentDashboard}/>
           <Route path={'/Doktorat'} component={DoktoriDashboard}/>
           <Route path={'/Pacientat'} component={PacientiDashboard}/>
           <Route path={'/Faturat'} component={FaturaDashboard}/>
+          <Route path={'/Laboratoret'} component={LaboratoriDashboard}/>
           <Route path='/errors' component={TestErrors} /> 
           <Route path='/server-error' component={ServerError} />
           <Route component={NotFound}/>
@@ -145,6 +137,6 @@ useEffect(() =>{
     </>
     
   );
-  };
-  export default observer (App);
 }
+
+export default observer (App);

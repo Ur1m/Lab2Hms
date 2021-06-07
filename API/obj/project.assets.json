@@ -1471,39 +1471,23 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\PC-STYLE\\.nuget\\packages\\": {},
-=======
-    "C:\\Users\\PULSE Electronics\\.nuget\\packages\\": {},
->>>>>>> 467954cd740e1b62e617dad8eaaab2bcc24be021
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\API\\API.csproj",
       "projectName": "API",
       "projectPath": "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\API\\API.csproj",
       "packagesPath": "C:\\Users\\PC-STYLE\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\API\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\API\\API.csproj",
-      "projectName": "API",
-      "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\PULSE Electronics\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\API\\obj\\",
->>>>>>> 467954cd740e1b62e617dad8eaaab2bcc24be021
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\PC-STYLE\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-        "C:\\Users\\PULSE Electronics\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 467954cd740e1b62e617dad8eaaab2bcc24be021
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1518,13 +1502,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-<<<<<<< HEAD
             "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\Application\\Application.csproj": {
               "projectPath": "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\Application\\Application.csproj"
-=======
-            "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Application\\Application.csproj"
->>>>>>> 467954cd740e1b62e617dad8eaaab2bcc24be021
             }
           }
         }
