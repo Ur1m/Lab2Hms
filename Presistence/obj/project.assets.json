@@ -413,7 +413,7 @@
           "lib/netstandard2.0/System.Collections.Immutable.dll": {}
         }
       },
-      "System.ComponentModel.Annotations/4.7.0": {
+      "System.ComponentModel.Annotations/5.0.0": {
         "type": "package",
         "compile": {
           "ref/netstandard2.0/System.ComponentModel.Annotations.dll": {}
@@ -511,6 +511,9 @@
       "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
         "compile": {
           "bin/placeholder/Domain.dll": {}
         },
@@ -1156,13 +1159,14 @@
         "version.txt"
       ]
     },
-    "System.ComponentModel.Annotations/4.7.0": {
-      "sha512": "0YFqjhp/mYkDGpU0Ye1GjE53HMp9UVfGN7seGpAMttAC0C40v5gw598jCgpbBLMmCo0E5YRLBv5Z2doypO49ZQ==",
+    "System.ComponentModel.Annotations/5.0.0": {
+      "sha512": "dMkqfy2el8A8/I76n2Hi1oBFEbG1SfxD2l5nhwXV3XjlnOmwxJlQbYpJH4W51odnU9sARCSAgv7S3CyAFMkpYg==",
       "type": "package",
-      "path": "system.componentmodel.annotations/4.7.0",
+      "path": "system.componentmodel.annotations/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/MonoAndroid10/_._",
@@ -1239,7 +1243,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.componentmodel.annotations.4.7.0.nupkg.sha512",
+        "system.componentmodel.annotations.5.0.0.nupkg.sha512",
         "system.componentmodel.annotations.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -1455,23 +1459,39 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\PC-STYLE\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\PULSE Electronics\\.nuget\\packages\\": {},
+>>>>>>> 467954cd740e1b62e617dad8eaaab2bcc24be021
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\Presistence\\Presistence.csproj",
       "projectName": "Presistence",
       "projectPath": "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\Presistence\\Presistence.csproj",
       "packagesPath": "C:\\Users\\PC-STYLE\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\Presistence\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Presistence\\Presistence.csproj",
+      "projectName": "Presistence",
+      "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Presistence\\Presistence.csproj",
+      "packagesPath": "C:\\Users\\PULSE Electronics\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Presistence\\obj\\",
+>>>>>>> 467954cd740e1b62e617dad8eaaab2bcc24be021
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\PC-STYLE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\PULSE Electronics\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 467954cd740e1b62e617dad8eaaab2bcc24be021
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1486,8 +1506,13 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\Domain\\Domain.csproj": {
               "projectPath": "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\Domain\\Domain.csproj"
+=======
+            "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Domain\\Domain.csproj"
+>>>>>>> 467954cd740e1b62e617dad8eaaab2bcc24be021
             }
           }
         }

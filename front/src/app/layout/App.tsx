@@ -1,10 +1,19 @@
+
+import '../../app/layout/styles.css';
+import DoktoriDashboard  from '../../Features/Doktori/DoktoriDashbord';
+import doktoretStor from '../store/doktoretStor';
+import { observer } from 'mobx-react-lite';
+import { Container } from 'semantic-ui-react';
+import { BrowserRouter as Router,Switch, Route, RouteComponentProps,withRouter } from 'react-router-dom';
+
+
+import agent from '../api/agent';
+
 import React, { useEffect, useState } from 'react';
 import './styles.css';
 import Navbar from '../../Components/Navbar';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Container } from 'semantic-ui-react';
+
 import DepartmentDashboard from '../../Features/Departmentet/Dashboard/DepartmentDashboard';
-import { observer } from 'mobx-react-lite';
 import HomePage from '../../Features/home/HomePage';
 import { ILaboratori } from '../Models/ILaboratori';
 import axios from 'axios';
@@ -61,6 +70,21 @@ const App = () => {
   }, []);
 
 //greta
+import TestErrors from '../../Features/errors/TestError';
+import { Slide, ToastContainer } from 'react-toastify';
+import NotFound from '../../Features/errors/NotFound';
+import ServerError from '../../Features/errors/ServerError';
+import Navbar from '../../Components/Navbar';
+import PacientiDashboard  from '../../Features/Pacineti/PacinetiDashboard';
+import FaturaDashboard from '../../Features/Faturat/Dashboard/FaturaDashboard';
+
+const App=()=> {
+ 
+ 
+
+ 
+
+
 
 /*const [infermieret, setInfermieret] = useState([]);
 useEffect(() =>{
@@ -83,6 +107,9 @@ useEffect(() =>{
 */
   return (
    <>
+   
+      <ToastContainer position='bottom-right' hideProgressBar />
+      
       <Router>
         <Navbar openCreateForm={handleOpenCreateForm}/>
         <Switch>
@@ -97,8 +124,20 @@ useEffect(() =>{
          editLaboratori={handleEditLaboratori}
          deleteLaboratori={handleDeleteLaboratori}
          />
+      <Navbar/>
+        
+        <Switch>
+        <Container style={{marginTop: '4em'}}>
+          <Switch>
           <Route exact path='/' component={HomePage}/>
           <Route path='/Departamentet' component={DepartmentDashboard}/>
+          <Route path={'/Doktorat'} component={DoktoriDashboard}/>
+          <Route path={'/Pacientat'} component={PacientiDashboard}/>
+          <Route path={'/Faturat'} component={FaturaDashboard}/>
+          <Route path='/errors' component={TestErrors} /> 
+          <Route path='/server-error' component={ServerError} />
+          <Route component={NotFound}/>
+          </Switch>
         </Container>
         </Switch>
       </Router>
@@ -108,3 +147,4 @@ useEffect(() =>{
   );
   };
   export default observer (App);
+}

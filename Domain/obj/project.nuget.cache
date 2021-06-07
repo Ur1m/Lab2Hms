@@ -1,11 +1,21 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "ynXFJUSYgyMeAfh1JiNQDDt0ygFdIl9mPzy8+GpfJk2OOBB8FqaeJKWCE414oUhjOkN6I3T6aCtjcEKXCRfCAw==",
   "success": true,
   "projectFilePath": "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC-STYLE\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\PC-STYLE\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+=======
+  "dgSpecHash": "RfSMQWa+vx+DV3UxxQQmzeXdEauAu7uGgyT85dIQ3Fwes6Tc4chNrcxFLwVM/rQ1JNhaxyHzl4CVd7U7NVYtaA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PULSE Electronics\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\PULSE Electronics\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\PULSE Electronics\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+>>>>>>> 467954cd740e1b62e617dad8eaaab2bcc24be021
   ],
   "logs": []
 }

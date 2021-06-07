@@ -1,17 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import {BrowserRouter,Router}from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css'
+import 'react-toastify/dist/ReactToastify.min.css';
+import 'react-datepicker/dist/react-datepicker.css';
+import "react-widgets/styles.css";
 import App from './app/layout/App';
-import { store, StoreContext } from './app/stores/store';
-
+import {createBrowserHistory} from 'history';
+import { store, StoreContext, StorePacientat,StoreContextPacientat, StoreDoktorat,StoreContextDoktorat } from './app/stores/store';
 import reportWebVitals from './reportWebVitals';
+import dateFnsLocalizer from 'react-widgets-date-fns';
+ new dateFnsLocalizer();
+
+
+export const history = createBrowserHistory();
+
+
 ReactDOM.render(
   <StoreContext.Provider value={store}>
-    <BrowserRouter>
+    <StoreContextPacientat.Provider value={StorePacientat}/>
+    <StoreContextDoktorat.Provider value={StoreDoktorat}/>
+    <Router history={history}>
       <App />
-    </BrowserRouter>
-  </StoreContext.Provider>,
+    </Router>
+  </StoreContext.Provider>
+  ,
+// ed6c089d2b03aa2626588a28c839ca8f6ae218f8
   document.getElementById('root')
 );
 

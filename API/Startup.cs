@@ -9,7 +9,8 @@ using MediatR;
 using Application.Departmentet;
 using Application.Core;
 using AutoMapper;
-
+using FluentValidation.AspNetCore;
+using API.Middleware;
 
 namespace API
 {
@@ -36,7 +37,10 @@ namespace API
                 });
             });
             services.AddMediatR(typeof(List.Handler).Assembly);
-            services.AddControllers();
+            services.AddControllers().AddFluentValidation(config =>
+            {
+                config.RegisterValidatorsFromAssemblyContaining<Create>();
+            });
            // services.AddMvc().AddFluentValidation(cfg =>cfg.RegisterValidatorsFromAssemblyContaining<Create>());
             services.AddAutoMapper(typeof(MappingProfiles).Assembly);
         }
@@ -44,16 +48,17 @@ namespace API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseMiddleware<ExceptionMiddleware>();
+
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                
             }
 
           //  app.UseHttpsRedirection();
 
             app.UseRouting();
-            
-            app.UseCors("CorsPolicy");
+               app.UseCors("CorsPolicy");
 
             app.UseCors("CorsPolicy");
 

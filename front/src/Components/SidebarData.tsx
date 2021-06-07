@@ -25,13 +25,13 @@ export const SidebarData = [
   },
   {
     title: 'Pacientet',
-    path: '/pacientet',
+    path: '/Pacientat',
     icon: <FaIcons.FaUserAlt />,
     cName: 'nav-text'
   },
   {
     title: 'Mjeket',
-    path: '/doctor',
+    path: '/Doktorat',
     icon: <IoIcons.IoMdPeople />,
     cName: 'nav-text'
   },
@@ -49,13 +49,19 @@ export const SidebarData = [
   },
   {
     title: 'Fatura',
-    path: '/',
+    path: '/Faturat',
     icon: <RiIcons.RiBillLine />,
     cName: 'nav-text'
   },
   {
     title: 'Ndihma teknike',
     path: '/',
+    icon: <IoIcons.IoMdHelpCircle />,
+    cName: 'nav-text'
+  },
+  {
+    title: 'Errors',
+    path: '/errors',
     icon: <IoIcons.IoMdHelpCircle />,
     cName: 'nav-text'
   }

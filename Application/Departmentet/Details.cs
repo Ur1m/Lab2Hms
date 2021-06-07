@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Application.Core;
 using Domain;
 using MediatR;
 using Presistence;
@@ -12,12 +13,12 @@ namespace Application.Departmentet
     public class Details
     {
 
-        public class Query : IRequest<Department>
+        public class Query : IRequest<Result<Department>>
         { 
             public Guid Department_Id { get; set; }
         }
 
-        public class Handler : IRequestHandler<Query, Department>
+        public class Handler : IRequestHandler<Query, Result<Department>>
         {
             private readonly DataContext _context;
 
@@ -26,9 +27,11 @@ namespace Application.Departmentet
                 _context = context;
             }
 
-            public async Task<Department> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<Result<Department>> Handle(Query request, CancellationToken cancellationToken)
             {
-                return await _context.Departmentet.FindAsync(request.Department_Id);
+                var department = await _context.Departmentet.FindAsync(request.Department_Id);
+
+                return Result<Department>.Success(department);
             }
         }
     }

@@ -15,7 +15,7 @@ namespace Presistence.Migrations
                     Titulli = table.Column<string>(nullable: true),
                     Pershkrimi = table.Column<string>(nullable: true),
                     Shuma = table.Column<int>(nullable: false),
-                    KrijuarMe = table.Column<int>(nullable: false),
+                    KrijuarMe = table.Column<DateTime>(nullable: true),
                     Statusi = table.Column<string>(nullable: true),
                     Pacient_id = table.Column<Guid>(nullable: false)
                 },
