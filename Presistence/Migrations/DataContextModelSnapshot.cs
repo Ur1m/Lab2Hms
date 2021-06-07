@@ -59,8 +59,8 @@ namespace Presistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("KrijuarMe")
-                        .HasColumnType("INTEGER");
+                    b.Property<DateTime?>("KrijuarMe")
+                        .HasColumnType("TEXT");
 
                     b.Property<Guid>("Pacient_id")
                         .HasColumnType("TEXT");
@@ -142,7 +142,7 @@ namespace Presistence.Migrations
                     b.Property<string>("adresa")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("ditlindja")
+                    b.Property<DateTime?>("ditlindja")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("emri")

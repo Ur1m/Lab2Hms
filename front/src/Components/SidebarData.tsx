@@ -43,7 +43,7 @@ export const SidebarData = [
   },
   {
     title: 'Fatura',
-    path: '/',
+    path: '/Faturat',
     icon: <RiIcons.RiBillLine />,
     cName: 'nav-text'
   },

@@ -20,6 +20,7 @@ import NotFound from '../../Features/errors/NotFound';
 import ServerError from '../../Features/errors/ServerError';
 import Navbar from '../../Components/Navbar';
 import PacientiDashboard  from '../../Features/Pacineti/PacinetiDashboard';
+import FaturaDashboard from '../../Features/Faturat/Dashboard/FaturaDashboard';
 
 const App=()=> {
  
@@ -63,6 +64,7 @@ useEffect(() =>{
           <Route path='/Departamentet' component={DepartmentDashboard}/>
           <Route path={'/Doktorat'} component={DoktoriDashboard}/>
           <Route path={'/Pacientat'} component={PacientiDashboard}/>
+          <Route path={'/Faturat'} component={FaturaDashboard}/>
           <Route path='/errors' component={TestErrors} /> 
           <Route path='/server-error' component={ServerError} />
           <Route component={NotFound}/>
