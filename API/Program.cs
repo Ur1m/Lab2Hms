@@ -33,7 +33,7 @@ namespace API
 
                 }
             }
-           host.Run();
+          await host.RunAsync();
 
         }
 
