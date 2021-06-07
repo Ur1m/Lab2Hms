@@ -8,7 +8,11 @@ import { IconContext } from 'react-icons';
 import { Button, Menu, Segment } from 'semantic-ui-react';
 import { useStore } from '../app/stores/store';
 
-function Navbar() {
+interface IProps{
+  openCreateForm: () => void;
+}
+
+function Navbar({openCreateForm} : IProps) {
   const {departmentStore} = useStore();
   const [sidebar, setSidebar] = useState(false);
 
@@ -46,6 +50,8 @@ function Navbar() {
             })}
           </ul>
         </nav>
+        <Button onClick={openCreateForm} positive content='Shto Analizat'/>
+        
       </IconContext.Provider>
     </>
   );

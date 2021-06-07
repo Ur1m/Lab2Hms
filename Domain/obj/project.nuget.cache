@@ -1,20 +1,11 @@
 {
   "version": 2,
-<<<<<<< Updated upstream
-  "dgSpecHash": "nODHpfWoXoVK5yWmDiBoMxLCDaGlr2GL5nWnEDw6EDj3gX0MFglO6QEiZzNrtu4hHf2WMXwfJC4hSMLYwb+O1A==",
+  "dgSpecHash": "ynXFJUSYgyMeAfh1JiNQDDt0ygFdIl9mPzy8+GpfJk2OOBB8FqaeJKWCE414oUhjOkN6I3T6aCtjcEKXCRfCAw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
-=======
-  "dgSpecHash": "lpQN+7NvDwFD1AcHSWc0kj0G4PDorDHpaiQXNRkZx0WI2Gto9tlUGrp6CC2Zn9xHUUxayFfElGYy29SJesZOxw==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj",
-  "expectedPackageFiles": [
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
->>>>>>> Stashed changes
+    "C:\\Users\\PC-STYLE\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\PC-STYLE\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

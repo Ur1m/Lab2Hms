@@ -42,6 +42,12 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
+    title: 'Laboratori',
+    path: '/laboratori',
+    icon: <FaIcons.FaFlask/>,
+    cName: 'nav-text'
+  },
+  {
     title: 'Fatura',
     path: '/',
     icon: <RiIcons.RiBillLine />,
