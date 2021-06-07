@@ -12,9 +12,9 @@ namespace Presistence{
     {
     
 
-    public static async Task SeedData(DataContext context){
+    public static void SeedData(DataContext context){
 
-            if(!context.Therapies.Any()) return;
+          /*  if(!context.Therapies.Any()) return;
                    var therapies =new List<Therapy>{
 
                      new Therapy{                     
@@ -23,11 +23,11 @@ namespace Presistence{
                          
                      }
                 
-                     };
+                     }; 
                 
                  //param
                  context.Therapies.AddRange(therapies);
-                 context.SaveChanges();
+                 context.SaveChanges();*/
             
         }
     }
