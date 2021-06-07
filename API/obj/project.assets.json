@@ -1471,23 +1471,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\": {},
+    "C:\\Users\\PULSE Electronics\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\api\\API.csproj",
+      "projectUniqueName": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\api\\API.csproj",
-      "packagesPath": "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\api\\obj\\",
+      "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\PULSE Electronics\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Rinor Hyseni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PULSE Electronics\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1502,8 +1502,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Application\\Application.csproj"
+            "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Application\\Application.csproj"
             }
           }
         }
