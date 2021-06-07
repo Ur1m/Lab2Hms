@@ -32,5 +32,17 @@ namespace API.Controllers
           return Ok(await Mediator.Send(new Create.Command{Barna=barna}));
         }
 
+        [HttpPut("{id}")]
+        public async Task<IActionResult> EditBarnat(Guid id ,Barna barna){
+            barna.Barnat_Id=id;
+            return Ok(await Mediator.Send(new Edit.Command{Barna=barna}));
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteBarnat(Guid id){
+
+                return Ok(await Mediator.Send(new Delete.Command{Barnat_Id =id}));
+
+        }
     }
 }
