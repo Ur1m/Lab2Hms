@@ -107,6 +107,38 @@ namespace Presistence.Migrations
                     b.ToTable("Infermieret");
                 });
 
+            modelBuilder.Entity("Domain.Laboratori", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("City")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Emri")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Mosha")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NrId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pershkrimi")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Rezultati")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Laboratoret");
+                });
+
             modelBuilder.Entity("Domain.Mjeku", b =>
                 {
                     b.Property<Guid>("Mjeku_Id")

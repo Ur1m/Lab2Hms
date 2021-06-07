@@ -7994,23 +7994,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PULSE Electronics\\.nuget\\packages\\": {},
+    "C:\\Users\\PC-STYLE\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Application\\Application.csproj",
-      "packagesPath": "C:\\Users\\PULSE Electronics\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Application\\obj\\",
+      "projectPath": "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\Application\\Application.csproj",
+      "packagesPath": "C:\\Users\\PC-STYLE\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\PULSE Electronics\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PC-STYLE\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -8025,11 +8025,11 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Domain\\Domain.csproj"
+            "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Presistence\\Presistence.csproj": {
-              "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Presistence\\Presistence.csproj"
+            "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\Presistence\\Presistence.csproj": {
+              "projectPath": "C:\\Users\\PC-STYLE\\Desktop\\LabHms\\Presistence\\Presistence.csproj"
             }
           }
         }

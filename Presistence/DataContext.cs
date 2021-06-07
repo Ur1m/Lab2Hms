@@ -20,6 +20,7 @@ namespace Presistence
 
         public DbSet<Fatura> Faturat {get; set;}
 
+        public DbSet<Laboratori> Laboratoret {get; set;}
         public DbSet<Therapy> Therapies {get; set;}
 
         public DbSet <Infermierja> Infermieret {get; set;}
@@ -61,6 +62,9 @@ namespace Presistence
                 .HasForeignKey(p => p.Pacient_id)
                 .HasConstraintName("FK_Therapy_Pacient_id");
                 //----------------------------------------------------------------------------- 
+
+            modelBuilder.Entity<Laboratori>()
+                .HasKey(l => l.Id);
 
         }
       
