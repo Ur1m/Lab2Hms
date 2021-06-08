@@ -17,8 +17,8 @@ export default observer( function FaturaList(){
     return (
         <Segment>
             <Item.Group divided>
-                {Faturat.map(IFatura =>(
-                    <Item key={IFatura.fatura_id}>
+                {Faturat.map((IFatura,key)=>(
+                    <Item key={key} value={IFatura.fatura_id}>
                         <Item.Content>
                             <Item.Header>{IFatura.titulli}</Item.Header>
                             <Item.Description>

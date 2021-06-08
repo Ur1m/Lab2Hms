@@ -2,6 +2,7 @@ import { makeAutoObservable, runInAction } from "mobx";
 import agent from "../api/agent";
 import { IFatura } from "../models/IFatura";
 import {v4 as uuid} from 'uuid';
+import { IPacienti } from "../models/IPacienti";
 
 export default class FaturaStore {
     Faturat: IFatura[] = [];
@@ -101,6 +102,20 @@ export default class FaturaStore {
             runInAction(() => {
                 this.loading = false;
             })
+        }
+    }
+
+    Pacientat: IPacienti[] =[];
+
+    getPacientet = async() => {
+        try{
+            const Pacientat = await agent.Pacientat.list();
+            Pacientat.forEach(Pacienti => {
+                    this.Pacientat.push(Pacienti);
+                })
+                return Pacientat;
+        } catch(error){
+            console.log(error);
         }
     }
 }
