@@ -59,8 +59,8 @@ namespace Presistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("KrijuarMe")
-                        .HasColumnType("INTEGER");
+                    b.Property<DateTime?>("KrijuarMe")
+                        .HasColumnType("TEXT");
 
                     b.Property<Guid>("Pacient_id")
                         .HasColumnType("TEXT");
@@ -107,6 +107,38 @@ namespace Presistence.Migrations
                     b.ToTable("Infermieret");
                 });
 
+            modelBuilder.Entity("Domain.Laboratori", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("City")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Emri")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Mosha")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NrId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pershkrimi")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Rezultati")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Laboratoret");
+                });
+
             modelBuilder.Entity("Domain.Mjeku", b =>
                 {
                     b.Property<Guid>("Mjeku_Id")
@@ -142,7 +174,7 @@ namespace Presistence.Migrations
                     b.Property<string>("adresa")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("ditlindja")
+                    b.Property<DateTime?>("ditlindja")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("emri")
@@ -160,6 +192,31 @@ namespace Presistence.Migrations
                     b.HasKey("Pacient_Id");
 
                     b.ToTable("pacientet");
+                });
+
+            modelBuilder.Entity("Domain.Shtrat", b =>
+                {
+                    b.Property<Guid>("Shtrat_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pershkrimi")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Statusi")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("llojiShtratit_id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("nrShtratit")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Shtrat_id");
+
+                    b.HasIndex("llojiShtratit_id");
+
+                    b.ToTable("Shtreter");
                 });
 
             modelBuilder.Entity("Domain.Therapy", b =>
@@ -184,6 +241,20 @@ namespace Presistence.Migrations
                     b.ToTable("Therapies");
                 });
 
+            modelBuilder.Entity("Domain.llojiShtratit", b =>
+                {
+                    b.Property<Guid>("llojiShtratit_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("emri")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("llojiShtratit_id");
+
+                    b.ToTable("llojeteShtreterve");
+                });
+
             modelBuilder.Entity("Domain.prov", b =>
                 {
                     b.Property<Guid>("id")
@@ -204,6 +275,16 @@ namespace Presistence.Migrations
                         .WithMany()
                         .HasForeignKey("Pacient_id")
                         .HasConstraintName("FK_Fatura_Pacient_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Domain.Shtrat", b =>
+                {
+                    b.HasOne("Domain.llojiShtratit", "llojiShtratit")
+                        .WithMany()
+                        .HasForeignKey("llojiShtratit_id")
+                        .HasConstraintName("FK_Shtrat_llojiShtratit_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
