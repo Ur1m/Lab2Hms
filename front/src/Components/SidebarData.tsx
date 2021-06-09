@@ -3,6 +3,7 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 import * as RiIcons from 'react-icons/ri';
+import * as GiIcons from 'react-icons/gi';
 
 export const SidebarData = [
   {
@@ -51,6 +52,12 @@ export const SidebarData = [
     title: 'Fatura',
     path: '/Faturat',
     icon: <RiIcons.RiBillLine />,
+    cName: 'nav-text'
+  },
+  {
+    title: 'Shtreterit',
+    path: '/Shtreter',
+    icon: <GiIcons.GiBed />,
     cName: 'nav-text'
   },
   {

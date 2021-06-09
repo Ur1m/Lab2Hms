@@ -24,6 +24,7 @@ import NotFound from '../../Features/errors/NotFound';
 import ServerError from '../../Features/errors/ServerError';
 import PacientiDashboard from '../../Features/Pacineti/PacinetiDashboard'
 import FaturaDashboard from '../../Features/Faturat/Dashboard/FaturaDashboard';
+import ShtratDashboard from '../../Features/Shtreter/Dashboard/ShtratDashboard';
 
 // greta
 
@@ -126,6 +127,7 @@ return (
           <Route path={'/Pacientat'} component={PacientiDashboard}/>
           <Route path={'/Faturat'} component={FaturaDashboard}/>
           <Route path={'/Laboratoret'} component={LaboratoriDashboard}/>
+          <Route path={'/Shtreter'} component={ShtratDashboard} />
           <Route path='/errors' component={TestErrors} /> 
           <Route path='/server-error' component={ServerError} />
           <Route component={NotFound}/>
