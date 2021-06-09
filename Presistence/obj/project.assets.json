@@ -1459,19 +1459,38 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\hp\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+>>>>>>> e002014b5fc77db9c42090e3fbf824fde64c26cb
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Presistence\\Presistence.csproj",
       "projectName": "Presistence",
       "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Presistence\\Presistence.csproj",
       "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Presistence\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj",
+      "projectName": "Presistence",
+      "projectPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj",
+      "packagesPath": "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Presistence\\obj\\",
+>>>>>>> e002014b5fc77db9c42090e3fbf824fde64c26cb
       "projectStyle": "PackageReference",
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+        "C:\\Users\\Rinor Hyseni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+>>>>>>> e002014b5fc77db9c42090e3fbf824fde64c26cb
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
@@ -1483,8 +1502,13 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj": {
               "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj"
+=======
+            "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj"
+>>>>>>> e002014b5fc77db9c42090e3fbf824fde64c26cb
             }
           }
         }

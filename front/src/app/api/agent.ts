@@ -3,7 +3,6 @@ import { toast } from 'react-toastify';
 import { history } from '../..';
 import { IDoktori } from '../models/Doktori';
 import { IDepartment } from '../models/IDepartment';
-import { IFatura } from '../models/IFatura';
 import {IPacienti} from '../models/IPacienti'
 
 import { store } from '../stores/store';
@@ -72,13 +71,6 @@ const Departmentet = {
     update: (Department: IDepartment) => axios.put<void>(`/departmentet/${Department.department_id}`, Department),
     delete: (department_id: string) => axios.delete<void>(`/departmentet/${department_id}`)
 }
-const Faturat = {
-    list: () => requests.get<IFatura[]>('/faturat'),
-    details: (fatura_id: string) => requests.get<IFatura>(`/faturat/${fatura_id}`),
-    create: (Fatura: IFatura) => axios.post<void>('/faturat', Fatura),
-    update: (Fatura: IFatura) => axios.put<void>(`/faturat/${Fatura.fatura_id}`, Fatura),
-    delete: (fatura_id: string) => axios.delete<void>(`/faturat/${fatura_id}`)
-}
 const Pacientat ={
     list: () => requests.get<IPacienti[]>('/Pacientat'),
     details: (pacient_Id: string) => requests.get<IDepartment>(`/Pacientat/${pacient_Id}`),
@@ -106,8 +98,7 @@ const doktoret={
 const agent = {
     Departmentet,
     doktoret,
-    Pacientat,
-    Faturat
+    Pacientat
 }
 
 export default agent;

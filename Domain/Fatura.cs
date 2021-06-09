@@ -12,7 +12,7 @@ namespace Domain
 
         public int Shuma{get; set;}
 
-        public DateTime? KrijuarMe {get; set;}
+        public int KrijuarMe {get; set;}
 
         public string Statusi {get; set;}
 
