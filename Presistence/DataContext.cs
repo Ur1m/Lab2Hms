@@ -26,6 +26,8 @@ namespace Presistence
         public DbSet <Infermierja> Infermieret {get; set;}
 
         public DbSet<Barna> Barnat {get; set;}
+        public DbSet<llojiShtratit> llojeteShtreterve { get; set; }
+        public DbSet<Shtrat> Shtreter { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -65,6 +67,18 @@ namespace Presistence
 
             modelBuilder.Entity<Laboratori>()
                 .HasKey(l => l.Id);
+
+            modelBuilder.Entity<llojiShtratit>()
+                .HasKey(ll => ll.llojiShtratit_id);
+            
+            modelBuilder.Entity<Shtrat>()
+                .HasKey(sh => sh.Shtrat_id);
+
+            modelBuilder.Entity<Shtrat>()
+                .HasOne(ll => ll.llojiShtratit)
+                .WithMany()
+                .HasForeignKey(ll => ll.llojiShtratit_id)
+                .HasConstraintName("FK_Shtrat_llojiShtratit_id");
 
         }
       
