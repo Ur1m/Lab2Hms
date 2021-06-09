@@ -25,7 +25,7 @@ namespace API
                   var   context=services.GetRequiredService<DataContext>();
                  await context.Database.MigrateAsync();
                
-                await Seed.SeedData(context);
+               /* await*/ Seed.SeedData(context);
                 }
                 catch(Exception ex){
                     var logger=services.GetRequiredService<ILogger<Program>>();

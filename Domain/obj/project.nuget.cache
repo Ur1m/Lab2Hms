@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "RfSMQWa+vx+DV3UxxQQmzeXdEauAu7uGgyT85dIQ3Fwes6Tc4chNrcxFLwVM/rQ1JNhaxyHzl4CVd7U7NVYtaA==",
+  "dgSpecHash": "ipfLrLqk0FHZ/iXMzqz1mvU0sT6v8qfRzMLpWJeLZVhiGp2iouDjQp9hysdZ7LWi8OQeyMJB9Ugl688mpad4yA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\PULSE Electronics\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\PULSE Electronics\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\PULSE Electronics\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

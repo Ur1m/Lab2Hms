@@ -13,6 +13,7 @@ export default observer(function DoktoratList () {
     const {DoktoratStore}=useStoreDoktorat();
     const{doktorat,selectDoktori,deleteDoktori}=DoktoratStore;
     
+    
     useEffect(()=>{
         DoktoratStore.loadDoktorat();
     },[DoktoratStore]);
