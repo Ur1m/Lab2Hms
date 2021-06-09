@@ -8,7 +8,11 @@ import { IconContext } from 'react-icons';
 import { Button, Menu, Segment } from 'semantic-ui-react';
 import { useStore } from '../app/stores/store';
 
-function Navbar() {
+interface IProps{
+  openCreateForm: () => void;
+}
+
+function Navbar({openCreateForm} : IProps) {
   const {departmentStore} = useStore();
   const [sidebar, setSidebar] = useState(false);
 
@@ -22,8 +26,11 @@ function Navbar() {
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
+          <div className="logo">
+          <img className="logo" src="assets/logo.png" alt="logo" style={{width: '50px', marginLeft: '200px'}}/>
+          </div>
           <div className="navi">
-          <Button inverted className="Log out" > Log Out</Button>
+          <Button inverted className="Log out" style={{marginLeft: '-500px'}}> Log Out</Button>
         </div>
        
         </div>
@@ -46,6 +53,8 @@ function Navbar() {
             })}
           </ul>
         </nav>
+        <Button onClick={openCreateForm} positive content='Shto Analizat'/>
+        
       </IconContext.Provider>
     </>
   );
