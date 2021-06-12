@@ -24,5 +24,24 @@ namespace API.Controllers
             return await Mediator.Send(new Details.Query { llojiShtratit_id = llojiShtratit_id });
         }
 
+        [HttpPost]
+        public async Task<IActionResult> CreatellojiShtratit(llojiShtratit llojiShtratit)
+        {
+            return Ok(await Mediator.Send(new Create.Command { llojiShtratit = llojiShtratit }));
+        }
+
+        [HttpPut("{llojiShtratit_id}")]
+        public async Task<IActionResult> EditllojiShtratit(Guid llojiShtratit_id, llojiShtratit llojiShtratit)
+        {
+            llojiShtratit.llojiShtratit_id = llojiShtratit_id;
+            return Ok(await Mediator.Send(new Edit.Command { llojiShtratit = llojiShtratit }));
+        }
+
+        [HttpDelete("{llojiShtratit_id}")]
+        public async Task<IActionResult> DeletellojiShtratit(Guid llojiShtratit_id)
+        {
+            return Ok(await Mediator.Send(new Delete.Command { llojiShtratit_id = llojiShtratit_id }));
+        }
+
     }
 }
