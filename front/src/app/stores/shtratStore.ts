@@ -1,8 +1,8 @@
 import { makeAutoObservable, runInAction } from "mobx";
 import agent from "../api/agent";
-import { IDepartment } from "../models/IDepartment";
 import {v4 as uuid} from 'uuid';
 import { IShtrat } from "../models/IShtrat";
+import { ILlojiShtratit } from "../models/ILlojiShtratit";
 
 export default class ShtratStore {
     Shtreter: IShtrat[] = [];
@@ -102,6 +102,20 @@ export default class ShtratStore {
             runInAction(() => {
                 this.loading = false;
             })
+        }
+    }
+
+    llojiShtratit: ILlojiShtratit[] =[];
+
+    getPacientet = async() => {
+        try{
+            const llojiShtratit = await agent.llojiShtratit.list();
+            llojiShtratit.forEach(llojiShtratit => {
+                    this.llojiShtratit.push(llojiShtratit);
+                })
+                return llojiShtratit;
+        } catch(error){
+            console.log(error);
         }
     }
 }

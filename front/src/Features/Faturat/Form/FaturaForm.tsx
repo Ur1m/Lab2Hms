@@ -10,7 +10,8 @@ import MyDateInput from '../../../app/common/form/MyDateInput';
 import { IFatura } from '../../../app/models/IFatura';
 import MySelectInput from '../../../app/common/form/MySelectInput';
 import { statusi } from '../../../app/FormElements/StatusiOptions';
-import { IPacienti } from '../../../app/models/IPacienti';
+import { IPacientetDropDown, IPacienti } from '../../../app/models/IPacienti';
+
 
 export default observer(function FaturaForm() {
     const { faturaStore } = useStore();
@@ -23,7 +24,7 @@ export default observer(function FaturaForm() {
         shuma: null,
         krijuarme: null,
         statusi: '',
-        pacienti_id: ''
+        pacient_id: ''
     }
 
     const [Fatura, setFatura] = useState(initialState);
@@ -32,8 +33,12 @@ export default observer(function FaturaForm() {
         shuma: Yup.number().required('Shuma fatures nuk mund te jete i zbrazet...').nullable(),
         krijuarme: Yup.string().required('Selektoni daten kur eshte krijuar fatura...').nullable(),
         statusi: Yup.string().required('Selektoni statusin').nullable(),
-        pacienti: Yup.string().required('Zgjedh pacientin').nullable()
+        pacient_id: Yup.string().required('Zgjedh pacientin').nullable()
     })
+
+
+    let pacientet: IPacienti[] = [];
+    let pacientetDropDown: IPacientetDropDown[] = [];
 
 
     function handleFormSubmit(Fatura: IFatura) {
@@ -41,24 +46,18 @@ export default observer(function FaturaForm() {
     }
 
 
-    let pacientet: IPacienti[] = [];
-    let ids:any[] = [];
     getPacientet().then(response => {
         response?.forEach(element => {
             pacientet.push(element);
-            ids.push(element.pacient_Id);
         });
-        return pacientet;
+        for(var i = 0; i < pacientet.length;i++){
+            
+            var pacientiDropDown: IPacientetDropDown = { text: pacientet[i].emri + " " + pacientet[i].mbimeri, key: pacientet[i].pacient_Id, value: pacientet[i].pacient_Id}
+            pacientetDropDown.push(pacientiDropDown);
+        }
     })
     
-    var pacienti_id: any;
-
-    function handleChange(event: any){
-        pacienti_id = event;
-        console.log(event);
-    }
   
-
     return (
         <Segment clearing>
             <Formik
@@ -70,17 +69,12 @@ export default observer(function FaturaForm() {
                     <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
                         <MyTextInput name='titulli' placeholder='Shkruani titullin e fatures...' />
                         <MyTextArea rows={3} name='pershkrimi' placeholder='Shkruani pershkrimin e fatures...' />
-                        <MyTextInput name='shuma' placeholder='Shkruani shumen e fatures...' />
+                        <MyTextInput type='number' name='shuma' placeholder='Shkruani shumen e fatures...' />
                         <MyDateInput name='krijuarme' placeholderText='Krijuar me...' />
-                        <select name="country" value={ids}>
-                            {pacientet.map((element, key) => {
-                                <option value={0} hidden selected={true}>Zgjedhni pacientin...</option>
-                                return <option key={key} onChange={handleChange} value={element.pacient_Id}>{element.emri} {element.mbimeri}</option>;
-                            })}
-                        </select>
+                        <MySelectInput options={pacientetDropDown} placeholder='Zgjedhni pacientin...' name='pacient_id'></MySelectInput>
                         <MySelectInput options={statusi} placeholder='Statusi' name='statusi' />
                         <Button
-                            disabled={isSubmitting || !dirty || !isValid}
+                           disabled={isSubmitting || !dirty || !isValid}
                             loading={loading}
                             floated='right' positive type='submit' content='Shto' />
                         <Button onClick={closeForm} floated='right' type='button' content='Anulo' />

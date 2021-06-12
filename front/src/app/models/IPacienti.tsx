@@ -8,3 +8,10 @@ export interface IPacienti{
      grupigjakut:string;
 
 }
+
+
+export interface IPacientetDropDown{
+    key:any;
+    text: any;
+    value: any;
+}

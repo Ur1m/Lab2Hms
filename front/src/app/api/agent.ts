@@ -4,6 +4,7 @@ import { history } from '../..';
 import { IDoktori } from '../models/Doktori';
 import { IDepartment } from '../models/IDepartment';
 import { IFatura } from '../models/IFatura';
+import { ILlojiShtratit } from '../models/ILlojiShtratit';
 import {IPacienti} from '../models/IPacienti'
 import { IShtrat } from '../models/IShtrat';
 
@@ -87,6 +88,10 @@ const Shtreter = {
     update: (Shtrat: IShtrat) => axios.put<void>(`/shtreter/${Shtrat.shtrat_id}`, Shtrat),
     delete: (shtrat_id: string) => axios.delete<void>(`/shtreter/${shtrat_id}`)
 }
+const llojiShtratit = {
+    list: () => requests.get<ILlojiShtratit[]>('/llojiShtratit'),
+    details: (llojiShtratit_id: string) => requests.get<ILlojiShtratit>(`/llojiShtratit/${llojiShtratit_id}`)
+}
 const Pacientat ={
     list: () => requests.get<IPacienti[]>('/Pacientat'),
     details: (pacient_Id: string) => requests.get<IDepartment>(`/Pacientat/${pacient_Id}`),
@@ -116,7 +121,8 @@ const agent = {
     doktoret,
     Pacientat,
     Faturat,
-    Shtreter
+    Shtreter,
+    llojiShtratit
 }
 
 export default agent;

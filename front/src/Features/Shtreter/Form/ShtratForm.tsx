@@ -6,8 +6,9 @@ import { useStore } from '../../../app/stores/store';
 import * as Yup from 'yup';
 import MyTextInput from '../../../app/common/form/MyTextInput';
 import MyTextArea from '../../../app/common/form/MyTextArea';
-import { IDepartment } from '../../../app/models/IDepartment';
 import { IShtrat } from '../../../app/models/IShtrat';
+import { statusishtratit } from '../../../app/FormElements/StatusiShtratitOptions';
+import MySelectInput from '../../../app/common/form/MySelectInput';
 
 export default observer(function ShtratForm() {
     const { shtratStore } = useStore();
@@ -24,7 +25,8 @@ export default observer(function ShtratForm() {
 
     const [Shtrat, setShtrat] = useState(initialState);
     const validationSchema = Yup.object({
-        name: Yup.string().required('Emri departamentit nuk mund te jete i zbrazet...')
+        nrshtratit: Yup.number().required('Numri shtratit nuk mund te jete i zbrazet...').nullable(),
+        statusi: Yup.string().required('Selektoni statusin').nullable()
     })
 
     function handleFormSubmit(Shtrat: IShtrat) {
@@ -40,8 +42,8 @@ export default observer(function ShtratForm() {
                 onSubmit={values => handleFormSubmit(values)}>
                 {({ handleSubmit, isValid, isSubmitting, dirty }) => (
                     <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
-                        <MyTextInput name='name' placeholder='Shkruani emrin e departamentit...' />
-                        <MyTextArea rows={3} name='description' placeholder='Shkruani pershkrimin e departamentit...' />
+                        <MyTextInput name='nrshtratit' placeholder='Shkruani numrin e shtratit...' />
+                        <MySelectInput options={statusishtratit} placeholder='Statusi' name='statusi' />
                         <Button 
                         disabled={isSubmitting || !dirty || !isValid}
                         loading={loading} 
