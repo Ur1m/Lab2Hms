@@ -88,9 +88,12 @@ const Shtreter = {
     update: (Shtrat: IShtrat) => axios.put<void>(`/shtreter/${Shtrat.shtrat_id}`, Shtrat),
     delete: (shtrat_id: string) => axios.delete<void>(`/shtreter/${shtrat_id}`)
 }
-const llojiShtratit = {
+const llojiShtreterve = {
     list: () => requests.get<ILlojiShtratit[]>('/llojiShtratit'),
-    details: (llojiShtratit_id: string) => requests.get<ILlojiShtratit>(`/llojiShtratit/${llojiShtratit_id}`)
+    details: (llojiShtreterve_id: string) => requests.get<ILlojiShtratit>(`/llojiShtratit/${llojiShtreterve_id}`),
+    create: (llojiShtreterve: ILlojiShtratit) => axios.post<void>('/llojiShtratit', llojiShtreterve),
+    update: (llojiShtreterve: ILlojiShtratit) => axios.put<void>(`/llojiShtratit/${llojiShtreterve.llojiShtratit_id}`, llojiShtreterve),
+    delete: (llojiShtreterve_id: string) => axios.delete<void>(`/llojiShtratit/${llojiShtreterve_id}`)
 }
 const Pacientat ={
     list: () => requests.get<IPacienti[]>('/Pacientat'),
@@ -122,7 +125,7 @@ const agent = {
     Pacientat,
     Faturat,
     Shtreter,
-    llojiShtratit
+    llojiShtreterve
 }
 
 export default agent;

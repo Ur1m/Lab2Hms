@@ -61,6 +61,12 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
+    title: 'Lloji Shtratit',
+    path: '/llojiShtratit',
+    icon: <GiIcons.GiBed />,
+    cName: 'nav-text'
+  },
+  {
     title: 'Ndihma teknike',
     path: '/',
     icon: <IoIcons.IoMdHelpCircle />,

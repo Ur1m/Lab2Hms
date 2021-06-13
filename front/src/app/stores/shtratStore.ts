@@ -109,7 +109,7 @@ export default class ShtratStore {
 
     getPacientet = async() => {
         try{
-            const llojiShtratit = await agent.llojiShtratit.list();
+            const llojiShtratit = await agent.llojiShtreterve.list();
             llojiShtratit.forEach(llojiShtratit => {
                     this.llojiShtratit.push(llojiShtratit);
                 })
