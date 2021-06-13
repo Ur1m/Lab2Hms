@@ -3,3 +3,9 @@ export interface ILlojiShtratit{
     emri:string;
     pershkrimi:string;
 }
+
+export interface ILlojiShtratitDropDown{
+    key:any;
+    text: any;
+    value: any;
+}

@@ -105,15 +105,15 @@ export default class ShtratStore {
         }
     }
 
-    llojiShtratit: ILlojiShtratit[] =[];
+    llojiShtreterve: ILlojiShtratit[] =[];
 
-    getPacientet = async() => {
+    getLlojiShtreterve = async() => {
         try{
-            const llojiShtratit = await agent.llojiShtreterve.list();
-            llojiShtratit.forEach(llojiShtratit => {
-                    this.llojiShtratit.push(llojiShtratit);
+            const llojiShtreterve = await agent.llojiShtreterve.list();
+                llojiShtreterve.forEach(llojiShtratit => {
+                    this.llojiShtreterve.push(llojiShtratit);
                 })
-                return llojiShtratit;
+                return llojiShtreterve;
         } catch(error){
             console.log(error);
         }
