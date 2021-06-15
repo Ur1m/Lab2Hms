@@ -4,8 +4,8 @@ import DepartmentStore from "./departmentStore";
 import PacientatStore from "../store/PacientatStore";
 import DoktoretStore from "../store/doktoretStor";
 import FaturaStore from "./faturaStore";
-import ShtratStore from "./shtratStore";
 import LlojiShtratitStore from "./llojiShtratitStore";
+import ShtratStore from "./shtratStore";
 
 interface Store {
     departmentStore: DepartmentStore;

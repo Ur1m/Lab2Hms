@@ -3,8 +3,9 @@ import { useEffect } from 'react';
 import {  Button, Grid } from 'semantic-ui-react';
 import LoadingComponent from '../../../app/layout/LoadingComponent';
 import { useStore } from '../../../app/stores/store';
-import ShtratList from './ShtratList';
 import ShtratDetails from '../Details/ShtratDetails';
+import ShtratForm from '../Form/ShtratForm';
+import ShtratList from './ShtratList';
 
 
 export default observer( function ShtratDashboard() {
@@ -31,7 +32,7 @@ export default observer( function ShtratDashboard() {
                 {selectedShtrat && !editMode &&
                 <ShtratDetails/>}
                 {editMode &&
-                <ShtratDetails />}
+                <ShtratForm />}
             </Grid.Column>
         </Grid>
     )

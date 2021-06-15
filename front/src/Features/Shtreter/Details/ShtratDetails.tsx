@@ -11,7 +11,7 @@ export default function ShtratDetails() {
 
     return (
         <Card fluid>
-        {/* <Image src={`/assets/FaturaImages/${Fatura.fatura_id}.jpg`} /> */}
+        {/* <Image src={`/assets/DepartmentImages/${Department.department_id}.jpg`} /> */}
         <Card.Content>
           <Card.Header>{Shtrat.nrshtratit}</Card.Header>
           <Card.Description>

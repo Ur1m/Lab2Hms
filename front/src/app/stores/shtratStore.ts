@@ -34,7 +34,7 @@ export default class ShtratStore {
     }
 
     selectShtrat = (shtrat_id: string) => {
-        this.selectedShtrat = this.Shtreter.find(sh => sh.shtrat_id === shtrat_id);
+        this.selectedShtrat= this.Shtreter.find(sh => sh.shtrat_id === shtrat_id);
     }
 
 
@@ -110,7 +110,7 @@ export default class ShtratStore {
     getLlojiShtreterve = async() => {
         try{
             const llojiShtreterve = await agent.llojiShtreterve.list();
-                llojiShtreterve.forEach(llojiShtratit => {
+            llojiShtreterve.forEach(llojiShtratit => {
                     this.llojiShtreterve.push(llojiShtratit);
                 })
                 return llojiShtreterve;

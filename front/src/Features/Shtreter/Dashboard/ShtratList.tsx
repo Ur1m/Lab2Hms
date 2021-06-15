@@ -17,8 +17,8 @@ export default observer( function ShtratList(){
     return (
         <Segment>
             <Item.Group divided>
-                {Shtreter.map((IShtrat,key)=>(
-                    <Item key={key} value={IShtrat.shtrat_id}>
+                {Shtreter.map(IShtrat =>(
+                    <Item key={IShtrat.shtrat_id}>
                         <Item.Content>
                             <Item.Header>{IShtrat.nrshtratit}</Item.Header>
                             <Item.Description>
