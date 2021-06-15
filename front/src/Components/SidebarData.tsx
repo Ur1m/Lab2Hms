@@ -61,6 +61,12 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
+    title: 'Cakto Shtratin',
+    path: '/caktoShtratin',
+    icon: <FaIcons.FaBed />,
+    cName: 'nav-text'
+  },
+  {
     title: 'Lloji Shtratit',
     path: '/llojiShtratit',
     icon: <GiIcons.GiBed />,
