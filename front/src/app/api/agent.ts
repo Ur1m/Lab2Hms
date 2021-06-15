@@ -2,6 +2,7 @@ import axios, { AxiosError, AxiosResponse } from 'axios';
 import { toast } from 'react-toastify';
 import { history } from '../..';
 import { IDoktori } from '../models/Doktori';
+import { ICaktoShtratin } from '../models/ICaktoShtratin';
 import { IDepartment } from '../models/IDepartment';
 import { IFatura } from '../models/IFatura';
 import { ILlojiShtratit } from '../models/ILlojiShtratit';
@@ -95,6 +96,13 @@ const llojiShtreterve = {
     update: (llojiShtreterve: ILlojiShtratit) => axios.put<void>(`/llojiShtratit/${llojiShtreterve.llojiShtratit_id}`, llojiShtreterve),
     delete: (llojiShtreterve_id: string) => axios.delete<void>(`/llojiShtratit/${llojiShtreterve_id}`)
 }
+const caktoShtreterit = {
+    list: () => requests.get<ICaktoShtratin[]>('/caktoShtreterit'),
+    details: (caktoShtreterit_id: string) => requests.get<ICaktoShtratin>(`/caktoShtreterit/${caktoShtreterit_id}`),
+    create: (caktoShtreterit: ICaktoShtratin) => axios.post<void>('/caktoShtreterit', caktoShtreterit),
+    update: (caktoShtreterit: ICaktoShtratin) => axios.put<void>(`/caktoShtreterit/${caktoShtreterit.caktoshtratin_id}`, caktoShtreterit),
+    delete: (caktoShtreterit_id: string) => axios.delete<void>(`/caktoShtreterit/${caktoShtreterit_id}`)
+}
 const Pacientat ={
     list: () => requests.get<IPacienti[]>('/Pacientat'),
     details: (pacient_Id: string) => requests.get<IDepartment>(`/Pacientat/${pacient_Id}`),
@@ -125,7 +133,8 @@ const agent = {
     Pacientat,
     Faturat,
     Shtreter,
-    llojiShtreterve
+    llojiShtreterve,
+    caktoShtreterit
 }
 
 export default agent;

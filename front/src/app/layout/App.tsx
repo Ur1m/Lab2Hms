@@ -26,6 +26,7 @@ import PacientiDashboard from '../../Features/Pacineti/PacinetiDashboard'
 import FaturaDashboard from '../../Features/Faturat/Dashboard/FaturaDashboard';
 import ShtratDashboard from '../../Features/Shtreter/Dashboard/ShtratDashboard';
 import LlojiShtratitDashboard from '../../Features/llojiShtratit/Dashboard/LlojiShtratitDashboard';
+import CaktoShtratinDashboard from '../../Features/caktoShtratin/Dashboard/CaktoShtratinDashboard';
 
 // greta
 
@@ -130,6 +131,7 @@ return (
           <Route path={'/Laboratoret'} component={LaboratoriDashboard}/>
           <Route path={'/Shtreter'} component={ShtratDashboard} />
           <Route path={'/llojiShtratit'} component={LlojiShtratitDashboard} />
+          <Route path={'/caktoShtreterit'} component={CaktoShtratinDashboard} />
           <Route path='/errors' component={TestErrors} /> 
           <Route path='/server-error' component={ServerError} />
           <Route component={NotFound}/>

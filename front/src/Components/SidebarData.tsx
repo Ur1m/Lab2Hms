@@ -62,7 +62,7 @@ export const SidebarData = [
   },
   {
     title: 'Cakto Shtratin',
-    path: '/caktoShtratin',
+    path: '/caktoShtreterit',
     icon: <FaIcons.FaBed />,
     cName: 'nav-text'
   },

@@ -5,3 +5,9 @@ export interface IShtrat{
     pershkrimi:string;
     llojiShtratit_id:string;
 }
+
+export interface IShtratDropDown{
+    key:any;
+    text: any;
+    value: any;
+}
