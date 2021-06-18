@@ -9,7 +9,7 @@ using Presistence;
 namespace Presistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210609210804_Faturat")]
+    [Migration("20210618165401_Faturat")]
     partial class Faturat
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -196,6 +196,20 @@ namespace Presistence.Migrations
                     b.ToTable("pacientet");
                 });
 
+            modelBuilder.Entity("Domain.Provoprovo", b =>
+                {
+                    b.Property<Guid>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("emri")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("id");
+
+                    b.ToTable("provoprovos");
+                });
+
             modelBuilder.Entity("Domain.Shtrat", b =>
                 {
                     b.Property<Guid>("Shtrat_id")
@@ -221,6 +235,30 @@ namespace Presistence.Migrations
                     b.ToTable("Shtreter");
                 });
 
+            modelBuilder.Entity("Domain.Terminet", b =>
+                {
+                    b.Property<Guid>("termini_ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("Mjeku_Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("Pacient_Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("orari")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("termini_ID");
+
+                    b.HasIndex("Mjeku_Id");
+
+                    b.HasIndex("Pacient_Id");
+
+                    b.ToTable("Terminet");
+                });
+
             modelBuilder.Entity("Domain.Therapy", b =>
                 {
                     b.Property<Guid>("Therapy_Id")
@@ -243,10 +281,40 @@ namespace Presistence.Migrations
                     b.ToTable("Therapies");
                 });
 
+            modelBuilder.Entity("Domain.caktoShtratin", b =>
+                {
+                    b.Property<Guid>("caktoShtratin_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("Pacient_id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("Shtrat_id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("kohaHyrjes")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("kohaLeshimit")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("caktoShtratin_id");
+
+                    b.HasIndex("Pacient_id");
+
+                    b.HasIndex("Shtrat_id");
+
+                    b.ToTable("caktoShtreterit");
+                });
+
             modelBuilder.Entity("Domain.llojiShtratit", b =>
                 {
                     b.Property<Guid>("llojiShtratit_id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pershkrimi")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("emri")
@@ -291,12 +359,46 @@ namespace Presistence.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Domain.Terminet", b =>
+                {
+                    b.HasOne("Domain.Mjeku", "mjeket")
+                        .WithMany()
+                        .HasForeignKey("Mjeku_Id")
+                        .HasConstraintName("FK_Terminat_Doktoret")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Pacient", "pacient")
+                        .WithMany()
+                        .HasForeignKey("Pacient_Id")
+                        .HasConstraintName("FK_Temrinet_Pacinetat")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Domain.Therapy", b =>
                 {
                     b.HasOne("Domain.Pacient", "Pacient")
                         .WithMany()
                         .HasForeignKey("Pacient_id")
                         .HasConstraintName("FK_Therapy_Pacient_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Domain.caktoShtratin", b =>
+                {
+                    b.HasOne("Domain.Pacient", "Pacient")
+                        .WithMany()
+                        .HasForeignKey("Pacient_id")
+                        .HasConstraintName("FK_caktoShtratin_Pacient_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Shtrat", "Shtrat")
+                        .WithMany()
+                        .HasForeignKey("Shtrat_id")
+                        .HasConstraintName("FK_caktoShtratin_Shtrat_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
