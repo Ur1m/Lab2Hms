@@ -2,10 +2,13 @@ import axios, { AxiosError, AxiosResponse } from 'axios';
 import { toast } from 'react-toastify';
 import { history } from '../..';
 import { IDoktori } from '../models/Doktori';
+import { ICaktoShtratin } from '../models/ICaktoShtratin';
 import { IDepartment } from '../models/IDepartment';
 import { IFatura } from '../models/IFatura';
+import { ILlojiShtratit } from '../models/ILlojiShtratit';
 import {IPacienti} from '../models/IPacienti'
 import { ITerminet } from '../models/Terminet';
+import { IShtrat } from '../models/IShtrat';
 
 import { store } from '../stores/store';
 
@@ -80,6 +83,27 @@ const Faturat = {
     update: (Fatura: IFatura) => axios.put<void>(`/faturat/${Fatura.fatura_id}`, Fatura),
     delete: (fatura_id: string) => axios.delete<void>(`/faturat/${fatura_id}`)
 }
+const Shtreter = {
+    list: () => requests.get<IShtrat[]>('/shtreter'),
+    details: (shtrat_id: string) => requests.get<IShtrat>(`/shtreter/${shtrat_id}`),
+    create: (Shtrat: IShtrat) => axios.post<void>('/shtreter', Shtrat),
+    update: (Shtrat: IShtrat) => axios.put<void>(`/shtreter/${Shtrat.shtrat_id}`, Shtrat),
+    delete: (shtrat_id: string) => axios.delete<void>(`/shtreter/${shtrat_id}`)
+}
+const llojiShtreterve = {
+    list: () => requests.get<ILlojiShtratit[]>('/llojiShtratit'),
+    details: (llojiShtreterve_id: string) => requests.get<ILlojiShtratit>(`/llojiShtratit/${llojiShtreterve_id}`),
+    create: (llojiShtreterve: ILlojiShtratit) => axios.post<void>('/llojiShtratit', llojiShtreterve),
+    update: (llojiShtreterve: ILlojiShtratit) => axios.put<void>(`/llojiShtratit/${llojiShtreterve.llojiShtratit_id}`, llojiShtreterve),
+    delete: (llojiShtreterve_id: string) => axios.delete<void>(`/llojiShtratit/${llojiShtreterve_id}`)
+}
+const caktoShtreterit = {
+    list: () => requests.get<ICaktoShtratin[]>('/caktoShtreterit'),
+    details: (caktoShtreterit_id: string) => requests.get<ICaktoShtratin>(`/caktoShtreterit/${caktoShtreterit_id}`),
+    create: (caktoShtreterit: ICaktoShtratin) => axios.post<void>('/caktoShtreterit', caktoShtreterit),
+    update: (caktoShtreterit: ICaktoShtratin) => axios.put<void>(`/caktoShtreterit/${caktoShtreterit.caktoshtratin_id}`, caktoShtreterit),
+    delete: (caktoShtreterit_id: string) => axios.delete<void>(`/caktoShtreterit/${caktoShtreterit_id}`)
+}
 const Pacientat ={
     list: () => requests.get<IPacienti[]>('/Pacientat'),
     details: (pacient_Id: string) => requests.get<IPacienti>(`/Pacientat/${pacient_Id}`),
@@ -117,7 +141,10 @@ const agent = {
     doktoret,
     Pacientat,
     Faturat,
-    Terminet
+    Terminet,
+    Shtreter,
+    llojiShtreterve,
+    caktoShtreterit
 }
 
 export default agent;

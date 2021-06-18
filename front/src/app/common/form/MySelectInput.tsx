@@ -15,7 +15,7 @@ export default function MySelectInput(props: Props){
         <Form.Field error={meta.touched && !!meta.error}>
             <label>{props.label}</label>
             <Select 
-            clerable
+            clerable="true"
             options={props.options}
             value={field.value || null}
             onChange={(o,e)=> helpers.setValue(e.value)}

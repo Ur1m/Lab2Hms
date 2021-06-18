@@ -5,5 +5,5 @@ export interface IFatura{
     shuma:number | null;
     krijuarme?:Date | null;
     statusi:string;
-    pacienti_id:string;
+    pacient_id:string;
 }

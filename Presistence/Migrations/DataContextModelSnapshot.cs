@@ -248,10 +248,40 @@ namespace Presistence.Migrations
                     b.ToTable("Therapies");
                 });
 
+            modelBuilder.Entity("Domain.caktoShtratin", b =>
+                {
+                    b.Property<Guid>("caktoShtratin_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("Pacient_id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("Shtrat_id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("kohaHyrjes")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("kohaLeshimit")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("caktoShtratin_id");
+
+                    b.HasIndex("Pacient_id");
+
+                    b.HasIndex("Shtrat_id");
+
+                    b.ToTable("caktoShtreterit");
+                });
+
             modelBuilder.Entity("Domain.llojiShtratit", b =>
                 {
                     b.Property<Guid>("llojiShtratit_id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pershkrimi")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("emri")
@@ -309,6 +339,23 @@ namespace Presistence.Migrations
                         .WithMany()
                         .HasForeignKey("Pacient_id")
                         .HasConstraintName("FK_Therapy_Pacient_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Domain.caktoShtratin", b =>
+                {
+                    b.HasOne("Domain.Pacient", "Pacient")
+                        .WithMany()
+                        .HasForeignKey("Pacient_id")
+                        .HasConstraintName("FK_caktoShtratin_Pacient_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Shtrat", "Shtrat")
+                        .WithMany()
+                        .HasForeignKey("Shtrat_id")
+                        .HasConstraintName("FK_caktoShtratin_Shtrat_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

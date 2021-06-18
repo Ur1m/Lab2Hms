@@ -5,16 +5,25 @@ import PacientatStore from "../store/PacientatStore";
 import DoktoretStore from "../store/doktoretStor";
 import FaturaStore from "./faturaStore";
 import TerminetStore from "../store/TerminetStore";
+import LlojiShtratitStore from "./llojiShtratitStore";
+import ShtratStore from "./shtratStore";
+import CaktoShtratinStore from "./caktoShtratinStore";
 
 interface Store {
     departmentStore: DepartmentStore;
     commonStore: CommonStore;
-    faturaStore: FaturaStore
+    faturaStore: FaturaStore;
+    shtratStore: ShtratStore;
+    llojiShtratitStore: LlojiShtratitStore;
+    caktoShtratinStore: CaktoShtratinStore
 }
 export const store: Store = {
     departmentStore: new DepartmentStore(),
     commonStore: new CommonStore(),
-    faturaStore: new FaturaStore()
+    faturaStore: new FaturaStore(),
+    shtratStore: new ShtratStore(),
+    llojiShtratitStore: new LlojiShtratitStore(),
+    caktoShtratinStore: new CaktoShtratinStore()
 }
 
 export const StoreContext = createContext(store);
