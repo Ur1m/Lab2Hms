@@ -1,5 +1,4 @@
-﻿using Domain;
-using MediatR;
+﻿using MediatR;
 using Presistence;
 using System;
 using System.Collections.Generic;
@@ -7,14 +6,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Application.Faturat
+namespace Application.Shtreter
 {
-    public class Create
+    public class Delete
     {
-
-       public class Command : IRequest
-        { 
-            public Fatura Fatura { get; set; }
+        public class Command : IRequest
+        {
+            public Guid Shtrat_id { get; set; }
         }
 
         public class Handler : IRequestHandler<Command>
@@ -28,7 +26,9 @@ namespace Application.Faturat
 
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
-                _context.Faturat.Add(request.Fatura);
+                var shtrat = await _context.Shtreter.FindAsync(request.Shtrat_id);
+
+                _context.Remove(shtrat);
 
                 await _context.SaveChangesAsync();
 

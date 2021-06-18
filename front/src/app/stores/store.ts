@@ -4,6 +4,7 @@ import DepartmentStore from "./departmentStore";
 import PacientatStore from "../store/PacientatStore";
 import DoktoretStore from "../store/doktoretStor";
 import FaturaStore from "./faturaStore";
+import TerminetStore from "../store/TerminetStore";
 
 interface Store {
     departmentStore: DepartmentStore;
@@ -47,4 +48,14 @@ export const StoreContextDoktorat=createContext(StoreDoktorat);
 
 export function useStoreDoktorat(){
     return useContext(StoreContextDoktorat);
+}
+interface StoreTerminet{
+    TerminetStore:TerminetStore;
+}
+export const StoreTerminet:StoreTerminet={
+    TerminetStore:new TerminetStore()
+}
+export const StoreContextTerminet=createContext(StoreTerminet);
+export function useStoreTerminet(){
+    return useContext(StoreContextTerminet);
 }

@@ -28,7 +28,17 @@ namespace Presistence{
                  //param
                  context.Therapies.AddRange(therapies);
                  context.SaveChanges();*/
+                  /*if(!context.Terminet.Any()){
+                      var termini=new List<Terminet>{
+                          new Terminet{
+                             orari=DateTime.Now
+                          }
+                      };
+                       context.Terminet.AddRangeAsync(termini);
+                       context.SaveChangesAsync();
+                  }*/
             
         }
+       
     }
 }

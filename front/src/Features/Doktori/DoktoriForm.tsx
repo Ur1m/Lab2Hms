@@ -15,7 +15,7 @@ import { useStoreDoktorat } from '../../app/stores/store';
 
 export const DoktoriForm = () => {
     const {DoktoratStore}=useStoreDoktorat();
-    const{doktorat,selectedDoktori,openForm,closeForm,updateDoktori,createDoktori}=DoktoratStore;
+    const{closeForm,selectedDoktori,updateDoktori,createDoktori}=DoktoratStore;
     
    
     const initialState = selectedDoktori ?? {
@@ -59,7 +59,7 @@ export const DoktoriForm = () => {
                 <Button 
                 disabled={isSubmitting || !dirty || !isValid}
                 floated="right" positive type='subimit' content='submit'/>
-                <Button onClick={()=>openForm}floated="right"  type='subimit' content='cancel'/>
+                <Button onClick={closeForm}floated="right"  type='subimit' content='cancel'/>
             </Form>
 
 

@@ -5,14 +5,14 @@ using Application.Core;
 using MediatR;
 using Presistence;
 
-namespace Application.Pacientett
+namespace Application.TerminatKontrolles
 {
     public class Delete
     {
-           public class Command : IRequest<Result<Unit>>
+          public class Command : IRequest<Result<Unit>>
         {
 
-            public Guid Pacinet_ID{ get; set; }
+            public Guid terapia_ID{ get; set; }
 
         }
 
@@ -27,11 +27,11 @@ namespace Application.Pacientett
 
             public async Task<Result<Unit>> Handle(Command request, CancellationToken cancellationToken)
             {
-                var pacineti = await _context.pacientet.FindAsync(request.Pacinet_ID);
+                var termini = await _context.Terminet.FindAsync(request.terapia_ID);
 
                 
 
-                _context.Remove(pacineti);
+                _context.Remove(termini);
 
                 var result = await _context.SaveChangesAsync() > 0;
 

@@ -23,22 +23,25 @@ import {format} from 'date-fns';
           <Card fluid>
       
       <Card.Content>
-        <Card.Header>{selectedPacienti.emri}</Card.Header>
+      <Card.Description>
+          {"ID :"+selectedPacienti.pacient_Id}.
+        </Card.Description>
+        <Card.Description>{"Emri :"+selectedPacienti.emri}</Card.Description>
         
         <Card.Description>
-          {selectedPacienti.mbimeri}.
+          {"Mbiemri:"+selectedPacienti.mbimeri}.
         </Card.Description>
         <Card.Description>
-          {format(selectedPacienti.ditlindja!,'dd mmm yyyy')}.
+          {"Ditlindja :"+format(selectedPacienti.ditlindja!,'dd mmm yyyy')}.
         </Card.Description>
         <Card.Description>
-          {selectedPacienti.adresa}.
+          {"Adresa :"+selectedPacienti.adresa}.
         </Card.Description>
         <Card.Description>
-          {selectedPacienti.qyteti}.
+          {"Qyteti:"+selectedPacienti.qyteti}.
         </Card.Description>
         <Card.Description>
-          {selectedPacienti.grupigjakut}.
+          {"GrupiiGjakut:"+selectedPacienti.grupigjakut}.
         </Card.Description>
       </Card.Content>
       <Card.Content extra>

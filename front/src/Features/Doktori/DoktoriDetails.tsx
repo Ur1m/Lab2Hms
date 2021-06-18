@@ -16,19 +16,19 @@ export default observer( function DoktoratDetails(){
         <Card fluid>
     
     <Card.Content>
-      <Card.Header>{selectedDoktori!.emri}</Card.Header>
-      
+      <Card.Description>{"Emri :"+selectedDoktori!.emri}</Card.Description>
+      <Card.Description>{"ID :"+selectedDoktori!.mjeku_Id}</Card.Description>
       <Card.Description>
-        {selectedDoktori!.mbimeri}.
+        {"Mbiemri :"+selectedDoktori!.mbimeri}.
       </Card.Description>
       <Card.Description>
-        {format(selectedDoktori!.ditlindja!,'dd mmm yyyy')}
+        {"Ditlindja :"+format(selectedDoktori!.ditlindja!,'dd mmm yyyy')}
       </Card.Description>
       <Card.Description>
-        {selectedDoktori!.specializimi}.
+        {"Specializimi :"+selectedDoktori!.specializimi}.
       </Card.Description>
       <Card.Description>
-        {selectedDoktori!.depName}.
+        {"Departmenti :"+selectedDoktori!.depName}.
       </Card.Description>
     </Card.Content>
     <Card.Content extra>

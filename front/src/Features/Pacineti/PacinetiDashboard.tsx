@@ -22,7 +22,7 @@ export default  observer( function  PacientiDashboard(){
 
            
      <PacientatList  /*deletePacienti={handledeletePacienti}*//> 
-     <Button onClick={()=>openForm()}floated="right"   content='AddPacientat'/>
+   
             
         </Grid.Column>
         <Grid.Column width={6}>

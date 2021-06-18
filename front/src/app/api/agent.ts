@@ -5,6 +5,7 @@ import { IDoktori } from '../models/Doktori';
 import { IDepartment } from '../models/IDepartment';
 import { IFatura } from '../models/IFatura';
 import {IPacienti} from '../models/IPacienti'
+import { ITerminet } from '../models/Terminet';
 
 import { store } from '../stores/store';
 
@@ -81,12 +82,20 @@ const Faturat = {
 }
 const Pacientat ={
     list: () => requests.get<IPacienti[]>('/Pacientat'),
-    details: (pacient_Id: string) => requests.get<IDepartment>(`/Pacientat/${pacient_Id}`),
+    details: (pacient_Id: string) => requests.get<IPacienti>(`/Pacientat/${pacient_Id}`),
     create: (Pacienti: IPacienti) => axios.post<void>('/Pacientat', Pacienti),
     update: (Pacienti: IPacienti) => axios.put<void>(`/Pacientat/${Pacienti.pacient_Id}`, Pacienti),
     delete: (pacient_Id: string) => axios.delete<void>(`/Pacientat/${pacient_Id}`)
 
 }
+const Terminet ={
+    list: () => requests.get<ITerminet[]>('/Terminet'),
+    details: (termini_Id: string) => requests.get<ITerminet>(`/Terminet/${termini_Id}`),
+    create: (Termini: ITerminet) => axios.post<void>('/Terminet', Termini),
+    update: (Termini: ITerminet) => axios.put<void>(`/Terminet/${Termini.termini_ID}`, Termini),
+    delete: (id: string) => axios.delete<void>(`/Terminet/${id}`)
+}
+
 const request={
     get:(url:string)=>axios.get(url).then(responseBody),
     post:(url:string,body :{})=> axios.post(url,body).then(responseBody),
@@ -107,7 +116,8 @@ const agent = {
     Departmentet,
     doktoret,
     Pacientat,
-    Faturat
+    Faturat,
+    Terminet
 }
 
 export default agent;

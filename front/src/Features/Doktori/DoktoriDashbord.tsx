@@ -21,7 +21,7 @@ export default observer( function DoktoriDashboard () {
 
             
       <DoktoratList  />
-      <Button onClick={()=>DoktoratStore.openForm()}floated="right"   content='AddDoktorat'/>
+     
              
          </Grid.Column>
          <Grid.Column width={6}>

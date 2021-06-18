@@ -1,20 +1,20 @@
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Application.Core;
+using Domain;
 using MediatR;
 using Presistence;
 
-namespace Application.Pacientett
+namespace Application.TerminatKontrolles
 {
-    public class Delete
+    public class Create
     {
-           public class Command : IRequest<Result<Unit>>
-        {
-
-            public Guid Pacinet_ID{ get; set; }
-
+        public class Command : IRequest<Result<Unit>>
+        { 
+            public Terminet terminet { get; set; }
         }
+
+       
 
         public class Handler : IRequestHandler<Command, Result<Unit>>
         {
@@ -27,11 +27,7 @@ namespace Application.Pacientett
 
             public async Task<Result<Unit>> Handle(Command request, CancellationToken cancellationToken)
             {
-                var pacineti = await _context.pacientet.FindAsync(request.Pacinet_ID);
-
-                
-
-                _context.Remove(pacineti);
+                _context.Terminet.Add(request.terminet);
 
                 var result = await _context.SaveChangesAsync() > 0;
 

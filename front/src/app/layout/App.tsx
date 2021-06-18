@@ -24,6 +24,8 @@ import NotFound from '../../Features/errors/NotFound';
 import ServerError from '../../Features/errors/ServerError';
 import PacientiDashboard from '../../Features/Pacineti/PacinetiDashboard'
 import FaturaDashboard from '../../Features/Faturat/Dashboard/FaturaDashboard';
+import TerminetDashboard from '../../Features/Terminet/TerminetDashboard';
+import TerminetList from '../../Features/Terminet/TerminetList';
 
 // greta
 
@@ -127,6 +129,8 @@ return (
           <Route path={'/Faturat'} component={FaturaDashboard}/>
           <Route path={'/Laboratoret'} component={LaboratoriDashboard}/>
           <Route path='/errors' component={TestErrors} /> 
+          <Route exact path={'/Terminet'} component={TerminetDashboard}/>
+          <Route  path='/Terminet/:id' component={TerminetList}/>
           <Route path='/server-error' component={ServerError} />
           <Route component={NotFound}/>
           </Switch>

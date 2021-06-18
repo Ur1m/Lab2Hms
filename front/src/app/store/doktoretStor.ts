@@ -52,6 +52,7 @@ export default class DoktoretStore{
                 this.doktoratRegistry.set(Doktori.mjeku_Id,Doktori);
                 this.selectedDoktori=Doktori;
                 this.editmode=false;
+                alert("Created successfully");
             })
         }
         catch(error){
@@ -66,6 +67,7 @@ export default class DoktoretStore{
             this.doktoratRegistry.set(Doktori.mjeku_Id,Doktori)
              this.selectedDoktori=Doktori;
              this.editmode=false;
+             alert('Updated Successfully');
            })
         }
         catch(error){
@@ -74,6 +76,7 @@ export default class DoktoretStore{
     }
     deleteDoktori=async(id:string)=>{
         try{
+            if(window.confirm('Are you sure')){
            await agent.doktoret.delete(id);
            runInAction(()=>{
             //this.pacientat=[...this.pacientat.filter(a => a.pacient_Id !== id)]
@@ -81,6 +84,7 @@ export default class DoktoretStore{
             ;if(this.selectedDoktori!.mjeku_Id==id)this.canceleSelectedDoktori();
 
            })
+        }
         }
         catch(error){
             console.log(error);

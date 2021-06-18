@@ -7,14 +7,14 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Application.Faturat
+namespace Application.Shtreter
 {
     public class Create
     {
 
-       public class Command : IRequest
-        { 
-            public Fatura Fatura { get; set; }
+        public class Command : IRequest
+        {
+            public Shtrat Shtrat { get; set; }
         }
 
         public class Handler : IRequestHandler<Command>
@@ -28,7 +28,7 @@ namespace Application.Faturat
 
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
-                _context.Faturat.Add(request.Fatura);
+                _context.Shtreter.Add(request.Shtrat);
 
                 await _context.SaveChangesAsync();
 

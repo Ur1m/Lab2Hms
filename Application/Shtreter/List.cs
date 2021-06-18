@@ -1,4 +1,4 @@
-﻿using Domain;
+using Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Presistence;
@@ -8,14 +8,14 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Application.Faturat
+namespace Application.Shtreter
 {
     public class List
     {
 
-       public class Query : IRequest<List<Fatura>> { }
+        public class Query : IRequest<List<Shtrat>> { }
 
-        public class Handler : IRequestHandler<Query, List<Fatura>>
+        public class Handler : IRequestHandler<Query, List<Shtrat>>
         {
             private readonly DataContext _context;
 
@@ -24,9 +24,9 @@ namespace Application.Faturat
                 _context = context;
             }
 
-            public async Task<List<Fatura>> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<List<Shtrat>> Handle(Query request, CancellationToken cancellationToken)
             {
-                return await _context.Faturat.ToListAsync();
+                return await _context.Shtreter.ToListAsync();
             }
         }
     }

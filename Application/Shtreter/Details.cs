@@ -6,19 +6,19 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-namespace Application.Faturat
+namespace Application.Shtreter
 {
     public class Details
     {
 
-       public class Query : IRequest<Fatura>
+        public class Query : IRequest<Shtrat>
         {
 
-            public Guid Fatura_Id { get; set; }
+            public Guid Shtrat_id { get; set; }
 
         }
 
-        public class Handler : IRequestHandler<Query, Fatura>
+        public class Handler : IRequestHandler<Query, Shtrat>
         {
             private readonly DataContext _context;
 
@@ -28,9 +28,9 @@ namespace Application.Faturat
                 _context = context;
             }
 
-            public async Task<Fatura> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<Shtrat> Handle(Query request, CancellationToken cancellationToken)
             {
-                return await _context.Faturat.FindAsync(request.Fatura_Id);
+                return await _context.Shtreter.FindAsync(request.Shtrat_id);
             }
         }
     }

@@ -28,6 +28,8 @@ namespace Presistence
         public DbSet<Barna> Barnat {get; set;}
         public DbSet<llojiShtratit> llojeteShtreterve { get; set; }
         public DbSet<Shtrat> Shtreter { get; set; }
+        public DbSet<Provoprovo> provoprovos{get;set;}
+        public DbSet<Terminet> Terminet {get;set;}
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -40,7 +42,7 @@ namespace Presistence
             modelBuilder.Entity<Pacient>()
                 .HasKey(p => p.Pacient_Id );
 //-----------------------------------------------------------------------------
-            modelBuilder.Entity<Fatura>()
+           modelBuilder.Entity<Fatura>()
                 .HasKey(f => f.Fatura_Id );
 
             modelBuilder.Entity<Fatura>()
@@ -79,6 +81,25 @@ namespace Presistence
                 .WithMany()
                 .HasForeignKey(ll => ll.llojiShtratit_id)
                 .HasConstraintName("FK_Shtrat_llojiShtratit_id");
+                //-----------------------------------------------------
+                modelBuilder.Entity<Provoprovo>()
+                .HasKey(a =>a.id);
+            modelBuilder.Entity<Terminet>()
+                .HasKey(terminet=>terminet.termini_ID);
+                //------------------------------------------------
+
+                modelBuilder.Entity<Terminet>()
+                .HasOne(terminet=>terminet.pacient)
+                .WithMany()
+                .HasForeignKey(p=>p.Pacient_Id)
+                .HasConstraintName("FK_Temrinet_Pacinetat");
+
+                //--------------------------------------------------
+                modelBuilder.Entity<Terminet>()
+                .HasOne(terminet=>terminet.mjeket)
+                .WithMany()
+                .HasForeignKey(p =>p.Mjeku_Id)
+                .HasConstraintName("FK_Terminat_Doktoret");
 
         }
       
