@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Application.Core;
 using AutoMapper;
 using Domain;
+using FluentValidation;
 using MediatR;
 using Presistence;
 
@@ -13,6 +14,13 @@ namespace Application.Assetet
           public class Command : IRequest<Result<Unit>>
         {
             public Paisjet Paisja { get; set; }
+        }
+          public class CommandValidator : AbstractValidator<Command>
+        {
+            public CommandValidator()
+            {
+                RuleFor(x => x.Paisja).SetValidator(new PaisjetValidator());
+            }
         }
 
        

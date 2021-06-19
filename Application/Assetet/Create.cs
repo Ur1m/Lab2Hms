@@ -4,6 +4,7 @@ using Application.Core;
 using MediatR;
 using Domain;
 using Presistence;
+using FluentValidation;
 
 namespace Application.Assetet
 {
@@ -13,8 +14,15 @@ namespace Application.Assetet
         { 
             public Paisjet paisje { get; set; }
         }
+        public class CommandValidator : AbstractValidator<Command>
+        {
+            public CommandValidator()
+            {
+                RuleFor(x => x.paisje).SetValidator(new PaisjetValidator());
+            }
+        }
 
-       
+
 
         public class Handler : IRequestHandler<Command, Result<Unit>>
         {
