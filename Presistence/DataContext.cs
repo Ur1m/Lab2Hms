@@ -32,6 +32,7 @@ namespace Presistence
         public DbSet<Terminet> Terminet {get;set;}
 
         public DbSet<caktoShtratin> caktoShtreterit {get; set;}
+        public DbSet<Paisjet> paisjet{get;set;}
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -117,6 +118,15 @@ namespace Presistence
                 .WithMany()
                 .HasForeignKey(sh => sh.Shtrat_id)
                 .HasConstraintName("FK_caktoShtratin_Shtrat_id");
+                //------------------------------------------------------
+                modelBuilder.Entity<Paisjet>()
+                .HasKey(p =>p.Paisja_Id);
+
+                modelBuilder.Entity<Paisjet>()
+                .HasOne(p => p.Department)
+                .WithMany()
+                .HasForeignKey(p => p.Department_Id);
+                
 
         }
       
