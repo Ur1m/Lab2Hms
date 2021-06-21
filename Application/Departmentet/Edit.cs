@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Application.Core;
+using AutoMapper;
 using Domain;
 using FluentValidation;
 using MediatR;
@@ -11,7 +12,7 @@ namespace Application.Departmentet
     public class Edit
     {
 
-        public class Command : IRequest
+        public class Command : IRequest<Result<Unit>>
         {
             public Department Department { get; set; }
         }
@@ -24,7 +25,7 @@ namespace Application.Departmentet
             }
         }
 
-        public class Handler : IRequestHandler<Command>
+        public class Handler : IRequestHandler<Command, Result<Unit>>
         {
             private readonly DataContext _context;
             private readonly IMapper _mapper;
@@ -35,15 +36,19 @@ namespace Application.Departmentet
                 _mapper = mapper;
             }
 
-            public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
+            public async Task<Result<Unit>> Handle(Command request, CancellationToken cancellationToken)
             {
                 var department = await _context.Departmentet.FindAsync(request.Department.Department_id);
 
+                if(department == null) return null;
+
                 _mapper.Map(request.Department, department);
 
-                await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync() > 0;
 
-                return Unit.Value;
+                if (!result) return Result<Unit>.Failure("Deshtoi ndryshimi i departamentit");
+
+                return Result<Unit>.Success(Unit.Value);
             }
         }
 

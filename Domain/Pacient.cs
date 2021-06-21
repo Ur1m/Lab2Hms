@@ -12,7 +12,7 @@ namespace Domain
         public string adresa{get; set;}
 
         public string qyteti{get; set;}
-        public DateTime ditlindja{get;set;}
+        public DateTime? ditlindja{get;set;}
 
         public string grupigjakut{get; set;}
 

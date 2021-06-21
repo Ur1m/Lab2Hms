@@ -3,9 +3,10 @@ using System.Linq;
 using Domain;
 using System;
 using Presistence;
+using System.Threading.Tasks;
 
 namespace Presistence{
-}
+
 
     public class Seed
     {
@@ -13,6 +14,7 @@ namespace Presistence{
 
     public static void SeedData(DataContext context){
 
+<<<<<<< HEAD
              if(!context.Departmentet.Any()){
                     var Departmentet=new List<Department>{
                      new Department{
@@ -59,24 +61,33 @@ namespace Presistence{
                          Koeficienti = 4,
                          Departamenti = "Radiologji"
 
+=======
+          /*  if(!context.Therapies.Any()) return;
+                   var therapies =new List<Therapy>{
+>>>>>>> 33e10b4c7f03e4c80ca461ea846b2c2bc0f1a3da
 
+                     new Therapy{                     
+                          terapia= "Momox MONALIZ",
+                          OnGoing= "Ilaq ndaj alergjis"
+                         
                      }
-                /*
-                         new Infermierja{
-                        Emri = "Nicole",
-                         Mbiemri = "Ford",
-                         Koeficienti = 5,
-                         Departamenti = "Stomatologji"
-                    }
-                     };
                 
-                */
-                     };
+                     }; 
                 
                  //param
-                 context.Infermieret.AddRange(Infermieret);
-                 context.SaveChanges();
-             };
+                 context.Therapies.AddRange(therapies);
+                 context.SaveChanges();*/
+                  /*if(!context.Terminet.Any()){
+                      var termini=new List<Terminet>{
+                          new Terminet{
+                             orari=DateTime.Now
+                          }
+                      };
+                       context.Terminet.AddRangeAsync(termini);
+                       context.SaveChangesAsync();
+                  }*/
+            
         }
+       
     }
-
+}

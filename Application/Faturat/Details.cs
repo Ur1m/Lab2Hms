@@ -11,7 +11,7 @@ namespace Application.Faturat
     public class Details
     {
 
-        public class Query : IRequest<Fatura>
+       public class Query : IRequest<Fatura>
         {
 
             public Guid Fatura_Id { get; set; }

@@ -12,7 +12,7 @@ namespace Application.Faturat
     public class Create
     {
 
-        public class Command : IRequest
+       public class Command : IRequest
         { 
             public Fatura Fatura { get; set; }
         }

@@ -3,6 +3,7 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 import * as RiIcons from 'react-icons/ri';
+import * as GiIcons from 'react-icons/gi';
 
 export const SidebarData = [
   {
@@ -25,13 +26,13 @@ export const SidebarData = [
   },
   {
     title: 'Pacientet',
-    path: '/pacientet',
+    path: '/Pacientat',
     icon: <FaIcons.FaUserAlt />,
     cName: 'nav-text'
   },
   {
     title: 'Mjeket',
-    path: '/doctor',
+    path: '/Doktorat',
     icon: <IoIcons.IoMdPeople />,
     cName: 'nav-text'
   },
@@ -42,9 +43,39 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
+    title: 'Laboratori',
+    path: '/laboratori',
+    icon: <FaIcons.FaFlask/>,
+    cName: 'nav-text'
+  },
+  {
+    title: 'Terminet',
+    path: '/Terminet',
+    icon: <FaIcons.FaFlask/>,
+    cName: 'nav-text'
+  },
+  {
     title: 'Fatura',
-    path: '/',
+    path: '/Faturat',
     icon: <RiIcons.RiBillLine />,
+    cName: 'nav-text'
+  },
+  {
+    title: 'Shtreterit',
+    path: '/Shtreter',
+    icon: <GiIcons.GiBed />,
+    cName: 'nav-text'
+  },
+  {
+    title: 'Cakto Shtratin',
+    path: '/caktoShtreterit',
+    icon: <FaIcons.FaBed />,
+    cName: 'nav-text'
+  },
+  {
+    title: 'Lloji Shtratit',
+    path: '/llojiShtratit',
+    icon: <GiIcons.GiBed />,
     cName: 'nav-text'
   },
   {
@@ -56,6 +87,12 @@ export const SidebarData = [
   {
     title: 'Infermieret',
     path: '/Infermieret',
+    icon: <IoIcons.IoMdHelpCircle />,
+    cName: 'nav-text'
+  },
+  {
+    title: 'Errors',
+    path: '/errors',
     icon: <IoIcons.IoMdHelpCircle />,
     cName: 'nav-text'
   }

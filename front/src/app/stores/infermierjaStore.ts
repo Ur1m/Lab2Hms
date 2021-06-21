@@ -1,6 +1,6 @@
 import { makeAutoObservable, runInAction } from "mobx";
 import agent from "../api/agent";
-import { Infermierja } from "../Models/Infermierja";
+import { Infermierja } from "../models/Infermierja";
 
 export default class InfermierjaStore{
 

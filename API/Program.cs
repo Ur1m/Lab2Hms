@@ -23,9 +23,9 @@ namespace API
                 try
                 {
                   var   context=services.GetRequiredService<DataContext>();
-                  context.Database.Migrate();
+                 context.Database.Migrate();
                
-                 Seed.SeedData(context);
+                Seed.SeedData(context);
                 }
                 catch(Exception ex){
                     var logger=services.GetRequiredService<ILogger<Program>>();
@@ -33,7 +33,7 @@ namespace API
 
                 }
             }
-            host.Run();
+           host.Run();
 
         }
 

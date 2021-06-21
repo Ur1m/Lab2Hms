@@ -25,7 +25,6 @@ namespace API.Controllers
         }
 
         [HttpPost]
-
         public async Task<IActionResult> CreateFatura(Fatura fatura)
         {
             return Ok(await Mediator.Send(new Create.Command { Fatura = fatura }));

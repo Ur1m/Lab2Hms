@@ -1,77 +1,63 @@
 import React, { useState } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
 import './Navbar.css';
 import { IconContext } from 'react-icons';
-import { Button, Container, Menu, Segment } from 'semantic-ui-react';
+import { Button, Menu, Segment } from 'semantic-ui-react';
 import { useStore } from '../app/stores/store';
 
-
-
-
-export default function NavBar(){
-
-  const {infermierjaStore}= useStore();
-
-return (
-  <Menu inverted fixed ='top'>
-    <Container>
-      <Menu.Item as ={NavLink} to ='/' exact header>
-        <img src='' alt="..." style={{marginRight: 10}}/>
-        Infermieret
-      </Menu.Item>
-      <Menu.Item as={NavLink} to ='/infermieret' name ='Infermieret'/>
-      <Menu.Item >
-        <Button as ={NavLink} to ='/createInfermierja' positive content='Shto Infermiere'/>
-      </Menu.Item>
-    </Container>
-  </Menu>
-)
+interface IProps{
+  openCreateForm: () => void;
 }
 
+function Navbar({openCreateForm} : IProps) {
+  const {departmentStore} = useStore();
+  const [sidebar, setSidebar] = useState(false);
 
-// function Navbar({openForm}: Props) {
-//   const {departmentStore} = useStore();
-//   const [sidebar, setSidebar] = useState(false);
+  const showSidebar = () => setSidebar(!sidebar);
 
-//   const showSidebar = () => setSidebar(!sidebar);
-
-//   return (
-//     <>
-//       <IconContext.Provider value={{ color: '#fff' }}>
+  return (
+    <>
+      <IconContext.Provider value={{ color: '#fff' }}>
         
-//         <div className='navbar'>
-//           <Link to='#' className='menu-bars'>
-//             <FaIcons.FaBars onClick={showSidebar} />
-//           </Link>
-//           <div className="navi">
-//           <Button inverted className="Log out" > Log Out</Button>
-//         </div>
+        <div className='navbar'>
+          <Link to='#' className='menu-bars'>
+            <FaIcons.FaBars onClick={showSidebar} />
+          </Link>
+          <div className="logo">
+          <img className="logo" src="assets/logo.png" alt="logo" style={{width: '50px', marginLeft: '200px'}}/>
+          </div>
+          <div className="navi">
+          <Button inverted className="Log out" style={{marginLeft: '-500px'}}> Log Out</Button>
+        </div>
        
-//         </div>
-//         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-//           <ul className='nav-menu-items' onClick={showSidebar}>
-//             <li className='navbar-toggle'>
-//               <Link to='#' className='menu-bars'>
-//                 <AiIcons.AiOutlineClose />
-//               </Link>
-//             </li>
-//             {SidebarData.map((item, index) => {
-//               return (
-//                 <li key={index} className={item.cName}>
-//                   <Link to={item.path}>
-//                     {item.icon}
-//                     <span>{item.title}</span>
-//                   </Link>
-//                 </li>
-//               );
-//             })}
-//           </ul>
-//         </nav>
-//       </IconContext.Provider>
-//     </>
-//   );
-// }
-// export default Navbar;
+        </div>
+        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+          <ul className='nav-menu-items' onClick={showSidebar}>
+            <li className='navbar-toggle'>
+              <Link to='#' className='menu-bars'>
+                <AiIcons.AiOutlineClose />
+              </Link>
+            </li>
+            {SidebarData.map((item, index) => {
+              return (
+                <li key={index} className={item.cName}>
+                  <Link to={item.path}>
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+        <Button onClick={openCreateForm} positive content='Shto Analizat'/>
+        
+      </IconContext.Provider>
+    </>
+  );
+}
+
+export default Navbar;

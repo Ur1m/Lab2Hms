@@ -13,7 +13,7 @@ namespace Application.Faturat
     public class List
     {
 
-        public class Query : IRequest<List<Fatura>> { }
+       public class Query : IRequest<List<Fatura>> { }
 
         public class Handler : IRequestHandler<Query, List<Fatura>>
         {
