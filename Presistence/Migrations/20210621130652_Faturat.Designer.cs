@@ -9,7 +9,7 @@ using Presistence;
 namespace Presistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210618165401_Faturat")]
+    [Migration("20210621130652_Faturat")]
     partial class Faturat
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,6 +36,29 @@ namespace Presistence.Migrations
                     b.HasKey("Barnat_Id");
 
                     b.ToTable("Barnat");
+                });
+
+            modelBuilder.Entity("Domain.BloodDonor", b =>
+                {
+                    b.Property<Guid>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("BloodGroup")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("LastDonation")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Surname")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("id");
+
+                    b.ToTable("BloodDonors");
                 });
 
             modelBuilder.Entity("Domain.Department", b =>
@@ -196,6 +219,31 @@ namespace Presistence.Migrations
                     b.ToTable("pacientet");
                 });
 
+            modelBuilder.Entity("Domain.Paisjet", b =>
+                {
+                    b.Property<Guid>("Paisja_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("Department_Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("emertimi")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("pershkrimi")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("servisimi")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Paisja_Id");
+
+                    b.HasIndex("Department_Id");
+
+                    b.ToTable("paisjet");
+                });
+
             modelBuilder.Entity("Domain.Provoprovo", b =>
                 {
                     b.Property<Guid>("id")
@@ -345,6 +393,15 @@ namespace Presistence.Migrations
                         .WithMany()
                         .HasForeignKey("Pacient_id")
                         .HasConstraintName("FK_Fatura_Pacient_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Domain.Paisjet", b =>
+                {
+                    b.HasOne("Domain.Department", "Department")
+                        .WithMany()
+                        .HasForeignKey("Department_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

@@ -16,6 +16,26 @@ namespace Presistence.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.1");
 
+            modelBuilder.Entity("Domain.Barna", b =>
+                {
+                    b.Property<Guid>("Barnat_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("BName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("DataRegjistrimit")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Barnat_Id");
+
+                    b.ToTable("Barnat");
+                });
+
             modelBuilder.Entity("Domain.BloodDonor", b =>
                 {
                     b.Property<Guid>("id")
@@ -37,26 +57,6 @@ namespace Presistence.Migrations
                     b.HasKey("id");
 
                     b.ToTable("BloodDonors");
-                    });
-                    
-            modelBuilder.Entity("Domain.Barna", b =>
-                {
-                    b.Property<Guid>("Barnat_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("BName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("DataRegjistrimit")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Barnat_Id");
-
-                    b.ToTable("Barnat");
                 });
 
             modelBuilder.Entity("Domain.Department", b =>
