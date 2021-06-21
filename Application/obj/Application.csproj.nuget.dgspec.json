@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Application\\Application.csproj": {}
   },
   "projects": {
@@ -22,46 +21,23 @@
           "C:\\Users\\TECHCOM\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-=======
-    "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Application\\Application.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Application\\Application.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Application\\Application.csproj",
-        "projectName": "Application",
-        "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Application\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config"
->>>>>>> 33e10b4c7f03e4c80ca461ea846b2c2bc0f1a3da
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-<<<<<<< HEAD
               "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj"
               },
               "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj": {
                 "projectPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj"
-=======
-              "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj"
-              },
-              "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Presistence\\Presistence.csproj": {
-                "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Presistence\\Presistence.csproj"
->>>>>>> 33e10b4c7f03e4c80ca461ea846b2c2bc0f1a3da
               }
             }
           }
@@ -117,7 +93,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -135,24 +110,12 @@
           "C:\\Users\\TECHCOM\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-=======
-    "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj",
-        "projectName": "Domain",
-        "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config"
->>>>>>> 33e10b4c7f03e4c80ca461ea846b2c2bc0f1a3da
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -196,7 +159,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -214,37 +176,20 @@
           "C:\\Users\\TECHCOM\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-=======
-    "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Presistence\\Presistence.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Presistence\\Presistence.csproj",
-        "projectName": "Presistence",
-        "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Presistence\\Presistence.csproj",
-        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Presistence\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config"
->>>>>>> 33e10b4c7f03e4c80ca461ea846b2c2bc0f1a3da
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-<<<<<<< HEAD
               "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj"
-=======
-              "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj"
->>>>>>> 33e10b4c7f03e4c80ca461ea846b2c2bc0f1a3da
               }
             }
           }

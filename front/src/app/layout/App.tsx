@@ -33,9 +33,9 @@ import InfermierjaDashboard from '../../Features/Infermieret/Dashboard/Infermier
 import LoadingComponent from './LoadingComponent';
 import { useStore } from '../stores/store';
 
-function App() {
 
-const[blooddonors, setBloodDonors]=useState([]);
+
+// const[blooddonors, setBloodDonors]=useState([]);
 
 // greta
 
@@ -92,12 +92,12 @@ const App = () => {
 
 
 
-useEffect(()=>{
-  axios.get('http://localhost:5000/api/blooddonors').then(response =>{
-    console.log(response);
-    setBloodDonors(response.data);
-  })
-},[])
+// useEffect(()=>{
+//   axios.get('http://localhost:5000/api/blooddonors').then(response =>{
+//     console.log(response);
+//     setBloodDonors(response.data);
+//   })
+// },[])
 
   const location=useLocation();
 
@@ -124,8 +124,7 @@ return (
           <Switch>
           <Route exact path='/' component={HomePage}/>
           <Route path='/Departamentet' component={DepartmentDashboard}/>
-          <Route exact path='/infermieret' component={InfermierjaDashboard}/>
-          <Route path='/infermieret/:Infermierja_Id' component={InfermierjaDetails}/>
+          <Route path='/Infermieret' component={InfermierjaDashboard}/>
           <Route path={'/Doktorat'} component={DoktoriDashboard}/>
           <Route path={'/Pacientat'} component={PacientiDashboard}/>
           <Route path={'/Faturat'} component={FaturaDashboard}/>

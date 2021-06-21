@@ -1,6 +1,5 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "1u/13Hdo4JFeVHNXCJhsKzCA1mzLbAUMv1E3YAqIEi/tjEJCeQE9Em9FL+pQGv2DwkDTzZdH2ST/WmYMdvPnIw==",
   "success": true,
   "projectFilePath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj",
@@ -8,15 +7,6 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\TECHCOM\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
-=======
-  "dgSpecHash": "ipfLrLqk0FHZ/iXMzqz1mvU0sT6v8qfRzMLpWJeLZVhiGp2iouDjQp9hysdZ7LWi8OQeyMJB9Ugl688mpad4yA==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\hp\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\hp\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\hp\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
->>>>>>> 33e10b4c7f03e4c80ca461ea846b2c2bc0f1a3da
   ],
   "logs": []
 }

@@ -16,7 +16,6 @@ namespace Presistence.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.1");
 
-<<<<<<< HEAD
             modelBuilder.Entity("Domain.BloodDonor", b =>
                 {
                     b.Property<Guid>("id")
@@ -38,7 +37,8 @@ namespace Presistence.Migrations
                     b.HasKey("id");
 
                     b.ToTable("BloodDonors");
-=======
+                    });
+                    
             modelBuilder.Entity("Domain.Barna", b =>
                 {
                     b.Property<Guid>("Barnat_Id")
@@ -57,7 +57,6 @@ namespace Presistence.Migrations
                     b.HasKey("Barnat_Id");
 
                     b.ToTable("Barnat");
->>>>>>> 33e10b4c7f03e4c80ca461ea846b2c2bc0f1a3da
                 });
 
             modelBuilder.Entity("Domain.Department", b =>

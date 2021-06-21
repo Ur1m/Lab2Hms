@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react';
 import { useEffect } from 'react';
 
-import { Grid } from 'semantic-ui-react'
+import { Button, Grid } from 'semantic-ui-react'
 import LoadingComponent from '../../../app/layout/LoadingComponent';
 import { useStore } from '../../../app/stores/store';
 
@@ -23,6 +23,9 @@ if(infermierjaStore.loadingInitial) return <LoadingComponent content='Loading ap
         <Grid>
             <Grid.Column width ='10'>
                 <InfermierjaList />
+                <div>
+                <Button onClick={() => infermierjaStore} style = {{marginLeft:530, marginTop:5}} positive content='Shto Infermierin'/>
+                </div>
             </Grid.Column>
             
             <Grid.Column width ='6'>

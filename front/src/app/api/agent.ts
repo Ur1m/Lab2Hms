@@ -7,7 +7,7 @@ import { IDepartment } from '../models/IDepartment';
 import { IFatura } from '../models/IFatura';
 import { ILlojiShtratit } from '../models/ILlojiShtratit';
 import {IPacienti} from '../models/IPacienti'
-import { ITerminet } from '../models/Terminet';z
+import { ITerminet } from '../models/Terminet';
 import { IShtrat } from '../models/IShtrat';
 import { Infermierja } from '../models/Infermierja';
 import { store } from '../stores/store';
