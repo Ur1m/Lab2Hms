@@ -27,6 +27,30 @@ namespace Presistence{
                  context.SaveChanges();
              };
 
+             if(!context.BloodDonors.Any()){
+
+                    var BloodDonors=new List<BloodDonor>{
+                        
+                     new BloodDonor{
+                         Name = "Ian",
+                         Surname = "Smith",
+                         BloodGroup="A+",
+                         LastDonation=DateTime.Now.AddMonths(-2)
+                     },
+                    /* new BloodDonor{
+                         Name="Harry",
+                         Surname="Poppins",
+                         BloodGroup="0-",
+                         LastDonation=DateTime.Now.AddMonths(-3)
+                     }
+                */
+                     };
+                
+                 //param
+                 context.BloodDonors.AddRange(BloodDonors);
+                 context.SaveChanges();
+             };
+
              if(!context.Infermieret.Any()){
                     var Infermieret=new List<Infermierja>{
                      new Infermierja{

@@ -45,5 +45,7 @@ namespace Presistence
 
         }
         public DbSet <Infermierja> Infermieret {get; set;}
+
+        public DbSet<BloodDonor> BloodDonors{get;set;}
     }
 }
