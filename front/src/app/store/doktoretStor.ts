@@ -90,4 +90,15 @@ export default class DoktoretStore{
             console.log(error);
         }
     }
+    getDepartmentet = async() => {
+        try{
+            const Department = await agent.Departmentet.list();
+           /* Doktorat.forEach(Doktori => {
+                    this.Dokktoret.push(Doktori);
+                })*/
+                return Department;
+        } catch(error){
+            console.log(error);
+        }
+    }
 }

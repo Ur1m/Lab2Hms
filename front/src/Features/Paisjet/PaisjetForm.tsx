@@ -4,13 +4,16 @@ import { useStorePaisjet } from "../../app/stores/store";
 import * as yup from 'yup';
 import { Button, Form, Input, Segment, TextArea } from "semantic-ui-react";
 import { Formik } from "formik";
+import MySelectInput from '../../app/common/form/MySelectInput';
 
 import MyTextInput from "../../app/common/form/MyTextInput";
 import MyDateInput from "../../app/common/form/MyDateInput";
+import { IDepartment } from "../../app/models/IDepartment";
+import { IPacientetDropDown } from "../../app/models/IPacienti";
 
 export const PaisjetForm = () => {
     const {PaisjetStore}=useStorePaisjet();
-    const{selectedPaisja,closeForm,updatePaisja,createPaisja,getimage}=PaisjetStore;
+    const{selectedPaisja,closeForm,updatePaisja,createPaisja,getDepartmentet}=PaisjetStore;
     
    
     const initialState = selectedPaisja ?? {
@@ -56,6 +59,20 @@ export const PaisjetForm = () => {
 
 
     })
+
+    let department: IDepartment[] = [];
+    let departmentDropDown: IPacientetDropDown[] = [];
+
+    getDepartmentet().then(response => {
+        response?.forEach(element => {
+            department.push(element);
+        });
+        for(var i = 0; i < department.length;i++){
+            
+            var departmentiDropDown: IPacientetDropDown = { text: department[i].name  , key: department[i].department_id, value: department[i].department_id}
+            departmentDropDown.push(departmentiDropDown);
+        }
+    })
   
     return (
         <Segment clearing>
@@ -68,7 +85,7 @@ export const PaisjetForm = () => {
                 
                 <MyTextInput placeholder="pershkrimi"name="pershkrimi"/>
               <MyDateInput name="servisimi" placeholderText="servisimi..."/>
-              <MyTextInput name="department_Id" placeholder="department"/>
+              <MySelectInput options={departmentDropDown} placeholder='Zgjedhni departamentin...' name='department_Id'></MySelectInput>
               <input type='file' name='image' id="image-id"onChange={changefile} />
 
                 

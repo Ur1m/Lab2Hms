@@ -1,17 +1,22 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { ITerminet } from "../../app/models/Terminet";
 import { useStoreTerminet } from "../../app/stores/store";
 import * as yup from 'yup';
 import { Button, Form, Segment } from "semantic-ui-react";
 import { Formik } from "formik";
-import MySelectInput from "../../app/common/form/MyDateInput";
+
+import MySelectInput from '../../app/common/form/MySelectInput';
 import { Doktoret, Pacientat, Qytetet } from "../../app/FormElements/Qyteti";
 import MyDateInput from "../../app/common/form/MyDateInput";
 import MyTextInput from "../../app/common/form/MyTextInput";
+import { IPacientetDropDown, IPacienti } from "../../app/models/IPacienti";
+import { IDoktori } from "../../app/models/Doktori";
 
 export const TerminatForm = () => {
     const {TerminetStore}=useStoreTerminet();
-    const{terminet,selectedTermini,openForm,closeForm,updateTermini,createTermini}=TerminetStore;
+    const{terminet,selectedTermini,openForm,closeForm,updateTermini,createTermini,getPacientet,getDoktoret}=TerminetStore;
+
+   
     
    
     const initialState = selectedTermini ?? {
@@ -26,17 +31,42 @@ export const TerminatForm = () => {
         setTermini({...Termini,[event.currentTarget.name]:event.currentTarget.value});
     };
     const handleFormsubmit=(Termini:ITerminet)=>{
-        Termini.termini_ID? updateTermini(Termini) : createTermini(Termini);
-      
+      // Termini.termini_ID? updateTermini(Termini) : createTermini(Termini);
+      console.log(Termini)
+     
     }
     const validationSchema=yup.object({
-        pacient_Id:yup.string().required("Selekto pacinetin"),
-        mjeku_Id:yup.string().required("selektoni mjekun"),
+     //   pacient_Id:yup.string().required("Selekto pacinetin"),
+      //  mjeku_Id:yup.string().required("selektoni mjekun"),
       //  orari:yup.string().required(),
 
         
 
 
+    })
+    let pacientet: IPacienti[] = [];
+    let pacientetDropDown: IPacientetDropDown[] = [];
+    let Doktoret:IDoktori[]=[];
+    let doktoretDropDown: IPacientetDropDown[]=[];
+    getDoktoret().then(response => {
+        response?.forEach(element => {
+            Doktoret.push(element);
+        });
+        for(var i = 0; i < Doktoret.length;i++){
+            
+            var doktorDropDown: IPacientetDropDown = { text: Doktoret[i].emri + " " + Doktoret[i].mbimeri, key: Doktoret[i].mjeku_Id, value: Doktoret[i].mjeku_Id}
+        doktoretDropDown.push(doktorDropDown);
+        }
+    })
+    getPacientet().then(response => {
+        response?.forEach(element => {
+            pacientet.push(element);
+        });
+        for(var i = 0; i < pacientet.length;i++){
+            
+            var pacientiDropDown: IPacientetDropDown = { text: pacientet[i].emri + " " + pacientet[i].mbimeri, key: pacientet[i].pacient_Id, value: pacientet[i].pacient_Id}
+            pacientetDropDown.push(pacientiDropDown);
+        }
     })
     
   
@@ -48,9 +78,9 @@ export const TerminatForm = () => {
             initialValues={Termini} onSubmit={values => handleFormsubmit(values)}>
             {({handleSubmit,isSubmitting,dirty,isValid})=>(
                 <Form className='ui form' onSubmit={handleSubmit}>
-               { !Termini.termini_ID && <MyTextInput name="pacient_Id" placeholder="Pacineti"/>}
-               { !Termini.termini_ID && <MyTextInput placeholder='Mjeku' name="mjeku_Id"/>}
-                <input type='datetime-local'  placeholder='orari' name="orari" />
+               { !Termini.termini_ID &&  <MySelectInput options={pacientetDropDown} placeholder='Zgjedhni pacientin...' name='pacient_Id'></MySelectInput>}
+               { !Termini.termini_ID && <MySelectInput options={doktoretDropDown} placeholder='Zgjedhni doktorin...' name='mjeku_Id'></MySelectInput>}
+                <input type='datetime-local'  placeholder='orari' name="orari"/>
                 
                
                 

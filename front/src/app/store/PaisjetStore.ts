@@ -82,7 +82,7 @@ export default class PaisjetStore{
     }
     deletePaisja=async(id:string)=>{
         try{
-            if(window.confirm('Are you sure')){
+            
            await agent.Paisjet.delete(id);
            runInAction(()=>{
             
@@ -90,9 +90,18 @@ export default class PaisjetStore{
             ;if(this.selectedPaisja?.paisja_Id==id)this.canceleSelectedPaisja();
 
            })
-        }
+        
         }
         catch(error){
+            console.log(error);
+        }
+    }
+    getDepartmentet = async() => {
+        try{
+            const Department = await agent.Departmentet.list();
+          
+                return Department;
+        } catch(error){
             console.log(error);
         }
     }

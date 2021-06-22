@@ -11,11 +11,14 @@ import * as yup from 'yup';
 import MyDateInput from '../../app/common/form/MyDateInput';
 import MySelectInput from '../../app/common/form/MySelectInput';
 import { useStoreDoktorat } from '../../app/stores/store';
+import { IDepartment } from '../../app/models/IDepartment';
+import { IPacientetDropDown } from '../../app/models/IPacienti';
 
 
 export const DoktoriForm = () => {
     const {DoktoratStore}=useStoreDoktorat();
-    const{closeForm,selectedDoktori,updateDoktori,createDoktori}=DoktoratStore;
+    const{closeForm,selectedDoktori,updateDoktori,createDoktori,getDepartmentet
+    }=DoktoratStore;
     
    
     const initialState = selectedDoktori ?? {
@@ -45,6 +48,19 @@ export const DoktoriForm = () => {
 
 
     })
+    let department: IDepartment[] = [];
+    let departmentDropDown: IPacientetDropDown[] = [];
+
+    getDepartmentet().then(response => {
+        response?.forEach(element => {
+            department.push(element);
+        });
+        for(var i = 0; i < department.length;i++){
+            
+            var departmentiDropDown: IPacientetDropDown = { text: department[i].name  , key: department[i].department_id, value: department[i].name}
+            departmentDropDown.push(departmentiDropDown);
+        }
+    })
     return (
         <Segment clearing>
               <Formik validationSchema={validationSchema}
@@ -55,7 +71,7 @@ export const DoktoriForm = () => {
                   <MyTextInput placeholder="Mbimeri" name="mbimeri"/>
                   <MyDateInput  placeholderText='ditlindja' name="ditlindja" />
                   <MySelectInput options={specializimet} placeholder='Specializimi' name='specializimi'/>
-                  <MySelectInput options={departamentet} placeholder="Departamenti" name="depName"/>
+                  <MySelectInput options={departmentDropDown} placeholder='Zgjedhni departamentin...' name='depName'></MySelectInput>
                 <Button 
                 disabled={isSubmitting || !dirty || !isValid}
                 floated="right" positive type='subimit' content='submit'/>

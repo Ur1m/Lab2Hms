@@ -11,6 +11,7 @@ export default class TerminetStore{
     TerminetRegistry=new Map<string,ITerminet>()
     pacientiemri="";
     DoktoriEmri="";
+    Pacientat: IPacienti[] =[];
    
     constructor(){
         makeAutoObservable(this)
@@ -78,7 +79,7 @@ export default class TerminetStore{
     }
     deleteTermini=async(id:string)=>{
         try{
-            if(window.confirm('Are you sure')){
+           
            await agent.Terminet.delete(id);
            runInAction(()=>{
            
@@ -87,7 +88,7 @@ export default class TerminetStore{
 
            })
         }
-        }
+        
         catch(error){
             console.log(error);
         }
@@ -105,6 +106,29 @@ export default class TerminetStore{
         
         
            
+    }
+    getPacientet = async() => {
+        try{
+            const Pacientat = await agent.Pacientat.list();
+            Pacientat.forEach(Pacienti => {
+                    this.Pacientat.push(Pacienti);
+                })
+                return Pacientat;
+        } catch(error){
+            console.log(error);
+        }
+    }
+
+    getDoktoret = async() => {
+        try{
+            const Doktorat = await agent.doktoret.list();
+           /* Doktorat.forEach(Doktori => {
+                    this.Dokktoret.push(Doktori);
+                })*/
+                return Doktorat;
+        } catch(error){
+            console.log(error);
+        }
     }
 
 }

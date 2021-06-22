@@ -15,3 +15,4 @@ export interface IPacientetDropDown{
     text: any;
     value: any;
 }
+

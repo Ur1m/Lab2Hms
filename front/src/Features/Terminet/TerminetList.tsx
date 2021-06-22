@@ -3,7 +3,7 @@ import { observer } from "mobx-react-lite";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { RouteComponentProps, useParams } from "react-router-dom";
-import { Button, Grid, Item, Segment } from "semantic-ui-react";
+import { Button, Grid, Header, Icon, Item, Modal, Segment } from "semantic-ui-react";
 import { useStoreTerminet } from "../../app/stores/store";
 import { TerminatForm } from "./TerminatForm";
 import TerminetDetails from "./TerminetDetails";
@@ -11,7 +11,8 @@ import TerminetDetails from "./TerminetDetails";
 
 export default observer( function TerminetList () {
     const {TerminetStore}=useStoreTerminet();
-    const{terminet,selectTermini,openForm}=TerminetStore;
+    const{terminet,selectTermini,openForm,deleteTermini}=TerminetStore;
+    const [open, setOpen] = React.useState(false)
     const {id}=useParams<{id:string}>();
     var i=0;
     
@@ -49,7 +50,34 @@ export default observer( function TerminetList () {
                        
                          <Item.Extra>
                              <Button onClick={()=>selectTermini(p.termini_ID)} floated="right" content='View' color='blue'/>
-                            {!id && <Button onClick={()=>TerminetStore.deleteTermini(p.termini_ID)} floated="right" content='Delete' color='red'/>}
+                            {!id && <Modal
+                                closeIcon
+                                open={open}
+                                trigger={
+                                <Button 
+                                        name={p.termini_ID}
+                                       
+                                        floated='right' 
+                                        content='Delete' 
+                                        color='red'
+                                />}
+                                onClose={() => setOpen(false)}
+                                onOpen={() => setOpen(true)}>
+                                <Header icon='archive' content='Delete terminin' />
+                                <Modal.Content>
+                                    <p>
+                                        Are you sure?
+                                    </p>
+                                </Modal.Content>
+                                <Modal.Actions>
+                                    <Button color='red' onClick={() => setOpen(false)}>
+                                        <Icon name='remove' /> No
+                                    </Button>
+                                    <Button color='green' onClick={() =>deleteTermini(p.termini_ID) }>
+                                        <Icon name='checkmark' /> Yes
+                                    </Button>
+                                </Modal.Actions>
+                            </Modal>}
                             
                          </Item.Extra>
                      </Item.Content>
