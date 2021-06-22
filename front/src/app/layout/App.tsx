@@ -1,17 +1,17 @@
+import React, { Fragment, useEffect, useState } from 'react';
+import './styles.css';
+import Navbar from '../../Components/Navbar';
+import { BrowserRouter as Router, Switch, Route, RouteComponentProps,withRouter, useLocation } from 'react-router-dom';
+import { Container } from 'semantic-ui-react';
 
 import '../../app/layout/styles.css';
 import DoktoriDashboard  from '../../Features/Doktori/DoktoriDashbord';
 import doktoretStor from '../store/doktoretStor';
 import { observer } from 'mobx-react-lite';
-import { Container } from 'semantic-ui-react';
-import { BrowserRouter as Router,Switch, Route, RouteComponentProps,withRouter } from 'react-router-dom';
 
 
 import agent from '../api/agent';
 
-import React, { useEffect, useState } from 'react';
-import './styles.css';
-import Navbar from '../../Components/Navbar';
 
 import DepartmentDashboard from '../../Features/Departmentet/Dashboard/DepartmentDashboard';
 import HomePage from '../../Features/home/HomePage';
@@ -30,6 +30,13 @@ import ShtratDashboard from '../../Features/Shtreter/Dashboard/ShtratDashboard';
 import LlojiShtratitDashboard from '../../Features/llojiShtratit/Dashboard/LlojiShtratitDashboard';
 import CaktoShtratinDashboard from '../../Features/caktoShtratin/Dashboard/CaktoShtratinDashboard';
 import PaisjetDashbord from '../../Features/Paisjet/PaisjetDashbord';
+import InfermierjaDashboard from '../../Features/Infermieret/Dashboard/InfermierjaDashboard';
+import LoadingComponent from './LoadingComponent';
+import { useStore } from '../stores/store';
+
+
+
+// const[blooddonors, setBloodDonors]=useState([]);
 
 // greta
 
@@ -86,25 +93,15 @@ const App = () => {
 
 
 
-/*const [infermieret, setInfermieret] = useState([]);
-useEffect(() =>{
-  axios.get('http://localhost:5000/api/infermieret').then(response =>{
-    console.log(response);
-    setInfermieret(response.data);
-  })
-}, [])
- return (
-    < div>
-    <header as ='h2' icon ='users' content='Infermieret'/>
-    <List>
-        {infermieret.map((infermierja: any) =>{
-          <List.item key=(infermierja.id)</li>
-          {infermierja.emri}
-          </List.item>
-        })}
-    </List>
-    </div>
-*/
+// useEffect(()=>{
+//   axios.get('http://localhost:5000/api/blooddonors').then(response =>{
+//     console.log(response);
+//     setBloodDonors(response.data);
+//   })
+// },[])
+
+  const location=useLocation();
+
 
 return (
    <>
@@ -128,6 +125,7 @@ return (
           <Switch>
           <Route exact path='/' component={HomePage}/>
           <Route path='/Departamentet' component={DepartmentDashboard}/>
+          <Route path='/Infermieret' component={InfermierjaDashboard}/>
           <Route path={'/Doktorat'} component={DoktoriDashboard}/>
           <Route path={'/Pacientat'} component={PacientiDashboard}/>
           <Route path={'/Faturat'} component={FaturaDashboard}/>

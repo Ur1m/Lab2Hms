@@ -1,6 +1,7 @@
 import { createContext, useContext } from "react";
 import CommonStore from "./commonStore";
 import DepartmentStore from "./departmentStore";
+import InfermierjaStore from "./infermierjaStore";
 import PacientatStore from "../store/PacientatStore";
 import DoktoretStore from "../store/doktoretStor";
 import FaturaStore from "./faturaStore";
@@ -16,15 +17,19 @@ interface Store {
     faturaStore: FaturaStore;
     shtratStore: ShtratStore;
     llojiShtratitStore: LlojiShtratitStore;
-    caktoShtratinStore: CaktoShtratinStore
+    caktoShtratinStore: CaktoShtratinStore;
+    infermierjaStore: InfermierjaStore
+    
 }
+
 export const store: Store = {
     departmentStore: new DepartmentStore(),
     commonStore: new CommonStore(),
     faturaStore: new FaturaStore(),
     shtratStore: new ShtratStore(),
     llojiShtratitStore: new LlojiShtratitStore(),
-    caktoShtratinStore: new CaktoShtratinStore()
+    caktoShtratinStore: new CaktoShtratinStore(),
+    infermierjaStore: new InfermierjaStore()
 }
 
 export const StoreContext = createContext(store);

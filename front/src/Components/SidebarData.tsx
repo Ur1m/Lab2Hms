@@ -91,6 +91,12 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
+    title: 'Infermieret',
+    path: '/Infermieret',
+    icon: <IoIcons.IoMdHelpCircle />,
+    cName: 'nav-text'
+  },
+  {
     title: 'Errors',
     path: '/errors',
     icon: <IoIcons.IoMdHelpCircle />,

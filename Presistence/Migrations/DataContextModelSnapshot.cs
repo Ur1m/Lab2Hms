@@ -36,6 +36,29 @@ namespace Presistence.Migrations
                     b.ToTable("Barnat");
                 });
 
+            modelBuilder.Entity("Domain.BloodDonor", b =>
+                {
+                    b.Property<Guid>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("BloodGroup")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("LastDonation")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Surname")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("id");
+
+                    b.ToTable("BloodDonors");
+                });
+
             modelBuilder.Entity("Domain.Department", b =>
                 {
                     b.Property<Guid>("Department_id")

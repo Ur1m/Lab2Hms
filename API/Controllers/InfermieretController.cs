@@ -3,22 +3,18 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Application.Infermieret;
 using Domain;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Presistence;
-
+using MediatR;
 namespace API.Controllers
 {
     public class InfermieretController : BaseApiController
     {
-        /*private readonly IMediator _mediator;
+        private readonly IMediator _mediator;
 
         public InfermieretController(IMediator mediator)
         {
             this._mediator = mediator;
-
-        }*/
+        }
         
         [HttpGet]
         public async Task<ActionResult<List<Infermierja>>> GetInfermierja()
@@ -26,10 +22,11 @@ namespace API.Controllers
             return await Mediator.Send(new List.Query());
         }
 
-        [HttpGet("{id}")]//
-        public async Task<ActionResult<Infermierja>> GetInfermierja(Guid id)
+        [HttpGet("{Infermierja_Id}")]
+        public async Task<ActionResult<Infermierja>> GetInfermierja(Guid Infermierja_Id)
         {
-            return await Mediator.Send(new Details.Query{Infermierja_Id=id});
+            return await Mediator.Send(new Details.Query{Infermierja_Id=Infermierja_Id});
+            
         }
 
         [HttpPost]
@@ -39,18 +36,18 @@ namespace API.Controllers
 
         }
 
-        [HttpPut("{id}")]
-        public async Task <IActionResult> EditInfermierja(Guid Infermierja_id, Infermierja infermierja)
+        [HttpPut("{Infermierja_Id}")]
+        public async Task <IActionResult> EditInfermierja(Guid Infermierja_Id, Infermierja infermierja)
         {
-            infermierja.Infermierja_Id= Infermierja_id;
+            infermierja.Infermierja_Id= Infermierja_Id;
             return Ok(await Mediator.Send(new Edit.Command{Infermierja=infermierja}));
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{Infermierja_Id}")]
 
-        public async Task <IActionResult> DeleteInfermierja(Guid Infermierja_id)
+        public async Task <IActionResult> DeleteInfermierja(Guid Infermierja_Id)
         {
-            return Ok(await Mediator.Send(new Delete.Command{Id=Infermierja_id}));
+            return Ok(await Mediator.Send(new Delete.Command{Infermierja_Id=Infermierja_Id}));
 
         }
 

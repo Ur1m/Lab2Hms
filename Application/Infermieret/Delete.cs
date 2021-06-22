@@ -11,7 +11,7 @@ namespace Application.Infermieret
         public class Command : IRequest
         {
 
-            public Guid Id { get; set; }
+            public Guid Infermierja_Id { get; set; }
         }
 
         public class Handler : IRequestHandler<Command>
@@ -24,7 +24,7 @@ namespace Application.Infermieret
 
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
-                var infermierja= await _context.Infermieret.FindAsync(request.Id);
+                var infermierja= await _context.Infermieret.FindAsync(request.Infermierja_Id);
 
                 _context.Remove(infermierja);
 

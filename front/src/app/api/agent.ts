@@ -9,7 +9,7 @@ import { ILlojiShtratit } from '../models/ILlojiShtratit';
 import {IPacienti} from '../models/IPacienti'
 import { ITerminet } from '../models/Terminet';
 import { IShtrat } from '../models/IShtrat';
-
+import { Infermierja } from '../models/Infermierja';
 import { store } from '../stores/store';
 import { IPaisjet } from '../models/IPaisjet';
 
@@ -61,7 +61,7 @@ axios.interceptors.response.use(async response =>  {
     return Promise.reject(error);
 })
 
-const responseBody = <T> (response: AxiosResponse<T>) => response.data;
+const responseBody = <T> (response: AxiosResponse <T> ) => response.data;
 
 const requests = {
     get: <T> (url: string) => axios.get<T>(url).then(responseBody),
@@ -69,6 +69,8 @@ const requests = {
     put: <T> (url: string, body: {}) => axios.put<T>(url, body).then(responseBody),
     del: <T> (url: string) => axios.delete<T>(url).then(responseBody),
 }
+
+
 
 const Departmentet = {
     list: () => requests.get<IDepartment[]>('/departmentet'),
@@ -144,8 +146,18 @@ const doktoret={
     delete:(id:string)=>request.del(`/Mjeket/${id}`)
 }
 
+const Infermieret={
+    list: ()=> requests.get<Infermierja[]>('/infermieret'),
+    details: (infermierja_id: string)=> requests.get<Infermierja>(`/infermieret/${infermierja_id}`),
+    create:(infermierja: Infermierja)=> axios.post<void>('/infermieret', infermierja),
+    update: (infermierja: Infermierja)=> axios.put<void>(`/infermieret/${infermierja.infermierja_id}`,infermierja),
+    delete:(infermierja_id: string)=>axios.delete<void>(`/infermieret/${infermierja_id}`)
+}
+
+
 const agent = {
     Departmentet,
+    Infermieret,
     doktoret,
     Pacientat,
     Faturat,
