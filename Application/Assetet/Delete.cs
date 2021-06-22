@@ -27,7 +27,7 @@ namespace Application.Assetet
 
             public async Task<Result<Unit>> Handle(Command request, CancellationToken cancellationToken)
             {
-                var pacineti = await _context.paisjet.FindAsync(request.Paisja_Id);
+                var pacineti = await _context.Paisjets.FindAsync(request.Paisja_Id);
 
                 
 

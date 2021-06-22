@@ -23,7 +23,7 @@ namespace Application.Assetet
             
             public async Task<List<Paisjet>> Handle(Query request, CancellationToken cancellationToken)
             {
-                return await  _context.paisjet.ToListAsync();
+                return await  _context.Paisjets.ToListAsync();
                 
             }
         }

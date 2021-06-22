@@ -26,7 +26,7 @@ namespace Application.Assetet
 
             public async Task<Result<Paisjet>> Handle(Query request, CancellationToken cancellationToken)
             {
-                var paisja = await _context.paisjet.FindAsync(request.Paisja_Id);
+                var paisja = await _context.Paisjets.FindAsync(request.Paisja_Id);
 
                 return Result<Paisjet>.Success(paisja);
             }

@@ -9,6 +9,7 @@ namespace Domain
         public string pershkrimi{get;set;}
         public DateTime? servisimi{get;set;}
         public Guid Department_Id{get;set;}
+         public string image{get;set;}
         public Department Department{get;set;}
         
     }

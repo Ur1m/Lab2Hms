@@ -206,6 +206,9 @@ namespace Presistence.Migrations
                     b.Property<string>("emertimi")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("image")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("pershkrimi")
                         .HasColumnType("TEXT");
 
@@ -216,7 +219,7 @@ namespace Presistence.Migrations
 
                     b.HasIndex("Department_Id");
 
-                    b.ToTable("paisjet");
+                    b.ToTable("Paisjets");
                 });
 
             modelBuilder.Entity("Domain.Provoprovo", b =>

@@ -32,7 +32,7 @@ namespace Presistence
         public DbSet<Terminet> Terminet {get;set;}
 
         public DbSet<caktoShtratin> caktoShtreterit {get; set;}
-        public DbSet<Paisjet> paisjet{get;set;}
+        public DbSet<Paisjet> Paisjets{get;set;}
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

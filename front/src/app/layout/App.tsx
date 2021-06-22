@@ -29,6 +29,7 @@ import TerminetList from '../../Features/Terminet/TerminetList';
 import ShtratDashboard from '../../Features/Shtreter/Dashboard/ShtratDashboard';
 import LlojiShtratitDashboard from '../../Features/llojiShtratit/Dashboard/LlojiShtratitDashboard';
 import CaktoShtratinDashboard from '../../Features/caktoShtratin/Dashboard/CaktoShtratinDashboard';
+import PaisjetDashbord from '../../Features/Paisjet/PaisjetDashbord';
 
 // greta
 
@@ -132,6 +133,7 @@ return (
           <Route path={'/Faturat'} component={FaturaDashboard}/>
           <Route path={'/Laboratoret'} component={LaboratoriDashboard}/>
           <Route path={'/Shtreter'} component={ShtratDashboard} />
+          <Route path={'/Paisjet'} component={PaisjetDashbord}/>
           <Route path={'/llojiShtratit'} component={LlojiShtratitDashboard} />
           <Route path={'/caktoShtreterit'} component={CaktoShtratinDashboard} />
           <Route path='/errors' component={TestErrors} /> 

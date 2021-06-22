@@ -8,6 +8,7 @@ import TerminetStore from "../store/TerminetStore";
 import LlojiShtratitStore from "./llojiShtratitStore";
 import ShtratStore from "./shtratStore";
 import CaktoShtratinStore from "./caktoShtratinStore";
+import PaisjetStore from "../store/PaisjetStore";
 
 interface Store {
     departmentStore: DepartmentStore;
@@ -67,4 +68,14 @@ export const StoreTerminet:StoreTerminet={
 export const StoreContextTerminet=createContext(StoreTerminet);
 export function useStoreTerminet(){
     return useContext(StoreContextTerminet);
+}
+interface StorePaisjet{
+    PaisjetStore:PaisjetStore;
+}
+export const StorePaisjet:StorePaisjet={
+    PaisjetStore:new PaisjetStore()
+}
+export const StoreContextPaisjet=createContext(StorePaisjet);
+export function useStorePaisjet(){
+    return useContext(StoreContextPaisjet);
 }

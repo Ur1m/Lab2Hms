@@ -11,6 +11,7 @@ import { ITerminet } from '../models/Terminet';
 import { IShtrat } from '../models/IShtrat';
 
 import { store } from '../stores/store';
+import { IPaisjet } from '../models/IPaisjet';
 
 const sleep = (delay: number) => {
     return new Promise((resolve) => {
@@ -119,6 +120,13 @@ const Terminet ={
     update: (Termini: ITerminet) => axios.put<void>(`/Terminet/${Termini.termini_ID}`, Termini),
     delete: (id: string) => axios.delete<void>(`/Terminet/${id}`)
 }
+const Paisjet ={
+    list: () => requests.get<IPaisjet[]>('/Paisjet'),
+    details: (paisja_Id: string) => requests.get<IPaisjet>(`/Paisjet/${paisja_Id}`),
+    create: (Paisja: IPaisjet) => axios.post<void>('/Paisjet', Paisja),
+    update: (Paisja: IPaisjet) => axios.put<void>(`/Paisjet/${Paisja.paisja_Id}`, Paisja),
+    delete: (id: string) => axios.delete<void>(`/Paisjet/${id}`)
+}
 
 const request={
     get:(url:string)=>axios.get(url).then(responseBody),
@@ -144,7 +152,8 @@ const agent = {
     Terminet,
     Shtreter,
     llojiShtreterve,
-    caktoShtreterit
+    caktoShtreterit,
+    Paisjet
 }
 
 export default agent;

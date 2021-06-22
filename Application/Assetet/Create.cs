@@ -35,7 +35,7 @@ namespace Application.Assetet
 
             public async Task<Result<Unit>> Handle(Command request, CancellationToken cancellationToken)
             {
-                _context.paisjet.Add(request.paisje);
+                _context.Paisjets.Add(request.paisje);
 
                 var result = await _context.SaveChangesAsync() > 0;
 

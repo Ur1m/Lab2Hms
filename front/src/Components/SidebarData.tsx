@@ -55,6 +55,12 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
+    title: 'Paisjet',
+    path: '/Paisjet',
+    icon: <FaIcons.FaFlask/>,
+    cName: 'nav-text'
+  },
+  {
     title: 'Fatura',
     path: '/Faturat',
     icon: <RiIcons.RiBillLine />,
