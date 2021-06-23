@@ -19,7 +19,9 @@ namespace API.Controllers
         }
 
         [HttpGet("{ShtreteritNeDhome_Id}")]
-        public async Task<ActionResult<Dhoma>> GetShteteritNeDhome(Guid ShtreteritNeDhome_Id)
+        public async Task<ActionResult<ShtreteritNeDhome>> GetShteteritNeDhome(Guid ShtreteritNeDhome_Id)
         {
             return await Mediator.Send(new Details.Query { ShtreteritNeDhome_Id = ShtreteritNeDhome_Id });
         }
+    }
+}

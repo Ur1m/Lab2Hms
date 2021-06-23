@@ -28,7 +28,7 @@ namespace Application.ShtreteritNeDhoma
                 _context = context;
             }
 
-            public async Task<Fatura> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<ShtreteritNeDhome> Handle(Query request, CancellationToken cancellationToken)
             {
                 return await _context.ShtreteritNeDhome.FindAsync(request.ShtreteritNeDhome_Id);
             }

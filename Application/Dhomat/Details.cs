@@ -30,7 +30,7 @@ namespace Application.Dhomat
 
             public async Task<Dhoma> Handle(Query request, CancellationToken cancellationToken)
             {
-                return await _context.caktoShtreterit.FindAsync(request.Dhoma_Id);
+                return await _context.Dhomat.FindAsync(request.Dhoma_Id);
             }
         }
     }
