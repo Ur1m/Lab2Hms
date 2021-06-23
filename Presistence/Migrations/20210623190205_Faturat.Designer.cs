@@ -9,7 +9,7 @@ using Presistence;
 namespace Presistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210621130652_Faturat")]
+    [Migration("20210623190205_Faturat")]
     partial class Faturat
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -231,6 +231,9 @@ namespace Presistence.Migrations
                     b.Property<string>("emertimi")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("image")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("pershkrimi")
                         .HasColumnType("TEXT");
 
@@ -241,7 +244,7 @@ namespace Presistence.Migrations
 
                     b.HasIndex("Department_Id");
 
-                    b.ToTable("paisjet");
+                    b.ToTable("Paisjets");
                 });
 
             modelBuilder.Entity("Domain.Provoprovo", b =>

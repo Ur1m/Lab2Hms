@@ -55,37 +55,6 @@ namespace Presistence.Migrations
                     b.ToTable("Departmentet");
                 });
 
-            modelBuilder.Entity("Domain.Fatura", b =>
-                {
-                    b.Property<Guid>("Fatura_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime?>("KrijuarMe")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("Pacient_id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Pershkrimi")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Shuma")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Statusi")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Titulli")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Fatura_Id");
-
-                    b.HasIndex("Pacient_id");
-
-                    b.ToTable("Faturat");
-                });
-
             modelBuilder.Entity("Domain.Infermierja", b =>
                 {
                     b.Property<Guid>("Infermierja_Id")
@@ -299,16 +268,6 @@ namespace Presistence.Migrations
                     b.HasKey("id");
 
                     b.ToTable("prova");
-                });
-
-            modelBuilder.Entity("Domain.Fatura", b =>
-                {
-                    b.HasOne("Domain.Pacient", "Pacient")
-                        .WithMany()
-                        .HasForeignKey("Pacient_id")
-                        .HasConstraintName("FK_Fatura_Pacient_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Domain.Shtrat", b =>
