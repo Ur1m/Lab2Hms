@@ -53,7 +53,7 @@ function Navbar({openCreateForm} : IProps) {
             })}
           </ul>
         </nav>
-        <Button onClick={openCreateForm} positive content='Shto Analizat'/>
+        {/* <Button onClick={openCreateForm} positive content='Shto Analizat'/> */}
         
       </IconContext.Provider>
     </>

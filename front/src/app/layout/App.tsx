@@ -118,8 +118,8 @@ return (
       <Navbar  openCreateForm={handleOpenCreateForm}/>
         
         <Switch>
-        <Container style={{marginTop: '4em'}}>
-        <LaboratoriDashboard laboratoret={laboratoret}
+        <Container style={{marginTop: '8em'}}>
+        {/* <LaboratoriDashboard laboratoret={laboratoret}
           selectLaboratori={handleSelectLaboratori}
           selectedLaboratori={selectedLaboratori}
           editMode={editMode}
@@ -127,7 +127,7 @@ return (
           setSelectedLaboratori={setSelectedLaboratori}
           createLaboratori={handleCreateLaboratori}
           editLaboratori={handleEditLaboratori}
-          deleteLaboratori={handleDeleteLaboratori} />
+          deleteLaboratori={handleDeleteLaboratori} /> */}
           <Switch>
           <Route path='/Departamentet' component={DepartmentDashboard}/>
           <Route path='/Infermieret' component={InfermierjaDashboard}/>
