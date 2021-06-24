@@ -12,6 +12,8 @@ import { IShtrat } from '../models/IShtrat';
 import { Infermierja } from '../models/Infermierja';
 import { store } from '../stores/store';
 import { IPaisjet } from '../models/IPaisjet';
+import { IDhoma } from '../models/IDhoma';
+import { IShtreteritNeDhoma } from '../models/IShtreteritNeDhoma';
 
 const sleep = (delay: number) => {
     return new Promise((resolve) => {
@@ -154,6 +156,22 @@ const Infermieret={
     delete:(infermierja_id: string)=>axios.delete<void>(`/infermieret/${infermierja_id}`)
 }
 
+const Dhomat={
+    list: () => requests.get<IDhoma[]>('/dhomat'),
+    details: (dhoma_id: string) => requests.get<IDhoma>(`/dhomat/${dhoma_id}`),
+    create: (Dhoma: IDhoma) => axios.post<void>('/dhomat', Dhoma),
+    update: (Dhoma: IDhoma) => axios.put<void>(`/dhomat/${Dhoma.dhoma_id}`, Dhoma),
+    delete: (dhoma_id: string) => axios.delete<void>(`/dhomat/${dhoma_id}`)
+}
+
+const ShtreteritNeDhoma={
+    list: () => requests.get<IShtreteritNeDhoma[]>('/shtreteritnedhoma'),
+    details: (shtreteritnedhome_id: string) => requests.get<IDhoma>(`/shtreteritnedhoma/${shtreteritnedhome_id}`),
+    create: (ShtreteritNeDhome: IShtreteritNeDhoma) => axios.post<void>('/dhomat', ShtreteritNeDhome),
+    update: (ShtreteritNeDhome: IShtreteritNeDhoma) => axios.put<void>(`/dhomat/${ShtreteritNeDhome.shtreteritnedhome_id}`, ShtreteritNeDhome),
+    delete: (shtreteritnedhome_id: string) => axios.delete<void>(`/dhomat/${shtreteritnedhome_id}`)
+}
+
 
 const agent = {
     Departmentet,
@@ -165,7 +183,9 @@ const agent = {
     Shtreter,
     llojiShtreterve,
     caktoShtreterit,
-    Paisjet
+    Paisjet,
+    Dhomat,
+    ShtreteritNeDhoma
 }
 
 export default agent;

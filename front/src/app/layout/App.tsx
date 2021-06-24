@@ -6,7 +6,6 @@ import { Container } from 'semantic-ui-react';
 
 import '../../app/layout/styles.css';
 import DoktoriDashboard  from '../../Features/Doktori/DoktoriDashbord';
-import doktoretStor from '../store/doktoretStor';
 import { observer } from 'mobx-react-lite';
 
 
@@ -33,6 +32,7 @@ import PaisjetDashbord from '../../Features/Paisjet/PaisjetDashbord';
 import InfermierjaDashboard from '../../Features/Infermieret/Dashboard/InfermierjaDashboard';
 import LoadingComponent from './LoadingComponent';
 import { useStore } from '../stores/store';
+import DhomaDashboard from '../../Features/Dhomat/Dashboard/DhomaDashboard';
 
 
 
@@ -134,6 +134,7 @@ return (
           <Route path={'/Paisjet'} component={PaisjetDashbord}/>
           <Route path={'/llojiShtratit'} component={LlojiShtratitDashboard} />
           <Route path={'/caktoShtreterit'} component={CaktoShtratinDashboard} />
+          <Route path={'/Dhomat'} component={DhomaDashboard} />
           <Route path='/errors' component={TestErrors} /> 
           <Route exact path={'/Terminet'} component={TerminetDashboard}/>
           <Route  path='/Terminet/:id' component={TerminetList}/>
