@@ -36,9 +36,9 @@ export const PacientatForm = () => {
       
     }
     const validationSchema=yup.object({
-        emri:yup.string().required("Emri eshte i domosdoshem"),
-        mbimeri:yup.string().required("Mbimeri nuk duhet te jete i zbrazet"),
-        adresa:yup.string().required("Ju lutem shenoni adresen"),
+        emri:yup.string().matches(/^[a-zA-Z0-9]{3,12}$/,'Emri duhet te ket mbi 3 shkronja deri ne 12').required("Ju lutem shenoni emrin "),
+        mbimeri:yup.string().matches(/^[a-zA-Z0-9]{3,}$/,'Mbimeri duhet te ket mbi 3 shkronja').required("Ju lutem shenoni Mbimerin"),
+        adresa:yup.string().required("Ju lutem shenoni adresen").matches(/^[a-zA-Z0-9]{3,}$/,'Adresa duhet te ket mbi 3 shkronja'),
         qyteti:yup.string().required('ju lutem selektoni qytetin tuaj'),
         ditlindja:yup.string().required().nullable(),
         grupigjakut:yup.string().required('ju lutem selektoni grupin e gjakut'),
@@ -60,7 +60,9 @@ export const PacientatForm = () => {
                 <MyTextInput placeholder="Mbiemri"name="mbimeri"/>
                 <MyTextInput placeholder="Adresa"name="adresa" />
                 <MySelectInput options={Qytetet} placeholder="Qyteti"name="qyteti"/>
-                <MyDateInput  placeholderText='ditlindja' name="ditlindja" />
+                <MyDateInput  placeholderText='ditlindja' name="ditlindja"
+                maxDate={new Date()}
+                minDate={new Date('05/05/1922')} />
                 <MySelectInput options={gruprtgjakut} placeholder="Grupi i Gjakut"name="grupigjakut"/>
                 
                 <Button 

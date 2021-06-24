@@ -10,6 +10,8 @@ import MyTextInput from "../../app/common/form/MyTextInput";
 import MyDateInput from "../../app/common/form/MyDateInput";
 import { IDepartment } from "../../app/models/IDepartment";
 import { IPacientetDropDown } from "../../app/models/IPacienti";
+import MyTextArea from "../../app/common/form/MyTextArea";
+import DateTimeP from "../../app/FormElements/DateTimePic";
 
 export const PaisjetForm = () => {
     const {PaisjetStore}=useStorePaisjet();
@@ -51,10 +53,11 @@ export const PaisjetForm = () => {
       
     }
     const validationSchema=yup.object({
-        emertimi:yup.string().required("Emri eshte i domosdoshem"),
-       pershkrimi:yup.string().required("Mbimeri nuk duhet te jete i zbrazet"),
-       servisimi:yup.string().required("Shenoni servisimin"),
-       department_Id:yup.string().required()
+        emertimi:yup.string().matches(/^[a-zA-Z0-9]{3,}$/,'Passwordi duhet te ket mbi 3 shkronja').required("Ju lutem shenoni emrin e paisjes"),
+       pershkrimi:yup.string().required("Pershkrimi nuk duhet te jete i zbrazet").matches(/^[a-zA-Z0-9]{15,}$/,'Pershkrimi nuk duhet me qene ner 15 karaktere'),
+       servisimi:yup.string().required("Selektoni daten e servisimimit te fundit"),
+       department_Id:yup.string().required("Selektoni Departamnetin"),
+      // image:yup.string().required("Selektoni foton")
       
 
 
@@ -83,8 +86,13 @@ export const PaisjetForm = () => {
                 <Form className='ui form' onSubmit={handleSubmit}>
                    <MyTextInput name='emertimi' placeholder='Emri..'/>
                 
-                <MyTextInput placeholder="pershkrimi"name="pershkrimi"/>
-              <MyDateInput name="servisimi" placeholderText="servisimi..."/>
+                <MyTextArea rows={3} placeholder="pershkrimi"name="pershkrimi"/>
+              <MyDateInput name="servisimi" placeholderText="servisimi..."
+              maxDate={new Date()}
+              filterDate={d => d.getMonth()>d.getMonth()-1}
+              isClearable
+            scrollableYearDropdown
+              />
               <MySelectInput options={departmentDropDown} placeholder='Zgjedhni departamentin...' name='department_Id'></MySelectInput>
               <input type='file' name='image' id="image-id"onChange={changefile} />
 

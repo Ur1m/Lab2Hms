@@ -4,7 +4,6 @@ import { useStoreTerminet } from "../../app/stores/store";
 import * as yup from 'yup';
 import { Button, Form, Segment } from "semantic-ui-react";
 import { Formik } from "formik";
-
 import MySelectInput from '../../app/common/form/MySelectInput';
 import { Doktoret, Pacientat, Qytetet } from "../../app/FormElements/Qyteti";
 import MyDateInput from "../../app/common/form/MyDateInput";
@@ -31,14 +30,15 @@ export const TerminatForm = () => {
         setTermini({...Termini,[event.currentTarget.name]:event.currentTarget.value});
     };
     const handleFormsubmit=(Termini:ITerminet)=>{
-      // Termini.termini_ID? updateTermini(Termini) : createTermini(Termini);
-      console.log(Termini)
+        
+       Termini.termini_ID? updateTermini(Termini) : createTermini(Termini);
+     
      
     }
     const validationSchema=yup.object({
-     //   pacient_Id:yup.string().required("Selekto pacinetin"),
-      //  mjeku_Id:yup.string().required("selektoni mjekun"),
-      //  orari:yup.string().required(),
+      pacient_Id:yup.string().required("Selekto pacinetin"),
+       mjeku_Id:yup.string().required("selektoni mjekun"),
+       orari:yup.string().required(),
 
         
 
@@ -80,7 +80,14 @@ export const TerminatForm = () => {
                 <Form className='ui form' onSubmit={handleSubmit}>
                { !Termini.termini_ID &&  <MySelectInput options={pacientetDropDown} placeholder='Zgjedhni pacientin...' name='pacient_Id'></MySelectInput>}
                { !Termini.termini_ID && <MySelectInput options={doktoretDropDown} placeholder='Zgjedhni doktorin...' name='mjeku_Id'></MySelectInput>}
-                <input type='datetime-local'  placeholder='orari' name="orari"/>
+               <MyDateInput name='orari' placeholderText='orari'
+               showTimeSelect
+               timeCaption='time'
+               dateFormat='MMMM d, yyyy h:mm aa'
+               minDate={new Date()}
+               filterDate={date=> date.getDay()!=0 && date.getDay()!=6}
+               filterTime={time=> time.getHours()<16 && time.getHours()>8}
+               isClearable/>
                 
                
                 

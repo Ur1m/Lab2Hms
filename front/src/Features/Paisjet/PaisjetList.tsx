@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import React from "react";
+import React, { SyntheticEvent } from "react";
 import { useEffect } from "react";
 import { Button, Header, Icon, Item, Modal, Segment } from "semantic-ui-react";
 import { useStorePaisjet } from "../../app/stores/store";
@@ -12,6 +12,12 @@ export default observer( function PacientatList () {
     useEffect(()=>{
         PaisjetStore.loadPaisjet();
     },[PaisjetStore]);
+
+    function handleDelete( id: string){
+        
+        deletePaisja(id);
+        setOpen(false);
+    }
     return (
         <React.Fragment>
             <Item.Group>
@@ -52,7 +58,7 @@ export default observer( function PacientatList () {
                                     <Button color='red' onClick={() => setOpen(false)}>
                                         <Icon name='remove' /> No
                                     </Button>
-                                    <Button color='green' onClick={() =>deletePaisja(p.paisja_Id) }>
+                                    <Button color='green' onClick={() =>handleDelete(p.paisja_Id) }>
                                         <Icon name='checkmark' /> Yes
                                     </Button>
                                 </Modal.Actions>

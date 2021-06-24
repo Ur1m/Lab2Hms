@@ -22,7 +22,7 @@ export default observer( function DoktoratDetails(){
         {"Mbiemri :"+selectedDoktori!.mbimeri}.
       </Card.Description>
       <Card.Description>
-        {"Ditlindja :"+format(selectedDoktori!.ditlindja!,'dd mmm yyyy')}
+        {"Ditlindja :"+format(selectedDoktori!.ditlindja!,'MMMM d, yyyy')}
       </Card.Description>
       <Card.Description>
         {"Specializimi :"+selectedDoktori!.specializimi}.

@@ -12,6 +12,9 @@ export default class TerminetStore{
     pacientiemri="";
     DoktoriEmri="";
     Pacientat: IPacienti[] =[];
+    withId:ITerminet []=[];
+    nr:number=0;
+    
    
     constructor(){
         makeAutoObservable(this)
@@ -34,6 +37,19 @@ export default class TerminetStore{
     get terminet(){
         return Array.from(this.TerminetRegistry.values());
     }
+    getTerminetwithId= async(id:string)=>{
+           
+        const terminatid = await agent.Terminet.list();
+        runInAction(()=>{
+          terminatid.filter(valt=>{
+             if(valt.pacient_Id==id || valt.mjeku_Id==id){
+                this.withId.push(valt);
+               this. nr++;
+               
+             }
+          })
+        })
+      }
     selectTermini=(id:string)=>{
       this.selectedTermini=this.TerminetRegistry.get(id);
     }
@@ -130,5 +146,6 @@ export default class TerminetStore{
             console.log(error);
         }
     }
+   
 
 }

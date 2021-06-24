@@ -32,7 +32,7 @@ import {format} from 'date-fns';
           {"Mbiemri:"+selectedPacienti.mbimeri}.
         </Card.Description>
         <Card.Description>
-          {"Ditlindja :"+format(selectedPacienti.ditlindja!,'dd mmm yyyy')}.
+          {"Ditlindja :"+format(selectedPacienti.ditlindja!,'MMMM d, yyyy')}.
         </Card.Description>
         <Card.Description>
           {"Adresa :"+selectedPacienti.adresa}.

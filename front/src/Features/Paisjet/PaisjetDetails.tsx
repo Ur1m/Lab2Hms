@@ -23,7 +23,7 @@ export default observer( function PacentatDetails ()  {
         
        
         <Card.Description>
-          {"Servisimi :"+format(selectedPaisja.servisimi!,'dd mm yyyy')}.
+          {"Servisimi :"+format(selectedPaisja.servisimi!,'MMMM d, yyyy')}.
         </Card.Description>
         <Card.Description>
           {"Pershkrimi"+selectedPaisja.pershkrimi}.
