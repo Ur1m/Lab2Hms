@@ -11,7 +11,7 @@ export default function DepartmentDetails() {
 
     return (
         <Card fluid>
-        <Image src={`/assets/DepartmentImages/${Department.department_id}.jpg`} />
+        <Image src={`${Department.fotografia}`} />
         <Card.Content>
           <Card.Header>{Department.name}</Card.Header>
           <Card.Description>

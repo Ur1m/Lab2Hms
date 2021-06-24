@@ -10,6 +10,7 @@ import LlojiShtratitStore from "./llojiShtratitStore";
 import ShtratStore from "./shtratStore";
 import CaktoShtratinStore from "./caktoShtratinStore";
 import PaisjetStore from "../store/PaisjetStore";
+import DhomaStore from "./dhomaStore";
 
 interface Store {
     departmentStore: DepartmentStore;
@@ -18,7 +19,8 @@ interface Store {
     shtratStore: ShtratStore;
     llojiShtratitStore: LlojiShtratitStore;
     caktoShtratinStore: CaktoShtratinStore;
-    infermierjaStore: InfermierjaStore
+    infermierjaStore: InfermierjaStore;
+    dhomaStore: DhomaStore;
     
 }
 
@@ -29,7 +31,8 @@ export const store: Store = {
     shtratStore: new ShtratStore(),
     llojiShtratitStore: new LlojiShtratitStore(),
     caktoShtratinStore: new CaktoShtratinStore(),
-    infermierjaStore: new InfermierjaStore()
+    infermierjaStore: new InfermierjaStore(),
+    dhomaStore: new DhomaStore()
 }
 
 export const StoreContext = createContext(store);

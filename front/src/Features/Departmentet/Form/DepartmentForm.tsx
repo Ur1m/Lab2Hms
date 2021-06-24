@@ -16,15 +16,28 @@ export default observer(function DepartmentForm() {
     const initialState = selectedDepartment ?? {
         department_id: '',
         name: '',
-        description: ''
+        description: '',
+        fotografia:''
     }
 
     const [Department, setDepartment] = useState(initialState);
+    const [fotografia, setfotografia] = useState<any>();
     const validationSchema = Yup.object({
         name: Yup.string().required('Emri departamentit nuk mund te jete i zbrazet...')
     })
 
+    const changefile=(event:any)=>{
+     
+        let v=event.target.files;
+        let reader=new FileReader();
+        reader.readAsDataURL(v[0]);
+        reader.onload=(e)=>{
+         setfotografia( e.target?.result);
+        }
+     }
+
     function handleFormSubmit(Department: IDepartment) {
+        Department!.fotografia=fotografia;
         Department.department_id ? updateDepartment(Department) : createDepartment(Department);
     }
 
@@ -39,6 +52,7 @@ export default observer(function DepartmentForm() {
                     <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
                         <MyTextInput name='name' placeholder='Shkruani emrin e departamentit...' />
                         <MyTextArea rows={3} name='description' placeholder='Shkruani pershkrimin e departamentit...' />
+                        <input type='file' name='fotografia' id="image-id"onChange={changefile} />
                         <Button 
                         disabled={isSubmitting || !dirty || !isValid}
                         loading={loading} 
