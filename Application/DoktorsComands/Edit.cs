@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Threading;
 using System.Threading.Tasks;
-
+using FluentValidation;
 using MediatR;
 using Presistence;
 
@@ -33,6 +33,18 @@ namespace Application.DoktorsComands
             RuleFor(x => x.Specializimi).NotEmpty();
             RuleFor(x => x.depName).NotEmpty();
         }*/
+         public class CommandValidator : AbstractValidator<Command>
+    {
+            public CommandValidator()
+        {
+            RuleFor(x => x.Emri).NotEmpty();
+            RuleFor(x => x.Mbimeri).NotEmpty();
+            RuleFor(X => X.Ditlindja).NotEmpty();
+            RuleFor(x => x.Specializimi).NotEmpty();
+            RuleFor(x => x.depName).NotEmpty();
+        }
+        
+    }
         
     
  public class Handler : IRequestHandler<Command>

@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Application.Core;
 using AutoMapper;
 using Domain;
+using FluentValidation;
 using MediatR;
 using Presistence;
 
@@ -13,6 +14,13 @@ namespace Application.Pacientett
           public class Command : IRequest<Result<Unit>>
         {
             public Pacient Pacienti { get; set; }
+        }
+         public class CommandValidator : AbstractValidator<Command>
+        {
+            public CommandValidator()
+            {
+                RuleFor(x => x.Pacienti).SetValidator(new PacinetatValidator());
+            }
         }
 
        

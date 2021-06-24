@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Threading;
 using System.Threading.Tasks;
 using Domain;
-
+using FluentValidation;
 using MediatR;
 using Presistence;
 
@@ -16,13 +16,13 @@ namespace Application.DoktorsComands
        public Guid Mjeku_Id{get;set;}
      
         public string Emri{get;set;}
-         [Required]
+         
         public string Mbimeri{get;set;}
         
         public DateTime Ditlindja{get;set;}
-         [Required]
+        
         public string Specializimi{get;set;}
-         [Required]
+         
         public string depName{get;set;}
     
             }
@@ -37,6 +37,18 @@ namespace Application.DoktorsComands
         }
         
     }*/
+     public class CommandValidator : AbstractValidator<Command>
+    {
+            public CommandValidator()
+        {
+            RuleFor(x => x.Emri).NotEmpty();
+            RuleFor(x => x.Mbimeri).NotEmpty();
+            RuleFor(X => X.Ditlindja).NotEmpty();
+            RuleFor(x => x.Specializimi).NotEmpty();
+            RuleFor(x => x.depName).NotEmpty();
+        }
+        
+    }
  public class Handler : IRequestHandler<Command>
         {
             private readonly DataContext _context;

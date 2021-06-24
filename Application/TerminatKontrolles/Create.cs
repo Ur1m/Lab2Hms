@@ -2,6 +2,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Application.Core;
 using Domain;
+using FluentValidation;
 using MediatR;
 using Presistence;
 
@@ -13,8 +14,14 @@ namespace Application.TerminatKontrolles
         { 
             public Terminet terminet { get; set; }
         }
+        public class CommandValidator : AbstractValidator<Command>
+        {
+            public CommandValidator()
+            {
+                RuleFor(x => x.terminet).SetValidator(new TerminetValidator());
+            }
 
-       
+        }
 
         public class Handler : IRequestHandler<Command, Result<Unit>>
         {

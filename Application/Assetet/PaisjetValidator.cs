@@ -1,3 +1,4 @@
+using System;
 using Domain;
 using FluentValidation;
 
@@ -12,6 +13,7 @@ namespace Application.Assetet
             RuleFor(X => X.servisimi).NotEmpty();
             RuleFor(x => x.Department_Id).NotEmpty();
         }
+       
     }
 
 }

@@ -1,9 +1,11 @@
 import { format } from "date-fns";
 import { observer } from "mobx-react-lite";
-import React, { useEffect } from "react";
+import React, { SyntheticEvent, useEffect } from "react";
 import { useState } from "react";
-import { RouteComponentProps, useParams } from "react-router-dom";
+import { RiBracketsLine } from "react-icons/ri";
+import { Link, RouteComponentProps, useParams } from "react-router-dom";
 import { Button, Grid, Header, Icon, Item, Modal, Segment } from "semantic-ui-react";
+import { history } from "../..";
 import { useStoreTerminet } from "../../app/stores/store";
 import { TerminatForm } from "./TerminatForm";
 import TerminetDetails from "./TerminetDetails";
@@ -11,21 +13,44 @@ import TerminetDetails from "./TerminetDetails";
 
 export default observer( function TerminetList () {
     const {TerminetStore}=useStoreTerminet();
-    const{terminet,selectTermini,openForm,deleteTermini}=TerminetStore;
+    const{terminet,selectTermini,openForm,deleteTermini,withId,getTerminetwithId,nr}=TerminetStore;
     const [open, setOpen] = React.useState(false)
     const {id}=useParams<{id:string}>();
-    var i=0;
+    const [i,seti]=useState(1);
+    const [v,setV]=useState(0);
+
     
 
     useEffect(()=>{
         TerminetStore.loadTerminet();
-    },[TerminetStore]);
+       if(id) getTerminetwithId(id);
+       setV(v+1);
+      
+    },[TerminetStore,id,withId,getTerminetwithId]);
+console.log(withId);
+  
+
+    {if( id && i==v && nr==0){
+         alert("skeni asnje termin");
+          history.goBack();
+         seti(i+1);
+         
+    }}
+    function handleDelete( id: string){
+        
+        deleteTermini(id);
+        setOpen(false);
+    }
+
+    
+    
     return (
      <Grid>
          <Grid.Column width={10}>
             <Item.Group>
           
            {!id && <Button onClick={()=>openForm()}floated="right"  positive content='AddTerminet'/>}
+           {id && <Button as={Link} to={"/Pacientat"} positive content="GoBack"/>}
             </Item.Group>
           
               
@@ -34,9 +59,13 @@ export default observer( function TerminetList () {
                    if(id && val.pacient_Id==id || val.mjeku_Id==id){
                        return val;
                    }
-                   else{
+                   else if(!id){
                        return val;
                    }
+                   else{
+
+                   }
+                  
                    
                 }).map(p =>
                     (
@@ -45,7 +74,7 @@ export default observer( function TerminetList () {
                         <Segment clearing>  
                      <Item key={p.termini_ID}>
                      <Item.Content>
-                         <Item.Header as='a'>{"Dita: "+p.orari?.getDate()+" Muaji: "+p.orari?.getMonth()}</Item.Header>
+                         <Item.Header as='a'>{format(p.orari!,'MMMM d, yyyy')}</Item.Header>
                          
                        
                          <Item.Extra>
@@ -73,8 +102,9 @@ export default observer( function TerminetList () {
                                     <Button color='red' onClick={() => setOpen(false)}>
                                         <Icon name='remove' /> No
                                     </Button>
-                                    <Button color='green' onClick={() =>deleteTermini(p.termini_ID) }>
+                                    <Button color='green' onClick={() =>handleDelete(p.termini_ID) }>
                                         <Icon name='checkmark' /> Yes
+                                    
                                     </Button>
                                 </Modal.Actions>
                             </Modal>}
@@ -110,3 +140,4 @@ export default observer( function TerminetList () {
 
 }
 )
+

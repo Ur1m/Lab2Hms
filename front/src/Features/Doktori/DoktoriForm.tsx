@@ -39,11 +39,11 @@ export const DoktoriForm = () => {
       
     }
     const validationSchema=yup.object({
-        emri:yup.string().required("Emri eshte i domosdoshem"),
-        mbimeri:yup.string().required("Mbimeri nuk duhet te jete i zbrazet"),
-        ditlindja:yup.string().required().nullable(),
+        emri:yup.string().required("Emri eshte i domosdoshem").matches(/^[a-zA-Z0-9]{3,}$/,'Emrri duhet te ket mbi 3 shkronja'),
+        mbimeri:yup.string().required("Mbimeri nuk duhet te jete i zbrazet").matches(/^[a-zA-Z0-9]{3,}$/,'Mbimeri duhet te ket mbi 3 shkronja'),
+        ditlindja:yup.string().required("ditlindja eshte e domosdoshme").nullable(),
         specializimi:yup.string().required('ju lutem selektoni specializimin'),
-        depName:yup.string().required()
+        depName:yup.string().required("ju Lutem selektoni departamentin")
         
 
 
@@ -69,7 +69,9 @@ export const DoktoriForm = () => {
                 <Form className='ui form' onSubmit={handleSubmit}>
                   <MyTextInput placeholder='Emri' name="emri"/>
                   <MyTextInput placeholder="Mbimeri" name="mbimeri"/>
-                  <MyDateInput  placeholderText='ditlindja' name="ditlindja" />
+                  <MyDateInput  placeholderText='ditlindja' name="ditlindja"
+                  maxDate={new Date('01/01/1998')}
+                  minDate={new Date('01/01/1960')}/>
                   <MySelectInput options={specializimet} placeholder='Specializimi' name='specializimi'/>
                   <MySelectInput options={departmentDropDown} placeholder='Zgjedhni departamentin...' name='depName'></MySelectInput>
                 <Button 
