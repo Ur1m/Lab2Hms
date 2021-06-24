@@ -33,6 +33,7 @@ import InfermierjaDashboard from '../../Features/Infermieret/Dashboard/Infermier
 import LoadingComponent from './LoadingComponent';
 import { useStore } from '../stores/store';
 import DhomaDashboard from '../../Features/Dhomat/Dashboard/DhomaDashboard';
+import LoginForm from '../../Features/users/LoginForm';
 
 
 
@@ -104,11 +105,16 @@ const App = () => {
 
 
 return (
-   <>
+  <Fragment>
+  <ToastContainer position='bottom-right' />
+  <Route exact path='/' component={HomePage} />
+  <Route
+    path={'/(.+)'}
+    render={() => (
+      <Fragment>
    
       <ToastContainer position='bottom-right' hideProgressBar />
       
-      <Router>
       <Navbar  openCreateForm={handleOpenCreateForm}/>
         
         <Switch>
@@ -123,7 +129,6 @@ return (
           editLaboratori={handleEditLaboratori}
           deleteLaboratori={handleDeleteLaboratori} />
           <Switch>
-          <Route exact path='/' component={HomePage}/>
           <Route path='/Departamentet' component={DepartmentDashboard}/>
           <Route path='/Infermieret' component={InfermierjaDashboard}/>
           <Route path={'/Doktorat'} component={DoktoriDashboard}/>
@@ -139,15 +144,16 @@ return (
           <Route exact path={'/Terminet'} component={TerminetDashboard}/>
           <Route  path='/Terminet/:id' component={TerminetList}/>
           <Route path='/server-error' component={ServerError} />
+          <Route path='/login' component={LoginForm} />
           <Route component={NotFound}/>
           </Switch>
         </Container>
         </Switch>
-      </Router>
-      
-    </>
-    
+        </Fragment>
+        )}
+      />
+    </Fragment>
   );
-}
+};
 
 export default observer (App);

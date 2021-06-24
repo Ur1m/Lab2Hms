@@ -8,7 +8,7 @@ import * as GiIcons from 'react-icons/gi';
 export const SidebarData = [
   {
     title: 'Ballina',
-    path: '/',
+    path: '/ballina',
     icon: <AiIcons.AiFillHome />,
     cName: 'nav-text'
   },

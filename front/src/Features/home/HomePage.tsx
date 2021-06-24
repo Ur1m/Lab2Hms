@@ -1,10 +1,21 @@
 import React from 'react';
-import { Container } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Button, Container, Header, Image, Segment } from 'semantic-ui-react';
 
 export default function HomePage(){
     return (
-        <Container style={{marginTop: '7em'}}>
-            <h1>Ballina</h1>
-        </Container>
+        <Segment inverted textAlign='center' vertical className='masthead'>
+            
+            <Container text>
+                <Header as='h1' inverted>
+                    <Image size='massive' src='/assets/logo.png' alt='logo' style={{marginBottom:12}} />
+                    Hospital Management System
+                </Header>
+                <Header as='h2' inverted content='Welcome to Hospital Management System'/>
+                <Button as={Link} to='/login' size='huge' inverted>
+                    Login!
+                </Button>
+            </Container>
+     </Segment>
     )
 }
