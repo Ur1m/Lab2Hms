@@ -26,7 +26,7 @@ namespace Application.Barnat
 
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
-                var barna = await this.context.Barnat.FindAsync(request.Barna.Barnat_Id);
+                var barna = await this.context.Barnats.FindAsync(request.Barna.Barnat_Id);
                 this.mapper.Map(request.Barna,barna);
                 await this.context.SaveChangesAsync();
                 return Unit.Value;

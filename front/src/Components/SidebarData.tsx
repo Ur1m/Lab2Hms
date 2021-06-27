@@ -43,6 +43,12 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
+    title: 'Barnat',
+    path: '/Barnat',
+    icon: <FaIcons.FaEnvelopeOpenText />,
+    cName: 'nav-text'
+  },
+  {
     title: 'Laboratori',
     path: '/laboratori',
     icon: <FaIcons.FaFlask/>,

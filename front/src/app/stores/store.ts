@@ -11,6 +11,7 @@ import ShtratStore from "./shtratStore";
 import CaktoShtratinStore from "./caktoShtratinStore";
 import PaisjetStore from "../store/PaisjetStore";
 import DhomaStore from "./dhomaStore";
+import BarnatStore from "../store/BarnatStore";
 
 interface Store {
     departmentStore: DepartmentStore;
@@ -86,4 +87,17 @@ export const StorePaisjet:StorePaisjet={
 export const StoreContextPaisjet=createContext(StorePaisjet);
 export function useStorePaisjet(){
     return useContext(StoreContextPaisjet);
+
+
+}
+interface StoreBarnat{
+    BarnatStore:BarnatStore;
+
+}
+export const StoreBarnat:StoreBarnat={
+    BarnatStore:new BarnatStore()
+}
+export const StoreContextBarna=createContext(StoreBarnat)
+export function useStoreBarnat(){
+    return useContext(StoreContextBarna);
 }

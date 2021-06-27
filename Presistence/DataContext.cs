@@ -29,7 +29,7 @@ namespace Presistence
 
         public DbSet<BloodDonor> BloodDonors{get;set;}
 
-        public DbSet<Barna> Barnat {get; set;}
+        public DbSet<Barna> Barnats {get; set;}
 
         public DbSet<llojiShtratit> llojeteShtreterve { get; set; }
 

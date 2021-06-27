@@ -26,7 +26,7 @@ namespace Application.Barnat
 
             public async Task<List<Barna>> Handle(Query request, CancellationToken cancellationToken)
             {
-                return await _context.Barnat.ToListAsync();
+                return await _context.Barnats.ToListAsync();
             }
         }
     }

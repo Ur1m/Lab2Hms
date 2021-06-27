@@ -8,6 +8,7 @@ namespace Domain
         public string BName{get;set;}
         public string Description{get;set;}
          public DateTime DataRegjistrimit{get;set;}
+         public string image{get;set;}
 
 
     }

@@ -23,7 +23,7 @@ namespace Application.Barnat
 
             public async Task<Barna> Handle(Query request, CancellationToken cancellationToken)
             {
-                return await this.context.Barnat.FindAsync(request.Barnat_Id);
+                return await this.context.Barnats.FindAsync(request.Barnat_Id);
             }
         }
     }

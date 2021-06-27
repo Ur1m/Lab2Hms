@@ -23,7 +23,7 @@ namespace Application.Barnat
 
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
-             var barna =await this.context.Barnat.FindAsync(request.Barnat_Id);
+             var barna =await this.context.Barnats.FindAsync(request.Barnat_Id);
              this.context.Remove(barna);
              await this.context.SaveChangesAsync();
              return Unit.Value;

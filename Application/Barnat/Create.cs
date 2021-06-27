@@ -23,7 +23,7 @@ namespace Application.Barnat
 
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
-                this.context.Barnat.Add(request.Barna);
+                this.context.Barnats.Add(request.Barna);
                  await this.context.SaveChangesAsync();
                  return Unit.Value;
             }

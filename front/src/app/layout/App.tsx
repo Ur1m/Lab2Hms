@@ -34,6 +34,7 @@ import LoadingComponent from './LoadingComponent';
 import { useStore } from '../stores/store';
 import DhomaDashboard from '../../Features/Dhomat/Dashboard/DhomaDashboard';
 import LoginForm from '../../Features/users/LoginForm';
+import BarnatDashboard from '../../Features/Barnat/BarnatDashboard';
 
 
 
@@ -145,6 +146,7 @@ return (
           <Route  path='/Terminet/:id' component={TerminetList}/>
           <Route path='/server-error' component={ServerError} />
           <Route path='/login' component={LoginForm} />
+          <Route path="/Barnat"component={BarnatDashboard}/>
           <Route component={NotFound}/>
           </Switch>
         </Container>

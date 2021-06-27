@@ -14,6 +14,7 @@ import { store } from '../stores/store';
 import { IPaisjet } from '../models/IPaisjet';
 import { IDhoma } from '../models/IDhoma';
 import { IShtreteritNeDhoma } from '../models/IShtreteritNeDhoma';
+import { Barna } from '../models/barna';
 
 const sleep = (delay: number) => {
     return new Promise((resolve) => {
@@ -171,7 +172,13 @@ const ShtreteritNeDhoma={
     update: (ShtreteritNeDhome: IShtreteritNeDhoma) => axios.put<void>(`/dhomat/${ShtreteritNeDhome.shtreteritnedhome_id}`, ShtreteritNeDhome),
     delete: (shtreteritnedhome_id: string) => axios.delete<void>(`/dhomat/${shtreteritnedhome_id}`)
 }
-
+const Barnat ={
+    list: () => requests.get<Barna[]>('/Barnat'),
+    details: (id: string) => requests.get<Barna>(`/Barnat/${id}`),
+    create: (Barna: Barna) => axios.post<void>('/Barnat', Barna),
+    update: (Barna: Barna) => axios.put<void>(`/Barnat/${Barna.barnat_Id}`,Barna),
+    delete: (id: string) => axios.delete<void>(`/Barnat/${id}`)
+}
 
 const agent = {
     Departmentet,
@@ -185,7 +192,8 @@ const agent = {
     caktoShtreterit,
     Paisjet,
     Dhomat,
-    ShtreteritNeDhoma
+    ShtreteritNeDhoma,
+    Barnat
 }
 
 export default agent;
