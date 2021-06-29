@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KtzSQv67muzNAZ0oofG1sInqopwhV1mnB5cMkHIEU0BlQRi4bs2Fi35iIcXeh3oQ+oU+vNW6Hjqyi64PZ6l5yg==",
+  "dgSpecHash": "fEhBWQ7DHI57l5LYt+uf4VJ/09CCEMwoYc2EMQ/+UrRx89eyUeMR5xH36388ukrw9mtNS5Grs1dhoFw0J3Da/w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\api\\API.csproj",
+  "projectFilePath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
@@ -31,8 +31,8 @@
     "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.1\\microsoft.extensions.configuration.3.1.1.nupkg.sha512",
     "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.1\\microsoft.extensions.configuration.abstractions.3.1.1.nupkg.sha512",
     "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.1\\microsoft.extensions.configuration.binder.3.1.1.nupkg.sha512",
-    "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.1\\microsoft.extensions.dependencyinjection.3.1.1.nupkg.sha512",
-    "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.1\\microsoft.extensions.dependencyinjection.abstractions.3.1.1.nupkg.sha512",
+    "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.1\\microsoft.extensions.dependencyinjection.5.0.1.nupkg.sha512",
+    "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\microsoft.extensions.dependencymodel\\3.1.1\\microsoft.extensions.dependencymodel.3.1.1.nupkg.sha512",
     "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\microsoft.extensions.identity.core\\3.0.0\\microsoft.extensions.identity.core.3.0.0.nupkg.sha512",
     "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\microsoft.extensions.identity.stores\\3.0.0\\microsoft.extensions.identity.stores.3.0.0.nupkg.sha512",
