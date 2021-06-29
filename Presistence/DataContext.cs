@@ -1,11 +1,12 @@
- using Domain;
+using Domain;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Presistence
  {
 
  
- public class DataContext : DbContext
+ public class DataContext : IdentityDbContext<AppUser>
     {
         public DataContext(DbContextOptions options) : base(options)
         {
@@ -49,6 +50,8 @@ namespace Presistence
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<Department>()
                 .HasKey(d => d.Department_id );
 
