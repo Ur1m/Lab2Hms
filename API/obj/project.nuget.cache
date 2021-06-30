@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fEhBWQ7DHI57l5LYt+uf4VJ/09CCEMwoYc2EMQ/+UrRx89eyUeMR5xH36388ukrw9mtNS5Grs1dhoFw0J3Da/w==",
+  "dgSpecHash": "G+1djEN+s/NdNl2H0uvOGyHa0Rjcfoj7kKeUxpcCDs7f3Y+dqamCEQ7Wu6v+5pRYq2/ZTp/VMZ9+xDwylOOZRw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\api\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
