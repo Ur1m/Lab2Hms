@@ -12,6 +12,8 @@ import CaktoShtratinStore from "./caktoShtratinStore";
 import PaisjetStore from "../store/PaisjetStore";
 import DhomaStore from "./dhomaStore";
 import BarnatStore from "../store/BarnatStore";
+import UserStore from "./userStore";
+import ModalStore from "./modalStore";
 
 interface Store {
     departmentStore: DepartmentStore;
@@ -22,6 +24,8 @@ interface Store {
     caktoShtratinStore: CaktoShtratinStore;
     infermierjaStore: InfermierjaStore;
     dhomaStore: DhomaStore;
+    userStore: UserStore;
+    modalStore: ModalStore;
     
 }
 
@@ -33,7 +37,9 @@ export const store: Store = {
     llojiShtratitStore: new LlojiShtratitStore(),
     caktoShtratinStore: new CaktoShtratinStore(),
     infermierjaStore: new InfermierjaStore(),
-    dhomaStore: new DhomaStore()
+    dhomaStore: new DhomaStore(),
+    userStore: new UserStore(),
+    modalStore: new ModalStore()
 }
 
 export const StoreContext = createContext(store);

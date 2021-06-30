@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
 import './Navbar.css';
 import { IconContext } from 'react-icons';
-import { Button, Menu, Segment } from 'semantic-ui-react';
+import { Button, Menu, Image ,Segment, Dropdown } from 'semantic-ui-react';
 import { useStore } from '../app/stores/store';
 
 interface IProps{
@@ -17,7 +17,7 @@ function Navbar({openCreateForm} : IProps) {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
-
+  const {userStore: {user, logout}} = useStore();
   return (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
@@ -29,8 +29,17 @@ function Navbar({openCreateForm} : IProps) {
           <div className="logo">
           <img className="logo" src="assets/logo.png" alt="logo" style={{width: '50px', marginLeft: '200px'}}/>
           </div>
+          <Menu.Item position='right'>
+            <Image src={user?.image || '/assets/user.png'} avatar spaced='right' />
+            <Dropdown pointing='top left' text={user?.displayName}>
+              <Dropdown.Menu>
+                <Dropdown.Item as={Link} to={`/profile/${user?.username}`} text='My Profile' icon='user'/>
+                <Dropdown.Item onClick={logout} text='Logout' icon='power'/>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Menu.Item>
           <div className="navi">
-          <Button inverted className="Log out" style={{marginLeft: '-500px'}}> Log Out</Button>
+          {/* <Button inverted className="Log out" style={{marginLeft: '-500px'}}> Log Out</Button> */}
         </div>
        
         </div>

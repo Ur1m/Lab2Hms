@@ -35,6 +35,7 @@ import { useStore } from '../stores/store';
 import DhomaDashboard from '../../Features/Dhomat/Dashboard/DhomaDashboard';
 import LoginForm from '../../Features/users/LoginForm';
 import BarnatDashboard from '../../Features/Barnat/BarnatDashboard';
+import ModalContainer from '../common/modals/ModalContainer';
 
 
 
@@ -103,11 +104,22 @@ const App = () => {
 // },[])
 
   const location=useLocation();
+  const {commonStore, userStore} = useStore();
 
+  useEffect(() => {
+    if(commonStore.token){
+      userStore.getUser().finally(() => commonStore.setAppLoaded());
+    }else{
+      commonStore.setAppLoaded();
+    }
+  }, [commonStore, userStore])
+
+  if (!commonStore.appLoaded) return <LoadingComponent content='Loading app...' />
 
 return (
   <Fragment>
   <ToastContainer position='bottom-right' />
+  <ModalContainer />
   <Route exact path='/' component={HomePage} />
   <Route
     path={'/(.+)'}
