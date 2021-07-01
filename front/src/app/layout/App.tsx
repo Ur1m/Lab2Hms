@@ -35,6 +35,7 @@ import { useStore } from '../stores/store';
 import DhomaDashboard from '../../Features/Dhomat/Dashboard/DhomaDashboard';
 import LoginForm from '../../Features/users/LoginForm';
 import BarnatDashboard from '../../Features/Barnat/BarnatDashboard';
+import { Home } from '../../Features/home/Home';
 
 
 
@@ -130,6 +131,7 @@ return (
           editLaboratori={handleEditLaboratori}
           deleteLaboratori={handleDeleteLaboratori} /> */}
           <Switch>
+            <Route path='/home' component={Home}/>
           <Route path='/Departamentet' component={DepartmentDashboard}/>
           <Route path='/Infermieret' component={InfermierjaDashboard}/>
           <Route path={'/Doktorat'} component={DoktoriDashboard}/>

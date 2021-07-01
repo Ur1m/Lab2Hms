@@ -37,6 +37,7 @@ export const BarnatForm = () => {
      }
     const handleFormsubmit=(barna:Barna )=>{
        barna!.image=image;
+       barna.dataRegjistrimit=new Date();
     
    Barna?.barnat_Id? updateBarna(barna) : createBarna(barna);
 
@@ -45,8 +46,8 @@ export const BarnatForm = () => {
     }
     const validationSchema=yup.object({
         bName:yup.string().matches(/^[a-zA-Z0-9]{3,}$/,'Passwordi duhet te ket mbi 3 shkronja').required("Ju lutem shenoni emrin e paisjes"),
-        description:yup.string().required("Pershkrimi nuk duhet te jete i zbrazet").matches(/^[a-zA-Z0-9]{15,}$/,'Pershkrimi nuk duhet me qene ner 15 karaktere'),
-       dataRegjistrimit:yup.string().required("Selektoni daten e servisimimit te fundit"),
+        description:yup.string().required("Pershkrimi nuk duhet te jete i zbrazet").matches(/^[a-zA-Z0-9 -?]{15,}$/,'Pershkrimi nuk duhet me qene ner 15 karaktere'),
+     // dataRegjistrimit:yup.string().required("Selektoni daten e servisimimit te fundit"),
       
       // image:yup.string().required("Selektoni foton")
       
@@ -66,12 +67,8 @@ export const BarnatForm = () => {
                    <MyTextInput name='bName' placeholder='Emri..'/>
                 
                 <MyTextArea rows={3} placeholder="pershkrimi"name="description"/>
-              <MyDateInput name="dataRegjistrimit" placeholderText="dataRegjistrimit..."
-              maxDate={new Date()}
-              filterDate={d => d.getMonth()>d.getMonth()-1}
-              isClearable
-            scrollableYearDropdown
-              />
+             
+              
               <input type='file' name='image' onChange={changefile} />
 
                 

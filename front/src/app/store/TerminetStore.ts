@@ -43,10 +43,12 @@ export default class TerminetStore{
         runInAction(()=>{
           terminatid.filter(valt=>{
              if(valt.pacient_Id==id || valt.mjeku_Id==id){
-                this.withId.push(valt);
-               this. nr++;
+                 console.log('0')
+                return 0;
                
              }
+             console.log('1')
+             return 1;
           })
         })
       }

@@ -4,12 +4,17 @@
     display: flex;
     justify-content: start;
     align-items: center;
+  
+   
+   
   }
   
   .menu-bars {
     margin-left: 2rem;
     font-size: 2rem;
     background: none;
+    
+    
   }
   
   .nav-menu {
@@ -22,6 +27,10 @@
     top: 0;
     left: -100%;
     transition: 850ms;
+    overflow: scroll;
+    z-index:6;
+    
+    
   }
   
   .nav-menu.active {

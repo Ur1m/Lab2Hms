@@ -22,8 +22,11 @@ export default observer( function BaratList () {
         <React.Fragment>
             <Item.Group>
            
-            <Button onClick={()=>openForm()}floated="right"  positive content='AddBarna'/>
-            </Item.Group>
+           <Button onClick={()=>openForm()}  positive content='AddBarna'/>
+           </Item.Group>
+           
+        <React.Fragment>
+            
            <Segment clearing>
             <Item.Group divided>
                 {Barnat.map(b =>(
@@ -75,6 +78,7 @@ export default observer( function BaratList () {
         </Item.Group>
         
         </Segment>
+        </React.Fragment>
         </React.Fragment>
     )
 

@@ -42,6 +42,7 @@ export const SidebarData = [
     icon: <FaIcons.FaEnvelopeOpenText />,
     cName: 'nav-text'
   },
+
   {
     title: 'Barnat',
     path: '/Barnat',

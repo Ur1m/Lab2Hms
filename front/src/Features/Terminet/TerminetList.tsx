@@ -2,7 +2,7 @@ import { format } from "date-fns";
 import { observer } from "mobx-react-lite";
 import React, { SyntheticEvent, useEffect } from "react";
 import { useState } from "react";
-import { RiBracketsLine } from "react-icons/ri";
+
 import { Link, RouteComponentProps, useParams } from "react-router-dom";
 import { Button, Grid, Header, Icon, Item, Modal, Segment } from "semantic-ui-react";
 import { history } from "../..";
@@ -13,7 +13,7 @@ import TerminetDetails from "./TerminetDetails";
 
 export default observer( function TerminetList () {
     const {TerminetStore}=useStoreTerminet();
-    const{terminet,selectTermini,openForm,deleteTermini,withId,getTerminetwithId,nr}=TerminetStore;
+    const{terminet,selectTermini,openForm,deleteTermini,withId,getTerminetwithId,nr,selectedTermini}=TerminetStore;
     const [open, setOpen] = React.useState(false)
     const {id}=useParams<{id:string}>();
     const [i,seti]=useState(1);
@@ -23,19 +23,14 @@ export default observer( function TerminetList () {
 
     useEffect(()=>{
         TerminetStore.loadTerminet();
-       if(id) getTerminetwithId(id);
+       //if(id) getTerminetwithId(id);
        setV(v+1);
       
-    },[TerminetStore,id,withId,getTerminetwithId]);
+    },[TerminetStore,id,withId]);
 console.log(withId);
   
 
-    {if( id && i==v && nr==0){
-         alert("skeni asnje termin");
-          history.goBack();
-         seti(i+1);
-         
-    }}
+   
     function handleDelete( id: string){
         
         deleteTermini(id);
@@ -49,7 +44,7 @@ console.log(withId);
          <Grid.Column width={10}>
             <Item.Group>
           
-           {!id && <Button onClick={()=>openForm()}floated="right"  positive content='AddTerminet'/>}
+           {!id && <Button onClick={()=>openForm()}  positive content='AddTerminet'/>}
            {id && <Button as={Link} to={"/Pacientat"} positive content="GoBack"/>}
             </Item.Group>
           
@@ -63,7 +58,7 @@ console.log(withId);
                        return val;
                    }
                    else{
-
+                       
                    }
                   
                    
@@ -84,7 +79,7 @@ console.log(withId);
                                 open={open}
                                 trigger={
                                 <Button 
-                                        name={p.termini_ID}
+                                        name={p!.termini_ID}
                                        
                                         floated='right' 
                                         content='Delete' 
@@ -102,7 +97,7 @@ console.log(withId);
                                     <Button color='red' onClick={() => setOpen(false)}>
                                         <Icon name='remove' /> No
                                     </Button>
-                                    <Button color='green' onClick={() =>handleDelete(p.termini_ID) }>
+                                    <Button color='green' onClick={() =>handleDelete(p!.termini_ID) }>
                                         <Icon name='checkmark' /> Yes
                                     
                                     </Button>
