@@ -4,6 +4,7 @@ using Domain;
 using System;
 using Presistence;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace Presistence{
 
@@ -12,7 +13,22 @@ namespace Presistence{
     {
     
 
-    public static void SeedData(DataContext context){
+    public static async Task SeedData(DataContext context, UserManager<AppUser> userManager){
+
+        if (!userManager.Users.Any())
+        {
+            var users = new List<AppUser>
+            {
+                new AppUser{DisplayName = "Rinor", UserName = "rinor", Email = "rinor@test.com"},
+                new AppUser{DisplayName = "Berat", UserName = "berat", Email = "berat@test.com"},
+                new AppUser{DisplayName = "Lavdim", UserName = "lavdim", Email = "lavdim@test.com"},
+            };
+
+            foreach (var user in users)
+            {
+                await userManager.CreateAsync(user, "Pa$$w0rd");
+            }
+        }
 
           /*  if(!context.Therapies.Any()) return;
                    var therapies =new List<Therapy>{

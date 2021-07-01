@@ -15,6 +15,7 @@ import { IPaisjet } from '../models/IPaisjet';
 import { IDhoma } from '../models/IDhoma';
 import { IShtreteritNeDhoma } from '../models/IShtreteritNeDhoma';
 import { Barna } from '../models/barna';
+import { User, UserFormValues } from '../models/user';
 
 const sleep = (delay: number) => {
     return new Promise((resolve) => {
@@ -23,6 +24,12 @@ const sleep = (delay: number) => {
 }
 
 axios.defaults.baseURL = 'http://localhost:5000/api';
+
+axios.interceptors.request.use(config => {
+    const token = store.commonStore.token;
+    if(token) config.headers.Authorization = `Bearer ${token}`
+    return config;
+})
 
 axios.interceptors.response.use(async response =>  {
 
@@ -180,6 +187,12 @@ const Barnat ={
     delete: (id: string) => axios.delete<void>(`/Barnat/${id}`)
 }
 
+const Account = {
+    current: () => requests.get<User>('/account'),
+    login: (user: UserFormValues) => requests.post<User>('/account/login', user),
+    register: (user: UserFormValues) => requests.post<User>('/account/register', user)
+}
+
 const agent = {
     Departmentet,
     Infermieret,
@@ -193,7 +206,8 @@ const agent = {
     Paisjet,
     Dhomat,
     ShtreteritNeDhoma,
-    Barnat
+    Barnat,
+    Account
 }
 
 export default agent;
