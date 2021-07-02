@@ -17,7 +17,7 @@ export default observer( function DoktoratDetails(){
     
     <Card.Content>
       <Card.Description>{"Emri :"+selectedDoktori!.emri}</Card.Description>
-      <Card.Description>{"ID :"+selectedDoktori!.mjeku_Id}</Card.Description>
+     
       <Card.Description>
         {"Mbiemri :"+selectedDoktori!.mbimeri}.
       </Card.Description>

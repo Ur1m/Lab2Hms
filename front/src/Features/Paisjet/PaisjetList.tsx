@@ -17,6 +17,11 @@ export default observer( function PacientatList () {
         
         deletePaisja(id);
         setOpen(false);
+        PaisjetStore.selectedPaisja=undefined;
+    }
+    function del(id:string){
+        selectPaisja(id);
+        setOpen(true);
     }
     return (
         <React.Fragment>
@@ -35,30 +40,24 @@ export default observer( function PacientatList () {
                          <Item.Extra>
                             
                              <Button onClick={()=>selectPaisja(p.paisja_Id)} floated="right" content='View' color='blue'/>
-                             <Modal
+                             <Button onClick={()=>del(p.paisja_Id)} floated="right" content='delete' color='red'/>
+                              <Modal
                                 closeIcon
                                 open={open}
-                                trigger={
-                                <Button 
-                                        name={p.paisja_Id}
-                                       
-                                        floated='right' 
-                                        content='Delete' 
-                                        color='red'
-                                />}
+                               
                                 onClose={() => setOpen(false)}
                                 onOpen={() => setOpen(true)}>
                                 <Header icon='archive' content='Delete terminin' />
                                 <Modal.Content>
                                     <p>
-                                        Are you sure that you want to delete Paisjen:{p.emertimi}?
+                                        Are you sure that you want to delete Paisjen:{selectedPaisja?.emertimi}?
                                     </p>
                                 </Modal.Content>
                                 <Modal.Actions>
                                     <Button color='red' onClick={() => setOpen(false)}>
                                         <Icon name='remove' /> No
                                     </Button>
-                                    <Button color='green' onClick={() =>handleDelete(p.paisja_Id) }>
+                                    <Button color='green' onClick={() =>handleDelete(selectedPaisja!.paisja_Id) }>
                                         <Icon name='checkmark' /> Yes
                                     </Button>
                                 </Modal.Actions>

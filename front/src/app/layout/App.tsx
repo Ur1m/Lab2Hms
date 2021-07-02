@@ -35,7 +35,7 @@ import { useStore } from '../stores/store';
 import DhomaDashboard from '../../Features/Dhomat/Dashboard/DhomaDashboard';
 import LoginForm from '../../Features/users/LoginForm';
 import BarnatDashboard from '../../Features/Barnat/BarnatDashboard';
-import { Home } from '../../Features/home/Home';
+import { Home}  from '../../Features/home/Home';
 import ModalContainer from '../common/modals/ModalContainer';
 
 

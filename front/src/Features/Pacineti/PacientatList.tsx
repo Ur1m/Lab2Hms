@@ -18,7 +18,7 @@ export default observer( function PacientatList () {
     return (
         <React.Fragment>
             <Item.Group>
-            <input type="text " placeholder="Search.." onChange={event=>setsearch(event.target.value)}/>
+            <div className="ui left icon input"><input type="text" placeholder="Search users..." onChange={event=>setsearch(event.target.value)}/><i aria-hidden="true" className="users icon"></i></div>
             <Button onClick={()=>openForm()}floated="right"  positive content='AddPacientat'/>
             </Item.Group>
            <Segment clearing>

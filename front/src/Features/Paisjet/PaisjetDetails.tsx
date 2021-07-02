@@ -16,9 +16,7 @@ export default observer( function PacentatDetails ()  {
             <Image src={`${selectedPaisja.image}`} />
       
       <Card.Content>
-      <Card.Description>
-          {"ID :"+selectedPaisja.paisja_Id}.
-        </Card.Description>
+     
         <Card.Description>{"Emri :"+selectedPaisja.emertimi}</Card.Description>
         
        

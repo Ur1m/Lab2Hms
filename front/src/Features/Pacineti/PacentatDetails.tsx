@@ -23,9 +23,7 @@ import {format} from 'date-fns';
           <Card fluid>
       
       <Card.Content>
-      <Card.Description>
-          {"ID :"+selectedPacienti.pacient_Id}.
-        </Card.Description>
+      
         <Card.Description>{"Emri :"+selectedPacienti.emri}</Card.Description>
         
         <Card.Description>

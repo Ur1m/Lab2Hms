@@ -36,6 +36,10 @@ console.log(withId);
         deleteTermini(id);
         setOpen(false);
     }
+    function del(id:string){
+        selectTermini(id);
+        setOpen(true);
+    }
 
     
     
@@ -74,35 +78,28 @@ console.log(withId);
                        
                          <Item.Extra>
                              <Button onClick={()=>selectTermini(p.termini_ID)} floated="right" content='View' color='blue'/>
-                            {!id && <Modal
+                             <Button onClick={()=>del(p.termini_ID)} floated="right" content='delete' color='red'/>
+                             <Modal
                                 closeIcon
                                 open={open}
-                                trigger={
-                                <Button 
-                                        name={p!.termini_ID}
-                                       
-                                        floated='right' 
-                                        content='Delete' 
-                                        color='red'
-                                />}
+                               
                                 onClose={() => setOpen(false)}
                                 onOpen={() => setOpen(true)}>
                                 <Header icon='archive' content='Delete terminin' />
                                 <Modal.Content>
                                     <p>
-                                        Are you sure?
+                                        Are you sure that you want to delete Terminin?
                                     </p>
                                 </Modal.Content>
                                 <Modal.Actions>
                                     <Button color='red' onClick={() => setOpen(false)}>
                                         <Icon name='remove' /> No
                                     </Button>
-                                    <Button color='green' onClick={() =>handleDelete(p!.termini_ID) }>
+                                    <Button color='green' onClick={() =>handleDelete(selectedTermini!.termini_ID) }>
                                         <Icon name='checkmark' /> Yes
-                                    
                                     </Button>
                                 </Modal.Actions>
-                            </Modal>}
+                            </Modal>
                             
                          </Item.Extra>
                      </Item.Content>

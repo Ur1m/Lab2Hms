@@ -46,7 +46,7 @@ export const SidebarData = [
   {
     title: 'Barnat',
     path: '/Barnat',
-    icon: <FaIcons.FaEnvelopeOpenText />,
+    icon: <FaIcons.FaMedkit/>,
     cName: 'nav-text'
   },
   {
@@ -58,13 +58,14 @@ export const SidebarData = [
   {
     title: 'Terminet',
     path: '/Terminet',
-    icon: <FaIcons.FaFlask/>,
+    icon: <FaIcons.FaClock/>,
     cName: 'nav-text'
   },
   {
     title: 'Paisjet',
     path: '/Paisjet',
-    icon: <FaIcons.FaFlask/>,
+    icon: <RiIcons.RiTableAltFill
+    />,
     cName: 'nav-text'
   },
   {

@@ -35,9 +35,7 @@ export default observer( function PacentatDetails () {
  
       
       <Card.Content>
-      <Card.Description>
-          {"ID :"+selectedTermini!.termini_ID}.
-        </Card.Description>
+     
         
         <Card.Description>{"Pacineti :"+TerminetStore.pacientiemri}</Card.Description>
         
