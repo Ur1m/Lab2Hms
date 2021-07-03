@@ -8,7 +8,7 @@ import * as GiIcons from 'react-icons/gi';
 export const SidebarData = [
   {
     title: 'Ballina',
-    path: '/ballina',
+    path: '/home',
     icon: <AiIcons.AiFillHome />,
     cName: 'nav-text'
   },
@@ -18,12 +18,12 @@ export const SidebarData = [
     icon: <FaIcons.FaRegBuilding />,
     cName: 'nav-text'
   },
-  {
-    title: 'Raportet',
-    path: '/',
-    icon: <IoIcons.IoIosPaper />,
-    cName: 'nav-text'
-  },
+  // {
+  //   title: 'Raportet',
+  //   path: '/',
+  //   icon: <IoIcons.IoIosPaper />,
+  //   cName: 'nav-text'
+  // },
   {
     title: 'Pacientet',
     path: '/Pacientat',
@@ -36,12 +36,12 @@ export const SidebarData = [
     icon: <IoIcons.IoMdPeople />,
     cName: 'nav-text'
   },
-  {
-    title: 'Terapia',
-    path: '/therapy',
-    icon: <FaIcons.FaEnvelopeOpenText />,
-    cName: 'nav-text'
-  },
+  // {
+  //   title: 'Terapia',
+  //   path: '/therapy',
+  //   icon: <FaIcons.FaEnvelopeOpenText />,
+  //   cName: 'nav-text'
+  // },
 
   {
     title: 'Barnat',
@@ -49,12 +49,12 @@ export const SidebarData = [
     icon: <FaIcons.FaMedkit/>,
     cName: 'nav-text'
   },
-  {
-    title: 'Laboratori',
-    path: '/laboratori',
-    icon: <FaIcons.FaFlask/>,
-    cName: 'nav-text'
-  },
+  // {
+  //   title: 'Laboratori',
+  //   path: '/laboratori',
+  //   icon: <FaIcons.FaFlask/>,
+  //   cName: 'nav-text'
+  // },
   {
     title: 'Terminet',
     path: '/Terminet',
@@ -98,18 +98,18 @@ export const SidebarData = [
     icon: <GiIcons.GiBed />,
     cName: 'nav-text'
   },
-  {
-    title: 'Ndihma teknike',
-    path: '/',
-    icon: <IoIcons.IoMdHelpCircle />,
-    cName: 'nav-text'
-  },
-  {
-    title: 'Infermieret',
-    path: '/Infermieret',
-    icon: <IoIcons.IoMdHelpCircle />,
-    cName: 'nav-text'
-  },
+  // {
+  //   title: 'Ndihma teknike',
+  //   path: '/',
+  //   icon: <IoIcons.IoMdHelpCircle />,
+  //   cName: 'nav-text'
+  // },
+  // {
+  //   title: 'Infermieret',
+  //   path: '/Infermieret',
+  //   icon: <IoIcons.IoMdHelpCircle />,
+  //   cName: 'nav-text'
+  // },
   {
     title: 'Errors',
     path: '/errors',
