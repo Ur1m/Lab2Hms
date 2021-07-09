@@ -27,7 +27,7 @@ export default observer( function PacientatList () {
         <React.Fragment>
             <Item.Group>
            
-            <Button onClick={()=>openForm()}floated="right"  positive content='AddPaisjet'/>
+            <Button onClick={()=>openForm()} positive content='AddPaisjet'/>
             </Item.Group>
            <Segment clearing>
             <Item.Group divided>
