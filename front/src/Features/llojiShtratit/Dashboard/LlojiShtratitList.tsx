@@ -17,6 +17,10 @@ export default observer( function LlojiShtratitList(){
     }
 
     return (
+        <React.Fragment>
+            <Item.Group>
+                <div className="ui left icon input"><input type="text" placeholder="Kerko llojin e shtratit..."  /><i aria-hidden="true" className="search icon"></i></div>
+            </Item.Group>
         <Segment>
             <Item.Group divided>
                 {llojiShtreterve.map(ILlojiShtratit=>(
@@ -62,5 +66,6 @@ export default observer( function LlojiShtratitList(){
                 ))}
             </Item.Group>
         </Segment>
+    </React.Fragment>
     )
 })

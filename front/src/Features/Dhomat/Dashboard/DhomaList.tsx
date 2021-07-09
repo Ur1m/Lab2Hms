@@ -28,6 +28,7 @@ export default observer( function DhomaList(){
                             </Item.Description>
                             <Item.Extra>
                                 <Button onClick={() => dhomaStore.selectDhoma(IDhoma.dhoma_id)} floated='right' content='Shiko' color='blue'/>
+                                <Button onClick={() => dhomaStore.selectDhoma(IDhoma.dhoma_id)} floated='right' content='Cakto Shtreterit ne Dhoma' color='yellow'/>
                                 <Modal
                                 closeIcon
                                 open={open}

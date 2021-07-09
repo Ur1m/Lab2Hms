@@ -20,7 +20,7 @@ export default observer( function HomePage(){
                 {userStore.isLoggedIn ?(
                     <>
                         <Header as='h2' inverted content='Welcome to Hospital Management System' />
-                        <Button as={Link} to='/ballina' size='huge' inverted>
+                        <Button as={Link} to='/home' size='huge' inverted>
                             Go to Home!
                         </Button>
                     </>
