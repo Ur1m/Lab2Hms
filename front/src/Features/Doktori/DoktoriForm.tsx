@@ -1,8 +1,8 @@
 
 import React ,{  FormEvent, useState}from 'react'
-import { Button, Form ,Input,Segment, TextArea} from 'semantic-ui-react'
+import { Button, Form ,Header,Icon,Modal,Segment, TextArea} from 'semantic-ui-react'
 import { IDoktori } from '../../app/models/Doktori';
-import { departamentet } from '../../app/FormElements/DoktoriOptions';
+
 import {specializimet} from '../../app/FormElements/SpecializimiOptions';
 
 import { Formik } from 'formik';
@@ -14,13 +14,18 @@ import { useStoreDoktorat } from '../../app/stores/store';
 import { IDepartment } from '../../app/models/IDepartment';
 import { IPacientetDropDown } from '../../app/models/IPacienti';
 
+import { observer } from 'mobx-react-lite';
+import { on } from 'stream';
 
-export const DoktoriForm = () => {
+
+export default  observer( function DoktoriForm ()  {
     const {DoktoratStore}=useStoreDoktorat();
-    const{closeForm,selectedDoktori,updateDoktori,createDoktori,getDepartmentet
+    const{closeForm,selectedDoktori,updateDoktori,createDoktori,doktorat,getDepartmentet,modali
     }=DoktoratStore;
-    
+    var open=false;
    
+
+   var i=0;
     const initialState = selectedDoktori ?? {
         mjeku_Id:'',
         emri: '',
@@ -34,10 +39,37 @@ export const DoktoriForm = () => {
     
         setDoktori({...Doktori,[event.currentTarget.name]:event.currentTarget.value});
     };
+   
     const handleFormsubmit=(Doktori:IDoktori)=>{
-        Doktori.mjeku_Id? updateDoktori(Doktori) : createDoktori(Doktori);
-      
+      if(!Doktori.mjeku_Id){
+        for(i==0 ; i<doktorat.length;i++){
+         if(doktorat[i].emri===Doktori.emri && doktorat[i].mbimeri===Doktori.mbimeri ){
+             open=true;
+         }
+        
+       }
+       if(!open){
+         createDoktori(Doktori);
+         open=false;
+       }
+       else{
+           alert("Nuk mund ta insertoni doktorin e njejt")
+           open=false;
+           
+           closeForm();
+        DoktoratStore.modali=true;
+       }
     }
+    else{
+        updateDoktori(Doktori)
+    }
+       
+    }
+    
+   
+        
+    
+    
     const validationSchema=yup.object({
         emri:yup.string().required("Emri eshte i domosdoshem").matches(/^[a-zA-Z0-9]{3,}$/,'Emrri duhet te ket mbi 3 shkronja'),
         mbimeri:yup.string().required("Mbimeri nuk duhet te jete i zbrazet").matches(/^[a-zA-Z0-9]{3,}$/,'Mbimeri duhet te ket mbi 3 shkronja'),
@@ -62,7 +94,9 @@ export const DoktoriForm = () => {
         }
     })
     return (
+       
         <Segment clearing>
+          
               <Formik validationSchema={validationSchema}
             enableReinitialize initialValues={Doktori!} onSubmit={values => handleFormsubmit(values)}>
             {({handleSubmit,isSubmitting,dirty,isValid})=>(
@@ -78,16 +112,25 @@ export const DoktoriForm = () => {
                 disabled={isSubmitting || !dirty || !isValid}
                 floated="right" positive type='subimit' content='submit'/>
                 <Button onClick={closeForm}floated="right"  type='subimit' content='cancel'/>
+               
+               
+               
             </Form>
+            
 
 
              )
 
              }
             </Formik>
+           
+           
             
         </Segment>
+        
     )
+            }
+);
           
             
 
@@ -95,4 +138,3 @@ export const DoktoriForm = () => {
             
        
     
-}

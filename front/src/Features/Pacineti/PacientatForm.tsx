@@ -16,7 +16,8 @@ export const PacientatForm = () => {
     const {PacientatStore}=useStorePacientat();
     const{pacientat,selectedPacienti,openForm,closeForm,updatePacineti,createPacineti}=PacientatStore;
     
-   
+   var i=0;
+   var open=false;
     const initialState = selectedPacienti ?? {
         pacient_Id:'',
         emri: '',
@@ -32,8 +33,29 @@ export const PacientatForm = () => {
         setPacienti({...Pacineti,[event.currentTarget.name]:event.currentTarget.value});
     };
     const handleFormsubmit=(Pacineti:IPacienti)=>{
-        Pacineti.pacient_Id? updatePacineti(Pacineti) : createPacineti(Pacineti);
-      
+       if(!Pacineti.pacient_Id){
+        for(i==0 ; i<pacientat.length;i++){
+            if(pacientat[i].emri===Pacineti.emri && pacientat[i].mbimeri===Pacineti.mbimeri && pacientat[i].adresa===Pacineti.adresa ){
+                open=true;
+            }
+           
+          }
+          if(!open){
+            createPacineti(Pacineti);
+            open=false;
+          }
+          else{
+              alert("Nuk mund ta insertoni pacinetin e njejt")
+              open=false;
+              
+              closeForm();
+          
+          }
+        }
+        else{
+            updatePacineti(Pacineti);
+        }
+
     }
     const validationSchema=yup.object({
         emri:yup.string().matches(/^[a-zA-Z0-9]{3,12}$/,'Emri duhet te ket mbi 3 shkronja deri ne 12').required("Ju lutem shenoni emrin "),

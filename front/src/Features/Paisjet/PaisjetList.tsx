@@ -21,7 +21,9 @@ export default observer( function PacientatList () {
     }
     function del(id:string){
         selectPaisja(id);
+        
         setOpen(true);
+        
     }
     return (
         <React.Fragment>

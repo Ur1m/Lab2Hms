@@ -52,7 +52,7 @@ export default class PacientatStore{
                 this.pacientatRegistry.set(pacineti.pacient_Id,pacineti);
                 this.selectedPacienti=pacineti;
                 this.editmode=false;
-                alert("Created successfully");
+               
             })
         }
         catch(error){
@@ -67,7 +67,7 @@ export default class PacientatStore{
             this.pacientatRegistry.set(Pacienti.pacient_Id,Pacienti)
              this.selectedPacienti=Pacienti;
              this.editmode=false;
-             alert("Updated successfully");
+            
            })
         }
         catch(error){
@@ -76,7 +76,7 @@ export default class PacientatStore{
     }
     deletePacienti=async(id:string)=>{
         try{
-            if(window.confirm('Are you sure')){
+          
            await agent.Pacientat.delete(id);
            runInAction(()=>{
             //this.pacientat=[...this.pacientat.filter(a => a.pacient_Id !== id)]
@@ -84,7 +84,7 @@ export default class PacientatStore{
             ;if(this.selectedPacienti?.pacient_Id==id)this.canceleSelectedPacienti();
 
            })
-        }
+        
         }
         catch(error){
             console.log(error);

@@ -15,9 +15,10 @@ import DateTimeP from "../../app/FormElements/DateTimePic";
 
 export const PaisjetForm = () => {
     const {PaisjetStore}=useStorePaisjet();
-    const{selectedPaisja,closeForm,updatePaisja,createPaisja,getDepartmentet}=PaisjetStore;
+    const{selectedPaisja,closeForm,updatePaisja,createPaisja,getDepartmentet,paisjet}=PaisjetStore;
     
-   
+   var i=0;
+   var open=false;
     const initialState = selectedPaisja ?? {
         paisja_Id:'',
         emertimi: '',
@@ -46,8 +47,29 @@ export const PaisjetForm = () => {
      }
     const handleFormsubmit=(Paisja?:IPaisjet )=>{
        Paisja!.image=image;
-    
-   Paisja?.paisja_Id? updatePaisja(Paisja) : createPaisja(Paisja!);
+    if(!Paisja?.paisja_Id){
+       for(i==0 ; i<paisjet.length;i++){
+        if(paisjet[i].emertimi===Paisja?.emertimi ){
+            open=true;
+        }
+       
+      }
+      if(!open){
+        createPaisja(Paisja!);
+        open=false;
+      }
+      else{
+          alert("Nuk mund ta insertoni Paisjen e njejt")
+          open=false;
+          
+          closeForm();
+       
+      }
+    }
+    else{
+        updatePaisja(Paisja);
+    }
+      
 
        
       

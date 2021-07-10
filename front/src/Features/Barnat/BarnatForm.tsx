@@ -6,12 +6,13 @@ import { Button, Form, Segment } from "semantic-ui-react";
 import { Formik } from "formik";
 import MyTextArea from "../../app/common/form/MyTextArea";
 import MyTextInput from "../../app/common/form/MyTextInput";
-import MyDateInput from "../../app/common/form/MyDateInput";
+
 
 export const BarnatForm = () => {
     const {BarnatStore}=useStoreBarnat();
-    const{selectedBarna,closeForm,updateBarna,createBarna}=BarnatStore;
-    
+    const{selectedBarna,closeForm,updateBarna,createBarna,Barnat}=BarnatStore;
+    var i=0;
+    var open=false;
    
     const initialState = selectedBarna ?? {
         barnat_Id: '',
@@ -38,8 +39,28 @@ export const BarnatForm = () => {
     const handleFormsubmit=(barna:Barna )=>{
        barna!.image=image;
        barna.dataRegjistrimit=new Date();
-    
-   Barna?.barnat_Id? updateBarna(barna) : createBarna(barna);
+    if(!barna.barnat_Id){
+       for(i==0 ; i<Barnat.length;i++){
+        if(Barnat[i].bName===barna.bName  ){
+            open=true;
+        }
+       
+      }
+      if(!open){
+        createBarna(Barna);
+        open=false;
+      }
+      else{
+          alert("Nuk mund ta insertoni barnen e njejt")
+          open=false;
+          
+          closeForm();
+      
+      }
+    }
+    else{
+        updateBarna(barna);
+    }
 
        
       

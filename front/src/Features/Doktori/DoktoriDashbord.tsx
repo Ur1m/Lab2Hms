@@ -6,7 +6,7 @@ import { Button, Grid} from 'semantic-ui-react';
 import { useStoreDoktorat, useStorePacientat } from '../../app/stores/store';
 import DoktoratList  from './DoktoratList';
 import DoktoratDetails  from './DoktoriDetails'
-import {DoktoriForm} from  './DoktoriForm';
+import DoktoriForm from  './DoktoriForm';
 
 
 //{Doktori,opencreateform,selectDoktori,selectedDoktori,editmode,seteditmode,setselectedDoktori,createDoktor,editDoktor,deleteDoktor}

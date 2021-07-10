@@ -8,6 +8,7 @@ export default class DoktoretStore{
     //pacientat:IPacienti[]=[];
     selectedDoktori:IDoktori | undefined=undefined;
     editmode=false;
+    modali=false;
     doktoratRegistry=new Map<string,IDoktori>()
     constructor(){
         makeAutoObservable(this)
@@ -37,6 +38,14 @@ export default class DoktoretStore{
     canceleSelectedDoktori=()=>{
         this.selectedDoktori=undefined;
     }
+    egziston=async(Doktori:IDoktori)=>{
+        this.doktorat.forEach(d=>{if(d.emri===Doktori.emri && d.mbimeri===Doktori.mbimeri && d.ditlindja===Doktori.ditlindja){
+            return true;
+        }
+        
+    })
+    return false;
+    }
     openForm=(id?:string)=>{
         id? this.selectDoktori(id) : this.canceleSelectedDoktori();
         this.editmode=(true);
@@ -52,7 +61,7 @@ export default class DoktoretStore{
                 this.doktoratRegistry.set(Doktori.mjeku_Id,Doktori);
                 this.selectedDoktori=Doktori;
                 this.editmode=false;
-                alert("Created successfully");
+               
             })
         }
         catch(error){
@@ -76,7 +85,7 @@ export default class DoktoretStore{
     }
     deleteDoktori=async(id:string)=>{
         try{
-            if(window.confirm('Are you sure')){
+           
            await agent.doktoret.delete(id);
            runInAction(()=>{
             //this.pacientat=[...this.pacientat.filter(a => a.pacient_Id !== id)]
@@ -84,7 +93,7 @@ export default class DoktoretStore{
             ;if(this.selectedDoktori!.mjeku_Id==id)this.canceleSelectedDoktori();
 
            })
-        }
+        
         }
         catch(error){
             console.log(error);

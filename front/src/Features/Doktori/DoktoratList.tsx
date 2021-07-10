@@ -1,7 +1,7 @@
 
 import { observer } from 'mobx-react-lite';
 import React, { useEffect, useState } from 'react';
-import { Item,Button,Label, Segment } from 'semantic-ui-react';
+import { Item,Button,Label, Segment, Modal, Header, Icon } from 'semantic-ui-react';
 
 import { IDoktori } from '../../app/models/Doktori';
 import { useStoreDoktorat } from '../../app/stores/store';
@@ -11,12 +11,25 @@ import { useStoreDoktorat } from '../../app/stores/store';
 
 export default observer(function DoktoratList () {
     const {DoktoratStore}=useStoreDoktorat();
-    const{doktorat,selectDoktori,deleteDoktori,openForm}=DoktoratStore;
+    const{doktorat,selectDoktori,deleteDoktori,openForm,selectedDoktori}=DoktoratStore;
+    const [open, setOpen] = React.useState(false)
     
     const[search,setsearch]=useState("");
     useEffect(()=>{
         DoktoratStore.loadDoktorat();
     },[DoktoratStore]);
+    function handleDelete( id: string){
+        
+        deleteDoktori(id);
+        setOpen(false);
+        DoktoratStore.selectedDoktori=undefined;
+    }
+    function del(id:string){
+        selectDoktori(id);
+        
+        setOpen(true);
+        
+    }
     return (
         <React.Fragment>
             <Item.Group>
@@ -40,7 +53,28 @@ export default observer(function DoktoratList () {
                        
                          <Item.Extra>
                              <Button onClick={()=>selectDoktori(Doktori.mjeku_Id)} floated="right" content='View' color='blue'/>
-                             <Button onClick={()=>deleteDoktori(Doktori.mjeku_Id)} floated="right" content='Delete' color='red'/>
+                             <Button onClick={()=>del(Doktori.mjeku_Id)} floated="right" content='Delete' color='red'/>
+                             <Modal
+                                closeIcon
+                                open={open}
+                               
+                                onClose={() => setOpen(false)}
+                                onOpen={() => setOpen(true)}>
+                                <Header icon='archive' content='Delete terminin' />
+                                <Modal.Content>
+                                    <p>
+                                        Are you sure that you want to delete Paisjen:{selectedDoktori?.emri}?
+                                    </p>
+                                </Modal.Content>
+                                <Modal.Actions>
+                                    <Button color='red' onClick={() => setOpen(false)}>
+                                        <Icon name='remove' /> No
+                                    </Button>
+                                    <Button color='green' onClick={() =>handleDelete(selectedDoktori!.mjeku_Id) }>
+                                        <Icon name='checkmark' /> Yes
+                                    </Button>
+                                </Modal.Actions>
+                            </Modal>
                              <Label basic content={Doktori.depName}/>
                          </Item.Extra>
                      </Item.Content>

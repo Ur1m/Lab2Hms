@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
-import { Button, Item, Label, Segment } from 'semantic-ui-react';
+import { Button, Header, Icon, Item, Label, Modal, Segment } from 'semantic-ui-react';
 import { IPacienti } from '../../app/models/IPacienti';
 import { useStorePacientat } from '../../app/stores/store';
 
@@ -9,12 +9,25 @@ import { useStorePacientat } from '../../app/stores/store';
 
 export default observer( function PacientatList () {
     const {PacientatStore}=useStorePacientat();
-    const{pacientat,selectPacineti,openForm,selectedPacienti}=PacientatStore
+    const{pacientat,selectPacineti,openForm,selectedPacienti,deletePacienti}=PacientatStore
     const[search,setsearch]=useState("");
+    const [open, setOpen] = React.useState(false)
 
     useEffect(()=>{
         PacientatStore.loadPacientat();
     },[PacientatStore]);
+    function handleDelete( id: string){
+        
+        deletePacienti(id);
+        setOpen(false);
+        PacientatStore.selectedPacienti=undefined;
+    }
+    function del(id:string){
+        selectPacineti(id);
+        
+        setOpen(true);
+        
+    }
     return (
         <React.Fragment>
             <Item.Group>
@@ -39,7 +52,29 @@ export default observer( function PacientatList () {
                          <Item.Extra>
                              <Button as={Link} to={`/Terminet/${p.pacient_Id}`} floated="right" content="View Terminet" color='yellow'/>
                              <Button onClick={()=>selectPacineti(p.pacient_Id)} floated="right" content='View' color='blue'/>
-                             <Button onClick={()=>PacientatStore.deletePacienti(p.pacient_Id)} floated="right" content='Delete' color='red'/>
+                             <Button onClick={()=>del(p.pacient_Id)} floated="right" content='delete' color='red'/>
+                              <Modal
+                                closeIcon
+                                open={open}
+                               
+                                onClose={() => setOpen(false)}
+                                onOpen={() => setOpen(true)}>
+                                <Header icon='archive' content='Delete terminin' />
+                                <Modal.Content>
+                                    <p>
+                                        Are you sure that you want to delete Paisjen:{selectedPacienti?.emri}?
+                                    </p>
+                                </Modal.Content>
+                                <Modal.Actions>
+                                    <Button color='red' onClick={() => setOpen(false)}>
+                                        <Icon name='remove' /> No
+                                    </Button>
+                                    <Button color='green' onClick={() =>handleDelete(selectedPacienti!.pacient_Id) }>
+                                        <Icon name='checkmark' /> Yes
+                                    </Button>
+                                </Modal.Actions>
+                            </Modal>
+                            
                             
                          </Item.Extra>
                      </Item.Content>
