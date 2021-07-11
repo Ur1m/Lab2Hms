@@ -9,9 +9,7 @@ export default observer(function DepartmentList() {
     const { departmentStore } = useStore();
     const { deleteDepartment, Departmentet, selectedDepartment, selectDepartment ,loading } = departmentStore;
     const [open, setOpen] = React.useState(false)
-
     const [target, setTarget] = useState('');
-
     const [search, setsearch] = useState("");
 
     function handleDepartmentDelete(e: SyntheticEvent<HTMLButtonElement>, department_id: string) {
@@ -43,13 +41,19 @@ export default observer(function DepartmentList() {
                     }).map(IDepartment => (
                         <Item key={IDepartment.department_id}>
                             <Item.Content>
-                                <Item.Header>{IDepartment.name}</Item.Header>
+                                <Item.Header>
+                                    {IDepartment.name}</Item.Header>
                                 <Item.Description>
                                     <div>{IDepartment.description}</div>
                                 </Item.Description>
                                 <Item.Extra>
                                     <Button onClick={() => departmentStore.selectDepartment(IDepartment.department_id)} floated='right' content='Shiko' color='blue' />
-                                    <Button onClick={()=>del(IDepartment.department_id)} floated="right" content='Fshij' color='red'/>
+                                    <Button 
+                                    onClick={()=>del(IDepartment.department_id)} 
+                                    loading={loading && target === IDepartment.department_id}
+                                    floated="right" 
+                                    content='Fshij' 
+                                    color='red'/>
                                     <Modal
                                         closeIcon
                                         open={open}

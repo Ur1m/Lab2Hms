@@ -1,8 +1,10 @@
 ﻿using Domain;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Presistence;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -30,7 +32,8 @@ namespace Application.Faturat
 
             public async Task<Fatura> Handle(Query request, CancellationToken cancellationToken)
             {
-                return await _context.Faturat.FindAsync(request.Fatura_Id);
+                var fatura = await _context.Faturat.Where(x => x.Fatura_Id == request.Fatura_Id).Include(x => x.Pacient).FirstOrDefaultAsync();
+                return fatura;
             }
         }
     }

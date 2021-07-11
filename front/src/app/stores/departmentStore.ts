@@ -16,6 +16,7 @@ export default class DepartmentStore {
 
     loadDepartamentet = async () => {
         this.setLoadingInitial(true);
+        this.Departmentet = [];
         try{
             const Departmentet = await agent.Departmentet.list();
                 Departmentet.forEach(Department => {
@@ -32,8 +33,8 @@ export default class DepartmentStore {
         this.loadingInitial = state;
     }
 
-    selectDepartment = (department_id: string) => {
-        this.selectedDepartment = this.Departmentet.find(d => d.department_id === department_id);
+    selectDepartment = async(department_id: string) => {
+        this.selectedDepartment = await agent.Departmentet.details(department_id);
     }
 
 

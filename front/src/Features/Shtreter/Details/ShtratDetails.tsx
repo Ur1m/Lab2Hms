@@ -13,9 +13,10 @@ export default function ShtratDetails() {
         <Card fluid>
         {/* <Image src={`/assets/DepartmentImages/${Department.department_id}.jpg`} /> */}
         <Card.Content>
-          <Card.Header>{Shtrat.nrshtratit}</Card.Header>
+          <Card.Header>Numri i shtratit: {Shtrat.nrShtratit}</Card.Header>
           <Card.Description>
-                {Shtrat.pershkrimi}
+                Pershkrimi: {Shtrat.pershkrimi}<br/>
+                Statusi: {Shtrat.statusi}
           </Card.Description>
         </Card.Content>
         <Card.Content extra>

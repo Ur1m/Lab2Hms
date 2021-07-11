@@ -18,13 +18,13 @@ export default observer(function FaturaForm() {
     const { selectedFatura, closeForm, createFatura, updateFatura, loading, getPacientet } = faturaStore;
 
     const initialState = selectedFatura ?? {
-        fatura_id: '',
+        fatura_Id: '',
         titulli: '',
         pershkrimi: '',
         shuma: null,
         krijuarme: null,
         statusi: '',
-        pacient_id: ''
+        pacient_id: '',
     }
 
     const [Fatura, setFatura] = useState(initialState);
@@ -33,7 +33,7 @@ export default observer(function FaturaForm() {
         shuma: Yup.number().required('Shuma fatures nuk mund te jete i zbrazet...').nullable(),
         krijuarme: Yup.string().required('Selektoni daten kur eshte krijuar fatura...').nullable(),
         statusi: Yup.string().required('Selektoni statusin').nullable(),
-        pacient_id: Yup.string().required('Zgjedh pacientin').nullable()
+        pacient_id: Yup.string().required('Zgjedh pacientin').nullable(),
     })
 
 
@@ -42,11 +42,11 @@ export default observer(function FaturaForm() {
 
 
     function handleFormSubmit(Fatura: IFatura) {
-        Fatura.fatura_id ? updateFatura(Fatura) : createFatura(Fatura);
+        Fatura.fatura_Id ? updateFatura(Fatura) : createFatura(Fatura);
     }
 
 
-    getPacientet().then(response => {
+    getPacientet()?.then(response => {
         response?.forEach(element => {
             pacientet.push(element);
         });
@@ -67,11 +67,17 @@ export default observer(function FaturaForm() {
                 onSubmit={values => handleFormSubmit(values)}>
                 {({ handleSubmit, isValid, isSubmitting, dirty }) => (
                     <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
+                        <label>Emri: </label>
                         <MyTextInput name='titulli' placeholder='Shkruani titullin e fatures...' />
+                        <label>Pershkrimi: </label>
                         <MyTextArea rows={3} name='pershkrimi' placeholder='Shkruani pershkrimin e fatures...' />
+                        <label>Shuma: </label>
                         <MyTextInput type='number' name='shuma' placeholder='Shkruani shumen e fatures...' />
+                        <label>Data: </label>
                         <MyDateInput name='krijuarme' placeholderText='Krijuar me...' />
+                        <label>Pacienti: </label>
                         <MySelectInput options={pacientetDropDown} placeholder='Zgjedhni pacientin...' name='pacient_id'></MySelectInput>
+                        <label>Statusi: </label>
                         <MySelectInput options={statusi} placeholder='Statusi' name='statusi' />
                         <Button
                            disabled={isSubmitting || !dirty || !isValid}

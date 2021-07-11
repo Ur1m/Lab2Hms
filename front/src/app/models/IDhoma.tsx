@@ -1,6 +1,6 @@
 export interface IDhoma{
-    dhoma_id:string;
-    nrdhomes:number | null;
+    dhoma_Id:string;
+    nrDhomes:number | null;
     pershkrimi:string;
     llojiDhomes:string;
 }

@@ -50,8 +50,11 @@ export default observer(function DepartmentForm() {
                 onSubmit={values => handleFormSubmit(values)}>
                 {({ handleSubmit, isValid, isSubmitting, dirty }) => (
                     <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
+                        <label>Emri i departmentit: </label>
                         <MyTextInput name='name' placeholder='Shkruani emrin e departamentit...' />
+                        <label>Pershkrimi: </label>
                         <MyTextArea rows={3} name='description' placeholder='Shkruani pershkrimin e departamentit...' />
+                        <label>Fotorgrafia: </label>
                         <input type='file' name='fotografia' id="image-id"onChange={changefile} />
                         <Button 
                         disabled={isSubmitting || !dirty || !isValid}

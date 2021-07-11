@@ -16,6 +16,7 @@ export default class DhomaStore {
 
     loadDhomat = async () => {
         this.setLoadingInitial(true);
+        this.Dhomat = [];
         try{
             const Dhomat = await agent.Dhomat.list();
                 Dhomat.forEach(Dhoma => {
@@ -32,8 +33,8 @@ export default class DhomaStore {
         this.loadingInitial = state;
     }
 
-    selectDhoma = (dhoma_id: string) => {
-        this.selectedDhoma = this.Dhomat.find(dh => dh.dhoma_id === dhoma_id);
+    selectDhoma = async(dhoma_id: string) => {
+        this.selectedDhoma = await agent.Dhomat.details(dhoma_id);
     }
 
 
@@ -52,7 +53,7 @@ export default class DhomaStore {
 
     createDhoma = async (Dhoma: IDhoma) => {
         this.loading = true;
-        Dhoma.dhoma_id = uuid();
+        Dhoma.dhoma_Id = uuid();
         try{
             await agent.Dhomat.create(Dhoma);
             runInAction(() => {
@@ -74,7 +75,7 @@ export default class DhomaStore {
         try{
             await agent.Dhomat.update(Dhoma);
             runInAction(() => {
-                this.Dhomat = [...this.Dhomat.filter(dh => dh.dhoma_id !== Dhoma.dhoma_id), Dhoma];
+                this.Dhomat = [...this.Dhomat.filter(dh => dh.dhoma_Id !== Dhoma.dhoma_Id), Dhoma];
                 this.selectedDhoma = Dhoma;
                 this.editMode = false;
                 this.loading = false;
@@ -92,8 +93,8 @@ export default class DhomaStore {
         try{
             await agent.Dhomat.delete(dhoma_id);
             runInAction(() => {
-                this.Dhomat = [...this.Dhomat.filter(dh => dh.dhoma_id !== dhoma_id)];
-                if (this.selectedDhoma?.dhoma_id === dhoma_id) this.cancelSelectedDhoma();
+                this.Dhomat = [...this.Dhomat.filter(dh => dh.dhoma_Id !== dhoma_id)];
+                if (this.selectedDhoma?.dhoma_Id === dhoma_id) this.cancelSelectedDhoma();
                 this.loading = false;
             })
         } catch(error) {

@@ -16,6 +16,7 @@ export default class LlojiShtratitStore {
 
     loadllojiShtreterve = async () => {
         this.setLoadingInitial(true);
+        this.llojiShtreterve = [];
         try{
             const llojiShtreterve = await agent.llojiShtreterve.list();
                 llojiShtreterve.forEach(llojiShtratit => {
@@ -32,8 +33,8 @@ export default class LlojiShtratitStore {
         this.loadingInitial = state;
     }
 
-    selectLlojiShtratit = (llojiShtratit_id: string) => {
-        this.selectedLlojiShtratit = this.llojiShtreterve.find(llsh => llsh.llojiShtratit_id === llojiShtratit_id);
+    selectLlojiShtratit = async(llojiShtratit_id: string) => {
+        this.selectedLlojiShtratit = await agent.llojiShtreterve.details(llojiShtratit_id);
     }
 
 

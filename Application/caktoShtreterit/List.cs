@@ -25,8 +25,8 @@ namespace Application.caktoShtreterit
             }
 
             public async Task<List<caktoShtratin>> Handle(Query request, CancellationToken cancellationToken)
-            {
-                return await _context.caktoShtreterit.ToListAsync();
+            { 
+                return await _context.caktoShtreterit.Include(x => x.Pacient).Include(y => y.Shtrat).Include(z => z.Shtrat.llojiShtratit).ToListAsync();
             }
         }
     }

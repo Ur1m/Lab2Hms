@@ -18,6 +18,7 @@ export default class CaktoShtratinStore {
 
     loadcaktoShtreterit = async () => {
         this.setLoadingInitial(true);
+        this.caktoShtreterit = [];
         try{
             const caktoShtreterit = await agent.caktoShtreterit.list();
                 caktoShtreterit.forEach(caktoShtratin => {
@@ -34,8 +35,8 @@ export default class CaktoShtratinStore {
         this.loadingInitial = state;
     }
 
-    selectCaktoShtratin = (caktoShtratin_id: string) => {
-        this.selectedCaktoShtratin = this.caktoShtreterit.find(csh => csh.caktoshtratin_id === caktoShtratin_id);
+    selectCaktoShtratin = async(caktoShtratin_id: string) => {
+        this.selectedCaktoShtratin = await agent.caktoShtreterit.details(caktoShtratin_id);
     }
 
 
@@ -54,7 +55,7 @@ export default class CaktoShtratinStore {
 
     createCaktoShtratin = async (caktoShtratin: ICaktoShtratin) => {
         this.loading = true;
-        caktoShtratin.caktoshtratin_id = uuid();
+        caktoShtratin.caktoShtratin_id = uuid();
         try{
             await agent.caktoShtreterit.create(caktoShtratin);
             runInAction(() => {
@@ -76,7 +77,7 @@ export default class CaktoShtratinStore {
         try{
             await agent.caktoShtreterit.update(CaktoShtratin);
             runInAction(() => {
-                this.caktoShtreterit = [...this.caktoShtreterit.filter(csh => csh.caktoshtratin_id !== CaktoShtratin.caktoshtratin_id), CaktoShtratin];
+                this.caktoShtreterit = [...this.caktoShtreterit.filter(csh => csh.caktoShtratin_id !== CaktoShtratin.caktoShtratin_id), CaktoShtratin];
                 this.selectedCaktoShtratin = CaktoShtratin;
                 this.editMode = false;
                 this.loading = false;
@@ -94,8 +95,8 @@ export default class CaktoShtratinStore {
         try{
             await agent.caktoShtreterit.delete(caktoShtratin_id);
             runInAction(() => {
-                this.caktoShtreterit = [...this.caktoShtreterit.filter(csh => csh.caktoshtratin_id !== caktoShtratin_id)];
-                if (this.selectedCaktoShtratin?.caktoshtratin_id === caktoShtratin_id) this.cancelCaktoShtratin();
+                this.caktoShtreterit = [...this.caktoShtreterit.filter(csh => csh.caktoShtratin_id !== caktoShtratin_id)];
+                if (this.selectedCaktoShtratin?.caktoShtratin_id === caktoShtratin_id) this.cancelCaktoShtratin();
                 this.loading = false;
             })
         } catch(error) {

@@ -1,4 +1,4 @@
 export const statusishtratit=[
-    { key:'Izene' ,text:'I zene',value:'izene'},
-    { key:'Ilire' ,text:'I lire',value:'ilire'}
+    { key:'Izene' ,text:'I zene',value:'I Zene'},
+    { key:'Ilire' ,text:'I lire',value:'I Lire'}
 ];

@@ -13,14 +13,15 @@ export default function CaktoShtratinDetails() {
         <Card fluid>
         {/* <Image src={`/assets/FaturaImages/${Fatura.fatura_id}.jpg`} /> */}
         <Card.Content>
-          <Card.Header>{caktoShtratin.pacient_id}</Card.Header>
+          <Card.Header>{caktoShtratin.pacient?.emri + " " + caktoShtratin.pacient?.mbimeri}</Card.Header>
           <Card.Description>
-                {caktoShtratin.shtrat_id}
+                Numri i shtratit: {caktoShtratin.shtrat?.nrShtratit}<br/>
+                Lloji i shtratit: {caktoShtratin.shtrat?.llojiShtratit?.emri}
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
             <Button.Group widths='2'>
-                <Button onClick={() => openForm(caktoShtratin.caktoshtratin_id)} basic color='blue' content='Ndrysho'/>
+                <Button onClick={() => openForm(caktoShtratin.caktoShtratin_id)} basic color='blue' content='Ndrysho'/>
                 <Button onClick={cancelCaktoShtratin} basic color='blue' content='Anulo'/>
             </Button.Group>
         </Card.Content>
