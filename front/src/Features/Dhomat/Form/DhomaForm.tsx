@@ -43,7 +43,7 @@ export default observer(function DhomaForm() {
                 {({ handleSubmit, isValid, isSubmitting, dirty }) => (
                     <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
                         <label>Numri dhomes: </label>
-                        <MyTextInput type='number' name='nrdhomes' placeholder='Shkruani numrin e dhomes...' />
+                        <MyTextInput type='number' name='nrDhomes' placeholder='Shkruani numrin e dhomes...' />
                         <label>Pershkrimi: </label>
                         <MyTextArea rows={3} name='pershkrimi' placeholder='Shkruani pershkrimin e dhomes...' />
                         <label>Lloji dhomes: </label>
