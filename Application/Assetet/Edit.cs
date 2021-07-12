@@ -39,13 +39,13 @@ namespace Application.Assetet
             public async Task<Result<Unit>> Handle(Command request, CancellationToken cancellationToken)
             {
                 var paisja = await _context.Paisjets.FindAsync(request.Paisja.Paisja_Id);
-               // _mapper.Map(request.Paisja, paisja);
+                _mapper.Map(request.Paisja, paisja);
 
-               paisja.emertimi=request.Paisja.emertimi ?? paisja.emertimi;
+              /* paisja.emertimi=request.Paisja.emertimi ?? paisja.emertimi;
                 paisja.pershkrimi=request.Paisja.pershkrimi ?? paisja.pershkrimi;
                 paisja.servisimi=request.Paisja.servisimi ?? paisja.servisimi;
                 //paisja.Department_Id=request.Paisja.Department_Id ?? paisja.Department_Id;
-               paisja.image=request.Paisja.image ?? paisja.image;
+               paisja.image=request.Paisja.image ?? paisja.image;*/
                
                 var result = await _context.SaveChangesAsync() > 0;
 

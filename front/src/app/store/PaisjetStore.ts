@@ -9,7 +9,8 @@ export default class PaisjetStore{
     selectedPaisja:IPaisjet | undefined=undefined;
     editmode=false;
     image=undefined;
-    paisjetRegistry=new Map<string,IPaisjet>()
+    paisjetRegistry=new Map<string,IPaisjet>();
+    departmentname="";
 
 
     constructor(){
@@ -105,4 +106,9 @@ export default class PaisjetStore{
             console.log(error);
         }
     }
+    department=async(id:string)=>{
+        await agent.Departmentet.details(id).then(val=>{
+            this.departmentname=val.name;
+        });
+      }
 }

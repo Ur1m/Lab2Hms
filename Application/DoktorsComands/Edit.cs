@@ -61,7 +61,7 @@ namespace Application.DoktorsComands
               
                var mjeket=await _context.Mjeket.FindAsync(request.Mjeku_Id);
                if(mjeket==null){
-                 throw new Exception("Could not finde that news");
+                 throw new Exception("Could not finde that doktor");
                }
                mjeket.Emri=request.Emri ?? mjeket.Emri;
                mjeket.Mbimeri=request.Mbimeri ?? mjeket.Mbimeri;

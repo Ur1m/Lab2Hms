@@ -31,10 +31,10 @@ namespace Application.TerminatKontrolles
             public async Task<Result<Unit>> Handle(Command request, CancellationToken cancellationToken)
             {
                 var termini = await _context.Terminet.FindAsync(request.terminet.termini_ID);
-
+                 _mapper.Map(request.terminet, termini);
               /*termini.Pacient_Id=request.terminet.Pacient_Id ?? termini.Pacient_Id;
                termini.Mjeku_Id=request.terminet.Mjeku_Id ?? termini.Mjeku_Id;*/
-               termini.orari=request.terminet.orari ?? termini.orari;
+              // termini.orari=request.terminet.orari ?? termini.orari;
 
                 
 

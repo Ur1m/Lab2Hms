@@ -10,7 +10,7 @@ export default function NotFound() {
                 Oops - we've looked everywhere and could not find this.
             </Header>
             <Segment.Inline>
-                <Button as={Link} to='/' primary>
+                <Button as={Link} to='/home' primary>
                     Kthe ne faqen kryesore
                 </Button>
             </Segment.Inline>
