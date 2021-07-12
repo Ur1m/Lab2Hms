@@ -60,8 +60,8 @@ export default observer(function ShtratForm() {
                 {({ handleSubmit, isValid, isSubmitting, dirty }) => (
                     <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
                         <label>Numri i shtrati: </label>
-                        <MyTextInput type='number' name='nrshtratit' placeholder='Shkruani numrin e shtratit...' />
-                        <label>Pershrkimi: </label>
+                        <MyTextInput type='number' name='nrShtratit' placeholder='Shkruani numrin e shtratit...' />
+                        <label>Pershkrimi: </label>
                         <MyTextArea rows={3} name='pershkrimi' placeholder='Shkruani pershkrimin e shtratit...' />
                         <label>Lloji: </label>
                         <MySelectInput options={llojiShtreterveDropDown} placeholder='Zgjedhni llojin e shtratit...' name='llojiShtratit_id'></MySelectInput>

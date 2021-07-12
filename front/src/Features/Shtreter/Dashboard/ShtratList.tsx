@@ -68,7 +68,7 @@ export default observer( function ShtratList(){
                                     <Button color='red' onClick={() => setOpen(false)}>
                                         <Icon name='remove' /> Jo
                                     </Button>
-                                    <Button color='green' onClick={(e) => handleShtratDelete(e, selectedShtrat!.shtrat_id)}>
+                                    <Button color='green' onClick={(e) => handleShtratDelete(e, IShtrat.shtrat_id)}>
                                         <Icon name='checkmark' /> Po
                                     </Button>
                                 </Modal.Actions>

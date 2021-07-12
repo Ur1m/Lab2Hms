@@ -3,15 +3,9 @@ import './styles.css';
 import Navbar from '../../Components/Navbar';
 import { BrowserRouter as Router, Switch, Route, RouteComponentProps,withRouter, useLocation } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
-
 import '../../app/layout/styles.css';
 import DoktoriDashboard  from '../../Features/Doktori/DoktoriDashbord';
 import { observer } from 'mobx-react-lite';
-
-
-import agent from '../api/agent';
-
-
 import DepartmentDashboard from '../../Features/Departmentet/Dashboard/DepartmentDashboard';
 import HomePage from '../../Features/home/HomePage';
 import { ILaboratori } from '../models/ILaboratori';
@@ -78,31 +72,19 @@ const App = () => {
     setLaboratoret([...laboratoret.filter(a=>a.id!==id)])
   }
 
-  useEffect(() => {
-    axios
-    .get<ILaboratori[]>('http://localhost:5000/api/laboratoret')
-    .then(response=>{
-      let laboratoret: ILaboratori[]=[];
-      response.data.forEach(laboratori => {
-        laboratori.date=laboratori.date.split('.')[0];
-        laboratoret.push(laboratori);
-      })
-      setLaboratoret(laboratoret);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //   .get<ILaboratori[]>('http://localhost:5000/api/laboratoret')
+  //   .then(response=>{
+  //     let laboratoret: ILaboratori[]=[];
+  //     response.data.forEach(laboratori => {
+  //       laboratori.date=laboratori.date.split('.')[0];
+  //       laboratoret.push(laboratori);
+  //     })
+  //     setLaboratoret(laboratoret);
+  //     });
+  // }, []);
  
- 
-
- 
-
-
-
-// useEffect(()=>{
-//   axios.get('http://localhost:5000/api/blooddonors').then(response =>{
-//     console.log(response);
-//     setBloodDonors(response.data);
-//   })
-// },[])
 
   const location=useLocation();
   const {commonStore, userStore} = useStore();
