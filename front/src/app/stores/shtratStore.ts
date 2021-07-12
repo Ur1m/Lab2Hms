@@ -17,6 +17,7 @@ export default class ShtratStore {
 
     loadShtreter = async () => {
         this.setLoadingInitial(true);
+        this.Shtreter = [];
         try{
             const Shtreter = await agent.Shtreter.list();
                 Shtreter.forEach(Shtrat => {
@@ -33,8 +34,8 @@ export default class ShtratStore {
         this.loadingInitial = state;
     }
 
-    selectShtrat = (shtrat_id: string) => {
-        this.selectedShtrat= this.Shtreter.find(sh => sh.shtrat_id === shtrat_id);
+    selectShtrat = async(shtrat_id: string) => {
+        this.selectedShtrat= await agent.Shtreter.details(shtrat_id);
     }
 
 

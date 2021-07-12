@@ -53,44 +53,44 @@ export const Home = () => {
         <Grid columns={3} divided>
     <Grid.Row>
       <Grid.Column>
-       <h1>Number of doktors {doktorat.length}</h1>
+       <h1>Numri i mjekeve: {doktorat.length}</h1>
      <img src="assets/5.jpg"/>
       </Grid.Column>
       <Grid.Column>
-      <h1>Number of departments {Departmentet.length}</h1>
+      <h1>Numri i deparatmenteve: {Departmentet.length}</h1>
         <Image src='assets/depp.jpg' />
       </Grid.Column>
       <Grid.Column>
-      <h1>Number of pacients {pacientat.length}</h1>
+      <h1>Numri i pacientave: {pacientat.length}</h1>
         <Image src='assets/pac.jpg' />
       </Grid.Column>
     </Grid.Row>
 
     <Grid.Row>
       <Grid.Column>
-      <h1>Number of equipments {paisjet.length}</h1>
+      <h1>Numri i pajisjeve: {paisjet.length}</h1>
         <Image src='assets/paisjet.jpg' />
       </Grid.Column>
       <Grid.Column>
-      <h1>Number of termineve {terminet.length}</h1>
+      <h1>Numri i terminave: {terminet.length}</h1>
         <Image src='assets/ter.jpg' />
       </Grid.Column>
       <Grid.Column>
-      <h1>Number of medikaments {Barnat.length}</h1>
+      <h1>Numri i barnave: {Barnat.length}</h1>
         <Image src='assets/barna.jpg' />
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>
       <Grid.Column>
-      <h1>Number of bills {Faturat.length}</h1>
+      <h1>Numri i faturave: {Faturat.length}</h1>
         <Image src='assets/pay.jpg' />
       </Grid.Column>
       <Grid.Column>
-      <h1>Number of rooms {Dhomat.length}</h1>
+      <h1>Numri i dhomave: {Dhomat.length}</h1>
         <Image src='assets/rooms.jpg' />
       </Grid.Column>
       <Grid.Column>
-      <h1>Number of bads {Shtreter.length}</h1>
+      <h1>Numri i shtreterve: {Shtreter.length}</h1>
         <Image src='assets/bad.png' />
       </Grid.Column>
     </Grid.Row>

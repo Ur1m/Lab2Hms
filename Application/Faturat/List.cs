@@ -26,7 +26,7 @@ namespace Application.Faturat
 
             public async Task<List<Fatura>> Handle(Query request, CancellationToken cancellationToken)
             {
-                return await _context.Faturat.ToListAsync();
+                return await _context.Faturat.Include(x => x.Pacient).ToListAsync();
             }
         }
     }

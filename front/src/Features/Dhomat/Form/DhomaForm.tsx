@@ -16,8 +16,8 @@ export default observer(function DhomaForm() {
 
 
     const initialState = selectedDhoma ?? {
-        dhoma_id: '',
-        nrdhomes: null,
+        dhoma_Id: '',
+        nrDhomes: null,
         pershkrimi: '',
         llojiDhomes: ''
     }
@@ -25,12 +25,12 @@ export default observer(function DhomaForm() {
     const [Dhoma, setDhoma] = useState(initialState);
     const validationSchema = Yup.object({
         pershkrimi: Yup.string().required('Pershkrimi dhomes nuk mund te jete i zbrazet...'),
-        nrdhomes: Yup.number().required('Numri dhomes nuk mund te jete i zbrazet...').nullable(),
+        nrDhomes: Yup.number().required('Numri dhomes nuk mund te jete i zbrazet...').nullable(),
         llojiDhomes: Yup.string().required('Zgjedh llojin e dhomes').nullable()
     })
 
     function handleFormSubmit(Dhoma: IDhoma) {
-        Dhoma.dhoma_id ? updateDhoma(Dhoma) : createDhoma(Dhoma);
+        Dhoma.dhoma_Id ? updateDhoma(Dhoma) : createDhoma(Dhoma);
     }
 
     return (
@@ -42,8 +42,11 @@ export default observer(function DhomaForm() {
                 onSubmit={values => handleFormSubmit(values)}>
                 {({ handleSubmit, isValid, isSubmitting, dirty }) => (
                     <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
-                        <MyTextInput type='number' name='nrdhomes' placeholder='Shkruani numrin e dhomes...' />
+                        <label>Numri dhomes: </label>
+                        <MyTextInput type='number' name='nrDhomes' placeholder='Shkruani numrin e dhomes...' />
+                        <label>Pershkrimi: </label>
                         <MyTextArea rows={3} name='pershkrimi' placeholder='Shkruani pershkrimin e dhomes...' />
+                        <label>Lloji dhomes: </label>
                         <MySelectInput options={llojiDhomesOptions} placeholder='Lloji Dhomes' name='llojiDhomes' />
                         <Button 
                         disabled={isSubmitting || !dirty || !isValid}

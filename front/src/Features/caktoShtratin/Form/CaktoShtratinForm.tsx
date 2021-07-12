@@ -19,7 +19,7 @@ export default observer(function CaktoShtratinForm() {
     const { selectedCaktoShtratin, closeForm, createCaktoShtratin, updateCaktoShtratin, loading, getPacientet,getShtreter } = caktoShtratinStore;
 
     const initialState = selectedCaktoShtratin ?? {
-        caktoshtratin_id: '',
+        caktoShtratin_id: '',
         kohahyrjes: null,
         kohaleshimit: null,
         pacient_id: '',
@@ -43,7 +43,7 @@ export default observer(function CaktoShtratinForm() {
 
 
     function handleFormSubmit(caktoShtratin: ICaktoShtratin) {
-        caktoShtratin.caktoshtratin_id ? updateCaktoShtratin(caktoShtratin) : createCaktoShtratin(caktoShtratin);
+        caktoShtratin.caktoShtratin_id ? updateCaktoShtratin(caktoShtratin) : createCaktoShtratin(caktoShtratin);
     }
 
 
@@ -64,7 +64,7 @@ export default observer(function CaktoShtratinForm() {
         });
         for(var i = 0; i < shtreter.length;i++){
             
-            var ShtreterDropDown: IShtratDropDown = { text: shtreter[i].nrshtratit, key: shtreter[i].shtrat_id, value: shtreter[i].shtrat_id}
+            var ShtreterDropDown: IShtratDropDown = { text: shtreter[i].nrShtratit , key: shtreter[i].shtrat_id, value: shtreter[i].shtrat_id}
             shtreterDropDown.push(ShtreterDropDown);
         }
     })
@@ -79,9 +79,13 @@ export default observer(function CaktoShtratinForm() {
                 onSubmit={values => handleFormSubmit(values)}>
                 {({ handleSubmit, isValid, isSubmitting, dirty }) => (
                     <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
+                        <label>Data e hyrjes:</label>
                         <MyDateInput name='kohahyrjes' placeholderText='Hyri me...' />
+                        <label>Data e leshimit: </label>
                         <MyDateInput name='kohaleshimit' placeholderText='Leshoi me...' />
+                        <label>Emri pacientit: </label>
                         <MySelectInput options={pacientetDropDown} placeholder='Zgjedhni pacientin...' name='pacient_id'></MySelectInput>
+                        <label>Shtrati me numer: </label>
                         <MySelectInput options={shtreterDropDown} placeholder='Zgjedhni shtratin...' name='shtrat_id'></MySelectInput>
                         <Button
                            disabled={isSubmitting || !dirty || !isValid}

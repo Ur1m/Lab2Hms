@@ -93,7 +93,7 @@ const Faturat = {
     list: () => requests.get<IFatura[]>('/faturat'),
     details: (fatura_id: string) => requests.get<IFatura>(`/faturat/${fatura_id}`),
     create: (Fatura: IFatura) => axios.post<void>('/faturat', Fatura),
-    update: (Fatura: IFatura) => axios.put<void>(`/faturat/${Fatura.fatura_id}`, Fatura),
+    update: (Fatura: IFatura) => axios.put<void>(`/faturat/${Fatura.fatura_Id}`, Fatura),
     delete: (fatura_id: string) => axios.delete<void>(`/faturat/${fatura_id}`)
 }
 const Shtreter = {
@@ -114,7 +114,7 @@ const caktoShtreterit = {
     list: () => requests.get<ICaktoShtratin[]>('/caktoShtreterit'),
     details: (caktoShtreterit_id: string) => requests.get<ICaktoShtratin>(`/caktoShtreterit/${caktoShtreterit_id}`),
     create: (caktoShtreterit: ICaktoShtratin) => axios.post<void>('/caktoShtreterit', caktoShtreterit),
-    update: (caktoShtreterit: ICaktoShtratin) => axios.put<void>(`/caktoShtreterit/${caktoShtreterit.caktoshtratin_id}`, caktoShtreterit),
+    update: (caktoShtreterit: ICaktoShtratin) => axios.put<void>(`/caktoShtreterit/${caktoShtreterit.caktoShtratin_id}`, caktoShtreterit),
     delete: (caktoShtreterit_id: string) => axios.delete<void>(`/caktoShtreterit/${caktoShtreterit_id}`)
 }
 const Pacientat ={
@@ -168,7 +168,7 @@ const Dhomat={
     list: () => requests.get<IDhoma[]>('/dhomat'),
     details: (dhoma_id: string) => requests.get<IDhoma>(`/dhomat/${dhoma_id}`),
     create: (Dhoma: IDhoma) => axios.post<void>('/dhomat', Dhoma),
-    update: (Dhoma: IDhoma) => axios.put<void>(`/dhomat/${Dhoma.dhoma_id}`, Dhoma),
+    update: (Dhoma: IDhoma) => axios.put<void>(`/dhomat/${Dhoma.dhoma_Id}`, Dhoma),
     delete: (dhoma_id: string) => axios.delete<void>(`/dhomat/${dhoma_id}`)
 }
 

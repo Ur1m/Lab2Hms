@@ -18,7 +18,7 @@ export default observer(function ShtratForm() {
 
     const initialState = selectedShtrat ?? {
         shtrat_id: '',
-        nrshtratit: null,
+        nrShtratit: null,
         statusi: '',
         pershkrimi: '',
         llojiShtratit_id: '',
@@ -27,7 +27,7 @@ export default observer(function ShtratForm() {
     const [Shtrat, setShtrat] = useState(initialState);
     const validationSchema = Yup.object({
         pershkrimi: Yup.string().required('Pershkrimi shtratit nuk mund te jete i zbrazet...'),
-        nrshtratit: Yup.number().required('Numri i shtratit nuk mund te jete i zbrazet...').nullable(),
+        nrShtratit: Yup.number().required('Numri i shtratit nuk mund te jete i zbrazet...').nullable(),
         statusi: Yup.string().required('Selektoni statusin').nullable(),
         llojiShtratit_id: Yup.string().required('Zgjedh llojin e shtratit...').nullable()
     })
@@ -59,9 +59,13 @@ export default observer(function ShtratForm() {
                 onSubmit={values => handleFormSubmit(values)}>
                 {({ handleSubmit, isValid, isSubmitting, dirty }) => (
                     <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
+                        <label>Numri i shtrati: </label>
                         <MyTextInput type='number' name='nrshtratit' placeholder='Shkruani numrin e shtratit...' />
+                        <label>Pershrkimi: </label>
                         <MyTextArea rows={3} name='pershkrimi' placeholder='Shkruani pershkrimin e shtratit...' />
+                        <label>Lloji: </label>
                         <MySelectInput options={llojiShtreterveDropDown} placeholder='Zgjedhni llojin e shtratit...' name='llojiShtratit_id'></MySelectInput>
+                        <label>Statusi:</label>
                         <MySelectInput options={statusishtratit} placeholder='Statusi' name='statusi' />
                         <Button 
                         disabled={isSubmitting || !dirty || !isValid}

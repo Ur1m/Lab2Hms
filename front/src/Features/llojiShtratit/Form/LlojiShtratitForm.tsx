@@ -38,7 +38,9 @@ export default observer(function LlojiShtratitForm() {
                 onSubmit={values => handleFormSubmit(values)}>
                 {({ handleSubmit, isValid, isSubmitting, dirty }) => (
                     <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
+                        <label>Lloji: </label>
                         <MyTextInput name='emri' placeholder='Shkruani emrin e llojit te shtratit...' />
+                        <label>Pershkrimi:</label>
                         <MyTextArea rows={3} name='pershkrimi' placeholder='Shkruani pershkrimin e llojit te shtratit...' />
                         <Button 
                         disabled={isSubmitting || !dirty || !isValid}

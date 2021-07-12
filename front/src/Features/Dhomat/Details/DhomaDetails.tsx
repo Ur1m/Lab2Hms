@@ -13,14 +13,15 @@ export default function DhomaDetails() {
         <Card fluid>
         {/* <Image src={`/assets/DepartmentImages/${Dhoma.dhoma_id}.jpg`} /> */}
         <Card.Content>
-          <Card.Header>{Dhoma.dhoma_id}</Card.Header>
+          <Card.Header>Numri Dhomes: {Dhoma.nrDhomes}</Card.Header>
           <Card.Description>
-                {Dhoma.pershkrimi}
+                Pershkrimi: {Dhoma.pershkrimi}<br/>
+                Lloji Dhomes: {Dhoma.llojiDhomes}
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
             <Button.Group widths='2'>
-                <Button onClick={() => openForm(Dhoma.dhoma_id)} basic color='blue' content='Ndrysho'/>
+                <Button onClick={() => openForm(Dhoma.dhoma_Id)} basic color='blue' content='Ndrysho'/>
                 <Button onClick={cancelSelectedDhoma} basic color='blue' content='Anulo'/>
             </Button.Group>
         </Card.Content>

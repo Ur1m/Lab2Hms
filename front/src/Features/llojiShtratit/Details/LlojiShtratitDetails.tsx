@@ -13,9 +13,9 @@ export default function LlojiShtratitDetails() {
         <Card fluid>
         {/* <Image src={`/assets/DepartmentImages/${llojiShtratit.llojiShtratit_id}.jpg`} /> */}
         <Card.Content>
-          <Card.Header>{llojiShtratit.emri}</Card.Header>
+          <Card.Header>Lloji: {llojiShtratit.emri}</Card.Header>
           <Card.Description>
-                {llojiShtratit.pershkrimi}
+                Pershkrimi: {llojiShtratit.pershkrimi}
           </Card.Description>
         </Card.Content>
         <Card.Content extra>

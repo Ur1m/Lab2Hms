@@ -1,9 +1,12 @@
+import { ILlojiShtratit } from "./ILlojiShtratit";
+
 export interface IShtrat{
     shtrat_id:string;
-    nrshtratit:number | null;
+    nrShtratit:number | null;
     statusi:string;
     pershkrimi:string;
     llojiShtratit_id:string;
+    llojiShtratit?: ILlojiShtratit;
 }
 
 export interface IShtratDropDown{

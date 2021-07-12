@@ -17,6 +17,7 @@ export default class FaturaStore {
 
     loadFaturat = async () => {
         this.setLoadingInitial(true);
+        this.Faturat = [];
         try{
             const Faturat = await agent.Faturat.list();
                 Faturat.forEach(Fatura => {
@@ -28,13 +29,15 @@ export default class FaturaStore {
                 this.setLoadingInitial(true);
         }
     }
+    
 
     setLoadingInitial = (state: boolean) => {
         this.loadingInitial = state;
     }
 
-    selectFatura = (fatura_id: string) => {
-        this.selectedFatura = this.Faturat.find(f => f.fatura_id === fatura_id);
+    
+    selectFatura = async (fatura_id: string) => {
+        this.selectedFatura = await agent.Faturat.details(fatura_id);
     }
 
 
@@ -53,7 +56,7 @@ export default class FaturaStore {
 
     createFatura = async (Fatura: IFatura) => {
         this.loading = true;
-        Fatura.fatura_id = uuid();
+        Fatura.fatura_Id = uuid();
         try{
             await agent.Faturat.create(Fatura);
             runInAction(() => {
@@ -75,7 +78,7 @@ export default class FaturaStore {
         try{
             await agent.Faturat.update(Fatura);
             runInAction(() => {
-                this.Faturat = [...this.Faturat.filter(f => f.fatura_id !== Fatura.fatura_id), Fatura];
+                this.Faturat = [...this.Faturat.filter(f => f.fatura_Id !== Fatura.fatura_Id), Fatura];
                 this.selectedFatura = Fatura;
                 this.editMode = false;
                 this.loading = false;
@@ -93,8 +96,8 @@ export default class FaturaStore {
         try{
             await agent.Faturat.delete(fatura_id);
             runInAction(() => {
-                this.Faturat = [...this.Faturat.filter(f => f.fatura_id !== fatura_id)];
-                if (this.selectedFatura?.fatura_id === fatura_id) this.cancelSelectedFatura();
+                this.Faturat = [...this.Faturat.filter(f => f.fatura_Id !== fatura_id)];
+                if (this.selectedFatura?.fatura_Id === fatura_id) this.cancelSelectedFatura();
                 this.loading = false;
             })
         } catch(error) {
