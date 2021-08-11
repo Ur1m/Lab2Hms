@@ -7,7 +7,9 @@ export default class PacientatStore{
     //pacientat:IPacienti[]=[];
     selectedPacienti:IPacienti | undefined=undefined;
     editmode=false;
+    detailsmode=false;
     pacientatRegistry=new Map<string,IPacienti>()
+    forma=false;
 
 
     constructor(){
@@ -41,6 +43,14 @@ export default class PacientatStore{
         pacient_Id? this.selectPacineti(pacient_Id) : this.canceleSelectedPacienti();
         this.editmode=(true);
     }
+    openDetails=(id:string)=>{
+        this.selectPacineti(id);
+        this.detailsmode=true;
+    }
+    closeDetails=()=>{
+        this.selectedPacienti=undefined;
+        this.detailsmode=false;
+    }
     closeForm=()=>{
         this.editmode=false;
     }
@@ -67,6 +77,7 @@ export default class PacientatStore{
             this.pacientatRegistry.set(Pacienti.pacient_Id,Pacienti)
              this.selectedPacienti=Pacienti;
              this.editmode=false;
+             
             
            })
         }

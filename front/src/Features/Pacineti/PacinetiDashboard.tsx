@@ -9,6 +9,7 @@ import { useStorePacientat } from "../../app/stores/store";
 import  PacentatDetails  from "./PacentatDetails";
 import { PacientatForm } from "./PacientatForm";
 import PacientatList  from "./PacientatList";
+import PacientatTable from "./PacinetatTable";
 
 export default  observer( function  PacientiDashboard(){
     const {PacientatStore}=useStorePacientat();
@@ -17,19 +18,17 @@ export default  observer( function  PacientiDashboard(){
 
     return(
         <Grid>
-        <Grid.Column width={10}>
+        <Grid.Column width={15}>
          
 
            
-     <PacientatList  /*deletePacienti={handledeletePacienti}*//> 
+    <PacientatTable/>
    
             
         </Grid.Column>
-        <Grid.Column width={6}>
-           {PacientatStore.selectedPacienti &&  !PacientatStore.editmode &&<PacentatDetails />}
-            {PacientatStore.editmode &&<PacientatForm 
-            key={PacientatStore.selectedPacienti && PacientatStore.selectedPacienti.pacient_Id || 0}
-            />}
+        <Grid.Column width={6}
+>
+           
         </Grid.Column>
     </Grid>
     )

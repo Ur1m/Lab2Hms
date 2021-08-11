@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import React from 'react'
-import { Button, ButtonGroup, Card } from 'semantic-ui-react'
+import { Button, ButtonGroup, Card,Image } from 'semantic-ui-react'
 import LoadingComponent from '../../app/layout/LoadingComponent';
 import { IPacienti } from '../../app/models/IPacienti'
 import { useStorePacientat } from '../../app/stores/store';
@@ -15,13 +15,13 @@ import {format} from 'date-fns';
   export default observer( function PacentatDetails ()  {
 
     const {PacientatStore}=useStorePacientat();
-    const{selectedPacienti}=PacientatStore
+    const{selectedPacienti,closeDetails}=PacientatStore
 
     if(!selectedPacienti) return <LoadingComponent/>;
 
       return (
           <Card fluid>
-      
+       <Image src={`assets/doc.jpg`} width={"300px"} height={"300px"} />
       <Card.Content>
       
         <Card.Description>{"Emri :"+selectedPacienti.emri}</Card.Description>
@@ -45,7 +45,7 @@ import {format} from 'date-fns';
       <Card.Content extra>
         <ButtonGroup widths={2}>
             <Button onClick={()=>PacientatStore.openForm(selectedPacienti!.pacient_Id)}basic color='blue' content="Edit"/>
-            <Button  onClick={()=>PacientatStore.canceleSelectedPacienti()}basic color='grey' content="Cancele"/>
+            <Button  onClick={()=>closeDetails()}basic color='grey' content="Cancele"/>
         </ButtonGroup>
       </Card.Content>
     </Card>
