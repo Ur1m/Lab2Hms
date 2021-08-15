@@ -114,7 +114,7 @@ return (
       <Navbar  openCreateForm={handleOpenCreateForm}/>
         
         <Switch>
-        <Container style={{marginTop: '8em'}}>
+        <Container width={"100vw"} >
         {/* <LaboratoriDashboard laboratoret={laboratoret}
           selectLaboratori={handleSelectLaboratori}
           selectedLaboratori={selectedLaboratori}

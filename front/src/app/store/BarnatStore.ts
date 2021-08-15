@@ -7,7 +7,7 @@ export default class BarnatStore{
     
     selectedBarna:Barna | undefined=undefined;
     editmode=false;
-    
+    detailsmode=false;
     BarnatRegistry=new Map<string,Barna>()
 
 
@@ -31,6 +31,13 @@ export default class BarnatStore{
     }
     get Barnat(){
         return Array.from(this.BarnatRegistry.values());
+    }
+    openDetails=(id:string)=>{
+        this.selectBarna(id);
+        this.detailsmode=true;
+    }
+    closeDetails=()=>{
+        this.detailsmode=false;
     }
     getimage=async(paisje_id:string)=>{
        var x= await agent.Paisjet.details(paisje_id);

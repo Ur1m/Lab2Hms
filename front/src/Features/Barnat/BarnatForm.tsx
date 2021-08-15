@@ -47,7 +47,7 @@ export const BarnatForm = () => {
        
       }
       if(!open){
-        createBarna(Barna);
+        createBarna(barna);
         open=false;
       }
       else{

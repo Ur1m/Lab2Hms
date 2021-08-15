@@ -18,7 +18,7 @@ export default observer( function PacentatDetails ()  {
 
       return (
           <Card fluid>
-            <Image src={`${selectedPaisja!.image}`} />
+          
       
       <Card.Content>
      
@@ -38,10 +38,7 @@ export default observer( function PacentatDetails ()  {
     
       </Card.Content>
       <Card.Content extra>
-        <ButtonGroup widths={2}>
-            <Button onClick={()=>PaisjetStore.openForm(selectedPaisja!.paisja_Id)}basic color='blue' content="Edit"/>
-            <Button  onClick={()=>PaisjetStore.canceleSelectedPaisja()}basic color='grey' content="Cancele"/>
-        </ButtonGroup>
+       
       </Card.Content>
     </Card>
       )

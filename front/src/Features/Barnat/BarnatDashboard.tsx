@@ -1,6 +1,8 @@
 import { observer } from "mobx-react-lite";
+import React from "react";
 import { Grid } from "semantic-ui-react";
 import { useStoreBarnat } from "../../app/stores/store";
+import BarnatDesign from "./BarnatDesign";
 
 import BarnatDetails from "./BarnatDetails";
 import { BarnatForm } from "./BarnatForm";
@@ -12,22 +14,15 @@ export default  observer( function  PaisjetDashboard(){
   
 
     return(
-        <Grid>
-        <Grid.Column width={10}>
+        
          
-
+     <React.Fragment>
            
-     <BarnatList  /> 
+     <BarnatDesign  /> 
+     
    
-            
-        </Grid.Column>
-        <Grid.Column width={6}>
-           {BarnatStore.selectedBarna &&  !BarnatStore.editmode &&<BarnatDetails />}
-            {BarnatStore.editmode &&<BarnatForm
-            key={BarnatStore.selectedBarna  && BarnatStore.selectedBarna .barnat_Id|| 0}
-            />}
-        </Grid.Column>
-    </Grid>
+     </React.Fragment>
+      
     )
 }
 );

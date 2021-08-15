@@ -1,0 +1,124 @@
+.dFlex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.containerr{
+  display: flex;
+  flex-direction: column;
+  
+  width: 100vw;
+  height: 100%;
+  overflow: scroll;
+  padding: 30px 50px 20px 50px;
+  box-sizing: border-box;
+  background-color: rgb(46, 46, 46);
+  position: absolute;
+  left :0;
+}
+
+.main_content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 70%;
+  height: 100%;
+  margin: 50px auto;
+  margin-top: 150px;
+  padding: 50px 0 0;
+  box-sizing: border-box;
+  justify-content: space-between;
+  flex-wrap: wrap;
+   
+}
+h3{
+  position: absolute;
+  left: 650px;
+  top: -10px;
+  color:red;
+  font-size: 8.5vw;
+}
+.carde{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 320px;
+  flex-direction: column;
+  border-radius: 15px;
+  position: relative;
+  transform: scale(.8);
+  transition: all .3s ease-in-out;
+  margin-bottom: 50px;
+  padding-bottom: 0px;
+  
+  
+}
+.carde-h-1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px;
+  
+}
+.carde-h-1 h4{
+  margin-top: -15px;
+}
+.carde_img{
+  margin-top: -5vw;
+}
+.carde_img img{
+  width: 200px;
+  
+
+}
+.carde_img img:hover{
+  width: 200px;
+  background-image: url("./delete-1432400-1211078.png");
+  background-position: center;
+  background-size: cover;
+}
+.card_headerr{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  margin: 25px 0px;
+ 
+}
+.card_headerr h2{
+  font-size: 18px;
+}
+.carde:hover{
+  
+  transform:scale(1.1);
+  cursor: pointer;
+ 
+ 
+
+}
+
+
+.btn{
+  background-color: lightgray;
+  width: 70px;
+  height:35px;
+  font-size: 14px;
+  border-radius: 35px;
+  text-align: center;
+  padding-top:5px ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: background-color .3s ease;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.btn:hover{
+  background-color: orange;
+}
