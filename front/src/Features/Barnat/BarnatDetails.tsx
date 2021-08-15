@@ -10,6 +10,14 @@ import Edit from "@material-ui/icons/Edit";
 import { BarnatForm } from "./BarnatForm";
 import PopUp from "../Pacineti/PopUp";
 import { CardActions } from "@material-ui/core";
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Slide from '@material-ui/core/Slide';
+import { TransitionProps } from '@material-ui/core/transitions';
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 
 export default observer( function BarnatDetails ()  {
 
@@ -55,37 +63,34 @@ export default observer( function BarnatDetails ()  {
             <Button onClick={()=>BarnatStore.openForm(selectedBarna!.barnat_Id)}basic color='blue' content={<Edit/>}/>
             <Button  onClick={()=>del(selectedBarna!.barnat_Id)} basic  content={<DeleteForeverIcon/>} color='red'/>
         </ButtonGroup>
+        <Dialog
+        open={open}
+        
+        keepMounted
        
-                            <PopUp
-                               openPopup={editmode}
-                              
-                               title="Pacientat Form">
-                                
-                                   <BarnatForm/>
-                                     </PopUp>
-                                     <PopUp
-                               openPopup={open}
-                              
-                               title="Pacientat Form">
-                                 <PopupHeader icon='archive' content='Delete Barnen' />
-                                <PopupContent>
-                                    <p>
-                                        Are you sure that you want to delete Barnen:{selectedBarna?.bName}?
-                                    </p>
-                                </PopupContent>
-                                <CardActions>
-                                    <Button color='red' onClick={() => setOpen(false)}>
-                                        <Icon name='remove' /> No
-                                    </Button>
-                                    <Button color='green' onClick={() =>handleDelete(selectedBarna!.barnat_Id) }>
-                                        <Icon name='checkmark' /> Yes
-                                    </Button>
-                                </CardActions>
+        aria-labelledby="alert-dialog-slide-title"
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogTitle id="alert-dialog-slide-title">{"Delete Barna"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-slide-description">
+           Are you sure that you want to delete barnen : {selectedBarna.bName}
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+        <Button color='red' onClick={() => setOpen(false)}>
+                                        <Icon name='remove' /> No</Button>
+         <Button color='green' onClick={() =>handleDelete(selectedBarna!.barnat_Id) }>
+              <Icon name='checkmark' /> Yes
+             </Button>
+        </DialogActions>
+      </Dialog>
+        
                             
-                                   
-                                     </PopUp>
+         
                                  
       </Card.Content>
+      
     </Card>
       )
   }

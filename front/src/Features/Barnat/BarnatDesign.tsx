@@ -10,6 +10,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import AddIcon from '@material-ui/icons/Add';
 import BarnatDetails from './BarnatDetails';
 import { BarnatForm } from './BarnatForm';
+import MoreHoriz from '@material-ui/icons/MoreHoriz';
 export default observer( function BarnatDesign  ()  {
     const {BarnatStore}=useStoreBarnat();
     const{Barnat,selectBarna,openForm,selectedBarna,deleteBarna,detailsmode,openDetails,editmode}=BarnatStore;
@@ -46,7 +47,7 @@ export default observer( function BarnatDesign  ()  {
                    <h1>{item.bName}</h1>
                    <h4>{format(item.dataRegjistrimit!,'MMMM d, yyyy')}</h4>
                    </div>
-                  <div className="btn" onClick={()=>openDetails(item.barnat_Id)} >more</div>
+                  <div className="btn" onClick={()=>openDetails(item.barnat_Id)} ><MoreHoriz/></div>
                </div>
             </div>
         ));
