@@ -1,18 +1,25 @@
-
+import { format } from 'date-fns';
 import { observer } from 'mobx-react-lite';
 import React, { useEffect, useState } from 'react';
 import { Item,Button,Label, Segment, Modal, Header, Icon } from 'semantic-ui-react';
-
+import './dc.css';
 import { IDoktori } from '../../app/models/Doktori';
 import { useStoreDoktorat } from '../../app/stores/store';
+import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@material-ui/core';
+import PopUp from '../Pacineti/PopUp';
+import DoktoriForm from './DoktoriForm';
+import AddIcon from '@material-ui/icons/Add';
+import DoktoriDetails from './DoktoriDetails';
+
 
 
 
 
 export default observer(function DoktoratList () {
     const {DoktoratStore}=useStoreDoktorat();
-    const{doktorat,selectDoktori,deleteDoktori,openForm,selectedDoktori}=DoktoratStore;
+    const{doktorat,selectDoktori,deleteDoktori,openForm,selectedDoktori,editmode,openDetails,detailsmode}=DoktoratStore;
     const [open, setOpen] = React.useState(false)
+    const [dimmer,setDimmer]=React.useState(false)
     
     const[search,setsearch]=useState("");
     useEffect(()=>{
@@ -30,62 +37,106 @@ export default observer(function DoktoratList () {
         setOpen(true);
         
     }
+    
+    
+   
     return (
-        <React.Fragment>
-            <Item.Group>
-            <div className="ui left icon input"><input type="text" placeholder="Search users..." onChange={event=>setsearch(event.target.value)}/><i aria-hidden="true" className="users icon"></i></div>
-            <Button onClick={()=>openForm()}floated="right"  positive content='AddDoktorat'/>
-            </Item.Group>
-        <Segment clearing>
-            <Item.Group divided>
-                {doktorat.filter((val)=>{
+       
+            <React.Fragment>
+                <div className="containerrr">
+                   
+<div className="zi">
+<div className="ui left icon input s"><input type="text" placeholder="Search users..." onChange={event=>setsearch(event.target.value)}/><i aria-hidden="true" className="users icon"></i></div>
+<Button onClick={()=>openForm()}floated="right" content={<AddIcon/>}color='green' />
+
+</div>
+               
+                <div className="ui special cards uii">
+                    {doktorat.filter((val)=>{
                     if(search==""){
                         return val;
                     }
                     else if(val.emri.toLocaleLowerCase().includes(search.toLocaleLowerCase())){
                         return val;
                     }
-                }).map(Doktori =>(
-                     <Item key={Doktori.mjeku_Id}>
-                     <Item.Content>
-                         <Item.Header as='a'>{Doktori.emri+"  "+Doktori.mbimeri}</Item.Header>
-                        
-                       
-                         <Item.Extra>
-                             <Button onClick={()=>selectDoktori(Doktori.mjeku_Id)} floated="right" content='View' color='blue'/>
-                             <Button onClick={()=>del(Doktori.mjeku_Id)} floated="right" content='Delete' color='red'/>
-                             <Modal
-                                closeIcon
-                                open={open}
-                               
-                                onClose={() => setOpen(false)}
-                                onOpen={() => setOpen(true)}>
-                                <Header icon='archive' content='Delete terminin' />
-                                <Modal.Content>
-                                    <p>
-                                        Are you sure that you want to delete Paisjen:{selectedDoktori?.emri}?
-                                    </p>
-                                </Modal.Content>
-                                <Modal.Actions>
-                                    <Button color='red' onClick={() => setOpen(false)}>
-                                        <Icon name='remove' /> No
-                                    </Button>
-                                    <Button color='green' onClick={() =>handleDelete(selectedDoktori!.mjeku_Id) }>
-                                        <Icon name='checkmark' /> Yes
-                                    </Button>
-                                </Modal.Actions>
-                            </Modal>
-                             <Label basic content={Doktori.depName}/>
-                         </Item.Extra>
-                     </Item.Content>
-                     </Item>
-
-                ))}
-            
-        </Item.Group>
+                }).map((item)=>(
+                        <div className="card">
+    <div className="blurring dimmable image">
+      <div className="ui dimmer"
+      
         
-        </Segment>
-        </React.Fragment>
+      >
+        <div className="content">
+          <div className="center">
+            <div className="ui inverted button">Add Friend</div>
+          </div>
+        </div>
+      </div>
+      <img src="assets/doc.jpg" />
+    </div>
+    <div className="content">
+      <a className="header">{item.emri}  { item.mbimeri}</a>
+      <div className="meta">
+        <span className="date">Department : {item.depName}</span><br/>
+        <span className="date">Ditlindja: {format(item.ditlindja!,'MMMM d, yyyy')}</span><br/>
+        <span className="date">Specializimi : {item.specializimi}</span>
+      </div>
+    </div>
+    <div className="extra content bt">
+    
+    <Button color="grey"  onClick={() =>openForm(item!.mjeku_Id) }>
+                                        <Icon name='edit' /> Edit
+                                    </Button>
+            <Button color='red' onClick={() =>del(item!.mjeku_Id) }>
+                                        <Icon name='remove' /> Delete
+                                    </Button>
+                                    
+    </div>
+    <Dialog
+  open={open}
+  
+  keepMounted
+ 
+  aria-labelledby="alert-dialog-slide-title"
+  aria-describedby="alert-dialog-slide-description"
+>
+  <DialogTitle id="alert-dialog-slide-title">{"Delete Mjekun"}</DialogTitle>
+  <DialogContent>
+    <DialogContentText id="alert-dialog-slide-description">
+     Are you sure that you want to delete Mjekun : {item!.emri}
+    </DialogContentText>
+  </DialogContent>
+  <DialogActions>
+  <Button color='red' onClick={() => setOpen(false)}>
+                                  <Icon name='remove' /> No</Button>
+   <Button color='green' onClick={() =>handleDelete(item!.mjeku_Id) }>
+        <Icon name='checkmark' /> Yes
+       </Button>
+  </DialogActions>
+</Dialog>
+<PopUp
+                               openPopup={editmode}
+                              
+                               title="Pacientat Form">
+                                
+                                   <DoktoriForm/>
+                                     </PopUp>
+                                     <PopUp
+                               openPopup={detailsmode}
+                               >
+                                   <DoktoriDetails/>
+                                     </PopUp>
+  </div>
+  
+                    ))}
+  
+  </div>
+  </div>
+  
+   
+            </React.Fragment>
+               
+        
     )
 }
 )

@@ -1,7 +1,7 @@
 import { Dialog, DialogContent, DialogTitle, makeStyles, withStyles } from '@material-ui/core';
 import React from 'react'
 import { Button, Input, ItemGroup } from 'semantic-ui-react';
-import { useStoreBarnat, useStorePacientat, useStorePaisjet } from '../../app/stores/store';
+import { useStoreBarnat, useStoreDoktorat, useStorePacientat, useStorePaisjet } from '../../app/stores/store';
 import CloseIcon from '@material-ui/icons/Close';
 
 const useStyles=makeStyles(theme=>({
@@ -21,6 +21,8 @@ const {PaisjetStore}=useStorePaisjet();
 const{paisjet,openForm,selectPaisja,deletePaisja,selectedPaisja,editmode}=PaisjetStore;
 const {BarnatStore}=useStoreBarnat();
 const{}=BarnatStore;
+const {DoktoratStore}=useStoreDoktorat();
+    const{}=DoktoratStore;
  const classes=useStyles()
 
  function close(){
@@ -29,6 +31,8 @@ const{}=BarnatStore;
     PaisjetStore.closeForm();
     BarnatStore.closeForm();
     BarnatStore.closeDetails();
+    DoktoratStore.closeForm();
+    DoktoratStore.closeDetails();
  }
     return (
         <Dialog open={openPopup}

@@ -9,6 +9,7 @@ export default class DoktoretStore{
     selectedDoktori:IDoktori | undefined=undefined;
     editmode=false;
     modali=false;
+    detailsmode=false;
     doktoratRegistry=new Map<string,IDoktori>()
     constructor(){
         makeAutoObservable(this)
@@ -31,6 +32,13 @@ export default class DoktoretStore{
     }
     get doktorat(){
         return Array.from(this.doktoratRegistry.values());
+    }
+    openDetails=(id:string)=>{
+        this.selectDoktori(id);
+        this.detailsmode=true;
+    }
+    closeDetails=()=>{
+        this.detailsmode=false;
     }
     selectDoktori=(id:string)=>{
       this.selectedDoktori=this.doktoratRegistry.get(id);

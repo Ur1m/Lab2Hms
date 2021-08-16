@@ -1,5 +1,6 @@
 
 import { observer } from 'mobx-react-lite';
+import React from 'react';
 
 import { Button, Grid} from 'semantic-ui-react';
 
@@ -15,21 +16,13 @@ export default observer( function DoktoriDashboard () {
     const{selectedDoktori}=DoktoratStore;
  
   return (
-     <Grid>
-         <Grid.Column width={10}>
-          
-
+    
+          <React.Fragment>
+      
             
       <DoktoratList  />
      
-             
-         </Grid.Column>
-         <Grid.Column width={6}>
-            { selectedDoktori! &&  !DoktoratStore.editmode &&<DoktoratDetails />}
-             {DoktoratStore.editmode &&<DoktoriForm 
-             key={selectedDoktori! && selectedDoktori.mjeku_Id || 0} 
-            />}
-         </Grid.Column>
-     </Grid>
+      </React.Fragment>
+        
        )})
   

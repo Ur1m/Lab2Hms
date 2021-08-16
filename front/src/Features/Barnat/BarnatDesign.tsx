@@ -19,6 +19,7 @@ export default observer( function BarnatDesign  ()  {
     },[BarnatStore]);
     const [openpop,setopenpop]=React.useState(false);
     const [open, setOpen] = React.useState(false)
+   
 
     function del(id:string){
       selectBarna(id);
@@ -67,7 +68,7 @@ export default observer( function BarnatDesign  ()  {
            <PopUp
                                openPopup={detailsmode}
                                setopenPopup={setopenpop}
-                               title="Pacientat Form">
+                              >
                                 <BarnatDetails/>
                                    
      </PopUp>
