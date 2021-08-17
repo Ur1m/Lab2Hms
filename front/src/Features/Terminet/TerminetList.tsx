@@ -9,6 +9,8 @@ import { history } from "../..";
 import { useStoreTerminet } from "../../app/stores/store";
 import { TerminatForm } from "./TerminatForm";
 import TerminetDetails from "./TerminetDetails";
+import TerminatTable from "./TerminatTable";
+import "./t.css";
 
 
 export default observer( function TerminetList () {
@@ -44,92 +46,12 @@ console.log(withId);
     
     
     return (
-     <Grid>
-         <Grid.Column width={10}>
-            <Item.Group>
-          
-           {!id && <Button onClick={()=>openForm()}  positive content='AddTerminet'/>}
-           {id && <Button as={Link} to={"/Pacientat"} positive content="GoBack"/>}
-            </Item.Group>
-          
-              
-            
-                {terminet.filter(val=>{
-                   if(id && val.pacient_Id==id || val.mjeku_Id==id){
-                       return val;
-                   }
-                   else if(!id){
-                       return val;
-                   }
-                   else{
-                       
-                   }
-                  
-                   
-                }).map(p =>
-                    (
-                   
-                       
-                        <Segment clearing>  
-                     <Item key={p.termini_ID}>
-                     <Item.Content>
-                         <Item.Header as='a'>{format(p.orari!,'MMMM d, yyyy')}</Item.Header>
-                         
-                       
-                         <Item.Extra>
-                             <Button onClick={()=>selectTermini(p.termini_ID)} floated="right" content='View' color='blue'/>
-                             <Button onClick={()=>del(p.termini_ID)} floated="right" content='delete' color='red'/>
-                             <Modal
-                                closeIcon
-                                open={open}
-                               
-                                onClose={() => setOpen(false)}
-                                onOpen={() => setOpen(true)}>
-                                <Header icon='archive' content='Delete terminin' />
-                                <Modal.Content>
-                                    <p>
-                                        Are you sure that you want to delete Terminin?
-                                    </p>
-                                </Modal.Content>
-                                <Modal.Actions>
-                                    <Button color='red' onClick={() => setOpen(false)}>
-                                        <Icon name='remove' /> No
-                                    </Button>
-                                    <Button color='green' onClick={() =>handleDelete(selectedTermini!.termini_ID) }>
-                                        <Icon name='checkmark' /> Yes
-                                    </Button>
-                                </Modal.Actions>
-                            </Modal>
-                            
-                         </Item.Extra>
-                     </Item.Content>
-                  
-                     
-                     </Item>
-                     </Segment>
-                   
-                    
-                   
-                     
-                    
+     <div className="tcontainer">
+      <TerminatTable/>
 
-                ))}
-               
-                </Grid.Column>
-                <Grid.Column width={5}>
-        { id && TerminetStore.selectedTermini &&  !TerminetStore.editmode &&<TerminetDetails />}
-            { id &&TerminetStore.editmode &&<TerminatForm
-            key={TerminetStore.selectedTermini && TerminetStore.selectedTermini.termini_ID|| 0}
-            />}
-         
-        </Grid.Column>
-            
-       
-        
-        </Grid>
+     </div>
        
     )
 
 }
 )
-

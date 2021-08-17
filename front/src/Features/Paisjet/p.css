@@ -1,0 +1,58 @@
+.p{
+    display: flex;
+    flex-direction: column;
+    
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+    padding: 30px 50px 20px 50px;
+    box-sizing: border-box;
+    background-color: rgb(76, 120, 145);
+    position: absolute;
+    left :0;
+    padding-top: 150px;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+.i{
+    width: 250px;
+    height: 350px;
+   
+}
+.ii{
+  
+    height: 200px;
+}
+.zi
+{
+    
+    width: 80vw;
+    height: 25vh;
+   
+    margin-bottom: 100px;
+    margin-left: 150px;
+    margin-right: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.e{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.pa{
+    margin-top: -100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+ .p h3{
+    color:azure;
+}

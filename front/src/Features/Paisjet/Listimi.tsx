@@ -1,26 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { observer } from 'mobx-react-lite';
 import { useStorePaisjet } from '../../app/stores/store';
-import PaisjetDetails from './PaisjetDetails';
-import { Button, Header, Modal,Icon,Image } from 'semantic-ui-react';
+import { Button, Header, Modal,Icon,Image,Card } from 'semantic-ui-react';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
 import { PaisjetForm } from './PaisjetForm';
 import PopUp from '../Pacineti/PopUp';
+import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@material-ui/core';
+import PaisjetDetails from './PaisjetDetails';
+import { format } from 'date-fns';
+import AddIcon from '@material-ui/icons/Add';
+import "./p.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -62,8 +54,9 @@ export default observer(function Listimi() {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const {PaisjetStore}=useStorePaisjet();
-    const{paisjet,openForm,selectPaisja,deletePaisja,selectedPaisja,editmode}=PaisjetStore;
+    const{paisjet,openForm,selectPaisja,deletePaisja,selectedPaisja,editmode,detailsmode,openDetails}=PaisjetStore;
     const [open, setOpen] = React.useState(false)
+    const[search,setsearch]=useState("");
     const [openPop,setopenPop]=useState(false)
     useEffect(()=>{
         PaisjetStore.loadPaisjet();
@@ -92,80 +85,67 @@ export default observer(function Listimi() {
 
   return (
       <React.Fragment >
-          <Button onClick={()=>openForm()} floated="right" content={<Image src={"assets/add.png"}/>} color='green'  className={classes.buton} />
-    {paisjet.map(p =>(
-    <Card className={classes.root} key={p.paisja_Id} >
-      <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            <Image src={`assets/doc.jpg`}  />
-          </Avatar>
-        }
-      
-        title={p.emertimi}
         
-      />
-      <CardMedia
-        className={classes.media}
-        image={p.image}
-       
-      />
-      <CardContent>
-       
-      </CardContent>
-      <CardActions disableSpacing>
-      <Button onClick={()=>del(p.paisja_Id)}basic  content={<DeleteForeverIcon/>} color="red"/>
-      <Button onClick={()=>openForm(p.paisja_Id)}floated="right" content={<EditIcon/>} color='grey' />
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={()=>more(p.paisja_Id)}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </IconButton>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-         
-          <Typography paragraph>
-           <PaisjetDetails/>
-          </Typography>
-         
-        </CardContent>
-      </Collapse>
-      <Modal
-      closeIcon
-      open={open}
-     
-      onClose={() => setOpen(false)}
-      onOpen={() => setOpen(true)}>
-      <Header icon='archive' content='Delete Pacientin' />
-      <Modal.Content>
-          <p>
-              Are you sure that you want to delete Pacinetin:{selectedPaisja?.emertimi}?
-          </p>
-      </Modal.Content>
-      <Modal.Actions>
-          <Button color='red' onClick={() => setOpen(false)}>
-              <Icon name='remove' /> No
-          </Button>
-          <Button color='green' onClick={() =>handleDelete(selectedPaisja!.paisja_Id) }>
-              <Icon name='checkmark' /> Yes
-          </Button>
-      </Modal.Actions>
-  </Modal>
-  <PopUp
+          <div className="p">
+            <h3>Paisjet</h3>
+          <div className="zi">
+<div className="ui left icon input s"><input type="text" placeholder="Search users..." onChange={event=>setsearch(event.target.value)}/><i aria-hidden="true" className="users icon"></i></div>
+<Button onClick={()=>openForm()}floated="right" content={<AddIcon/>}color='green' />
+</div>
+<div className="pa">
+
+
+          
+    {paisjet.map(p =>(
+     <Card className="i">
+     <Image src={p.image} wrapped ui={false} className="ii"/>
+     <Card.Content>
+       <Card.Header>{p.emertimi}</Card.Header>
+       <Card.Meta>{format(p.servisimi!,'MMMM d, yyyy')}</Card.Meta>
+     </Card.Content>
+     <Card.Content className="e" extra>
+     <Button color="blue"onClick={()=>openDetails(p.paisja_Id)}content="view" />
+     <Button onClick={()=>openForm(p.paisja_Id)} content={<EditIcon/>} color='grey' />
+     <Button color="red"onClick={()=>del(p.paisja_Id)} ><Icon name="remove"/></Button>
+      
+     </Card.Content>
+   </Card>
+))
+}
+<Dialog
+  open={open}
+  
+  keepMounted
+ 
+  aria-labelledby="alert-dialog-slide-title"
+  aria-describedby="alert-dialog-slide-description"
+>
+  <DialogTitle id="alert-dialog-slide-title">{"Delete Paisje"}</DialogTitle>
+  <DialogContent>
+    <DialogContentText id="alert-dialog-slide-description">
+     Are you sure that you want to delete paisjen: {selectedPaisja && selectedPaisja!.emertimi}
+    </DialogContentText>
+  </DialogContent>
+  <DialogActions>
+  <Button color='red' onClick={() => setOpen(false)}>
+                                  <Icon name='remove' /> No</Button>
+   <Button color='green' onClick={() =>handleDelete(selectedPaisja!.paisja_Id) }>
+        <Icon name='checkmark' /> Yes
+       </Button>
+  </DialogActions>
+</Dialog>
+<PopUp
                                openPopup={editmode}
-                               setopenPopup={setopenPop}
-                               title="Pacientat Form">
+                              
+                               >
                                 
                                    <PaisjetForm/>
                                      </PopUp>
-    </Card>
-     
-))
-}
+                                     <PopUp
+                               openPopup={detailsmode}
+                               >
+                                   <PaisjetDetails/>
+                                     </PopUp>
+                                     </div>
+                                     </div>
     </React.Fragment>)});

@@ -92,28 +92,7 @@ export default observer(function DoktoratList () {
                                     </Button>
                                     
     </div>
-    <Dialog
-  open={open}
-  
-  keepMounted
- 
-  aria-labelledby="alert-dialog-slide-title"
-  aria-describedby="alert-dialog-slide-description"
->
-  <DialogTitle id="alert-dialog-slide-title">{"Delete Mjekun"}</DialogTitle>
-  <DialogContent>
-    <DialogContentText id="alert-dialog-slide-description">
-     Are you sure that you want to delete Mjekun : {item!.emri}
-    </DialogContentText>
-  </DialogContent>
-  <DialogActions>
-  <Button color='red' onClick={() => setOpen(false)}>
-                                  <Icon name='remove' /> No</Button>
-   <Button color='green' onClick={() =>handleDelete(item!.mjeku_Id) }>
-        <Icon name='checkmark' /> Yes
-       </Button>
-  </DialogActions>
-</Dialog>
+    
 <PopUp
                                openPopup={editmode}
                               
@@ -129,6 +108,28 @@ export default observer(function DoktoratList () {
   </div>
   
                     ))}
+                    <Dialog
+  open={open}
+  
+  keepMounted
+ 
+  aria-labelledby="alert-dialog-slide-title"
+  aria-describedby="alert-dialog-slide-description"
+>
+  <DialogTitle id="alert-dialog-slide-title">{"Delete Mjekun"}</DialogTitle>
+  <DialogContent>
+    <DialogContentText id="alert-dialog-slide-description">
+     Are you sure that you want to delete Mjekun : {selectedDoktori && selectedDoktori!.emri}
+    </DialogContentText>
+  </DialogContent>
+  <DialogActions>
+  <Button color='red' onClick={() => setOpen(false)}>
+                                  <Icon name='remove' /> No</Button>
+   <Button color='green' onClick={() =>handleDelete(selectedDoktori!.mjeku_Id) }>
+        <Icon name='checkmark' /> Yes
+       </Button>
+  </DialogActions>
+</Dialog>
   
   </div>
   </div>

@@ -9,6 +9,7 @@ export default class PaisjetStore{
     selectedPaisja:IPaisjet | undefined=undefined;
     editmode=false;
     image=undefined;
+    detailsmode=false;
     paisjetRegistry=new Map<string,IPaisjet>();
     departmentname="";
 
@@ -37,6 +38,13 @@ export default class PaisjetStore{
     getimage=async(paisje_id:string)=>{
        var x= await agent.Paisjet.details(paisje_id);
        return x.image;
+    }
+    openDetails=(id:string)=>{
+        this.selectPaisja(id);
+        this.detailsmode=true;
+    }
+    closeDetails=()=>{
+        this.detailsmode=false;
     }   
      selectPaisja=(paisja_Id:string)=>{
       this.selectedPaisja=this.paisjetRegistry.get(paisja_Id);

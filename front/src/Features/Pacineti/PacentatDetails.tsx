@@ -21,7 +21,7 @@ import {format} from 'date-fns';
 
       return (
           <Card fluid>
-       <Image src={`assets/doc.jpg`} width={"300px"} height={"300px"} />
+       <Image src={`assets/i.png`} width={"300px"} height={"300px"} />
       <Card.Content>
       
         <Card.Description>{"Emri :"+selectedPacienti.emri}</Card.Description>

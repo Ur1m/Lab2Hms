@@ -1,4 +1,5 @@
 import { observer } from "mobx-react-lite";
+import React from "react";
 import { Grid } from "semantic-ui-react";
 import { useStoreTerminet } from "../../app/stores/store";
 import { TerminatForm } from "./TerminatForm";
@@ -11,24 +12,17 @@ export default  observer( function  PacientiDashboard(){
   
 
     return(
-        <Grid>
-        <Grid.Column width={10}>
+       
          
 
            
-    
+    <React.Fragment>
+       
      <TerminetList />
+     </React.Fragment>
    
             
-        </Grid.Column>
-        <Grid.Column width={6}>
-        {TerminetStore.selectedTermini &&  !TerminetStore.editmode &&<TerminetDetails />}
-            {TerminetStore.editmode &&<TerminatForm
-            key={TerminetStore.selectedTermini && TerminetStore.selectedTermini.termini_ID|| 0}
-            />}
-         
-        </Grid.Column>
-    </Grid>
+      
     )
 }
 );

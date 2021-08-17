@@ -12,17 +12,16 @@ export default  observer( function  PaisjetDashboard(){
   
 
     return(
-        <Grid>
-        <Grid.Column width={15}>
+        
+       
          
 
            
      <Listimi /> 
    
             
-        </Grid.Column>
        
-    </Grid>
+    
     )
 }
 );

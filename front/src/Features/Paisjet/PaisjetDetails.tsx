@@ -19,7 +19,7 @@ export default observer( function PacentatDetails ()  {
       return (
           <Card fluid>
           
-      
+          <Image src={selectedPaisja!.image} wrapped ui={false} />
       <Card.Content>
      
         <Card.Description>{"Emri :"+selectedPaisja!.emertimi}</Card.Description>

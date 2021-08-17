@@ -17,20 +17,14 @@ export default  observer( function  PacientiDashboard(){
   
 
     return(
-        <Grid>
-        <Grid.Column width={15}>
+        
          
 
            
     <PacientatTable/>
    
             
-        </Grid.Column>
-        <Grid.Column width={6}
->
-           
-        </Grid.Column>
-    </Grid>
+        
     )
 }
 );

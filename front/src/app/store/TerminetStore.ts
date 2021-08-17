@@ -4,6 +4,7 @@ import { ITerminet } from "../models/Terminet";
 import {v4 as uuid} from 'uuid';
 import { IPacienti } from "../models/IPacienti";
 import { IDepartment } from "../models/IDepartment";
+import { IDoktori } from "../models/Doktori";
 
 export default class TerminetStore{
     selectedTermini:ITerminet | undefined=undefined;
@@ -14,6 +15,7 @@ export default class TerminetStore{
     Pacientat: IPacienti[] =[];
     withId:ITerminet []=[];
     nr:number=0;
+   
     
    
     constructor(){
@@ -73,7 +75,7 @@ export default class TerminetStore{
                 this.TerminetRegistry.set(termini.termini_ID,termini);
                 this.selectedTermini=termini;
                 this.editmode=false;
-                alert("Created successfully");
+               
             })
         }
         catch(error){
@@ -88,7 +90,7 @@ export default class TerminetStore{
             this.TerminetRegistry.set(Termini.termini_ID,Termini)
              this.selectedTermini=Termini;
              this.editmode=false;
-             alert("Updated successfully");
+            
            })
         }
         catch(error){
@@ -114,7 +116,7 @@ export default class TerminetStore{
     }
     pacienti=async(id:string)=>{
       await agent.Pacientat.details(id).then(val=>{
-          this.pacientiemri=val.emri;
+          return val.emri;
       });
     }
       doktori=async(id:string)=>{

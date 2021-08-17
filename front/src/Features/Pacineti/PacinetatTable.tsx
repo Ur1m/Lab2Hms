@@ -16,6 +16,8 @@ import { PacientatForm } from './PacientatForm';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
 import PacentatDetails from './PacentatDetails';
+import "./b.css";
+import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@material-ui/core';
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -72,6 +74,7 @@ function editf(id:string){
 }
 
   return (
+    <div className="pconteiner">
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
@@ -102,27 +105,28 @@ function editf(id:string){
               <StyledTableCell align="right">{<Button  onClick={()=>del(row.pacient_Id)}floated="right" content={<DeleteForeverIcon/>} color='red' />}</StyledTableCell>
             </StyledTableRow>
           ))}
-          <Modal
-                                closeIcon
-                                open={open}
-                               
-                                onClose={() => setOpen(false)}
-                                onOpen={() => setOpen(true)}>
-                                <Header icon='archive' content='Delete Pacientin' />
-                                <Modal.Content>
-                                    <p>
-                                        Are you sure that you want to delete Pacinetin:{selectedPacienti?.emri}?
-                                    </p>
-                                </Modal.Content>
-                                <Modal.Actions>
-                                    <Button color='red' onClick={() => setOpen(false)}>
-                                        <Icon name='remove' /> No
-                                    </Button>
-                                    <Button color='green' onClick={() =>handleDelete(selectedPacienti!.pacient_Id) }>
-                                        <Icon name='checkmark' /> Yes
-                                    </Button>
-                                </Modal.Actions>
-                            </Modal>
+          <Dialog
+  open={open}
+  
+  keepMounted
+ 
+  aria-labelledby="alert-dialog-slide-title"
+  aria-describedby="alert-dialog-slide-description"
+>
+  <DialogTitle id="alert-dialog-slide-title">{"Delete Pacineti"}</DialogTitle>
+  <DialogContent>
+    <DialogContentText id="alert-dialog-slide-description">
+     Are you sure that you want to delete Pacinetin 
+    </DialogContentText>
+  </DialogContent>
+  <DialogActions>
+  <Button color='red' onClick={() => setOpen(false)}>
+                                  <Icon name='remove' /> No</Button>
+   <Button color='green' onClick={() =>handleDelete(selectedPacienti!.pacient_Id) }>
+        <Icon name='checkmark' /> Yes
+       </Button>
+  </DialogActions>
+</Dialog>
                             <PopUp
                                openPopup={editmode}
                                setopenPopup={setopenPop}
@@ -142,6 +146,7 @@ function editf(id:string){
       
       </Table>
     </TableContainer>
+    </div>
      
   );
 });
