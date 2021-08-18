@@ -25,6 +25,7 @@ const {DoktoratStore}=useStoreDoktorat();
     const{}=DoktoratStore;
     const {TerminetStore}=useStoreTerminet();
     const{}=TerminetStore;
+   
  const classes=useStyles()
 
  function close(){
@@ -34,6 +35,7 @@ const {DoktoratStore}=useStoreDoktorat();
     PaisjetStore.closeDetails();
     BarnatStore.closeForm();
     TerminetStore.closeForm();
+    TerminetStore.closeDetails();
     BarnatStore.closeDetails();
     DoktoratStore.closeForm();
     DoktoratStore.closeDetails();

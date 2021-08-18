@@ -96,7 +96,14 @@ export default observer(function Listimi() {
 
 
           
-    {paisjet.map(p =>(
+    {paisjet.filter((val)=>{
+                    if(search==""){
+                        return val;
+                    }
+                    else if(val.emertimi.toLocaleLowerCase().includes(search.toLocaleLowerCase())){
+                        return val;
+                    }
+                }).map(p =>(
      <Card className="i">
      <Image src={p.image} wrapped ui={false} className="ii"/>
      <Card.Content>

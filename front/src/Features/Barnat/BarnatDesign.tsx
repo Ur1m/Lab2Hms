@@ -57,9 +57,10 @@ export default observer( function BarnatDesign  ()  {
     
     return (
         <div className="containerr">
-            <div className="h">
+           
             <h3>Barnat</h3>
-            <Button onClick={()=>openForm()} content={<AddIcon/>} color="green" className="b" />
+            <div className="b">
+            <Button onClick={()=>openForm()} content={<AddIcon/>} color="green"  />
             </div>
        <div className="main_content">
           

@@ -12,6 +12,7 @@ export default class TerminetStore{
     TerminetRegistry=new Map<string,ITerminet>()
     pacientiemri="";
     DoktoriEmri="";
+    detailsmode=false;
     Pacientat: IPacienti[] =[];
     withId:ITerminet []=[];
     nr:number=0;
@@ -54,6 +55,13 @@ export default class TerminetStore{
           })
         })
       }
+      openDetails=(id:string)=>{
+        this.selectTermini(id);
+        this.detailsmode=true;
+    }
+    closeDetails=()=>{
+        this.detailsmode=false;
+    }   
     selectTermini=(id:string)=>{
         
       this.selectedTermini=this.TerminetRegistry.get(id);
@@ -121,14 +129,14 @@ export default class TerminetStore{
     }
     pacienti=async(id:string)=>{
       await agent.Pacientat.details(id).then(val=>{
-          return val.emri;
+          this.pacientiemri= val.emri + val.mbimeri;
       });
     }
       doktori=async(id:string)=>{
         await agent.doktoret.details(id).then(val=>{
             runInAction(()=>{
            
-                this.DoktoriEmri=val.emri;
+                this.DoktoriEmri=val.emri +val.mbimeri;
     
                })
             
