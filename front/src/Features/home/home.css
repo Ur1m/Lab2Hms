@@ -34,4 +34,13 @@
   font-size: 30pt;
   font-family: 'Courier New', Courier, monospace;
 }
-
+.ui.grid>.row>.column>img, .ui.grid>.row>img {
+    height: 150px;
+    width: 300px;
+}
+.ui.grid {
+    margin-top: 5rem;
+    margin-bottom: -1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
