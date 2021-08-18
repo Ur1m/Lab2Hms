@@ -15,6 +15,9 @@ import EditIcon from '@material-ui/icons/Edit';
 import { TerminatForm } from './TerminatForm';
 import PopUp from '../Pacineti/PopUp';
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@material-ui/core';
+import { observer } from 'mobx-react-lite';
+import { IPacientetDropDown, IPacienti } from '../../app/models/IPacienti';
+import { IDoktori } from '../../app/models/Doktori';
 
 const StyledTableCell = withStyles((theme: Theme) =>
   createStyles({
@@ -56,26 +59,19 @@ const useStyles = makeStyles({
   },
 });
 
-export default function TerminetTable() {
+export default  observer( function TerminetTable() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false)
-  const [openPop,setopenPop]=useState(false)
   const {TerminetStore}=useStoreTerminet();
-  const{terminet,selectTermini,openForm,deleteTermini,editmode,selectedTermini,DoktoriEmri,pacientiemri,}=TerminetStore;
+  const{terminet,selectTermini,openForm,deleteTermini,editmode,selectedTermini,getDoktoret,getPacientet}=TerminetStore;
   useEffect(()=>{
     TerminetStore.loadTerminet();
-    
-   //if(id) getTerminetwithId(id);
-   
-  
 },[TerminetStore]);
-
-  function dok(id:string){
-      selectTermini(id)
-      
-      return TerminetStore.DoktoriEmri;
-      
-  }
+function dok(id:string){
+  selectTermini(id);
+  
+  return TerminetStore.DoktoriEmri;
+}
   function del(id:string){
     selectTermini(id);
     setOpen(true);
@@ -87,6 +83,32 @@ function handleDelete( id: string){
   setOpen(false);
   TerminetStore.selectedTermini=undefined;
 }
+var pacientet: IPacienti[] = [];
+var pacientetDropDown: IPacientetDropDown[] = [];
+var Doktoret:IDoktori[]=[];
+var doktoretDropDown: IPacientetDropDown[]=[];
+ getDoktoret().then(response => {
+    response?.forEach(element => {
+        Doktoret.push(element);
+    });
+    for(var i = 0; i < Doktoret.length;i++){
+        
+        var doktorDropDown: IPacientetDropDown = { text: Doktoret[i].emri + " " + Doktoret[i].mbimeri, key: Doktoret[i].mjeku_Id, value: Doktoret[i].mjeku_Id}
+    doktoretDropDown.push(doktorDropDown);
+    }
+   
+})
+getPacientet().then(response => {
+    response?.forEach(element => {
+        pacientet.push(element);
+    });
+    for(var i = 0; i < pacientet.length;i++){
+        
+        var pacientiDropDown: IPacientetDropDown = { text: pacientet[i].emri + " " + pacientet[i].mbimeri, key: pacientet[i].pacient_Id, value: pacientet[i].pacient_Id}
+        pacientetDropDown.push(pacientiDropDown);
+    }
+})
+
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="customized table">
@@ -103,7 +125,7 @@ function handleDelete( id: string){
           {terminet.map((row) => (
             <StyledTableRow key={row.termini_ID}>
               <StyledTableCell component="th" scope="row">
-                {dok(row.mjeku_Id)}
+                {row.termini_ID}
               </StyledTableCell>
               <StyledTableCell align="right">{row.pacient_Id}</StyledTableCell>
               <StyledTableCell align="right">{row.termini_ID}</StyledTableCell>
@@ -114,10 +136,11 @@ function handleDelete( id: string){
           ))}
           <PopUp
             openPopup={editmode}
-            setopenPopup={setopenPop}
             >
                 <TerminatForm/>
                   </PopUp>
+
+
                   <Dialog
   open={open}
   
@@ -135,7 +158,7 @@ function handleDelete( id: string){
   <DialogActions>
   <Button color='red' onClick={() => setOpen(false)}>
                                   <Icon name='remove' /> No</Button>
-   <Button color='green' onClick={() =>handleDelete(selectedTermini!.termini_ID) }>
+   <Button color='green' onClick={() => selectedTermini && handleDelete(selectedTermini!.termini_ID) }>
         <Icon name='checkmark' /> Yes
        </Button>
   </DialogActions>
@@ -144,4 +167,8 @@ function handleDelete( id: string){
       </Table>
     </TableContainer>
   );
+})
+
+function getDoktoret() {
+  throw new Error('Function not implemented.');
 }

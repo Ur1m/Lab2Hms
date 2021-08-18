@@ -78,8 +78,8 @@ export const TerminatForm = () => {
             initialValues={Termini} onSubmit={values => handleFormsubmit(values)}>
             {({handleSubmit,isSubmitting,dirty,isValid})=>(
                 <Form className='ui form' onSubmit={handleSubmit}>
-               { !Termini.termini_ID &&  <MySelectInput options={pacientetDropDown} placeholder='Zgjedhni pacientin...' name='pacient_Id'></MySelectInput>}
-               { !Termini.termini_ID && <MySelectInput options={doktoretDropDown} placeholder='Zgjedhni doktorin...' name='mjeku_Id'></MySelectInput>}
+               {   <MySelectInput options={pacientetDropDown} placeholder='Zgjedhni pacientin...' name='pacient_Id'></MySelectInput>}
+               {  <MySelectInput options={doktoretDropDown} placeholder='Zgjedhni doktorin...' name='mjeku_Id'></MySelectInput>}
                <MyDateInput name='orari' placeholderText='orari'
                showTimeSelect
                timeCaption='time'
