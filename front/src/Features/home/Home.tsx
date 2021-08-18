@@ -62,7 +62,7 @@ export const Home = () => {
       </Grid.Column>
       <Grid.Column>
       <h1>Numri i pacientave: {pacientat.length}</h1>
-        <Image src='assets/pac.jpg' />
+        <Image src='assets/aaa.jpg' />
       </Grid.Column>
     </Grid.Row>
 
@@ -77,7 +77,7 @@ export const Home = () => {
       </Grid.Column>
       <Grid.Column>
       <h1>Numri i barnave: {Barnat.length}</h1>
-        <Image src='assets/barna.jpg' />
+        <Image src='assets/sss.jpg' />
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>
@@ -91,7 +91,7 @@ export const Home = () => {
       </Grid.Column>
       <Grid.Column>
       <h1>Numri i shtreterve: {Shtreter.length}</h1>
-        <Image src='assets/bad.png' />
+        <Image src='assets/bed.png' />
       </Grid.Column>
     </Grid.Row>
   </Grid>
