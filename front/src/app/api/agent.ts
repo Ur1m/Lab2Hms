@@ -16,6 +16,7 @@ import { IDhoma } from '../models/IDhoma';
 import { IShtreteritNeDhoma } from '../models/IShtreteritNeDhoma';
 import { Barna } from '../models/barna';
 import { User, UserFormValues } from '../models/user';
+import { ITherapy } from '../models/ITherapy';
 
 const sleep = (delay: number) => {
     return new Promise((resolve) => {
@@ -139,6 +140,13 @@ const Paisjet ={
     update: (Paisja: IPaisjet) => axios.put<void>(`/Paisjet/${Paisja.paisja_Id}`, Paisja),
     delete: (id: string) => axios.delete<void>(`/Paisjet/${id}`)
 }
+const Therapy ={
+    list: () => requests.get<ITherapy[]>('/Therapies'),
+    details: (therapy_Id: string) => requests.get<ITherapy>(`/Therapies/${therapy_Id}`),
+    create: (Therapy: ITherapy) => axios.post<void>('/Therapies', Therapy),
+    update: (Therapy: ITherapy) => axios.put<void>(`/Therapies/${Therapy.therapy_Id}`, Therapy),
+    delete: (id: string) => axios.delete<void>(`/Therapies/${id}`)
+}
 
 const request={
     get:(url:string)=>axios.get(url).then(responseBody),
@@ -207,7 +215,8 @@ const agent = {
     Dhomat,
     ShtreteritNeDhoma,
     Barnat,
-    Account
+    Account,
+    Therapy
 }
 
 export default agent;
