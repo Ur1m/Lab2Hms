@@ -14,6 +14,7 @@ import DhomaStore from "./dhomaStore";
 import BarnatStore from "../store/BarnatStore";
 import UserStore from "./userStore";
 import ModalStore from "./modalStore";
+import TherapyStore from "../store/TherapyStore";
 
 interface Store {
     departmentStore: DepartmentStore;
@@ -93,6 +94,18 @@ export const StorePaisjet:StorePaisjet={
 export const StoreContextPaisjet=createContext(StorePaisjet);
 export function useStorePaisjet(){
     return useContext(StoreContextPaisjet);
+
+
+}
+interface StoreTherapies{
+    TherapyStore:TherapyStore;
+}
+export const StoreTherapies:StoreTherapies={
+    TherapyStore:new TherapyStore()
+}
+export const StoreContextTherapies=createContext(StoreTherapies);
+export function useStoreTherapies(){
+    return useContext(StoreContextTherapies);
 
 
 }

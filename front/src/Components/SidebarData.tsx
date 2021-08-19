@@ -62,6 +62,12 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
+    title: 'Terapit',
+    path: '/Therapy',
+    icon: <FaIcons.FaClock/>,
+    cName: 'nav-text'
+  },
+  {
     title: 'Paisjet',
     path: '/Paisjet',
     icon: <RiIcons.RiTableAltFill

@@ -12,7 +12,7 @@
   overflow: scroll;
   padding: 30px 50px 20px 50px;
   box-sizing: border-box;
-  background-color: rgb(46, 46, 46);
+  background-color: rgb(15, 81, 104);
   position: absolute;
   left :0;
 }
@@ -36,7 +36,7 @@ h3{
   position: absolute;
   left: 650px;
   top: -10px;
-  color:red;
+  color:white;
   font-size: 8.5vw;
 }
 .carde{
@@ -121,4 +121,13 @@ h3{
 }
 .btn:hover{
   background-color: orange;
+}
+.b{
+ 
+  width: 50px;
+  height: 50px;
+  margin-left: 1200px;
+  border-radius: 30px;
+  margin-top: 50px;
+
 }

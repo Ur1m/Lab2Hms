@@ -52,13 +52,16 @@ export default observer(function PacientatTable() {
   const [openPop,setopenPop]=useState(false)
   const[search,setsearch]=useState("");
 
-    const{pacientat,selectPacineti,openForm,selectedPacienti,deletePacienti,closeForm,editmode,detailsmode,openDetails,closeDetails}=PacientatStore
+    const{pacientat,selectPacineti,openForm,selectedPacienti,deletePacienti,closeForm,editmode,detailsmode,openDetails,closeDetails,pacientatRegistry}=PacientatStore
     useEffect(()=>{
       PacientatStore.loadPacientat();
   },[PacientatStore]);
 
+  
+
   function del(id:string){
     selectPacineti(id);
+    
     
     setOpen(true);
     

@@ -22,19 +22,29 @@ namespace API.Controllers
         [HttpGet("{Therapy_Id}")]
         public async Task<ActionResult<Therapy>> GetTherapy(Guid Therapy_Id)
         {
-         return await Mediator.Send(new Details.Query {Therapy_Id = Therapy_Id});
-           
+            return await Mediator.Send(new Details.Query { Therapy_Id = Therapy_Id });
+
         }
         [HttpPost]
-          public async Task<ActionResult<Therapy>> CreateTherapies(Therapy therapy){
-              return Ok(await Mediator.Send(new Create.Command{Therapy = therapy}) );
-          }
-          [HttpPut("{Therapy_Id}")]
-          public async Task<IActionResult> EditTherapy(Guid id ,Therapy therapy){
+        public async Task<ActionResult<Therapy>> CreateTherapies(Therapy therapy)
+        {
+            return Ok(await Mediator.Send(new Create.Command { Therapy = therapy }));
+        }
+        [HttpPut("{Therapy_Id}")]
+        public async Task<IActionResult> EditTherapy(Guid id, Therapy therapy)
+        {
 
-                therapy.Therapy_Id=id;
+            therapy.Therapy_Id = id;
 
-                return Ok(await Mediator.Send(new Edit.Command{Therapy =therapy}));
-          }
+            return Ok(await Mediator.Send(new Edit.Command { Therapy = therapy }));
+        }
+       
+
+        [HttpDelete("{Therapy_Id}")]
+        public async Task<IActionResult> DeleteTherapy(Guid Therapy_Id)
+        {
+            return HandleResult(await Mediator.Send(new Delete.Command {Therapy_Id =Therapy_Id  }));
+            
+        }
     }
 }

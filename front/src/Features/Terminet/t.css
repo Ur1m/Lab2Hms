@@ -1,7 +1,7 @@
 .tcontainer{
     display: flex;
     flex-direction: column;
-   
+   background-image: url("./a.jpg");
     background-position: center;
     background-size: cover;
     width: 100vw;
@@ -15,4 +15,7 @@
     padding-top: 150px;
     padding-left: 150px;
     padding-right: 150px;
+}
+.t{
+    margin-top: 110px;
 }

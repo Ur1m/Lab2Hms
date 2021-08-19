@@ -31,6 +31,7 @@ import LoginForm from '../../Features/users/LoginForm';
 import BarnatDashboard from '../../Features/Barnat/BarnatDashboard';
 import { Home}  from '../../Features/home/Home';
 import ModalContainer from '../common/modals/ModalContainer';
+import TherapyDashbord from '../../Features/Therapies/TherapyDashbord';
 
 
 
@@ -143,6 +144,7 @@ return (
           <Route path='/server-error' component={ServerError} />
           <Route path='/login' component={LoginForm} />
           <Route path="/Barnat"component={BarnatDashboard}/>
+          <Route path="/Therapy"component={TherapyDashbord}/>
           <Route component={NotFound}/>
           </Switch>
         </Container>
