@@ -30,11 +30,11 @@
 .uii{
    
    
-    display: flex
-    ;
+    display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+
 }
 .bt{
     display: flex;

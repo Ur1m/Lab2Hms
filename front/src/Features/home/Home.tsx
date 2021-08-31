@@ -50,48 +50,133 @@ export const Home = () => {
 
             </div>
         </div>*/
-        <Grid columns={3} divided>
+        <Grid columns={3} >
     <Grid.Row>
       <Grid.Column>
-       <h1>Numri i mjekeve: {doktorat.length}</h1>
-     <img src="assets/5.jpg"/>
+      <div className="ui card bb">
+  
+    <img className="c" src="assets/5.jpg" />
+ 
+  <div className="content">
+    <a className="header" href="#">Mjeket</a>
+    <div className="meta">
+      <a className="nr">Numri i mjekeve : {doktorat.length}</a>
+    </div>
+  </div>
+</div>
+      
       </Grid.Column>
       <Grid.Column>
-      <h1>Numri i deparatmenteve: {Departmentet.length}</h1>
-        <Image src='assets/depp.jpg' />
+        <div className="ui card bb">
+  
+    <img  className="c"src="assets/depp.jpg" />
+  
+  <div className="content">
+    <a className="header" href="#">Departmentet</a>
+    <div className="meta">
+      <a className="nr">Numri i deparatmenteve: {Departmentet.length}</a>
+    </div>
+  </div>
+</div>
       </Grid.Column>
       <Grid.Column>
-      <h1>Numri i pacientave: {pacientat.length}</h1>
-        <Image src='assets/aaa.jpg' />
+        <div className="ui card bb">
+  
+    <img className="c" src="assets/aaa.jpg" />
+  
+  <div className="content">
+    <a className="header" href="#">Pacientet</a>
+    <div className="meta">
+      <a className="nr">Numri i pacientave: {pacientat.length}</a>
+    </div>
+  </div>
+</div>
+        
       </Grid.Column>
     </Grid.Row>
 
     <Grid.Row>
       <Grid.Column>
-      <h1>Numri i pajisjeve: {paisjet.length}</h1>
-        <Image src='assets/paisjet.jpg' />
+        <div className="ui card bb">
+  
+    <img  className="c"src="assets/paisjet.jpg"/>
+  
+  <div className="content">
+    <a className="header" href="#">Paisjet</a>
+    <div className="meta">
+      <a className="nr">Numri i Paisjeve: {paisjet.length}</a>
+    </div>
+  </div>
+</div>
       </Grid.Column>
       <Grid.Column>
-      <h1>Numri i terminave: {terminet.length}</h1>
-        <Image src='assets/ter.jpg' />
+        <div className="ui card bb">
+  
+    <img className="c" src="assets/ter.jpg"/>
+  
+  <div className="content">
+    <a className="header" href="#">Terminet</a>
+    <div className="meta">
+      <a className="nr">Numri i terminave: {terminet.length}</a>
+    </div>
+  </div>
+</div>
       </Grid.Column>
       <Grid.Column>
-      <h1>Numri i barnave: {Barnat.length}</h1>
-        <Image src='assets/sss.jpg' />
+        <div className="ui card bb">
+  
+    <img className="c" src="assets/sss.jpg"/>
+ 
+  <div className="content">
+    <a className="header" href="#">Barnat</a>
+    <div className="meta">
+      <a className="nr">Numri i barnave: {Barnat.length}</a>
+    </div>
+  </div>
+</div>
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>
       <Grid.Column>
-      <h1>Numri i faturave: {Faturat.length}</h1>
-        <Image src='assets/pay.jpg' />
+      
+        <div className="ui card bb">
+
+    <img  className="c" src="assets/pay.jpg"/>
+  
+  <div className="content">
+    <a className="header" href="#">Faturat</a>
+    <div className="meta">
+      <a className="nr">Numri i faturave: {Faturat.length}</a>
+    </div>
+  </div>
+</div>
       </Grid.Column>
       <Grid.Column>
-      <h1>Numri i dhomave: {Dhomat.length}</h1>
-        <Image src='assets/rooms.jpg' />
+     
+        <div className="ui card bb">
+
+    <img  className="c"src="assets/rooms.jpg"/>
+  
+  <div className="content">
+    <a className="header" href="#">Dhomat</a>
+    <div className="meta">
+      <a className="nr">Numri i dhomave: {Dhomat.length}</a>
+    </div>
+  </div>
+</div>
       </Grid.Column>
       <Grid.Column>
-      <h1>Numri i shtreterve: {Shtreter.length}</h1>
-        <Image src='assets/bed.png' />
+        <div className="ui card bb">
+  
+    <img className="c" src="assets/rooms.jpg"/>
+  
+  <div className="content">
+    <a className="header" href="#">Shtreterit</a>
+    <div className="meta">
+      <a className="nr">Numri i shtreterve: {Shtreter.length}</a>
+    </div>
+  </div>
+</div>
       </Grid.Column>
     </Grid.Row>
   </Grid>

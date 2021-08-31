@@ -76,7 +76,7 @@ export default observer( function BarnatDesign  ()  {
      <PopUp
                                openPopup={editmode}
                               
-                               title="Pacientat Form">
+                               >
                                 
                                    <BarnatForm/>
                                      </PopUp>
