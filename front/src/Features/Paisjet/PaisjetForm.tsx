@@ -76,7 +76,7 @@ export const PaisjetForm = () => {
     }
     const validationSchema=yup.object({
         emertimi:yup.string().matches(/^[a-zA-Z0-9]{3,}$/,'Passwordi duhet te ket mbi 3 shkronja').required("Ju lutem shenoni emrin e paisjes"),
-       pershkrimi:yup.string().required("Pershkrimi nuk duhet te jete i zbrazet").matches(/^[a-zA-Z0-9]{15,}$/,'Pershkrimi nuk duhet me qene ner 15 karaktere'),
+       pershkrimi:yup.string().required("Pershkrimi nuk duhet te jete i zbrazet").matches(/^[a-zA-Z0-9 ]{15,}$/,'Pershkrimi nuk duhet me qene ner 15 karaktere'),
        servisimi:yup.string().required("Selektoni daten e servisimimit te fundit"),
        department_Id:yup.string().required("Selektoni Departamnetin"),
       // image:yup.string().required("Selektoni foton")

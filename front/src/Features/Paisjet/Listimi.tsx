@@ -86,13 +86,13 @@ export default observer(function Listimi() {
   return (
       <React.Fragment >
         
-          <div className="p">
+          <div className="ppp">
             <h3>Paisjet</h3>
           <div className="zi">
 <div className="ui left icon input s"><input type="text" placeholder="Search users..." onChange={event=>setsearch(event.target.value)}/><i aria-hidden="true" className="users icon"></i></div>
 <Button onClick={()=>openForm()}floated="right" content={<AddIcon/>}color='green' />
 </div>
-<div className="pa">
+<div className="ui special cards uii mii">
 
 
           
@@ -105,7 +105,7 @@ export default observer(function Listimi() {
                     }
                 }).map(p =>(
      <Card className="i">
-     <Image src={p.image} wrapped ui={false} className="ii"/>
+     <img src={p.image}  className="ii"/>
      <Card.Content>
        <Card.Header>{p.emertimi}</Card.Header>
        <Card.Meta>{format(p.servisimi!,'MMMM d, yyyy')}</Card.Meta>
