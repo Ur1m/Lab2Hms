@@ -1,0 +1,13 @@
+.sss:hover{
+    background-color: rgba(140, 181, 235, 0.233);
+    transition: 1s;
+    
+   
+}
+.ssss:hover{
+    background-color: rgba(98, 216, 118, 0.425);
+    transition: 1s;  
+}
+.ui input {
+    width: 255px;
+}

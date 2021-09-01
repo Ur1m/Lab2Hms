@@ -24,7 +24,7 @@ export default observer( function TherapyList(){
         <Item.Group>
             <div className="ui left icon input"><input type="text" placeholder="Kerko dhome (Lloji)..." onChange={event => setsearch(event.target.value)} /><i aria-hidden="true" className="search icon"></i></div>
         </Item.Group>
-        <Segment>
+        <Segment className="sss">
             <Item.Group divided>
                 {terapit.filter((val) => {
                         if (search == "") {

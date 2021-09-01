@@ -46,6 +46,8 @@ namespace Presistence
 
         public DbSet<Dhoma> Dhomat {get; set;}
 
+        public DbSet<Raport> Raportet {get; set;}
+
         public DbSet<ShtreteritNeDhome> ShtreteritNeDhome {get; set;}
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -69,6 +71,15 @@ namespace Presistence
                 .WithMany()
                 .HasForeignKey(p => p.Pacient_id)
                 .HasConstraintName("FK_Fatura_Pacient_id");
+
+                 modelBuilder.Entity<Raport>()
+                .HasKey(f => f.Raport_Id );
+
+            modelBuilder.Entity<Raport>()
+                .HasOne(p => p.Paisjet)
+                .WithMany()
+                .HasForeignKey(p => p.Paisja_Id)
+                .HasConstraintName("FK_Raport_Paisja_Id");
       
             modelBuilder.Entity<Infermierja>()
                 .HasKey(i => i.Infermierja_Id);

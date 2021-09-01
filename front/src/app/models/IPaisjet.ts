@@ -9,3 +9,8 @@ export interface IPaisjet{
 
 
 }
+export interface IPaisjetDropDown{
+    key:any;
+    text: any;
+    value: any;
+}

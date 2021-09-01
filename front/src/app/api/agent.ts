@@ -17,6 +17,7 @@ import { IShtreteritNeDhoma } from '../models/IShtreteritNeDhoma';
 import { Barna } from '../models/barna';
 import { User, UserFormValues } from '../models/user';
 import { ITherapy } from '../models/ITherapy';
+import { IRaport } from '../models/IRaport';
 
 const sleep = (delay: number) => {
     return new Promise((resolve) => {
@@ -147,6 +148,13 @@ const Therapy ={
     update: (Therapy: ITherapy) => axios.put<void>(`/Therapies/${Therapy.therapy_Id}`, Therapy),
     delete: (id: string) => axios.delete<void>(`/Therapies/${id}`)
 }
+const Raport ={
+    list: () => requests.get<IRaport[]>('/Raportet'),
+    details: (raport_Id: string) => requests.get<IRaport>(`/Raportet/${raport_Id}`),
+    create: (Raport: IRaport) => axios.post<void>('/Raportet', Raport),
+    update: (Raport: IRaport) => axios.put<void>(`/Raportet/${Raport.raport_Id}`, Raport),
+    delete: (id: string) => axios.delete<void>(`/Raportet/${id}`)
+}
 
 const request={
     get:(url:string)=>axios.get(url).then(responseBody),
@@ -216,7 +224,8 @@ const agent = {
     ShtreteritNeDhoma,
     Barnat,
     Account,
-    Therapy
+    Therapy,
+    Raport
 }
 
 export default agent;

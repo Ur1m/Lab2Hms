@@ -32,6 +32,9 @@ import BarnatDashboard from '../../Features/Barnat/BarnatDashboard';
 import { Home}  from '../../Features/home/Home';
 import ModalContainer from '../common/modals/ModalContainer';
 import TherapyDashbord from '../../Features/Therapies/TherapyDashbord';
+import RaportForm from '../../Features/Raportet/RaportForm';
+import RaportList from '../../Features/Raportet/RaportList';
+import RaportDashboard from '../../Features/Raportet/RaportDashboard';
 
 
 
@@ -145,6 +148,7 @@ return (
           <Route path='/login' component={LoginForm} />
           <Route path="/Barnat"component={BarnatDashboard}/>
           <Route path="/Therapy"component={TherapyDashbord}/>
+          <Route path="/Raport"component={RaportDashboard}/>
           <Route component={NotFound}/>
           </Switch>
         </Container>

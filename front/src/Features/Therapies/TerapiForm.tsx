@@ -48,7 +48,7 @@ export default observer(function TerapiaForm() {
     })
 
     return (
-        <Segment clearing>
+        <Segment clearing className="ssss">
             
             <Formik
                 validationSchema={validationSchema}

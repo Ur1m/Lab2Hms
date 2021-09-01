@@ -24,7 +24,7 @@ function Navbar({openCreateForm} : IProps) {
         
         <div className='navbar'>
           <Link to='#' className='menu-bars'>
-            <FaIcons.FaBars onClick={showSidebar} />
+            <FaIcons.FaBars className="ngjyra-sidebarhover" onClick={showSidebar} />
           </Link>
           <div className="logo">
           <img className="logo" src="assets/logo.png" alt="logo" style={{width: '50px', marginLeft: '200px'}}/>

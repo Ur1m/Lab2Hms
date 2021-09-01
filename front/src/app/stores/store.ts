@@ -15,6 +15,7 @@ import BarnatStore from "../store/BarnatStore";
 import UserStore from "./userStore";
 import ModalStore from "./modalStore";
 import TherapyStore from "../store/TherapyStore";
+import RaportStore from "../store/RaportStore";
 
 interface Store {
     departmentStore: DepartmentStore;
@@ -109,6 +110,20 @@ export function useStoreTherapies(){
 
 
 }
+
+interface StoreRaport{
+    RaportStore:RaportStore;
+}
+export const StoreRaport:StoreRaport={
+    RaportStore:new RaportStore()
+}
+export const StoreContextRaport=createContext(StoreRaport);
+export function useStoreRaport(){
+    return useContext(StoreContextRaport);
+
+
+}
+
 interface StoreBarnat{
     BarnatStore:BarnatStore;
 

@@ -16,6 +16,9 @@
     
     
   }
+  .menu-bars:hover{
+    background-color: teal;
+  }
   
   .nav-menu {
     background-color: #060b26;
