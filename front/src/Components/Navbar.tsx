@@ -30,7 +30,7 @@ function Navbar({openCreateForm} : IProps) {
           <img className="logo" src="assets/logo.png" alt="logo" style={{width: '50px', marginLeft: '200px'}}/>
           </div>
           <Menu.Item position='right'>
-            <Image src={user?.image || '/assets/user.png'} avatar spaced='right' />
+           
             <Dropdown pointing='top left' text={user?.displayName}>
               <Dropdown.Menu>
                 <Dropdown.Item as={Link} to={`/profile/${user?.username}`} text='My Profile' icon='user'/>
