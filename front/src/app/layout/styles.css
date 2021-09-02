@@ -31,15 +31,30 @@ body{
   align-items: center;
   background-image: linear-gradient(
           135deg,
-          rgb(24, 42, 115) 0%,
+          rgba(115, 24, 24, 0.842) 0%,
           rgb(33, 138, 174) 69%,
           rgb(32, 167, 172) 89%
   ) !important;
   height: 100vh;
 }
+.masthead:hover{
+ background-image: url("b.jpg") ,linear-gradient(
+  135deg,
+  rgb(0, 0, 0) 0%,
+  rgb(0, 0, 0) 69%,
+  rgb(0, 0, 0) 89%
+)!important;
+ background-repeat: no-repeat!important;
+
+ transition: 2s !important;
+ opacity: 0.80;
+}
+
+
 
 .masthead .ui.menu .ui.button,
 .ui.menu a.ui.inverted.button {
+
   margin-left: 0.5em;
 }
 
@@ -53,3 +68,53 @@ body{
   font-weight: normal;
 }
 
+
+.ui.inverted.button {
+    box-shadow: 0 0 0 2px #fff inset!important;
+    background: transparent none;
+    color: #fff;
+    text-shadow: none!important;
+    margin-left: 10px;
+}
+.ui.huge.button, .ui.huge.buttons .button, .ui.huge.buttons .or {
+    font-size: 1.42857143rem;
+}
+.ui.inverted.button {
+    box-shadow: 0 0 0 2px #fff inset!important;
+    background: transparent none;
+    color: #fff;
+    text-shadow: none!important;
+}
+.ui.huge.button, .ui.huge.buttons .button, .ui.huge.buttons .or {
+    font-size: 1.42857143rem;
+}
+.ui.inverted.button {
+    -webkit-box-shadow: 0 0 0 2px #fff inset!important;
+    box-shadow: 0 0 0 2px #fff inset!important;
+    background: transparent none;
+    color: #fff;
+    text-shadow: none!important;
+}
+.ui.button, .ui.buttons .button, .ui.buttons .or {
+    font-size: 1rem;
+}
+.asas{
+  animation: asas 17s ease-in-out infinite;
+  
+}
+.logo{
+  animation-name: fadeInOut, moveLeft800px, bounce;
+animation-duration: 3s;
+animation-iteration-count: 1;
+}
+@keyframes asas {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
