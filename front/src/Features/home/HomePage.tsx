@@ -14,11 +14,11 @@ export default observer( function HomePage(){
     return (
         <Segment inverted textAlign='center' vertical className='masthead'>
             
-            <Container text>
+            <Container className='aaad' text>
                 
                 <Header as='h1' inverted>
-                    <Image size='massive' src='/assets/logo.png' alt='logo' className="logo" style={{marginBottom:12}} />
-                    Hospital Management System
+                    <Image size='massive' src='/assets/logo.png' alt='logo' className="logo" style={{width:100,marginBottom:12}} />
+                    <p data-text="Hospital Management System"> Hospital Management System</p>  
                 </Header>
                 {userStore.isLoggedIn ?(
                     <>
