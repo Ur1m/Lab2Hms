@@ -7,6 +7,7 @@ import * as Yup from 'yup';
 import MyTextInput from '../../../app/common/form/MyTextInput';
 import MyTextArea from '../../../app/common/form/MyTextArea';
 import { ILlojiShtratit } from '../../../app/models/ILlojiShtratit';
+import "../Dashboard/lloji.css";
 
 export default observer(function LlojiShtratitForm() {
     const { llojiShtratitStore } = useStore();
@@ -30,7 +31,7 @@ export default observer(function LlojiShtratitForm() {
     }
 
     return (
-        <Segment clearing>
+        <Segment className="ssss" clearing>
             <Formik
                 validationSchema={validationSchema}
                 enableReinitialize

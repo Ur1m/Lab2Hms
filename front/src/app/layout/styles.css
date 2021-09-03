@@ -127,8 +127,9 @@ p{
   overflow: hidden;
   position: relative;
   white-space : nowrap;
-  color: rgb(243, 243, 243);
-  -webkit-text-stroke:0.3w rgb(211, 211, 211);
+  -webkit-text-stroke: 2.4px rgb(14, 182, 224);
+  color: rgb(22, 99, 99);
+ 
   text-transform:uppercase ;
 
 }
@@ -136,7 +137,8 @@ p{
 p::before{
   content: attr(data-text);
   position: absolute; 
-  -webkit-text-stroke: 3px rgb(14, 182, 224);
+ 
+  color: aqua;
   border-right:3px solid rgb(0, 194, 58) ;
   overflow: hidden;
   white-space : nowrap;

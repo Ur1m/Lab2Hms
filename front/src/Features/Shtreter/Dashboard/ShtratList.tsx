@@ -2,6 +2,7 @@ import { observer } from 'mobx-react-lite';
 import React, { SyntheticEvent, useState } from 'react';
 import { Button, Header,Label, Icon, Item, ItemGroup, Modal, Segment } from 'semantic-ui-react';
 import { useStore } from '../../../app/stores/store';
+import "./shtrat.css";
 
 export default observer( function ShtratList(){
     const {shtratStore} = useStore();
@@ -26,7 +27,7 @@ export default observer( function ShtratList(){
             <Item.Group>
                 <div className="ui left icon input"><input type="text" placeholder="Kerko Shtrat (Statusi)..." onChange={event => setsearch(event.target.value)} /><i aria-hidden="true" className="search icon"></i></div>
             </Item.Group>
-        <Segment>
+        <Segment className="sss">
             <Item.Group divided>
                 {Shtreter.filter((val) => {
                         if (search == "") {

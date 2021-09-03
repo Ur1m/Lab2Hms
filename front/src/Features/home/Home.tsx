@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Grid,Icon,Image } from 'semantic-ui-react'
+import {Header, Grid,Icon,Image } from 'semantic-ui-react'
 import { useStore, useStoreBarnat, useStoreDoktorat, useStorePacientat, useStorePaisjet, useStoreTerminet } from '../../app/stores/store';
 import './home.css'
 
@@ -51,6 +51,10 @@ export const Home = () => {
             </div>
         </div>*/
         <Grid columns={3} >
+          <div className="lll">
+          <Header >Materialet dhe informacionet nuk mund të kopjohen, të shtypen, ose të përdoren në çfarëdo forme tjetër për qëllime përfitimi.</Header>
+          <Header >Per qdo problem rreth funksionalitetit të faqes na kontaktoni në emailin: admin@gmail.com <br/><br/> </Header>
+          </div>
     <Grid.Row>
       <Grid.Column>
       <div className="ui card bb">

@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { Button, Header, Icon, Item, ItemGroup, Modal, Segment } from 'semantic-ui-react';
 import DepartmentStore from '../../../app/stores/departmentStore';
 import { useStore } from '../../../app/stores/store';
+import "./dep.css";
 
 export default observer(function DepartmentList() {
     const { departmentStore } = useStore();
@@ -29,7 +30,7 @@ export default observer(function DepartmentList() {
             <Item.Group>
                 <div className="ui left icon input"><input type="text" placeholder="Kerko departamentet..." onChange={event => setsearch(event.target.value)} /><i aria-hidden="true" className="search icon"></i></div>
             </Item.Group>
-            <Segment>
+            <Segment className='sss'>
                 <Item.Group divided>
                     {Departmentet.filter((val) => {
                         if (search == "") {

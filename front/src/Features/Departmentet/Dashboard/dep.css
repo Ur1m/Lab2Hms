@@ -1,16 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 .sss:hover{
     background-color: rgba(140, 181, 235, 0.233);
     transition: 1s;
-    box-shadow: 0 0 20px rgb(12, 1, 43);
+    
    
 }
 .ssss:hover{
     background-color: rgba(98, 216, 118, 0.425);
     transition: 1s;  
-    box-shadow: 0 0 20px rgb(12, 1, 43);
 }
 .ui input {
     width: 255px;
 }
-/* animation*/

@@ -11,7 +11,7 @@ import { IFatura } from '../../../app/models/IFatura';
 import MySelectInput from '../../../app/common/form/MySelectInput';
 import { statusi } from '../../../app/FormElements/StatusiOptions';
 import { IPacientetDropDown, IPacienti } from '../../../app/models/IPacienti';
-
+import "../Dashboard/fatura.css";
 
 export default observer(function FaturaForm() {
     const { faturaStore } = useStore();
@@ -59,7 +59,7 @@ export default observer(function FaturaForm() {
     
   
     return (
-        <Segment clearing>
+        <Segment className="ssss" clearing>
             <Formik
                 validationSchema={validationSchema}
                 enableReinitialize

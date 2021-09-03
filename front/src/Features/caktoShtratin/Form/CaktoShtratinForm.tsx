@@ -12,6 +12,7 @@ import { IPacientetDropDown, IPacienti } from '../../../app/models/IPacienti';
 import { IShtrat, IShtratDropDown } from '../../../app/models/IShtrat';
 import { ICaktoShtratin } from '../../../app/models/ICaktoShtratin';
 import { create } from 'yup/lib/array';
+import "../Dashboard/cakto.css";
 
 
 export default observer(function CaktoShtratinForm() {
@@ -71,7 +72,7 @@ export default observer(function CaktoShtratinForm() {
     
   
     return (
-        <Segment clearing>
+        <Segment className="ssss" clearing>
             <Formik
                 validationSchema={validationSchema}
                 enableReinitialize

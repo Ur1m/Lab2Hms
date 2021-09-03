@@ -7,6 +7,7 @@ import * as Yup from 'yup';
 import MyTextInput from '../../../app/common/form/MyTextInput';
 import MyTextArea from '../../../app/common/form/MyTextArea';
 import { IDepartment } from '../../../app/models/IDepartment';
+import "../Dashboard/dep.css";
 
 export default observer(function DepartmentForm() {
     const { departmentStore } = useStore();
@@ -42,7 +43,7 @@ export default observer(function DepartmentForm() {
     }
 
     return (
-        <Segment clearing>
+        <Segment className='ssss' clearing>
             <Formik
                 validationSchema={validationSchema}
                 enableReinitialize

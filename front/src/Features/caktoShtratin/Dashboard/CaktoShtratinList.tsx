@@ -2,6 +2,7 @@ import { observer } from 'mobx-react-lite';
 import React, { SyntheticEvent, useState } from 'react';
 import { Button, Header,Label, Icon, Item, ItemGroup, Modal, Segment } from 'semantic-ui-react';
 import { useStore } from '../../../app/stores/store';
+import "./cakto.css";
 
 export default observer( function CaktoShtratinList(){
     const {caktoShtratinStore} = useStore();
@@ -26,7 +27,7 @@ export default observer( function CaktoShtratinList(){
             <Item.Group>
                 <div className="ui left icon input"><input type="text" placeholder="Kerko shtrat per pacient..." onChange={event => setsearch(event.target.value)} /><i aria-hidden="true" className="search icon"></i></div>
             </Item.Group>
-        <Segment>
+        <Segment className="sss">
             <Item.Group divided>
                 {caktoShtreterit.filter((val) => {
                         if (search == "") {

@@ -2,7 +2,7 @@ import { observer } from 'mobx-react-lite';
 import React, { SyntheticEvent, useState } from 'react';
 import { Button, Header,Label, Icon, Item, ItemGroup, Modal, Segment } from 'semantic-ui-react';
 import { useStore } from '../../../app/stores/store';
-
+import "./dhoma.css";
 export default observer( function DhomaList(){
     const {dhomaStore} = useStore();
     const {deleteDhoma, Dhomat, loading} = dhomaStore;
@@ -21,7 +21,7 @@ export default observer( function DhomaList(){
         <Item.Group>
             <div className="ui left icon input"><input type="text" placeholder="Kerko dhome (Lloji)..." onChange={event => setsearch(event.target.value)} /><i aria-hidden="true" className="search icon"></i></div>
         </Item.Group>
-        <Segment>
+        <Segment className="sss">
             <Item.Group divided>
                 {Dhomat.filter((val) => {
                         if (search == "") {

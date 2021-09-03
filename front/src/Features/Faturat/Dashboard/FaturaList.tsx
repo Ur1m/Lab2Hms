@@ -2,7 +2,7 @@ import { observer } from 'mobx-react-lite';
 import React, { SyntheticEvent, useState } from 'react';
 import { Button, Header,Label, Icon, Item, ItemGroup, Modal, Segment } from 'semantic-ui-react';
 import { useStore } from '../../../app/stores/store';
-
+import "./fatura.css";
 export default observer( function FaturaList(){
     const {faturaStore} = useStore();
     const {deleteFatura, Faturat, loading, selectedFatura, selectFatura} = faturaStore;
@@ -26,7 +26,7 @@ export default observer( function FaturaList(){
         <Item.Group>
             <div className="ui left icon input"><input type="text" placeholder="Kerko fature..." onChange={event => setsearch(event.target.value)} /><i aria-hidden="true" className="search icon"></i></div>
         </Item.Group>
-        <Segment>
+        <Segment className="sss">
             <Item.Group divided>
                 {Faturat.filter((val) => {
                         if (search == "") {

@@ -10,6 +10,8 @@ import { IShtrat } from '../../../app/models/IShtrat';
 import { ILlojiShtratit, ILlojiShtratitDropDown } from '../../../app/models/ILlojiShtratit';
 import { statusishtratit } from '../../../app/FormElements/StatusiShtratitOptions';
 import MySelectInput from '../../../app/common/form/MySelectInput';
+import "../Dashboard/shtrat.css";
+
 
 export default observer(function ShtratForm() {
     const { shtratStore } = useStore();
@@ -51,7 +53,7 @@ export default observer(function ShtratForm() {
     })
 
     return (
-        <Segment clearing>
+        <Segment className="ssss" clearing>
             <Formik
                 validationSchema={validationSchema}
                 enableReinitialize

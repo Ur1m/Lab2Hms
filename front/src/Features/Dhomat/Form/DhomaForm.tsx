@@ -9,6 +9,7 @@ import MyTextArea from '../../../app/common/form/MyTextArea';
 import { IDhoma } from '../../../app/models/IDhoma';
 import { llojiDhomesOptions } from '../../../app/FormElements/llojiDhomesOptions';
 import MySelectInput from '../../../app/common/form/MySelectInput';
+import "../Dashboard/dhoma.css";
 
 export default observer(function DhomaForm() {
     const { dhomaStore } = useStore();
@@ -34,7 +35,7 @@ export default observer(function DhomaForm() {
     }
 
     return (
-        <Segment clearing>
+        <Segment className="ssss" clearing>
             <Formik
                 validationSchema={validationSchema}
                 enableReinitialize
