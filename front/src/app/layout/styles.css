@@ -162,6 +162,10 @@ p::before{
   margin-top: 32px;
 }
 
-.ui.dropdown {
-  background: white;
+.ui.dropdown>.text {
+  color: white;
+}
+
+.ui.dropdown>.dropdown.icon:before {
+  color: white;
 }
