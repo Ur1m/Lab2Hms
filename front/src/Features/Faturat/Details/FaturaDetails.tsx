@@ -2,11 +2,12 @@ import React from 'react';
 import { Button, Card,Label, Icon, Image } from 'semantic-ui-react';
 import LoadingComponent from '../../../app/layout/LoadingComponent';
 import { IPacientetDropDown, IPacienti } from '../../../app/models/IPacienti';
+import FaturaStore from '../../../app/stores/faturaStore';
 import { useStore } from '../../../app/stores/store';
 
 export default function FaturaDetails() {
     const {faturaStore} = useStore();
-    const {selectedFatura: Fatura, openForm, cancelSelectedFatura} = faturaStore;
+    const {selectedFatura: Fatura, openForm, closeDetails,cancelSelectedFatura} = faturaStore;
 
     if(!Fatura) return <LoadingComponent />;
     
@@ -24,8 +25,8 @@ export default function FaturaDetails() {
         </Card.Content>
         <Card.Content extra>
             <Button.Group widths='2'>
-                <Button onClick={() => openForm(Fatura.fatura_Id)} basic color='blue' content='Ndrysho'/>
-                <Button onClick={cancelSelectedFatura} basic color='blue' content='Anulo'/>
+                <Button onClick={() => faturaStore.openForm(Fatura.fatura_Id)} basic color='blue' content='Ndrysho'/>
+                <Button onClick={()=>closeDetails()} basic color='blue' content='Anulo'/>
             </Button.Group>
         </Card.Content>
       </Card >

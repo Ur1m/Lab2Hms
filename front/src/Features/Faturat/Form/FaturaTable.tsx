@@ -52,7 +52,7 @@ export default observer(function FaturaTable() {
   const [openPop,setopenPop]=useState(false)
   const[search,setsearch]=useState("");
 
-    const{Faturat,selectFatura,openForm,selectedFatura,deleteFatura,closeForm,editMode,detailsmode,faturatRegistry}=FaturatStore
+    const{Faturat,selectFatura,openForm,openDetails,selectedFatura,deleteFatura,closeForm,editMode,detailsmode,faturatRegistry}=FaturatStore
     useEffect(()=>{
       FaturatStore.loadFaturat();
   },[FaturatStore]);
@@ -82,8 +82,8 @@ function editf(id:string){
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Emri</StyledTableCell>
-            <StyledTableCell align="right">Mbiemri</StyledTableCell>
+            <StyledTableCell>Titulli</StyledTableCell>
+            <StyledTableCell align="right">Pershkrimi</StyledTableCell>
             <StyledTableCell align="right"colSpan={2}> <div className="ui left icon input"><input type="text" placeholder="Kerko fature..." onChange={event=>setsearch(event.target.value)}/><i aria-hidden="true" className="search icon"></i></div></StyledTableCell>
             
             <StyledTableCell align="right">{<Button onClick={()=>openForm()}floated="right" content={<AddIcon/>}color='green' />}</StyledTableCell>
@@ -103,7 +103,7 @@ function editf(id:string){
                 {row.titulli}
               </StyledTableCell>
               <StyledTableCell align="right">{row.pershkrimi}</StyledTableCell>
-              <StyledTableCell align="right">{<Button onClick={()=>openForm(row.fatura_Id)}floated="right" content='View' color='blue' />}</StyledTableCell>
+              <StyledTableCell align="right">{<Button onClick={()=>openDetails(row.fatura_Id)}floated="right" content='Shiko' color='blue' />}</StyledTableCell>
               <StyledTableCell align="right">{<Button onClick={()=>openForm(row.fatura_Id)}floated="right" content={<EditIcon/>} color='grey' />}</StyledTableCell>
               <StyledTableCell align="right">{<Button  onClick={()=>del(row.fatura_Id)}floated="right" content={<DeleteForeverIcon/>} color='red' />}</StyledTableCell>
             </StyledTableRow>
@@ -116,10 +116,10 @@ function editf(id:string){
   aria-labelledby="alert-dialog-slide-title"
   aria-describedby="alert-dialog-slide-description"
 >
-  <DialogTitle id="alert-dialog-slide-title">{"Delete Pacineti"}</DialogTitle>
+  <DialogTitle id="alert-dialog-slide-title">{"Fshije faturen?"}</DialogTitle>
   <DialogContent>
     <DialogContentText id="alert-dialog-slide-description">
-     Are you sure that you want to delete Pacinetin 
+     A jeni i sigurt ? 
     </DialogContentText>
   </DialogContent>
   <DialogActions>

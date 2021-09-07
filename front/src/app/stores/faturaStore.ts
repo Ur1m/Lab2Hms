@@ -53,8 +53,17 @@ export default class FaturaStore {
         this.editMode = true;
     }
 
-    closeForm = () => {
-        this.editMode = false;
+    closeForm=()=>{
+        this.editMode=false;
+    }
+
+    openDetails=(id:string)=>{
+        this.selectFatura(id);
+        this.detailsmode=true;
+    }
+    closeDetails=()=>{
+        this.selectedFatura=undefined;
+        this.detailsmode=false;
     }
 
     createFatura = async (Fatura: IFatura) => {

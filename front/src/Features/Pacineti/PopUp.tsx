@@ -41,6 +41,8 @@ const {DoktoratStore}=useStoreDoktorat();
     BarnatStore.closeDetails();
     DoktoratStore.closeForm();
     DoktoratStore.closeDetails();
+    FaturatStore.closeForm();
+    FaturatStore.closeDetails();
     
  }
     return (
