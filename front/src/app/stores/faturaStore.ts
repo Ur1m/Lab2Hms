@@ -10,6 +10,9 @@ export default class FaturaStore {
     editMode = false;
     loading = false;
     loadingInitial = false;
+    detailsmode=false;
+    faturatRegistry=new Map<string,IFatura>()
+    forma=false;
 
     constructor(){
         makeAutoObservable(this)

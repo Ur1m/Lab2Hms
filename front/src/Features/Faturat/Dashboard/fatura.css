@@ -1,13 +1,20 @@
-.sss:hover{
-    background-color: rgba(140, 181, 235, 0.233);
-    transition: 1s;
+.pconteiner{
+    display: flex;
+    flex-direction: column;
+    background-image: url("./inovice.jpg");
+    background-position: center;
+    background-size: cover;
     
-   
-}
-.ssss:hover{
-    background-color: rgba(98, 216, 118, 0.425);
-    transition: 1s;  
-}
-.ui input {
-    width: 255px;
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+    padding: 30px 50px 20px 50px;
+    box-sizing: border-box;
+    background-color: rgb(76, 120, 145);
+    position: absolute;
+    left :0;
+    padding-top: 220px;
+    padding-left: 150px;
+    padding-right: 150px;
+
 }

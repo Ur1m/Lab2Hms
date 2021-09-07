@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\api\\API.csproj": {}
+    "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\api\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\api\\API.csproj": {
+    "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\api\\API.csproj",
+        "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\api\\API.csproj",
-        "packagesPath": "C:\\Users\\PULSE Electronics\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\api\\obj\\",
+        "projectPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\api\\API.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\api\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PULSE Electronics\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -32,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Application\\Application.csproj"
+              "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Application\\Application.csproj"
               }
             }
           }
@@ -95,12 +91,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.1.15, 3.1.15]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -109,26 +99,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Application\\Application.csproj": {
+    "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\PULSE Electronics\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Application\\obj\\",
+        "projectPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Application\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PULSE Electronics\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -141,11 +127,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Domain\\Domain.csproj"
+              "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Presistence\\Presistence.csproj": {
-                "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Presistence\\Presistence.csproj"
+              "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Presistence\\Presistence.csproj": {
+                "projectPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Presistence\\Presistence.csproj"
               }
             }
           }
@@ -196,26 +182,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Domain\\Domain.csproj": {
+    "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\PULSE Electronics\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PULSE Electronics\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -264,26 +246,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Presistence\\Presistence.csproj": {
+    "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Presistence\\Presistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Presistence\\Presistence.csproj",
+        "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Presistence\\Presistence.csproj",
         "projectName": "Presistence",
-        "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Presistence\\Presistence.csproj",
-        "packagesPath": "C:\\Users\\PULSE Electronics\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Presistence\\obj\\",
+        "projectPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Presistence\\Presistence.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Presistence\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PULSE Electronics\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -296,8 +274,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\Domain\\Domain.csproj"
+              "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Domain\\Domain.csproj"
               }
             }
           }
@@ -336,7 +314,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

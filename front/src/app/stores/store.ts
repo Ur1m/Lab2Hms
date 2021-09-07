@@ -135,3 +135,16 @@ export const StoreContextBarna=createContext(StoreBarnat)
 export function useStoreBarnat(){
     return useContext(StoreContextBarna);
 }
+
+
+interface StoreFatura{
+    FaturatStore:FaturaStore;
+
+}
+export const StoreFaturat:StoreFatura={
+    FaturatStore:new FaturaStore()
+}
+export const StoreContextFatura=createContext(StoreFaturat)
+export function useStoreFaturat(){
+    return useContext(StoreContextFatura);
+}

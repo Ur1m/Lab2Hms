@@ -161,3 +161,7 @@ p::before{
   margin-left: 10px;
   margin-top: 32px;
 }
+
+.ui.dropdown {
+  background: white;
+}
