@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { observer } from 'mobx-react-lite';
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Button, FormField, Header, Label, Segment } from 'semantic-ui-react';
-import { useStore } from '../../../app/stores/store';
+import { useStore, useStoreFaturat } from '../../../app/stores/store';
 import * as Yup from 'yup';
 import MyTextInput from '../../../app/common/form/MyTextInput';
 import MyTextArea from '../../../app/common/form/MyTextArea';
@@ -14,8 +14,8 @@ import { IPacientetDropDown, IPacienti } from '../../../app/models/IPacienti';
 import "../Dashboard/fatura.css";
 
 export default observer(function FaturaForm() {
-    const { faturaStore } = useStore();
-    const { selectedFatura, closeForm, createFatura, updateFatura, loading, getPacientet } = faturaStore;
+    const { FaturatStore } = useStoreFaturat();
+    const { selectedFatura, closeForm, createFatura, updateFatura, loading, getPacientet } = FaturatStore;
 
     const initialState = selectedFatura ?? {
         fatura_Id: '',
@@ -29,7 +29,7 @@ export default observer(function FaturaForm() {
 
     const [Fatura, setFatura] = useState(initialState);
     const validationSchema = Yup.object({
-        titulli: Yup.string().required('Titulli fatures nuk mund te jete i zbrazet...'),
+        titulli: Yup.string().matches(/^[a-zA-Z0-9]{3,12}$/,'titulli duhet te kete mbi 3 shkronja deri ne 12').required('Titulli fatures nuk mund te jete i zbrazet...'),
         shuma: Yup.number().required('Shuma fatures nuk mund te jete i zbrazet...').nullable(),
         krijuarme: Yup.string().required('Selektoni daten kur eshte krijuar fatura...').nullable(),
         statusi: Yup.string().required('Selektoni statusin').nullable(),
@@ -74,7 +74,8 @@ export default observer(function FaturaForm() {
                         <label>Shuma: </label>
                         <MyTextInput type='number' name='shuma' placeholder='Shkruani shumen e fatures...' />
                         <label>Data: </label>
-                        <MyDateInput name='krijuarme' placeholderText='Krijuar me...' />
+                        <MyDateInput name='krijuarme' placeholderText='Krijuar me...' maxDate={new Date()}
+                        minDate={new Date('05/05/1922')} />
                         <label>Pacienti: </label>
                         <MySelectInput options={pacientetDropDown} placeholder='Zgjedhni pacientin...' name='pacient_id'></MySelectInput>
                         <label>Statusi: </label>

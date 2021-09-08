@@ -1,6 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import React from 'react';
 import { Button, Card,Label, Icon, Image } from 'semantic-ui-react';
+import { format } from 'util';
 import LoadingComponent from '../../../app/layout/LoadingComponent';
 import { IPacientetDropDown, IPacienti } from '../../../app/models/IPacienti';
 import FaturaStore from '../../../app/stores/FaturaStore';
@@ -21,6 +22,9 @@ export default observer (function FaturaDetails() {
                 Pershkrimi: {selectedFatura.pershkrimi}
           </Card.Description>
           <label>Pacienti: {selectedFatura.pacient?.emri + " " + selectedFatura.pacient?.mbimeri}</label><br/>
+          <Card.Description>
+          {"Krijuar më:" +format(selectedFatura.krijuarme!,'MMMM d, yyyy')}.
+          </Card.Description>
           <label>Statusi: {selectedFatura.statusi}</label><br/>
           Shuma: <Label basic content={selectedFatura.shuma + " euro"}/>
         </Card.Content>
