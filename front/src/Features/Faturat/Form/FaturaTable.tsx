@@ -77,7 +77,7 @@ function editf(id:string){
 }
 
   return (
-    <div className="pconteiner">
+    <div className="faturacontainer">
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="customized table">
         <TableHead>

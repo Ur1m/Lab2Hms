@@ -26,7 +26,7 @@ const {DoktoratStore}=useStoreDoktorat();
     const {TerminetStore}=useStoreTerminet();
     const{}=TerminetStore;
     const {FaturatStore}=useStoreFaturat();
-    const{}=FaturatStore;
+    const{selectedFatura, Faturat, selectFatura,deleteFatura,editMode}=FaturatStore;
    
  const classes=useStyles()
 

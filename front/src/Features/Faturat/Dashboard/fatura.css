@@ -1,4 +1,4 @@
-.pconteiner{
+.faturacontainer{
     display: flex;
     flex-direction: column;
     background-image: url("./inovice.jpg");

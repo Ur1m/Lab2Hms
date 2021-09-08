@@ -1,34 +1,36 @@
+import { observer } from 'mobx-react-lite';
 import React from 'react';
 import { Button, Card,Label, Icon, Image } from 'semantic-ui-react';
 import LoadingComponent from '../../../app/layout/LoadingComponent';
 import { IPacientetDropDown, IPacienti } from '../../../app/models/IPacienti';
-import FaturaStore from '../../../app/stores/faturaStore';
-import { useStore } from '../../../app/stores/store';
+import FaturaStore from '../../../app/stores/FaturaStore';
+import { useStore, useStoreFaturat } from '../../../app/stores/store';
 
-export default function FaturaDetails() {
-    const {faturaStore} = useStore();
-    const {selectedFatura: Fatura, openForm, closeDetails,cancelSelectedFatura} = faturaStore;
+export default observer (function FaturaDetails() {
+    const {FaturatStore} = useStoreFaturat();
+    const {selectedFatura,closeDetails} = FaturatStore;
 
-    if(!Fatura) return <LoadingComponent />;
+    if(!selectedFatura) return <LoadingComponent />;
     
     return (
         <Card fluid>
         {/* <Image src={`/assets/FaturaImages/${Fatura.fatura_id}.jpg`} /> */}
         <Card.Content>
-          <Card.Header>{Fatura.titulli}</Card.Header>
+          <Card.Header>{selectedFatura.titulli}</Card.Header>
           <Card.Description>
-                Pershkrimi: {Fatura.pershkrimi}
+                Pershkrimi: {selectedFatura.pershkrimi}
           </Card.Description>
-          <label>Pacienti: {Fatura.pacient?.emri + " " + Fatura.pacient?.mbimeri}</label><br/>
-          <label>Statusi: {Fatura.statusi}</label><br/>
-          Shuma: <Label basic content={Fatura.shuma + " euro"}/>
+          <label>Pacienti: {selectedFatura.pacient?.emri + " " + selectedFatura.pacient?.mbimeri}</label><br/>
+          <label>Statusi: {selectedFatura.statusi}</label><br/>
+          Shuma: <Label basic content={selectedFatura.shuma + " euro"}/>
         </Card.Content>
         <Card.Content extra>
             <Button.Group widths='2'>
-                <Button onClick={() => faturaStore.openForm(Fatura.fatura_Id)} basic color='blue' content='Ndrysho'/>
+                <Button onClick={() => FaturatStore.openForm(selectedFatura.fatura_Id)} basic color='blue' content='Ndrysho'/>
                 <Button onClick={()=>closeDetails()} basic color='blue' content='Anulo'/>
             </Button.Group>
         </Card.Content>
       </Card >
     )
 }
+);

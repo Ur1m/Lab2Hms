@@ -5,7 +5,7 @@ import {v4 as uuid} from 'uuid';
 import { IPacienti } from "../models/IPacienti";
 
 export default class FaturaStore {
-    Faturat: IFatura[] = [];
+    //Faturat: IFatura[] = [];
     selectedFatura: IFatura | undefined = undefined;
     editMode = false;
     loading = false;
@@ -20,27 +20,32 @@ export default class FaturaStore {
 
     loadFaturat = async () => {
         this.setLoadingInitial(true);
-        this.Faturat = [];
+        //this.Faturat = [];
         try{
             const Faturat = await agent.Faturat.list();
+            runInAction(()=>{
                 Faturat.forEach(Fatura => {
-                    this.Faturat.push(Fatura);
+                    //this.Faturat.push(Fatura);
+                    this.faturatRegistry.set(Fatura.fatura_Id,Fatura);
                 })
                 this.setLoadingInitial(false);
+            })
         } catch(error){
             console.log(error);
                 this.setLoadingInitial(true);
         }
     }
-    
 
     setLoadingInitial = (state: boolean) => {
         this.loadingInitial = state;
     }
 
+    get Faturat(){
+        return Array.from(this.faturatRegistry.values());
+    }
     
     selectFatura = async (fatura_id: string) => {
-        this.selectedFatura = await agent.Faturat.details(fatura_id);
+        this.selectedFatura = this.faturatRegistry.get(fatura_id);
     }
 
 
@@ -72,7 +77,8 @@ export default class FaturaStore {
         try{
             await agent.Faturat.create(Fatura);
             runInAction(() => {
-                this.Faturat.push(Fatura);
+                //this.Faturat.push(Fatura);
+                this.faturatRegistry.set(Fatura.fatura_Id,Fatura);
                 this.selectedFatura = Fatura;
                 this.editMode = false;
                 this.loading = false;
@@ -90,7 +96,8 @@ export default class FaturaStore {
         try{
             await agent.Faturat.update(Fatura);
             runInAction(() => {
-                this.Faturat = [...this.Faturat.filter(f => f.fatura_Id !== Fatura.fatura_Id), Fatura];
+                //this.Faturat = [...this.Faturat.filter(f => f.fatura_Id !== Fatura.fatura_Id), Fatura];
+                this.faturatRegistry.set(Fatura.fatura_Id,Fatura);
                 this.selectedFatura = Fatura;
                 this.editMode = false;
                 this.loading = false;
@@ -108,7 +115,8 @@ export default class FaturaStore {
         try{
             await agent.Faturat.delete(fatura_id);
             runInAction(() => {
-                this.Faturat = [...this.Faturat.filter(f => f.fatura_Id !== fatura_id)];
+                //this.Faturat = [...this.Faturat.filter(f => f.fatura_Id !== fatura_id)];
+                this.faturatRegistry.delete(fatura_id);
                 if (this.selectedFatura?.fatura_Id === fatura_id) this.cancelSelectedFatura();
                 this.loading = false;
             })
