@@ -1,35 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\api\\API.csproj": {}
+    "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\api\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\api\\API.csproj": {
+    "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\api\\API.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\api\\API.csproj",
-        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\api\\obj\\",
+        "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\api\\API.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Application\\Application.csproj"
+              "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\Application\\Application.csproj"
               }
             }
           }
@@ -91,6 +89,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.15, 3.1.15]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -99,39 +103,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Application\\Application.csproj": {
+    "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Application\\obj\\",
+        "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Domain\\Domain.csproj"
+              "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Presistence\\Presistence.csproj": {
-                "projectPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Presistence\\Presistence.csproj"
+              "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\Presistence\\Presistence.csproj": {
+                "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\Presistence\\Presistence.csproj"
               }
             }
           }
@@ -182,28 +184,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Domain\\Domain.csproj": {
+    "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -246,36 +246,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Presistence\\Presistence.csproj": {
+    "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\Presistence\\Presistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Presistence\\Presistence.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\Presistence\\Presistence.csproj",
         "projectName": "Presistence",
-        "projectPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Presistence\\Presistence.csproj",
-        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Presistence\\obj\\",
+        "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\Presistence\\Presistence.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\Presistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\lenovo\\Desktop\\rh\\LabHms\\Domain\\Domain.csproj"
+              "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHMs\\Domain\\Domain.csproj"
               }
             }
           }
@@ -314,7 +312,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -6,7 +6,6 @@
 .containerr{
   display: flex;
   flex-direction: column;
-  
   width: 100vw;
   height: 100%;
   overflow: scroll;
@@ -60,11 +59,18 @@ h3{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 0px;
+ 
   
 }
 .carde-h-1 h4{
   margin-top: -15px;
+}
+.carde-h-1 h1{
+  color: white;
+  align-items: center;
+ margin-left: 90px;
+ 
+
 }
 .carde_img{
   margin-top: -5vw;
