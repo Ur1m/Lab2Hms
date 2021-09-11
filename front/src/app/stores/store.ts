@@ -4,7 +4,7 @@ import DepartmentStore from "./departmentStore";
 import InfermierjaStore from "./infermierjaStore";
 import PacientatStore from "../store/PacientatStore";
 import DoktoretStore from "../store/doktoretStor";
-import FaturaStore from "./FaturaStore";
+import FaturaStore from "./faturaStore";
 import TerminetStore from "../store/TerminetStore";
 import LlojiShtratitStore from "./llojiShtratitStore";
 import ShtratStore from "./shtratStore";
