@@ -4,7 +4,7 @@ import { Button, Card,Label, Icon, Image } from 'semantic-ui-react';
 import { format } from 'util';
 import LoadingComponent from '../../../app/layout/LoadingComponent';
 import { IPacientetDropDown, IPacienti } from '../../../app/models/IPacienti';
-import FaturaStore from '../../../app/stores/FaturaStore';
+import FaturaStore from '../../../app/stores/faturaStore';
 import { useStore, useStoreFaturat } from '../../../app/stores/store';
 
 export default observer (function FaturaDetails() {
