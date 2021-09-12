@@ -1,5 +1,9 @@
 {
+<<<<<<< Updated upstream
   "FilePath": "c:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\API\\API.csproj",
+=======
+  "FilePath": "c:\\Users\\PULSE Electronics\\Desktop\\lab\\LabHms\\API\\API.csproj",
+>>>>>>> Stashed changes
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",

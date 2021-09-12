@@ -21,7 +21,6 @@ namespace Presistence
         public DbSet<Pacient> pacientet{get;set;}
 
         public DbSet<Fatura> Faturat {get; set;}
-
         public DbSet<Laboratori> Laboratoret {get; set;}
 
         public DbSet<Therapy> Therapies {get; set;}
@@ -71,6 +70,15 @@ namespace Presistence
                 .WithMany()
                 .HasForeignKey(p => p.Pacient_id)
                 .HasConstraintName("FK_Fatura_Pacient_id");
+            
+              modelBuilder.Entity<Laboratori>()
+                .HasKey(f => f.Lab_Id );
+
+            modelBuilder.Entity<Laboratori>()
+                .HasOne(p => p.Department)
+                .WithMany()
+                .HasForeignKey(p => p.Department_id)
+                .HasConstraintName("FK_Laboratori_Department_id");
 
                  modelBuilder.Entity<Raport>()
                 .HasKey(f => f.Raport_Id );
@@ -96,8 +104,6 @@ namespace Presistence
                 .HasForeignKey(p => p.Pacient_id)
                 .HasConstraintName("FK_Therapy_Pacient_id");
 
-            modelBuilder.Entity<Laboratori>()
-                .HasKey(l => l.Id);
 
             modelBuilder.Entity<llojiShtratit>()
                 .HasKey(ll => ll.llojiShtratit_id);

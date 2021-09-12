@@ -11,19 +11,27 @@ namespace Presistence.Migrations
                 name: "Laboratoret",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false),
+                    Lab_Id = table.Column<Guid>(nullable: false),
                     Emri = table.Column<string>(nullable: true),
-                    NrId = table.Column<string>(nullable: true),
-                    Mosha = table.Column<string>(nullable: true),
                     Pershkrimi = table.Column<string>(nullable: true),
-                    Rezultati = table.Column<string>(nullable: true),
-                    Date = table.Column<DateTime>(nullable: false),
-                    City = table.Column<string>(nullable: true)
+                    Fotografia = table.Column<string>(nullable: true),
+                    Department_id = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Laboratoret", x => x.Id);
+                    table.PrimaryKey("PK_Laboratoret", x => x.Lab_Id);
+                    table.ForeignKey(
+                        name: "FK_Laboratori_Department_id",
+                        column: x => x.Department_id,
+                        principalTable: "Departmentet",
+                        principalColumn: "Department_id",
+                        onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Laboratoret_Department_id",
+                table: "Laboratoret",
+                column: "Department_id");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

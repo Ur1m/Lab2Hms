@@ -4,14 +4,12 @@ namespace Domain
 {
     public class Laboratori
     {
-        public Guid Id { get; set; }
+        public Guid Lab_Id { get; set; }
         public String Emri { get; set; }
-        public String NrId { get; set; }
-        public string Mosha { get; set; }
         public string Pershkrimi { get; set; }
-        public string Rezultati { get; set; }
-        public DateTime Date { get; set; }
-        public string City { get; set; }
+        public string Fotografia{get;set;}
+          public Guid Department_id { get; set; }
+        public Department Department { get; set; } 
         
     }
 }

@@ -10,7 +10,6 @@ import DepartmentDashboard from '../../Features/Departmentet/Dashboard/Departmen
 import HomePage from '../../Features/home/HomePage';
 import { ILaboratori } from '../models/ILaboratori';
 import axios from 'axios';
-import LaboratoriDashboard from '../../Features/Laboratoret/Dashboard/LaboratoriDashboard';
 import TestErrors from '../../Features/errors/TestError';
 import { Slide, ToastContainer } from 'react-toastify';
 import NotFound from '../../Features/errors/NotFound';
@@ -135,7 +134,7 @@ return (
           <Route path={'/Doktorat'} component={DoktoriDashboard}/>
           <Route path={'/Pacientat'} component={PacientiDashboard}/>
           <Route path={'/Faturat'} component={FaturaDashboard}/>
-          <Route path={'/Laboratoret'} component={LaboratoriDashboard}/>
+ 
           <Route path={'/Shtreter'} component={ShtratDashboard} />
           <Route path={'/Paisjet'} component={PaisjetDashbord}/>
           <Route path={'/llojiShtratit'} component={LlojiShtratitDashboard} />

@@ -1,48 +1,47 @@
+using Application.Laboratoret;
+using Domain;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Application.Laboratoret;
-using Domain;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class LaboratoretController : ControllerBase
+    public class LaboratoretController: BaseApiController
     {
-        private readonly IMediator _mediator;
-        public LaboratoretController(IMediator mediator)
+         [HttpGet]
+        public async Task<IActionResult> GetLaboratoret()
         {
-            _mediator = mediator;
-        }
-        [HttpGet]
-        public async Task<ActionResult<List<Laboratori>>> List()
-        {
-            return await _mediator.Send(new List.Query());
+            return HandleResult(await Mediator.Send(new List.Query()));
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Laboratori>> Details(Guid id)
+        [HttpGet("{Lab_Id}")]
+        public async Task<IActionResult> GetLaboratoret(Guid Lab_Id)
         {
-            return await _mediator.Send(new Details.Query{Id=id});
+            var result = await Mediator.Send(new Details.Query { Lab_Id = Lab_Id });
+        
+            return HandleResult(result);
         }
+
         [HttpPost]
-        public async Task<ActionResult<Unit>> Create(Create.Command command)
+        public async Task<IActionResult> CreateLaborator(Laboratori laboratori)
         {
-            return await _mediator.Send(command);
+            return HandleResult(await Mediator.Send(new Create.Command { Laboratori = laboratori }));
         }
-        [HttpPut("{id}")]
-        public async Task <ActionResult<Unit>> Edit(Guid id, Edit.Command command)
+
+        [HttpPut("{Lab_Id}")]
+        public async Task<IActionResult> EditLaborator(Guid Lab_Id, Laboratori laboratori)
         {
-            command.Id= id;
-            return await _mediator.Send(command);
+            laboratori.Lab_Id = Lab_Id;
+            return HandleResult(await Mediator.Send(new Edit.Command { Laboratori = laboratori }));
         }
-        [HttpDelete("{Id}")]
-        public async Task<ActionResult <Unit>> Delete(Guid id)
+
+        [HttpDelete("{Lab_Id}")]
+        public async Task<IActionResult> DeleteLaborator(Guid Lab_Id)
         {
-            return await _mediator.Send(new Delete.Command{Id=id});
+            return HandleResult(await Mediator.Send(new Delete.Command { Lab_Id = Lab_Id }));
         }
+
+
     }
 }

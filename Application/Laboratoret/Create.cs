@@ -1,56 +1,39 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using Domain;
+using FluentValidation;
 using MediatR;
 using Presistence;
+using System.Threading;
+using System.Threading.Tasks;
+using Application.Core;
 
 namespace Application.Laboratoret
 {
     public class Create
     {
-        public class Command : IRequest
-        {
-        public Guid Id { get; set; }
-        public String Emri { get; set; }
-        public String NrId { get; set; }
-        public string Mosha { get; set; }
-        public string Pershkrimi { get; set; }
-        public string Rezultati { get; set; }
-        public DateTime Date { get; set; }
-        public string City { get; set; }
+          public class Command : IRequest<Result<Unit>>
+        { 
+            public Laboratori Laboratori { get; set; }
         }
 
-        public class Handler : IRequestHandler<Command>
+
+        public class Handler : IRequestHandler<Command, Result<Unit>>
         {
             private readonly DataContext _context;
+
             public Handler(DataContext context)
             {
                 _context = context;
-
             }
 
-            public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
+            public async Task<Result<Unit>> Handle(Command request, CancellationToken cancellationToken)
             {
-                var laboratori= new Laboratori
-                {
-                    Id = request.Id,
-                    Emri=request.Emri,
-                    NrId=request.NrId,
-                    Mosha=request.Mosha,
-                    Pershkrimi=request.Pershkrimi,
-                    Rezultati=request.Rezultati,
-                    Date=request.Date,
-                    City=request.City,
-                    
-                };
-                _context.Laboratoret.Add(laboratori);
-                var success = await _context.SaveChangesAsync() >0;
+                _context.Laboratoret.Add(request.Laboratori);
 
-                if(success) return Unit.Value;
+                var result = await _context.SaveChangesAsync() > 0;
 
-                throw new Exception("Problem saving changes");
+                if (!result) return Result<Unit>.Failure("Deshtoi krijimi i laboratorit");
 
+                return Result<Unit>.Success(Unit.Value);
             }
         }
     }
