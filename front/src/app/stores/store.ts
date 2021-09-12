@@ -148,3 +148,27 @@ export const StoreContextFatura=createContext(StoreFaturat)
 export function useStoreFaturat(){
     return useContext(StoreContextFatura);
 }
+
+interface StoreDepartment{
+    DepartmentStore:DepartmentStore;
+
+}
+export const StoreDepartment:StoreDepartment={
+    DepartmentStore:new DepartmentStore()
+}
+export const StoreContextDepartment=createContext(StoreDepartment)
+export function useStoreDepartment(){
+    return useContext(StoreContextDepartment);
+}
+
+interface StoreDhoma{
+    DhomaStore:DhomaStore;
+
+}
+export const StoreDhoma:StoreDhoma={
+    DhomaStore:new DhomaStore()
+}
+export const StoreContextDhoma=createContext(StoreDhoma)
+export function useStoreDhoma(){
+    return useContext(StoreContextDhoma);
+}

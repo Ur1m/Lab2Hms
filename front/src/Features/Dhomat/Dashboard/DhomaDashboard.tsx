@@ -5,6 +5,7 @@ import LoadingComponent from '../../../app/layout/LoadingComponent';
 import { useStore } from '../../../app/stores/store';
 import DhomaDetails from '../Details/DhomaDetails';
 import DhomaForm from '../Form/DhomaForm';
+import DhomaTable from '../Form/DhomaTable';
 import DhomaList from './DhomaList';
 
 
@@ -21,19 +22,6 @@ export default observer( function DhomaDashboard() {
 
 
     return (
-        <Grid>
-            <Grid.Column width='10'>
-                <DhomaList />
-                <div>
-                <Button onClick={() => dhomaStore.openForm()} style = {{marginLeft:530, marginTop:5}} positive content='Shto Dhome'/>
-            </div>
-            </Grid.Column>
-            <Grid.Column width='6'>
-                {selectedDhoma && !editMode &&
-                <DhomaDetails/>}
-                {editMode &&
-                <DhomaForm />}
-            </Grid.Column>
-        </Grid>
+        <DhomaTable/>
     )
 })

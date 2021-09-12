@@ -5,7 +5,7 @@ import {v4 as uuid} from 'uuid';
 import { IPacienti } from "../models/IPacienti";
 
 export default class FaturaStore {
-    //Faturat: IFatura[] = [];
+    // Faturat: IFatura[] = [];
     selectedFatura: IFatura | undefined = undefined;
     editMode = false;
     loading = false;
@@ -96,7 +96,7 @@ export default class FaturaStore {
         try{
             await agent.Faturat.update(Fatura);
             runInAction(() => {
-                //this.Faturat = [...this.Faturat.filter(f => f.fatura_Id !== Fatura.fatura_Id), Fatura];
+                // this.Faturat = [...this.Faturat.filter(f => f.fatura_Id !== Fatura.fatura_Id), Fatura];
                 this.faturatRegistry.set(Fatura.fatura_Id,Fatura);
                 this.selectedFatura = Fatura;
                 this.editMode = false;

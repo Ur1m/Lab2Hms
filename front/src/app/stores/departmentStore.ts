@@ -7,6 +7,7 @@ export default class DepartmentStore {
     Departmentet: IDepartment[] = [];
     selectedDepartment: IDepartment | undefined = undefined;
     editMode = false;
+    detailsmode=false;
     loading = false;
     loadingInitial = false;
 
@@ -44,11 +45,18 @@ export default class DepartmentStore {
 
     openForm = (department_id?: string) => {
         department_id? this.selectDepartment(department_id) : this.cancelSelectedDepartment();
-        this.editMode = true;
+        this.editMode = (true);
     }
 
     closeForm = () => {
         this.editMode = false;
+    }
+    openDetails=(id:string)=>{
+        this.selectDepartment(id);
+        this.detailsmode=true;
+    }
+    closeDetails=()=>{
+        this.detailsmode=false;
     }
 
     createDepartment = async (Department: IDepartment) => {
