@@ -1,13 +1,19 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import './styles.css';
 import Navbar from '../../Components/Navbar';
+<<<<<<< HEAD
 import { BrowserRouter as Router, Switch, Route, RouteComponentProps,withRouter, useLocation } from 'react-router-dom';
+=======
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+<<<<<<< Updated upstream
+>>>>>>> parent of ed8d6bc (Krijimi laboratorit front & back end)
 import { Container } from 'semantic-ui-react';
 import '../../app/layout/styles.css';
 import DoktoriDashboard  from '../../Features/Doktori/DoktoriDashbord';
 import { observer } from 'mobx-react-lite';
 import DepartmentDashboard from '../../Features/Departmentet/Dashboard/DepartmentDashboard';
 import HomePage from '../../Features/home/HomePage';
+<<<<<<< HEAD
 import { ILaboratori } from '../models/ILaboratori';
 import axios from 'axios';
 import TestErrors from '../../Features/errors/TestError';
@@ -116,6 +122,46 @@ return (
           deleteLaboratori={handleDeleteLaboratori} /> */}
           <Switch>
             <Route path='/home' component={Home}/>
+=======
+=======
+import axios from 'axios';
+>>>>>>> Stashed changes
+
+function App() {
+
+/*const [infermieret, setInfermieret] = useState([]);
+useEffect(() =>{
+  axios.get('http://localhost:5000/api/infermieret').then(response =>{
+    console.log(response);
+    setInfermieret(response.data);
+  })
+}, [])
+ return (
+    < div>
+    <header as ='h2' icon ='users' content='Infermieret'/>
+    <List>
+        {infermieret.map((infermierja: any) =>{
+          <List.item key=(infermierja.id)</li>
+          {infermierja.emri}
+          </List.item>
+        })}
+    </List>
+    </div>
+*/
+  return (
+<<<<<<< Updated upstream
+   <>
+      <Router>
+        <Navbar/>
+=======
+    <>
+     <Router>
+        <Navbar />
+>>>>>>> Stashed changes
+        <Switch>
+        <Container style={{marginTop: '4em'}}>
+          <Route exact path='/' component={HomePage}/>
+>>>>>>> parent of ed8d6bc (Krijimi laboratorit front & back end)
           <Route path='/Departamentet' component={DepartmentDashboard}/>
           <Route path='/Infermieret' component={InfermierjaDashboard}/>
           <Route path={'/Doktorat'} component={DoktoriDashboard}/>
@@ -145,6 +191,12 @@ return (
       />
     </Fragment>
   );
+<<<<<<< HEAD
 };
 
 export default observer (App);
+=======
+}
+
+export default observer (App);
+>>>>>>> parent of ed8d6bc (Krijimi laboratorit front & back end)

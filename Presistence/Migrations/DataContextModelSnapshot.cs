@@ -226,6 +226,7 @@ namespace Presistence.Migrations
                     b.ToTable("Infermieret");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("Domain.Laboratori", b =>
                 {
                     b.Property<Guid>("Lab_Id")
@@ -251,6 +252,8 @@ namespace Presistence.Migrations
                     b.ToTable("Laboratoret");
                 });
 
+=======
+>>>>>>> parent of ed8d6bc (Krijimi laboratorit front & back end)
             modelBuilder.Entity("Domain.Mjeku", b =>
                 {
                     b.Property<Guid>("Mjeku_Id")

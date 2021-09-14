@@ -8,11 +8,7 @@ import { IconContext } from 'react-icons';
 import { Button, Menu, Image ,Segment, Dropdown } from 'semantic-ui-react';
 import { useStore } from '../app/stores/store';
 
-interface IProps{
-  openCreateForm: () => void;
-}
-
-function Navbar({openCreateForm} : IProps) {
+function Navbar() {
   const {departmentStore} = useStore();
   const [sidebar, setSidebar] = useState(false);
 
@@ -62,8 +58,11 @@ function Navbar({openCreateForm} : IProps) {
             })}
           </ul>
         </nav>
+<<<<<<< HEAD
         {/* <Button onClick={openCreateForm} positive content='Shto Analizat'/> */}
         
+=======
+>>>>>>> parent of ed8d6bc (Krijimi laboratorit front & back end)
       </IconContext.Provider>
     </>
   );

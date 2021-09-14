@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Presistence\\Presistence.csproj": {}
   },
   "projects": {
@@ -12,12 +13,43 @@
         "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\PULSE Electronics\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Domain\\obj\\",
+=======
+<<<<<<< Updated upstream
+    "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Domain\\obj\\",
+=======
+    "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\TECHCOM\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\obj\\",
+>>>>>>> Stashed changes
+>>>>>>> parent of ed8d6bc (Krijimi laboratorit front & back end)
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\PULSE Electronics\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\Rinor Hyseni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> parent of ed8d6bc (Krijimi laboratorit front & back end)
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -72,6 +104,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Presistence\\Presistence.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -80,12 +113,30 @@
         "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Presistence\\Presistence.csproj",
         "packagesPath": "C:\\Users\\PULSE Electronics\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Presistence\\obj\\",
+=======
+<<<<<<< Updated upstream
+    "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj": {
+=======
+    "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj": {
+>>>>>>> Stashed changes
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj",
+        "projectName": "Presistence",
+        "projectPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Presistence\\Presistence.csproj",
+        "packagesPath": "C:\\Users\\Rinor Hyseni\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Presistence\\obj\\",
+>>>>>>> parent of ed8d6bc (Krijimi laboratorit front & back end)
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\PULSE Electronics\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\Rinor Hyseni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> parent of ed8d6bc (Krijimi laboratorit front & back end)
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -100,8 +151,18 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Domain\\Domain.csproj"
+=======
+<<<<<<< Updated upstream
+              "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Rinor Hyseni\\Desktop\\RINOR - UBT\\Semestri IV\\Lende Laboratorike 1 ( Programim )\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj"
+=======
+              "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\TECHCOM\\Desktop\\Lab Course - Projekti\\LabHms\\Domain\\Domain.csproj"
+>>>>>>> Stashed changes
+>>>>>>> parent of ed8d6bc (Krijimi laboratorit front & back end)
               }
             }
           }

@@ -21,6 +21,7 @@ namespace Presistence
         public DbSet<Pacient> pacientet{get;set;}
 
         public DbSet<Fatura> Faturat {get; set;}
+<<<<<<< HEAD
         public DbSet<Laboratori> Laboratoret {get; set;}
 
         public DbSet<Therapy> Therapies {get; set;}
@@ -48,6 +49,8 @@ namespace Presistence
         public DbSet<Raport> Raportet {get; set;}
 
         public DbSet<ShtreteritNeDhome> ShtreteritNeDhome {get; set;}
+=======
+>>>>>>> parent of ed8d6bc (Krijimi laboratorit front & back end)
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -95,6 +98,7 @@ namespace Presistence
             modelBuilder.Entity<Barna>()
                 .HasKey(d => d.Barnat_Id );
 
+<<<<<<< HEAD
              modelBuilder.Entity<Therapy>()
                 .HasKey(f => f.Therapy_Id );
 
@@ -176,6 +180,8 @@ namespace Presistence
                 .HasForeignKey(shdh => shdh.Shtrat_Id)
                 .HasConstraintName("FK_ShtreteritNeDhome_Shtrat_Id");
                 
+=======
+>>>>>>> parent of ed8d6bc (Krijimi laboratorit front & back end)
         }
     }
 }
