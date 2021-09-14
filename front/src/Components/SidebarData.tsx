@@ -80,7 +80,6 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-<<<<<<< HEAD
     title: 'Paisjet',
     path: '/Paisjet',
     icon: <RiIcons.RiTableAltFill
@@ -88,8 +87,6 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-=======
->>>>>>> parent of ed8d6bc (Krijimi laboratorit front & back end)
     title: 'Fatura',
     path: '/Faturat',
     icon: <RiIcons.RiBillLine />,
