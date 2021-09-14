@@ -18,6 +18,7 @@ import { Barna } from '../models/barna';
 import { User, UserFormValues } from '../models/user';
 import { ITherapy } from '../models/ITherapy';
 import { IRaport } from '../models/IRaport';
+import { ILaboratori } from '../models/ILaboratori';
 
 const sleep = (delay: number) => {
     return new Promise((resolve) => {
@@ -90,6 +91,13 @@ const Departmentet = {
     create: (Department: IDepartment) => axios.post<void>('/departmentet', Department),
     update: (Department: IDepartment) => axios.put<void>(`/departmentet/${Department.department_id}`, Department),
     delete: (department_id: string) => axios.delete<void>(`/departmentet/${department_id}`)
+}
+const Laboratoret = {
+    list: () => requests.get<ILaboratori[]>('/laboratoret'),
+    details: (lab_Id: string) => requests.get<ILaboratori>(`/laboratoret/${lab_Id}`),
+    create: (Laboratori: ILaboratori) => axios.post<void>('/laboratoret', Laboratori),
+    update: (Laboratori: ILaboratori) => axios.put<void>(`/laboratoret/${Laboratori.lab_Id}`, Laboratori),
+    delete: (lab_Id: string) => axios.delete<void>(`/laboratoret/${lab_Id}`)
 }
 const Faturat = {
     list: () => requests.get<IFatura[]>('/faturat'),
@@ -225,7 +233,8 @@ const agent = {
     Barnat,
     Account,
     Therapy,
-    Raport
+    Raport,
+    Laboratoret
 }
 
 export default agent;

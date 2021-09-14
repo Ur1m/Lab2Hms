@@ -1,10 +1,7 @@
 export interface ILaboratori{
-    id: string;
-    emri: string;
-    nrId: string;
-    mosha: string;
-    pershkrimi: string;
-    rezultati: string;
-    date: string;
-    city: string;
+    lab_Id:string;
+    emri:string; 
+    pershkrimi:string;
+    fotografia: string;
+    department_id:string;
 }

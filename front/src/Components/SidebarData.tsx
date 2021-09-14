@@ -19,6 +19,12 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
+    title: 'Laboratoret',
+    path: '/Laboratori/',
+    icon: <FaIcons.FaRegBuilding />,
+    cName: 'nav-text'
+  },
+  {
     title: 'Raportet',
     path: '/Raport/',
     icon: <FaIcons.FaRegBuilding />,

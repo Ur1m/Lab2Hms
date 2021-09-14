@@ -16,7 +16,7 @@ import UserStore from "./userStore";
 import ModalStore from "./modalStore";
 import TherapyStore from "../store/TherapyStore";
 import RaportStore from "../store/RaportStore";
-
+import LaboratoriStore from "../store/LaboratoriStore";
 interface Store {
     departmentStore: DepartmentStore;
     commonStore: CommonStore;
@@ -110,7 +110,18 @@ export function useStoreTherapies(){
 
 
 }
+interface StoreLaboratoret{
+    LaboratoriStore:LaboratoriStore;
+}
+export const StoreLaboratoret:StoreLaboratoret={
+    LaboratoriStore:new LaboratoriStore()
+}
+export const StoreContextLaboratori=createContext(StoreLaboratoret);
+export function useStoreLaboratori(){
+    return useContext(StoreContextLaboratori);
 
+
+}
 interface StoreRaport{
     RaportStore:RaportStore;
 }

@@ -4,3 +4,8 @@ export interface IDepartment {
   description: string
   fotografia: string
 }
+export interface IDepartametnetDropDown{
+  key:any;
+  text: any;
+  value: any;
+}

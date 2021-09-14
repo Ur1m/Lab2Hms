@@ -34,6 +34,8 @@ import TherapyDashbord from '../../Features/Therapies/TherapyDashbord';
 import RaportForm from '../../Features/Raportet/RaportForm';
 import RaportList from '../../Features/Raportet/RaportList';
 import RaportDashboard from '../../Features/Raportet/RaportDashboard';
+import LaboratoriList from '../../Features/Laboratoret/LaboratoriList';
+import LaboratoriForm from '../../Features/Laboratoret/LaboratoriForm';
 
 
 
@@ -49,7 +51,7 @@ const App = () => {
   const [editMode, setEditMode]=useState(false);
 
   const handleSelectLaboratori= (id: string) => {
-    setSelectedLaboratori(laboratoret.filter(a=>a.id ===id)[0]);
+   
     setEditMode(false);
 
   };
@@ -59,22 +61,7 @@ const App = () => {
     setEditMode(true);
   }
 
-  const handleCreateLaboratori=(laboratori:ILaboratori) => {
-    setLaboratoret([...laboratoret, laboratori])
-    setSelectedLaboratori(laboratori);
-    setEditMode(false);
-  }
-
-  const handleEditLaboratori = (laboratori:ILaboratori)=> {
-    setLaboratoret([...laboratoret.filter(a=>a.id !== laboratori.id), laboratori])
-    setSelectedLaboratori(laboratori);
-    setEditMode(false);
-  }
-
-  const handleDeleteLaboratori=(id: string)=>{
-    setLaboratoret([...laboratoret.filter(a=>a.id!==id)])
-  }
-
+  
   // useEffect(() => {
   //   axios
   //   .get<ILaboratori[]>('http://localhost:5000/api/laboratoret')
@@ -147,6 +134,7 @@ return (
           <Route path='/login' component={LoginForm} />
           <Route path="/Barnat"component={BarnatDashboard}/>
           <Route path="/Therapy"component={TherapyDashbord}/>
+          <Route path="/Laboratori"component={LaboratoriForm}/>
           <Route path="/Raport"component={RaportDashboard}/>
           <Route component={NotFound}/>
           </Switch>

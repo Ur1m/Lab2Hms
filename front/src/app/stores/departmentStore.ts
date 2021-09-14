@@ -9,6 +9,7 @@ export default class DepartmentStore {
     editMode = false;
     detailsmode=false;
     loading = false;
+ 
     loadingInitial = false;
 
     constructor(){
@@ -29,7 +30,7 @@ export default class DepartmentStore {
                 this.setLoadingInitial(true);
         }
     }
-
+ 
     setLoadingInitial = (state: boolean) => {
         this.loadingInitial = state;
     }
