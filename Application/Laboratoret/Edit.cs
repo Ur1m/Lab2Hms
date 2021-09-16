@@ -31,7 +31,7 @@ namespace Application.Laboratoret
 
             public async Task<Result<Unit>> Handle(Command request, CancellationToken cancellationToken)
             {
-                var laboratori = await _context.Laboratoret.FindAsync(request.Laboratori.Lab_Id);
+                var laboratori = await _context.Laboratort.FindAsync(request.Laboratori.Lab_Id);
 
                 if(laboratori == null) return null;
 

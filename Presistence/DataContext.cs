@@ -21,7 +21,7 @@ namespace Presistence
         public DbSet<Pacient> pacientet{get;set;}
 
         public DbSet<Fatura> Faturat {get; set;}
-        public DbSet<Laboratori> Laboratoret {get; set;}
+        public DbSet<Laboratori> Laboratort {get; set;}
 
         public DbSet<Therapy> Therapies {get; set;}
 

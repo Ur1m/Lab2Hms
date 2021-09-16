@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Presistence.Migrations
 {
-    public partial class Laboratoret : Migration
+    public partial class Laboratort : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Laboratoret",
+                name: "Laboratort",
                 columns: table => new
                 {
                     Lab_Id = table.Column<Guid>(nullable: false),
@@ -19,7 +19,7 @@ namespace Presistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Laboratoret", x => x.Lab_Id);
+                    table.PrimaryKey("PK_Laboratort", x => x.Lab_Id);
                     table.ForeignKey(
                         name: "FK_Laboratori_Department_id",
                         column: x => x.Department_id,
@@ -29,15 +29,15 @@ namespace Presistence.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Laboratoret_Department_id",
-                table: "Laboratoret",
+                name: "IX_Laboratort_Department_id",
+                table: "Laboratort",
                 column: "Department_id");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Laboratoret");
+                name: "Laboratort");
         }
     }
 }

@@ -26,7 +26,7 @@ namespace Application.Laboratoret
 
             public async Task<Result<List<Laboratori>>> Handle(Query request, CancellationToken cancellationToken)
             {
-                return Result<List<Laboratori>>.Success(await _context.Laboratoret.ToListAsync(cancellationToken));
+                return Result<List<Laboratori>>.Success(await _context.Laboratort.ToListAsync(cancellationToken));
             }
         }
     }

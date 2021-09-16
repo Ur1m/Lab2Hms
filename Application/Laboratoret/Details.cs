@@ -28,7 +28,7 @@ namespace Application.Laboratoret
 
             public async Task<Result<Laboratori>> Handle(Query request, CancellationToken cancellationToken)
             {
-                var laboratori = await _context.Laboratoret.FindAsync(request.Lab_Id);
+                var laboratori = await _context.Laboratort.FindAsync(request.Lab_Id);
 
                 return Result<Laboratori>.Success(laboratori);
             }

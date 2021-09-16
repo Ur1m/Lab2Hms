@@ -248,7 +248,7 @@ namespace Presistence.Migrations
 
                     b.HasIndex("Department_id");
 
-                    b.ToTable("Laboratoret");
+                    b.ToTable("Laboratort");
                 });
 
             modelBuilder.Entity("Domain.Mjeku", b =>

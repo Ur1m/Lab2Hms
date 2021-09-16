@@ -9,8 +9,8 @@ using Presistence;
 namespace Presistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210912163000_Laboratoret")]
-    partial class Laboratoret
+    [Migration("20210916180406_Laboratort")]
+    partial class Laboratort
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -250,7 +250,7 @@ namespace Presistence.Migrations
 
                     b.HasIndex("Department_id");
 
-                    b.ToTable("Laboratoret");
+                    b.ToTable("Laboratort");
                 });
 
             modelBuilder.Entity("Domain.Mjeku", b =>

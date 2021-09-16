@@ -36,6 +36,8 @@ import RaportList from '../../Features/Raportet/RaportList';
 import RaportDashboard from '../../Features/Raportet/RaportDashboard';
 import LaboratoriList from '../../Features/Laboratoret/LaboratoriList';
 import LaboratoriForm from '../../Features/Laboratoret/LaboratoriForm';
+import LaboratoriTable from '../../Features/Laboratoret/LaboratoriTable';
+import LaboratoriDashboard from '../../Features/Laboratoret/LaboratoriDashboard';
 
 
 
@@ -134,7 +136,7 @@ return (
           <Route path='/login' component={LoginForm} />
           <Route path="/Barnat"component={BarnatDashboard}/>
           <Route path="/Therapy"component={TherapyDashbord}/>
-          <Route path="/Laboratori"component={LaboratoriForm}/>
+          <Route path="/Laboratori"component={LaboratoriDashboard}/>
           <Route path="/Raport"component={RaportDashboard}/>
           <Route component={NotFound}/>
           </Switch>

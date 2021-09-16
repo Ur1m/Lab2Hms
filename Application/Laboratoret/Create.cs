@@ -27,7 +27,7 @@ namespace Application.Laboratoret
 
             public async Task<Result<Unit>> Handle(Command request, CancellationToken cancellationToken)
             {
-                _context.Laboratoret.Add(request.Laboratori);
+                _context.Laboratort.Add(request.Laboratori);
 
                 var result = await _context.SaveChangesAsync() > 0;
 

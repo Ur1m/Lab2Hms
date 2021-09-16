@@ -92,12 +92,12 @@ const Departmentet = {
     update: (Department: IDepartment) => axios.put<void>(`/departmentet/${Department.department_id}`, Department),
     delete: (department_id: string) => axios.delete<void>(`/departmentet/${department_id}`)
 }
-const Laboratoret = {
-    list: () => requests.get<ILaboratori[]>('/laboratoret'),
-    details: (lab_Id: string) => requests.get<ILaboratori>(`/laboratoret/${lab_Id}`),
-    create: (Laboratori: ILaboratori) => axios.post<void>('/laboratoret', Laboratori),
-    update: (Laboratori: ILaboratori) => axios.put<void>(`/laboratoret/${Laboratori.lab_Id}`, Laboratori),
-    delete: (lab_Id: string) => axios.delete<void>(`/laboratoret/${lab_Id}`)
+const Laboratort = {
+    list: () => requests.get<ILaboratori[]>('/laboratort'),
+    details: (lab_Id: string) => requests.get<ILaboratori>(`/laboratort/${lab_Id}`),
+    create: (Laboratori: ILaboratori) => axios.post<void>('/laboratort', Laboratori),
+    update: (Laboratori: ILaboratori) => axios.put<void>(`/laboratort/${Laboratori.lab_Id}`, Laboratori),
+    delete: (lab_Id: string) => axios.delete<void>(`/laboratort/${lab_Id}`)
 }
 const Faturat = {
     list: () => requests.get<IFatura[]>('/faturat'),
@@ -234,7 +234,7 @@ const agent = {
     Account,
     Therapy,
     Raport,
-    Laboratoret
+    Laboratort
 }
 
 export default agent;

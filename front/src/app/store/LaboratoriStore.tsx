@@ -6,7 +6,7 @@ import { IDepartment } from "../models/IDepartment";
 
 
 export default class LaboratoriStore {
-    Laboratoret: ILaboratori[] = [];
+    Laboratort: ILaboratori[] = [];
     selectedLaborator: ILaboratori | undefined = undefined;
     editMode = false;
     detailsmode=false;
@@ -20,11 +20,11 @@ export default class LaboratoriStore {
 
     loadLaboratoret = async () => {
         this.setLoadingInitial(true);
-        this.Laboratoret = [];
+        this.Laboratort = [];
         try{
-            const Laboratoret = await agent.Laboratoret.list();
+            const Laboratoret = await agent.Laboratort.list();
             Laboratoret.forEach(Laboratori => {
-                    this.Laboratoret.push(Laboratori);
+                    this.Laboratort.push(Laboratori);
                 })
                 this.setLoadingInitial(false);
         } catch(error){
@@ -38,7 +38,7 @@ export default class LaboratoriStore {
     }
 
     selectLaboratori = async(lab_Id: string) => {
-        this.selectedLaborator = await agent.Laboratoret.details(lab_Id);
+        this.selectedLaborator = await agent.Laboratort.details(lab_Id);
     }
 
 
@@ -66,9 +66,9 @@ export default class LaboratoriStore {
         this.loading = true;
         Laboratori.lab_Id = uuid();
         try{
-            await agent.Laboratoret.create(Laboratori);
+            await agent.Laboratort.create(Laboratori);
             runInAction(() => {
-                this.Laboratoret.push(Laboratori);
+                this.Laboratort.push(Laboratori);
                 this.selectedLaborator = Laboratori;
                 this.editMode = false;
                 this.loading = false;
@@ -84,9 +84,9 @@ export default class LaboratoriStore {
     updateLaborator = async (Laboratori: ILaboratori) => {
         this.loading = true;
         try{
-            await agent.Laboratoret.update(Laboratori);
+            await agent.Laboratort.update(Laboratori);
             runInAction(() => {
-                this.Laboratoret = [...this.Laboratoret.filter(d => d.lab_Id !== Laboratori.lab_Id), Laboratori];
+                this.Laboratort = [...this.Laboratort.filter(d => d.lab_Id !== Laboratori.lab_Id), Laboratori];
                 this.selectedLaborator = Laboratori;
                 this.editMode = false;
                 this.loading = false;
@@ -102,9 +102,9 @@ export default class LaboratoriStore {
     deleteLaborator = async (lab_Id: string) => {
         this.loading = true;
         try{
-            await agent.Laboratoret.delete(lab_Id);
+            await agent.Laboratort.delete(lab_Id);
             runInAction(() => {
-                this.Laboratoret = [...this.Laboratoret.filter(d => d.lab_Id !== lab_Id)];
+                this.Laboratort = [...this.Laboratort.filter(d => d.lab_Id !== lab_Id)];
                 if (this.selectedLaborator?.lab_Id === lab_Id) this.cancelSelectedLaborator();
                 this.loading = false;
             })

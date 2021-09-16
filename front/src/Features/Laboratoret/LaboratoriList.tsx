@@ -7,7 +7,7 @@ import { useStoreDepartment, useStoreLaboratori, useStorePacientat, useStorePais
 
 export default observer( function LaboratoriList(){
     const {LaboratoriStore} = useStoreLaboratori();
-    const {selectLaboratori, editMode,Laboratoret} = LaboratoriStore;
+    const {selectLaboratori,selectedLaborator, editMode,deleteLaborator,Laboratort,loading} = LaboratoriStore;
     const {DepartmentStore}=useStoreDepartment();
     const{Departmentet}=DepartmentStore
     const [open, setOpen] = React.useState(false)
@@ -18,8 +18,15 @@ export default observer( function LaboratoriList(){
         DepartmentStore.loadDepartamentet();
     }, [LaboratoriStore])
 
-    
- 
+    function handleLaboratorDelete(e: SyntheticEvent<HTMLButtonElement>, lab_Id: string) {
+        setTarget(e.currentTarget.name);
+        deleteLaborator(lab_Id);
+        setOpen(false);
+    }
+    function del(lab_Id:string){
+        selectLaboratori(lab_Id);
+        setOpen(true);
+    }
     return (
     <React.Fragment>
         <Item.Group>
@@ -27,7 +34,7 @@ export default observer( function LaboratoriList(){
         </Item.Group>
         <Segment className="sss">
             <Item.Group divided >
-                {Laboratoret.filter((val) => {
+                {Laboratort.filter((val) => {
                         if (search == "") {
                             return val;
                         }
@@ -36,19 +43,42 @@ export default observer( function LaboratoriList(){
                         }
                     }).map(ILaboratori =>(
                     <Item key={ILaboratori.lab_Id}>
-                        <Item.Content >
-                        <Item.Header>
+                         <Item.Content>
+                                <Item.Header>
                                     {ILaboratori.emri}</Item.Header>
-                              
-                            <Item.Description>
-                             
-                            </Item.Description>
-                            <Item.Extra>
-                                <Button onClick={() => LaboratoriStore.selectLaboratori(ILaboratori.lab_Id)} floated='right' content='Shiko' color='blue'/>
-                                <Button onClick={() => LaboratoriStore.deleteLaborator(ILaboratori.lab_Id)} floated='right' content='delete' color='red'/>
-                            
-                            </Item.Extra>
-                        </Item.Content>
+                                <Item.Description>
+                                    <div>{ILaboratori.pershkrimi}</div>
+                                </Item.Description>
+                                <Item.Extra>
+                                    <Button onClick={() => LaboratoriStore.selectLaboratori(ILaboratori.lab_Id)} floated='right' content='Shiko' color='blue' />
+                                    <Button 
+                                    onClick={()=>del(ILaboratori.lab_Id)} 
+                                    loading={loading && target === ILaboratori.lab_Id}
+                                    floated="right" 
+                                    content='Fshij' 
+                                    color='red'/>
+                                    <Modal
+                                        closeIcon
+                                        open={open}
+                                        onClose={() => setOpen(false)}
+                                        onOpen={() => setOpen(true)}>
+                                        <Header icon='archive' content='Fshij departamentin' />
+                                        <Modal.Content>
+                                            <p>
+                                                A jeni i/e sigurt qe deshironi te fshini Laboratorin: {selectedLaborator?.emri}?
+                                            </p>
+                                        </Modal.Content>
+                                        <Modal.Actions>
+                                            <Button color='red' onClick={() => setOpen(false)}>
+                                                <Icon name='remove' /> Jo
+                                            </Button>
+                                            <Button color='green' onClick={(e) => handleLaboratorDelete(e, selectedLaborator!.lab_Id)}>
+                                                <Icon name='checkmark' /> Po
+                                            </Button>
+                                        </Modal.Actions>
+                                    </Modal>
+                                </Item.Extra>
+                            </Item.Content>
                     </Item>
                 ))}
             </Item.Group>

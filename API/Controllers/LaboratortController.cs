@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace API.Controllers
 {
-    public class LaboratoretController: BaseApiController
+    public class LaboratortController: BaseApiController
     {
          [HttpGet]
         public async Task<IActionResult> GetLaboratoret()

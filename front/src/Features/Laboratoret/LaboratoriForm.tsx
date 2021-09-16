@@ -16,7 +16,7 @@ import { IDepartametnetDropDown, IDepartment } from "../../app/models/IDepartmen
 
 export default observer(function LaboratoriStore() {
     const {LaboratoriStore} = useStoreLaboratori();
-    const {selectedLaborator, editMode,updateLaborator,createLaborator,getDepartamentet,closeForm} = LaboratoriStore;
+    const {selectedLaborator, editMode,updateLaborator,createLaborator,getDepartamentet,closeForm,loading} = LaboratoriStore;
 
 
     const initialState = selectedLaborator ?? {
@@ -31,8 +31,7 @@ export default observer(function LaboratoriStore() {
     const [fotografia, setfotografia] = useState<any>();
 
     const validationSchema = Yup.object({
-        emri: Yup.string().required(),
-        lab_Id: Yup.string().required()
+   
     })
     const changefile=(event:any)=>{
      
@@ -74,7 +73,8 @@ export default observer(function LaboratoriStore() {
                     <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
                              
                            
-                           <MyTextArea rows={3} name='raporti' placeholder='Shkruani pershkrimin e raportit...' />
+                           <MyTextArea rows={3} name='emri' placeholder='Shkruani emrin e laboratorit...' />
+                           <MyTextArea rows={3} name='pershkrimi' placeholder='Shkruani pershkrimin e laboratorit...' />
                            <MySelectInput options={departamentetDropDown} placeholder='Zgjedhni departamentin...' name='department_id'></MySelectInput>
                            <label>Fotorgrafia: </label>
                         <input type='file' name='fotografia' id="image-id"onChange={changefile} />
@@ -82,7 +82,7 @@ export default observer(function LaboratoriStore() {
                         
                         <Button 
                         disabled={isSubmitting || !dirty || !isValid}
-                         
+                        loading={loading} 
                         floated='right' positive type='submit' content='Shto' />
                         <Button onClick={closeForm} floated='right' type='button' content='Anulo' />   
                     </Form>
