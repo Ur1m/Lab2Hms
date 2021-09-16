@@ -4,7 +4,7 @@ import { IFatura } from "../models/IFatura";
 import {v4 as uuid} from 'uuid';
 import { IPacienti } from "../models/IPacienti";
 
-export default class FaturaStore {
+export default class faturaStore {
     // Faturat: IFatura[] = [];
     selectedFatura: IFatura | undefined = undefined;
     editMode = false;
