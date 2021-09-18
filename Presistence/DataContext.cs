@@ -17,7 +17,7 @@ namespace Presistence
         public DbSet<Department> Departmentet{get;set;}
 
         public DbSet<Mjeku> Mjeket{get;set;}
-
+        public DbSet<Ambulanca> Ambulancat{get;set;}
         public DbSet<Pacient> pacientet{get;set;}
 
         public DbSet<Fatura> Faturat {get; set;}
@@ -79,6 +79,15 @@ namespace Presistence
                 .WithMany()
                 .HasForeignKey(p => p.Department_id)
                 .HasConstraintName("FK_Laboratori_Department_id");
+
+                   modelBuilder.Entity<Ambulanca>()
+                .HasKey(f => f.Amb_Id );
+
+            modelBuilder.Entity<Ambulanca>()
+                .HasOne(p => p.Department)
+                .WithMany()
+                .HasForeignKey(p => p.Department_id)
+                .HasConstraintName("FK_Ambulanca_Department_id");
 
                  modelBuilder.Entity<Raport>()
                 .HasKey(f => f.Raport_Id );

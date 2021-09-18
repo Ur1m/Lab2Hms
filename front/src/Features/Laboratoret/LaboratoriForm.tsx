@@ -84,6 +84,7 @@ export default observer(function LaboratoriStore() {
                         disabled={isSubmitting || !dirty || !isValid}
                         loading={loading} 
                         floated='right' positive type='submit' content='Shto' />
+                         <Button onClick={closeForm} floated='right' type='button' content='Anulo' />   
                         <Button onClick={closeForm} floated='right' type='button' content='Anulo' />   
                     </Form>
                 )}

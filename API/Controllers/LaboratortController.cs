@@ -33,7 +33,7 @@ namespace API.Controllers
         public async Task<IActionResult> EditLaborator(Guid Lab_Id, Laboratori laboratori)
         {
             laboratori.Lab_Id = Lab_Id;
-            return HandleResult(await Mediator.Send(new Edit.Command { Laboratori = laboratori }));
+            return Ok(await Mediator.Send(new Edit.Command { Laboratori = laboratori }));
         }
 
         [HttpDelete("{Lab_Id}")]

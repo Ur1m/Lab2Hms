@@ -50,6 +50,7 @@ const {DoktoratStore}=useStoreDoktorat();
     DepartmentStore.closeForm();
     DhomaStore.closeForm();
     LaboratoriStore.closeForm();
+   
     
  }
     return (

@@ -9,6 +9,7 @@ import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } 
 import PopUp from '../Pacineti/PopUp';
 import DepartmentForm from './LaboratoriForm';
 import LaboratoriDetails from './LaboratoriDetails';
+import LaboratoriForm from './LaboratoriForm';
 
 
 export default observer(function LaboratoriTable() {
@@ -69,10 +70,8 @@ export default observer(function LaboratoriTable() {
             </div>
             <div className="extra content bt">
 
-            <Button color="grey" onClick={() => openForm(item!.department_id)}>
-            <Icon name='edit' /> Edit
-            </Button>
-            <Button color='red' onClick={() => del(item!.department_id)}>
+            <Button onClick={()=>LaboratoriStore.openForm(item!.lab_Id)}basic color='blue' content="Edit"/>
+            <Button color='red' onClick={() => del(item!.lab_Id)}>
             <Icon name='remove' /> Delete
             </Button>
 
@@ -82,7 +81,7 @@ export default observer(function LaboratoriTable() {
 
             title="Pacientat Form">
 
-            <DepartmentForm />
+            <LaboratoriForm />
             </PopUp>
             <PopUp
             openPopup={detailsmode}
