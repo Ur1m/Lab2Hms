@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { observer } from 'mobx-react-lite';
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Button, FormField, Header, Label, Segment } from 'semantic-ui-react';
-import { useStore } from '../../../app/stores/store';
+import { useStore, useStoreShtrat } from '../../../app/stores/store';
 import * as Yup from 'yup';
 import MyTextInput from '../../../app/common/form/MyTextInput';
 import MyTextArea from '../../../app/common/form/MyTextArea';
@@ -13,9 +13,9 @@ import MySelectInput from '../../../app/common/form/MySelectInput';
 import "../Dashboard/shtrat.css";
 
 
-export default observer(function ShtratForm() {
-    const { shtratStore } = useStore();
-    const { selectedShtrat, closeForm, createShtrat, updateShtrat, getLlojiShtreterve , loading } = shtratStore;
+export const ShtratForm = () => {
+    const { ShtratStore } = useStoreShtrat();
+    const { selectedShtrat, closeForm, createShtrat, updateShtrat, getLlojiShtreterve , loading } = ShtratStore;
 
 
     const initialState = selectedShtrat ?? {
@@ -80,4 +80,8 @@ export default observer(function ShtratForm() {
 
         </Segment>
     )
-})
+}
+
+function uuid() {
+    throw new Error("Function not implemented.");
+}

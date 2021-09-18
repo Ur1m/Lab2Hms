@@ -22,7 +22,7 @@ export const Home = () => {
     const {dhomaStore} = useStore();
     const { Dhomat} = dhomaStore;
     const {shtratStore} = useStore();
-    const { Shtreter} = shtratStore;
+    const { Shtrat } = shtratStore;
   useEffect(()=>{
     DoktoratStore.loadDoktorat();
     departmentStore.loadDepartamentet();
@@ -177,7 +177,7 @@ export const Home = () => {
   <div className="content">
     <a className="header" href="#">Shtreterit</a>
     <div className="meta">
-      <a className="nr">Numri i shtreterve: {Shtreter.length}</a>
+      <a className="nr">Numri i shtreterve: {Shtrat.length}</a>
     </div>
   </div>
 </div>

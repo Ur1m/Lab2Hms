@@ -1,30 +1,33 @@
+import { observer } from 'mobx-react-lite';
 import React from 'react';
 import { Button, Card, Icon, Image } from 'semantic-ui-react';
 import LoadingComponent from '../../../app/layout/LoadingComponent';
-import { useStore } from '../../../app/stores/store';
+import { useStore, useStoreShtrat } from '../../../app/stores/store';
 
-export default function ShtratDetails() {
-    const {shtratStore} = useStore();
-    const {selectedShtrat: Shtrat, openForm, cancelSelectedShtrat} = shtratStore;
+export default observer( function ShtratDetails() {
 
-    if(!Shtrat) return <LoadingComponent />;
+  const {ShtratStore}=useStoreShtrat();
+  const{selectedShtrat,closeDetails}=ShtratStore
+
+    if(!selectedShtrat) return <LoadingComponent />;
 
     return (
         <Card fluid>
         {/* <Image src={`/assets/DepartmentImages/${Department.department_id}.jpg`} /> */}
         <Card.Content>
-          <Card.Header>Numri i shtratit: {Shtrat.nrShtratit}</Card.Header>
+          <Card.Header>Numri i shtratit: {selectedShtrat.nrShtratit}</Card.Header>
           <Card.Description>
-                Pershkrimi: {Shtrat.pershkrimi}<br/>
-                Statusi: {Shtrat.statusi}
+                Pershkrimi: {selectedShtrat.pershkrimi}<br/>
+                Statusi: {selectedShtrat.statusi}
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
             <Button.Group widths='2'>
-                <Button onClick={() => openForm(Shtrat.shtrat_id)} basic color='blue' content='Ndrysho'/>
-                <Button onClick={cancelSelectedShtrat} basic color='blue' content='Anulo'/>
+                <Button onClick={() => ShtratStore.openForm(selectedShtrat!.shtrat_id)} basic color='blue' content='Ndrysho'/>
+                <Button onClick={() => closeDetails()} basic color='blue' content='Anulo'/>
             </Button.Group>
         </Card.Content>
       </Card >
     )
 }
+);

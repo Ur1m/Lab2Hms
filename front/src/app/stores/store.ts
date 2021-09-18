@@ -7,7 +7,6 @@ import DoktoretStore from "../store/doktoretStor";
 import FaturaStore from "./faturaStore";
 import TerminetStore from "../store/TerminetStore";
 import LlojiShtratitStore from "./llojiShtratitStore";
-import ShtratStore from "./shtratStore";
 import CaktoShtratinStore from "./caktoShtratinStore";
 import PaisjetStore from "../store/PaisjetStore";
 import DhomaStore from "./dhomaStore";
@@ -17,6 +16,8 @@ import ModalStore from "./modalStore";
 import TherapyStore from "../store/TherapyStore";
 import RaportStore from "../store/RaportStore";
 import LaboratoriStore from "../store/LaboratoriStore";
+import ShtratStore from "./shtratStore";
+
 interface Store {
     departmentStore: DepartmentStore;
     commonStore: CommonStore;
@@ -182,4 +183,16 @@ export const StoreDhoma:StoreDhoma={
 export const StoreContextDhoma=createContext(StoreDhoma)
 export function useStoreDhoma(){
     return useContext(StoreContextDhoma);
+}
+
+interface StoreShtrat{
+    ShtratStore:ShtratStore;
+
+}
+export const StoreShtrat:StoreShtrat={
+    ShtratStore:new ShtratStore()
+}
+export const StoreContextShtrat=createContext(StoreShtrat)
+export function useStoreShtrat(){
+    return useContext(StoreContextShtrat);
 }

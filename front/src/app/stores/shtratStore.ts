@@ -4,12 +4,15 @@ import {v4 as uuid} from 'uuid';
 import { IShtrat } from "../models/IShtrat";
 import { ILlojiShtratit } from "../models/ILlojiShtratit";
 
-export default class ShtratStore {
-    Shtreter: IShtrat[] = [];
+export default class shtratStore {
+    // Shtreter: IShtrat[] = [];
     selectedShtrat: IShtrat | undefined = undefined;
     editMode = false;
     loading = false;
     loadingInitial = false;
+    detailsmode=false;
+    shtratRegistry=new Map<string,IShtrat>()
+    forma=false;
 
     constructor(){
         makeAutoObservable(this)
@@ -17,13 +20,16 @@ export default class ShtratStore {
 
     loadShtreter = async () => {
         this.setLoadingInitial(true);
-        this.Shtreter = [];
+        //this.Shtreter = [];
         try{
             const Shtreter = await agent.Shtreter.list();
+            runInAction(()=>{
                 Shtreter.forEach(Shtrat => {
-                    this.Shtreter.push(Shtrat);
+                    //this.Shtreter.push(Shtrat);
+                    this.shtratRegistry.set(Shtrat.shtrat_id,Shtrat);
                 })
                 this.setLoadingInitial(false);
+            })
         } catch(error){
             console.log(error);
                 this.setLoadingInitial(true);
@@ -35,7 +41,11 @@ export default class ShtratStore {
     }
 
     selectShtrat = async(shtrat_id: string) => {
-        this.selectedShtrat= await agent.Shtreter.details(shtrat_id);
+        this.selectedShtrat= this.shtratRegistry.get(shtrat_id)
+    }
+
+    get Shtrat(){
+        return Array.from(this.shtratRegistry.values());
     }
 
 
@@ -52,13 +62,24 @@ export default class ShtratStore {
         this.editMode = false;
     }
 
+    openDetails=(id:string)=>{
+        this.selectShtrat(id);
+        this.detailsmode=true;
+    }
+
+    closeDetails=()=>{
+        this.selectedShtrat=undefined;
+        this.detailsmode=false;
+    }
+
     createShtrat = async (Shtrat: IShtrat) => {
         this.loading = true;
         Shtrat.shtrat_id = uuid();
         try{
             await agent.Shtreter.create(Shtrat);
             runInAction(() => {
-                this.Shtreter.push(Shtrat);
+                //this.Shtreter.push(Shtrat);
+                this.shtratRegistry.set(Shtrat.shtrat_id,Shtrat);
                 this.selectedShtrat = Shtrat;
                 this.editMode = false;
                 this.loading = false;
@@ -76,7 +97,8 @@ export default class ShtratStore {
         try{
             await agent.Shtreter.update(Shtrat);
             runInAction(() => {
-                this.Shtreter = [...this.Shtreter.filter(sh => sh.shtrat_id !== Shtrat.shtrat_id), Shtrat];
+                //this.Shtreter = [...this.Shtreter.filter(sh => sh.shtrat_id !== Shtrat.shtrat_id), Shtrat];
+                this.shtratRegistry.set(Shtrat.shtrat_id,Shtrat);
                 this.selectedShtrat = Shtrat;
                 this.editMode = false;
                 this.loading = false;
@@ -94,7 +116,8 @@ export default class ShtratStore {
         try{
             await agent.Shtreter.delete(shtrat_id);
             runInAction(() => {
-                this.Shtreter = [...this.Shtreter.filter(sh => sh.shtrat_id !== shtrat_id)];
+                //this.Shtreter = [...this.Shtreter.filter(sh => sh.shtrat_id !== shtrat_id)];
+                this.shtratRegistry.delete(shtrat_id);
                 if (this.selectedShtrat?.shtrat_id === shtrat_id) this.cancelSelectedShtrat();
                 this.loading = false;
             })

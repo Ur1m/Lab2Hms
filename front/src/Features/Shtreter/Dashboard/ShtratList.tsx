@@ -6,7 +6,7 @@ import "./shtrat.css";
 
 export default observer( function ShtratList(){
     const {shtratStore} = useStore();
-    const {deleteShtrat, Shtreter, loading, selectShtrat, selectedShtrat} = shtratStore;
+    const {deleteShtrat, Shtrat, loading, selectShtrat, selectedShtrat} = shtratStore;
     const [open, setOpen] = React.useState(false)
     const [search, setsearch] = useState("");
     const [target, setTarget] = useState('');
@@ -29,7 +29,7 @@ export default observer( function ShtratList(){
             </Item.Group>
         <Segment className="sss">
             <Item.Group divided>
-                {Shtreter.filter((val) => {
+                {Shtrat.filter((val) => {
                         if (search == "") {
                             return val;
                         }
