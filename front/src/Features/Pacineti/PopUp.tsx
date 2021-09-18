@@ -1,9 +1,10 @@
 import { Dialog, DialogContent, DialogTitle, makeStyles, withStyles } from '@material-ui/core';
 import React from 'react'
 import { Button, Input, ItemGroup } from 'semantic-ui-react';
-import { useStoreBarnat, useStoreDepartment, useStoreDhoma, useStoreDoktorat, useStoreFaturat, useStoreLaboratori, useStorePacientat, useStorePaisjet, useStoreTerminet } from '../../app/stores/store';
+import { useStoreBarnat, useStoreDepartment, useStoreDhoma, useStoreDoktorat, useStoreFaturat, useStoreLaboratori, useStorePacientat, useStorePaisjet, useStoreShtrat, useStoreTerminet } from '../../app/stores/store';
 import CloseIcon from '@material-ui/icons/Close';
 import LaboratoriStore from '../../app/store/LaboratoriStore';
+import shtratStore from '../../app/stores/shtratStore';
 
 const useStyles=makeStyles(theme=>({
     dialogWrapper: {
@@ -30,7 +31,8 @@ const {DoktoratStore}=useStoreDoktorat();
     const {DepartmentStore}=useStoreDepartment();
     const {DhomaStore} = useStoreDhoma();
     const {LaboratoriStore} = useStoreLaboratori();
-    const{selectedFatura, Faturat, selectFatura,deleteFatura,editMode}=FaturatStore;
+const{}=shtratStore;
+const {ShtratStore} = useStoreShtrat();
    
  const classes=useStyles()
 
@@ -50,6 +52,7 @@ const {DoktoratStore}=useStoreDoktorat();
     DepartmentStore.closeForm();
     DhomaStore.closeForm();
     LaboratoriStore.closeForm();
+    ShtratStore.closeForm();
     
  }
     return (

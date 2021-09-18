@@ -23,7 +23,7 @@ export default observer( function ShtratDetails() {
         </Card.Content>
         <Card.Content extra>
             <Button.Group widths='2'>
-                <Button onClick={() => ShtratStore.openForm(selectedShtrat!.shtrat_id)} basic color='blue' content='Ndrysho'/>
+                <Button onClick={() => ShtratStore.openForm(selectedShtrat.shtrat_id)} basic color='blue' content='Ndrysho'/>
                 <Button onClick={() => closeDetails()} basic color='blue' content='Anulo'/>
             </Button.Group>
         </Card.Content>

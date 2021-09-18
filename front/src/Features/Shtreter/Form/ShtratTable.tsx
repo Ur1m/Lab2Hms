@@ -17,7 +17,7 @@ import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } 
 import PopUp from '../../Pacineti/PopUp';
 import { useStoreShtrat } from '../../../app/stores/store';
 import ShtratDetails from '../Details/ShtratDetails';
-import { ShtratForm } from './ShtratForm';
+import ShtratForm from './ShtratForm';
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -82,7 +82,8 @@ export default observer(function ShtratTable() {
           <TableHead>
             <TableRow>
               <StyledTableCell>Numri i shtratit:</StyledTableCell>
-              <StyledTableCell align="right">Pershkrimi</StyledTableCell>
+              <StyledTableCell align="right">Pershkrimi:</StyledTableCell>
+              <StyledTableCell align="right">Statusi:</StyledTableCell>
               <StyledTableCell align="right" colSpan={2}> <div className="ui left icon input"><input type="text" placeholder="Kerko Shtrat (Statusi)..." onChange={event => setsearch(event.target.value)} /><i aria-hidden="true" className="search icon"></i></div></StyledTableCell>
 
               <StyledTableCell align="right">{<Button onClick={() => openForm()} floated="right" content={<AddIcon />} color='green' />}</StyledTableCell>
@@ -102,6 +103,7 @@ export default observer(function ShtratTable() {
                   {row.nrShtratit}
                 </StyledTableCell>
                 <StyledTableCell align="right">{row.pershkrimi}</StyledTableCell>
+                <StyledTableCell align="right">{row.statusi}</StyledTableCell>
                 <StyledTableCell align="right">{<Button onClick={() => openDetails(row.shtrat_id)} floated="right" content='Shiko' color='blue' />}</StyledTableCell>
                 <StyledTableCell align="right">{<Button onClick={() => openForm(row.shtrat_id)} floated="right" content={<EditIcon />} color='grey' />}</StyledTableCell>
                 <StyledTableCell align="right">{<Button onClick={() => del(row.shtrat_id)} floated="right" content={<DeleteForeverIcon />} color='red' />}</StyledTableCell>

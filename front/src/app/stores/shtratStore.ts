@@ -58,8 +58,10 @@ export default class shtratStore {
         this.editMode = true;
     }
 
-    closeForm = () => {
-        this.editMode = false;
+    closeForm=()=>{
+        
+        this.editMode=false;
+        console.log("closeForm")
     }
 
     openDetails=(id:string)=>{

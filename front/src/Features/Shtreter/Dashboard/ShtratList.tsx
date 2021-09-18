@@ -62,14 +62,14 @@ export default observer( function ShtratList(){
                                 <Header icon='archive' content='Fshij shtratin' />
                                 <Modal.Content>
                                     <p>
-                                        A jeni i/e sigurt qe deshironi te fshini?
+                                        A jeni i/e sigurt qe deshironi te fshini shtratin: {selectedShtrat?.nrShtratit}?
                                     </p>
                                 </Modal.Content>
                                 <Modal.Actions>
                                     <Button color='red' onClick={() => setOpen(false)}>
                                         <Icon name='remove' /> Jo
                                     </Button>
-                                    <Button color='green' onClick={(e) => handleShtratDelete(e, IShtrat.shtrat_id)}>
+                                    <Button color='green' onClick={(e) => handleShtratDelete(e, selectedShtrat!.shtrat_id)}>
                                         <Icon name='checkmark' /> Po
                                     </Button>
                                 </Modal.Actions>

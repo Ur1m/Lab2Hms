@@ -13,7 +13,7 @@ import MySelectInput from '../../../app/common/form/MySelectInput';
 import "../Dashboard/shtrat.css";
 
 
-export const ShtratForm = () => {
+export default observer(function ShtratForm(){
     const { ShtratStore } = useStoreShtrat();
     const { selectedShtrat, closeForm, createShtrat, updateShtrat, getLlojiShtreterve , loading } = ShtratStore;
 
@@ -80,8 +80,4 @@ export const ShtratForm = () => {
 
         </Segment>
     )
-}
-
-function uuid() {
-    throw new Error("Function not implemented.");
-}
+})
