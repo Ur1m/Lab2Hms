@@ -1,7 +1,7 @@
 import { Dialog, DialogContent, DialogTitle, makeStyles, withStyles } from '@material-ui/core';
 import React from 'react'
 import { Button, Input, ItemGroup } from 'semantic-ui-react';
-import { useStoreBarnat, useStoreDepartment, useStoreDhoma, useStoreDoktorat, useStoreFaturat, useStoreLaboratori, useStorePacientat, useStorePaisjet, useStoreShtrat, useStoreTerminet } from '../../app/stores/store';
+import { StoreLlojiShtratit, useStoreBarnat, useStoreDepartment, useStoreDhoma, useStoreDoktorat, useStoreFaturat, useStoreLaboratori, useStoreLlojiShtratit, useStorePacientat, useStorePaisjet, useStoreShtrat, useStoreTerminet } from '../../app/stores/store';
 import CloseIcon from '@material-ui/icons/Close';
 import LaboratoriStore from '../../app/store/LaboratoriStore';
 import shtratStore from '../../app/stores/shtratStore';
@@ -18,7 +18,7 @@ const useStyles=makeStyles(theme=>({
 export default function PopUp(props:any) {
 const {title,children,openPopup,setopenPopup}=props;
 const {PacientatStore}=useStorePacientat();
-const{selectedPacienti,closeDetails,closeForm}=PacientatStore
+const{selectedPacienti,closeDetails,closeForm}=PacientatStore 
 const {PaisjetStore}=useStorePaisjet();
 const{paisjet,openForm,selectPaisja,deletePaisja,selectedPaisja,editmode}=PaisjetStore;
 const {BarnatStore}=useStoreBarnat();
@@ -33,6 +33,8 @@ const {DoktoratStore}=useStoreDoktorat();
     const {LaboratoriStore} = useStoreLaboratori();
 const{}=shtratStore;
 const {ShtratStore} = useStoreShtrat();
+const{}=StoreLlojiShtratit;
+const {LlojiShtratitStore} = useStoreLlojiShtratit();
    
  const classes=useStyles()
 
@@ -51,8 +53,15 @@ const {ShtratStore} = useStoreShtrat();
     FaturatStore.closeDetails();
     DepartmentStore.closeForm();
     DhomaStore.closeForm();
+    DhomaStore.closeDetails();
     LaboratoriStore.closeForm();
     ShtratStore.closeForm();
+    ShtratStore.closeForm();
+    LlojiShtratitStore.closeForm();
+    LlojiShtratitStore.closeDetails();
+    DepartmentStore.closeDetails();
+    DepartmentStore.closeForm();
+    
     
  }
     return (

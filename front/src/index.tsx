@@ -7,7 +7,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import "react-widgets/styles.css";
 import App from './app/layout/App';
 import {createBrowserHistory} from 'history';
-import { store, StoreContext, StorePacientat,StoreContextPacientat, StoreDoktorat,StoreContextDoktorat, StoreContextTerminet, StoreTerminet, StoreTherapies, StoreContextTherapies, StoreContextRaport, StoreRaport, StoreLaboratoret, StoreContextLaboratori, StoreContextShtrat, StoreShtrat } from './app/stores/store';
+import { store, StoreContext, StorePacientat,StoreContextPacientat, StoreDoktorat,StoreContextDoktorat, StoreContextTerminet, StoreTerminet, StoreTherapies, StoreContextTherapies, StoreContextRaport, StoreRaport, StoreLaboratoret, StoreContextLaboratori, StoreContextShtrat, StoreShtrat, StoreContextLlojiShtratit, StoreLlojiShtratit } from './app/stores/store';
 import reportWebVitals from './reportWebVitals';
 import dateFnsLocalizer from 'react-widgets-date-fns';
  new dateFnsLocalizer();
@@ -26,6 +26,7 @@ ReactDOM.render(
     <StoreContextLaboratori.Provider value={StoreLaboratoret}/>
     <StoreContextRaport.Provider value={StoreRaport}/>
     <StoreContextShtrat.Provider value={StoreShtrat}/>
+    <StoreContextLlojiShtratit.Provider value={StoreLlojiShtratit}/>
     <Router history={history}>
       <App />
     </Router>

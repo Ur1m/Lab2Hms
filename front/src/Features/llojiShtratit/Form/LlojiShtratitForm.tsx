@@ -1,24 +1,43 @@
+import { FormEvent, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { observer } from 'mobx-react-lite';
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, useEffect } from 'react';
 import { Button, FormField, Header, Label, Segment } from 'semantic-ui-react';
-import { useStore } from '../../../app/stores/store';
+import { useStore, useStoreLlojiShtratit } from '../../../app/stores/store';
 import * as Yup from 'yup';
 import MyTextInput from '../../../app/common/form/MyTextInput';
 import MyTextArea from '../../../app/common/form/MyTextArea';
 import { ILlojiShtratit } from '../../../app/models/ILlojiShtratit';
 import "../Dashboard/lloji.css";
+import LlojiShtratitStore from '../../../app/stores/llojiShtratitStore';
 
-export default observer(function LlojiShtratitForm() {
-    const { llojiShtratitStore } = useStore();
-    const { selectedLlojiShtratit, closeForm, createLlojiShtratit, updateLlojiShtratit, loading } = llojiShtratitStore;
-
+export const LlojiShtratitForm = () => {
+    const { LlojiShtratitStore } = useStoreLlojiShtratit();
+    const { selectedLlojiShtratit, closeForm, createLlojiShtratit, updateLlojiShtratit, loading} = LlojiShtratitStore;
+    var i = 0;
+    var open = false;
 
     const initialState = selectedLlojiShtratit ?? {
         llojiShtratit_id: '',
         emri: '',
-        pershkrimi: ''
+        pershkrimi: '',
+        image: ''
     }
+    const [ILlojiShtratit,setllojiShtratit]=useState<ILlojiShtratit>(initialState)
+    const [image,setimage]=useState<any>();
+    const handleinputchange =(event:FormEvent<HTMLInputElement | HTMLTextAreaElement>)=>{
+    
+        setllojiShtratit({...ILlojiShtratit,[event.currentTarget.name]:event.currentTarget.value});
+    };
+    const changefile=(event:any)=>{
+     
+        let v=event.target.files;
+        let reader=new FileReader();
+     reader.readAsDataURL(v[0]);
+        reader.onload=(e)=>{
+         setimage( e.target?.result);
+        }
+     }
 
     const [LlojiShtreterve, setDepartment] = useState(initialState);
     const validationSchema = Yup.object({
@@ -43,6 +62,7 @@ export default observer(function LlojiShtratitForm() {
                         <MyTextInput name='emri' placeholder='Shkruani emrin e llojit te shtratit...' />
                         <label>Pershkrimi:</label>
                         <MyTextArea rows={3} name='pershkrimi' placeholder='Shkruani pershkrimin e llojit te shtratit...' />
+                        <input type='file' name='image' onChange={changefile} />
                         <Button 
                         disabled={isSubmitting || !dirty || !isValid}
                         loading={loading} 
@@ -53,5 +73,5 @@ export default observer(function LlojiShtratitForm() {
             </Formik>
 
         </Segment>
-    )
-})
+    );
+                }

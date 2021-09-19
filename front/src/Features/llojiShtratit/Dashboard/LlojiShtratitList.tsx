@@ -1,60 +1,54 @@
-import { observer } from 'mobx-react-lite';
-import React, { SyntheticEvent, useState } from 'react';
-import { Button, Header, Icon, Item, ItemGroup, Modal, Segment } from 'semantic-ui-react';
-import { useStore } from '../../../app/stores/store';
-import "./lloji.css";
+import { observer } from "mobx-react-lite";
+import React from "react";
+import { useEffect } from "react";
+import { Button, Header, Icon, Image, Item, Modal, Segment } from "semantic-ui-react";
+import { useStoreLlojiShtratit } from "../../../app/stores/store";
 
-export default observer( function LlojiShtratitList(){
-    const {llojiShtratitStore} = useStore();
-    const {deleteLlojiShtratit, llojiShtreterve, loading, selectLlojiShtratit, selectedLlojiShtratit} = llojiShtratitStore;
+export default observer( function LlojiShtratitList () {
+    const {LlojiShtratitStore} = useStoreLlojiShtratit();
+    const{llojiShtreterve,selectLlojiShtratit,openForm,selectedLlojiShtratit,deleteLlojiShtratit} = LlojiShtratitStore;
     const [open, setOpen] = React.useState(false)
-    const [target, setTarget] = useState('');
-    const [search, setsearch] = useState("");
 
-    function handleLlojiShtratitDelete(e: SyntheticEvent<HTMLButtonElement>, llojiShtratit_id: string){
-        setTarget(e.currentTarget.name);
-        deleteLlojiShtratit(llojiShtratit_id);
+    useEffect(()=>{
+        LlojiShtratitStore.loadllojiShtreterve();
+    },[LlojiShtratitStore]);
+
+    function handleDelete( id: string){
+        
+        deleteLlojiShtratit(id);
         setOpen(false);
     }
-
-    function del(llojiShtratit_id:string){
-        selectLlojiShtratit(llojiShtratit_id);
-        setOpen(true);
-    }
-
     return (
         <React.Fragment>
             <Item.Group>
-                <div className="ui left icon input"><input type="text" placeholder="Kerko llojin e shtratit..." onChange={event => setsearch(event.target.value)} /><i aria-hidden="true" className="search icon"></i></div>
-            </Item.Group>
-        <Segment className="sss">
+           
+           <Button onClick={()=>openForm()}  positive content='Shto lloje te shtreterve'/>
+           </Item.Group>
+           
+        <React.Fragment>
+            
+           <Segment clearing>
             <Item.Group divided>
-                {llojiShtreterve.filter((val) => {
-                        if (search == "") {
-                            return val;
-                        }
-                        else if (val.emri.toLocaleLowerCase().includes(search.toLocaleLowerCase())) {
-                            return val;
-                        }
-                    }).map(ILlojiShtratit=>(
-                    <Item key={ILlojiShtratit.llojiShtratit_id}>
-                        <Item.Content>
-                            <Item.Header>{ILlojiShtratit.emri}</Item.Header>
-                            <Item.Description>
-                                <div>{ILlojiShtratit.pershkrimi}</div>
-                            </Item.Description>
-                            <Item.Extra>
-                                <Button onClick={() => llojiShtratitStore.selectLlojiShtratit(ILlojiShtratit.llojiShtratit_id)} floated='right' content='Shiko' color='blue'/>
-                                <Modal
+                {llojiShtreterve.map(ll =>(
+                     <Item key={ll.llojiShtratit_id}>
+                     <Item.Content>
+                         <Item.Header as='a'>{ll.emri}</Item.Header>
+                         <Item.Content >
+                         <Image src={ll.image}  width={50} height={50}/>
+                         </Item.Content>
+                       
+                         <Item.Extra>
+                            
+                             <Button onClick={()=>selectLlojiShtratit(ll.llojiShtratit_id)} floated="right" content='View' color='blue'/>
+                             <Modal
                                 closeIcon
                                 open={open}
                                 trigger={
                                 <Button 
-                                        onClick={()=>del(ILlojiShtratit.llojiShtratit_id)}
-                                        name={ILlojiShtratit.llojiShtratit_id}
-                                        loading={loading && target === ILlojiShtratit.llojiShtratit_id}
+                                        name={ll.llojiShtratit_id}
+                                       
                                         floated='right' 
-                                        content='Fshij' 
+                                        content='Delete' 
                                         color='red'
                                 />}
                                 onClose={() => setOpen(false)}
@@ -62,24 +56,31 @@ export default observer( function LlojiShtratitList(){
                                 <Header icon='archive' content='Fshij llojin e shtratit' />
                                 <Modal.Content>
                                     <p>
-                                        A jeni i/e sigurt qe deshironi te fshini llojin {selectedLlojiShtratit?.emri}?
+                                        A jeni i sigurt qe deshironi te fshini llojin e shtratit:{ll.emri}
                                     </p>
                                 </Modal.Content>
                                 <Modal.Actions>
                                     <Button color='red' onClick={() => setOpen(false)}>
-                                        <Icon name='remove' /> Jo
+                                        <Icon name='remove' /> No
                                     </Button>
-                                    <Button color='green' onClick={(e) => handleLlojiShtratitDelete(e, selectedLlojiShtratit!.llojiShtratit_id)}>
-                                        <Icon name='checkmark' /> Po
+                                    <Button color='green' onClick={() =>handleDelete(ll.llojiShtratit_id) }>
+                                        <Icon name='checkmark' /> Yes
                                     </Button>
                                 </Modal.Actions>
                             </Modal>
-                            </Item.Extra>
-                        </Item.Content>
-                    </Item>
+                            
+                         </Item.Extra>
+                     </Item.Content>
+                     </Item>
+
                 ))}
-            </Item.Group>
+            
+        </Item.Group>
+        
         </Segment>
-    </React.Fragment>
+        </React.Fragment>
+        </React.Fragment>
     )
-})
+
+}
+)

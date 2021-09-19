@@ -9,5 +9,7 @@ namespace Domain
         public Guid llojiShtratit_id { get; set; }
         public string emri { get; set; }
         public string Pershkrimi {get; set;}
+
+        public string image { get; set;}
     }
 }

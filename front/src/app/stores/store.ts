@@ -196,3 +196,15 @@ export const StoreContextShtrat=createContext(StoreShtrat)
 export function useStoreShtrat(){
     return useContext(StoreContextShtrat);
 }
+
+interface StoreLlojiShtratit{
+    LlojiShtratitStore:LlojiShtratitStore;
+
+}
+export const StoreLlojiShtratit:StoreLlojiShtratit={
+    LlojiShtratitStore:new LlojiShtratitStore()
+}
+export const StoreContextLlojiShtratit=createContext(StoreLlojiShtratit)
+export function useStoreLlojiShtratit(){
+    return useContext(StoreContextLlojiShtratit);
+}
