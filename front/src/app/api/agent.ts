@@ -19,6 +19,7 @@ import { User, UserFormValues } from '../models/user';
 import { ITherapy } from '../models/ITherapy';
 import { IRaport } from '../models/IRaport';
 import { ILaboratori } from '../models/ILaboratori';
+import { IAmbulanca } from '../models/IAmbulanca';
 
 const sleep = (delay: number) => {
     return new Promise((resolve) => {
@@ -98,6 +99,13 @@ const Laboratort = {
     create: (Laboratori: ILaboratori) => axios.post<void>('/laboratort', Laboratori),
     update: (Laboratori: ILaboratori) => axios.put<void>(`/laboratort/${Laboratori.lab_Id}`, Laboratori),
     delete: (lab_Id: string) => axios.delete<void>(`/laboratort/${lab_Id}`)
+}
+const Ambulancat = {
+    list: () => requests.get<IAmbulanca[]>('/ambulancat'),
+    details: (amb_Id: string) => requests.get<IAmbulanca>(`/ambulancat/${amb_Id}`),
+    create: (Ambulanca: IAmbulanca) => axios.post<void>('/ambulancat', Ambulanca),
+    update: (Ambulanca: IAmbulanca) => axios.put<void>(`/ambulancat/${Ambulanca.amb_Id}`, Ambulanca),
+    delete: (amb_Id: string) => axios.delete<void>(`/ambulancat/${amb_Id}`)
 }
 const Faturat = {
     list: () => requests.get<IFatura[]>('/faturat'),
@@ -234,7 +242,8 @@ const agent = {
     Account,
     Therapy,
     Raport,
-    Laboratort
+    Laboratort,
+    Ambulancat
 }
 
 export default agent;

@@ -38,6 +38,9 @@ import LaboratoriList from '../../Features/Laboratoret/LaboratoriList';
 import LaboratoriForm from '../../Features/Laboratoret/LaboratoriForm';
 import LaboratoriTable from '../../Features/Laboratoret/LaboratoriTable';
 import LaboratoriDashboard from '../../Features/Laboratoret/LaboratoriDashboard';
+import AmbulancaDashboard from '../../Features/Ambulancat/AmbulancaDashboard';
+import AmbulancaForm from '../../Features/Ambulancat/AmbulancaForm';
+import AmbulancaList from '../../Features/Ambulancat/AmbulancaList';
 
 
 
@@ -137,6 +140,8 @@ return (
           <Route path="/Barnat"component={BarnatDashboard}/>
           <Route path="/Therapy"component={TherapyDashbord}/>
           <Route path="/Laboratori"component={LaboratoriDashboard}/>
+          <Route path="/Ambulanca"component={AmbulancaDashboard}/>
+
           <Route path="/Raport"component={RaportDashboard}/>
           <Route component={NotFound}/>
           </Switch>

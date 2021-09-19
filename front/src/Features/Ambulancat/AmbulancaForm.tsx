@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite";
 import { useState } from "react";
-import { useStoreLaboratori, useStoreRaport } from "../../app/stores/store";
+import { useStoreAmbulancat, useStoreLaboratori, useStoreRaport } from "../../app/stores/store";
 import * as Yup from 'yup';
 import { IRaport } from "../../app/models/IRaport";
 import { Button, Form, Segment, Select } from "semantic-ui-react";
@@ -10,24 +10,22 @@ import MyTextInput from "../../app/common/form/MyTextInput";
 import MyTextArea from "../../app/common/form/MyTextArea";
 import { IPaisjet, IPaisjetDropDown } from "../../app/models/IPaisjet";
 import MyDateInput from "../../app/common/form/MyDateInput";
+import { IDepartametnetDropDown, IDepartment } from "../../app/models/IDepartment"; 
+import { IAmbulanca } from "../../app/models/IAmbulanca";
 
-import { ILaboratori } from "../../app/models/ILaboratori";
-import { IDepartametnetDropDown, IDepartment } from "../../app/models/IDepartment";
-
-export default observer(function LaboratoriStore() {
-    const {LaboratoriStore} = useStoreLaboratori();
-    const {selectedLaborator, editMode,updateLaborator,createLaborator,getDepartamentet,closeForm,loading} = LaboratoriStore;
+export default observer(function AmbulancaStore() {
+    const {AmbulancaStore} = useStoreAmbulancat();
+    const {selectedAmbulanca, editMode,updateAmbulancat,createAmbulancat,getDepartamentet,closeForm,loading} = AmbulancaStore;
 
 
-    const initialState = selectedLaborator ?? {
-        lab_Id: '',
-        emri:'',
-        pershkrimi:'',
+    const initialState = selectedAmbulanca ?? {
+        amb_Id: '',
+        tipi:'',
         fotografia:'',
         department_id:''
     }
 
-    const [Laboratori, setLaboratori] = useState(initialState);
+    const [Ambulanca, setAmbulanca] = useState(initialState);
     const [fotografia, setfotografia] = useState<any>();
 
     const validationSchema = Yup.object({
@@ -43,9 +41,9 @@ export default observer(function LaboratoriStore() {
         }
      }
 
-    function handleFormSubmit(Laboratori: ILaboratori) {
-        Laboratori!.fotografia=fotografia;
-        Laboratori.lab_Id ? updateLaborator(Laboratori) : createLaborator(Laboratori);
+    function handleFormSubmit(Ambulanca: IAmbulanca) {
+        Ambulanca!.fotografia=fotografia;
+        Ambulanca.amb_Id ? updateAmbulancat(Ambulanca) : createAmbulancat(Ambulanca);
     }
     let departamentet: IDepartment[] = [];
     let departamentetDropDown: IDepartametnetDropDown[] = [];
@@ -67,14 +65,14 @@ export default observer(function LaboratoriStore() {
             <Formik
                 validationSchema={validationSchema}
                 enableReinitialize
-                initialValues={Laboratori}
+                initialValues={Ambulanca}
                 onSubmit={values => handleFormSubmit(values)}>
                 {({ handleSubmit, isValid, isSubmitting, dirty }) => (
                     <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
                              
                            
-                           <MyTextArea rows={3} name='emri' placeholder='Shkruani emrin e laboratorit...' />
-                           <MyTextArea rows={3} name='pershkrimi' placeholder='Shkruani pershkrimin e laboratorit...' />
+                           <MyTextArea rows={3} name='tipi' placeholder='Shkruani tipin e ambulacnes...' />
+                         
                            <MySelectInput options={departamentetDropDown} placeholder='Zgjedhni departamentin...' name='department_id'></MySelectInput>
                            <label>Fotorgrafia: </label>
                         <input type='file' name='fotografia' id="image-id"onChange={changefile} />
@@ -84,8 +82,8 @@ export default observer(function LaboratoriStore() {
                         disabled={isSubmitting || !dirty || !isValid}
                         loading={loading} 
                         floated='right' positive type='submit' content='Shto' />
-                         <Button onClick={closeForm} floated='right' type='button' content='Anulo' />   
-                    
+                      
+                        <Button onClick={closeForm} floated='right' type='button' content='Anulo' />   
                     </Form>
                 )}
             </Formik>

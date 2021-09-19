@@ -7,7 +7,11 @@ import 'react-datepicker/dist/react-datepicker.css';
 import "react-widgets/styles.css";
 import App from './app/layout/App';
 import {createBrowserHistory} from 'history';
+<<<<<<< Updated upstream
 import { store, StoreContext, StorePacientat,StoreContextPacientat, StoreDoktorat,StoreContextDoktorat, StoreContextTerminet, StoreTerminet, StoreTherapies, StoreContextTherapies, StoreContextRaport, StoreRaport, StoreLaboratoret, StoreContextLaboratori, StoreContextShtrat, StoreShtrat, StoreContextLlojiShtratit, StoreLlojiShtratit } from './app/stores/store';
+=======
+import { store, StoreContext, StorePacientat,StoreContextPacientat, StoreDoktorat,StoreContextDoktorat, StoreContextTerminet, StoreTerminet, StoreTherapies, StoreContextTherapies, StoreContextRaport, StoreRaport, StoreLaboratoret, StoreContextLaboratori, StoreContextShtrat, StoreShtrat, StoreContextAmbulancat, StoreAmbulancat } from './app/stores/store';
+>>>>>>> Stashed changes
 import reportWebVitals from './reportWebVitals';
 import dateFnsLocalizer from 'react-widgets-date-fns';
  new dateFnsLocalizer();
@@ -24,6 +28,7 @@ ReactDOM.render(
     <StoreContextTerminet.Provider value={StoreTerminet}/>
     <StoreContextTherapies.Provider value={StoreTherapies}/>
     <StoreContextLaboratori.Provider value={StoreLaboratoret}/>
+    <StoreContextAmbulancat.Provider value={StoreAmbulancat}/>
     <StoreContextRaport.Provider value={StoreRaport}/>
     <StoreContextShtrat.Provider value={StoreShtrat}/>
     <StoreContextLlojiShtratit.Provider value={StoreLlojiShtratit}/>

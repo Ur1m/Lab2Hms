@@ -17,6 +17,7 @@ import TherapyStore from "../store/TherapyStore";
 import RaportStore from "../store/RaportStore";
 import LaboratoriStore from "../store/LaboratoriStore";
 import ShtratStore from "./shtratStore";
+import AmbulancaStore from "../store/AmbulancaStore";
 
 interface Store {
     departmentStore: DepartmentStore;
@@ -120,6 +121,18 @@ export const StoreLaboratoret:StoreLaboratoret={
 export const StoreContextLaboratori=createContext(StoreLaboratoret);
 export function useStoreLaboratori(){
     return useContext(StoreContextLaboratori);
+
+
+}
+interface StoreAmbulancat{
+    AmbulancaStore:AmbulancaStore;
+}
+export const StoreAmbulancat:StoreAmbulancat={
+    AmbulancaStore:new AmbulancaStore()
+}
+export const StoreContextAmbulancat=createContext(StoreAmbulancat);
+export function useStoreAmbulancat(){
+    return useContext(StoreContextAmbulancat);
 
 
 }
