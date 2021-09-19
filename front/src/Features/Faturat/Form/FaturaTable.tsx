@@ -83,6 +83,8 @@ export default observer(function FaturaTable() {
             <TableRow>
               <StyledTableCell>Titulli</StyledTableCell>
               <StyledTableCell align="right">Pershkrimi</StyledTableCell>
+              <StyledTableCell align="right">Shuma</StyledTableCell>
+              <StyledTableCell align="right">Statusi</StyledTableCell>
               <StyledTableCell align="right" colSpan={2}> <div className="ui left icon input"><input type="text" placeholder="Kerko fature..." onChange={event => setsearch(event.target.value)} /><i aria-hidden="true" className="search icon"></i></div></StyledTableCell>
 
               <StyledTableCell align="right">{<Button onClick={() => openForm()} floated="right" content={<AddIcon />} color='green' />}</StyledTableCell>
@@ -102,6 +104,8 @@ export default observer(function FaturaTable() {
                   {row.titulli}
                 </StyledTableCell>
                 <StyledTableCell align="right">{row.pershkrimi}</StyledTableCell>
+                <StyledTableCell align="right">{row.shuma}</StyledTableCell>
+                <StyledTableCell align="right">{row.statusi}</StyledTableCell>
                 <StyledTableCell align="right">{<Button onClick={() => openDetails(row.fatura_Id)} floated="right" content='Shiko' color='blue' />}</StyledTableCell>
                 <StyledTableCell align="right">{<Button onClick={() => openForm(row.fatura_Id)} floated="right" content={<EditIcon />} color='grey' />}</StyledTableCell>
                 <StyledTableCell align="right">{<Button onClick={() => del(row.fatura_Id)} floated="right" content={<DeleteForeverIcon />} color='red' />}</StyledTableCell>

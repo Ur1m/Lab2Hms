@@ -29,7 +29,7 @@ export default observer(function FaturaForm() {
 
     const [Fatura, setFatura] = useState(initialState);
     const validationSchema = Yup.object({
-        titulli: Yup.string().matches(/^[a-zA-Z0-9]{3,12}$/, 'titulli duhet te kete mbi 3 shkronja deri ne 12').required('Titulli fatures nuk mund te jete i zbrazet...'),
+        titulli: Yup.string().required('Titulli fatures nuk mund te jete i zbrazet...'),
         shuma: Yup.number().required('Shuma fatures nuk mund te jete i zbrazet...').nullable(),
         krijuarme: Yup.string().required('Selektoni daten kur eshte krijuar fatura...').nullable(),
         statusi: Yup.string().required('Selektoni statusin').nullable(),

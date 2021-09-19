@@ -25,9 +25,10 @@
     overflow: scroll;
     padding: 30px 50px 20px 50px;
     box-sizing: border-box;
-    background-image: url("./1282794.jpg");
+    background-image: url("./typeofbeds.jpg");
     position: absolute;
     left :0;
+    background-size: 100%;
   }
 
   
@@ -79,14 +80,13 @@
   }
   .carde-h-1 h4{
     margin-top: -15px;
-  }
-  .carde-h-1 h1{
     color: black;
-    align-items: center;
-   margin-left: 90px;
-   
-  
   }
+  .carde-h-1 h1 {
+    color: black  !important;
+    align-items: center;
+    margin-left: 90px;
+}
   .carde_img{
     margin-top: -5vw;
   }

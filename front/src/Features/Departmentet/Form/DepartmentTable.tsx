@@ -36,9 +36,9 @@ export default observer(function DepartmentTable() {
 
     return (
         <React.Fragment>
-            <div className="containerrr">
+            <div className="departmentcontainer">
             <div className="zi">
-                <div className="ui left icon input s"><input type ="text" placeholder="Search departments..." onChange={event => setsearch(event.target.value)}/><i aria-hidden="true" className="users icon"></i></div>
+                <div className="ui left icon input s"><input type ="text" placeholder="Kerko departamente..." onChange={event => setsearch(event.target.value)}/><i aria-hidden="true" className="users icon"></i></div>
                 <Button onClick={() => openForm()}floated="right" content={<AddIcon/>}color='green' />
             </div>
             <div className="ui special cards uii">

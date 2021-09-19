@@ -13,7 +13,7 @@ import LlojiShtratitStore from '../../../app/stores/llojiShtratitStore';
 
 export const LlojiShtratitForm = () => {
     const { LlojiShtratitStore } = useStoreLlojiShtratit();
-    const { selectedLlojiShtratit, closeForm, createLlojiShtratit, updateLlojiShtratit, loading} = LlojiShtratitStore;
+    const { selectedLlojiShtratit, closeForm, createLlojiShtratit, updateLlojiShtratit, loading, llojiShtreterve} = LlojiShtratitStore;
     var i = 0;
     var open = false;
 
@@ -38,16 +38,37 @@ export const LlojiShtratitForm = () => {
          setimage( e.target?.result);
         }
      }
+     const handleFormSubmit=(llojiShtratit:ILlojiShtratit )=>{
+        llojiShtratit!.image=image;
+        if(!llojiShtratit.llojiShtratit_id){
+            for(i==0 ; i<llojiShtreterve.length;i++){
+             if(llojiShtreterve[i].emri===llojiShtratit.emri  ){
+                 open=true;
+             }
+            
+           }
+           if(!open){
+             createLlojiShtratit(llojiShtratit);
+             open=false;
+           }
+           else{
+               alert("Nuk mund ta insertoni llojin e shtratut te njejt")
+               open=false;
+               
+               closeForm();
+           
+           }
+         }
+         else{
+             updateLlojiShtratit(llojiShtratit);
+         }
+         }
 
     const [LlojiShtreterve, setDepartment] = useState(initialState);
     const validationSchema = Yup.object({
         emri: Yup.string().required('Emri i llojit te shtratit nuk mund te jete i zbrazet...'),
         pershkrimi: Yup.string().required('Pershkrimi i llojit te shtratit nuk mund te jete i zbrazet...')
     })
-
-    function handleFormSubmit(LlojiShtreterve: ILlojiShtratit) {
-        LlojiShtreterve.llojiShtratit_id ? updateLlojiShtratit(LlojiShtreterve) : createLlojiShtratit(LlojiShtreterve);
-    }
 
     return (
         <Segment className="ssss" clearing>
