@@ -41,6 +41,7 @@ import LaboratoriDashboard from '../../Features/Laboratoret/LaboratoriDashboard'
 import AmbulancaDashboard from '../../Features/Ambulancat/AmbulancaDashboard';
 import AmbulancaForm from '../../Features/Ambulancat/AmbulancaForm';
 import AmbulancaList from '../../Features/Ambulancat/AmbulancaList';
+import AmbulancaDetails from '../../Features/Ambulancat/AmbulancaDetails';
 
 
 

@@ -22,7 +22,7 @@ export default observer( function TherapyList(){
     return (
     <React.Fragment>
         <Item.Group>
-            <div className="ui left icon input"><input type="text" placeholder="Kerko dhome (Lloji)..." onChange={event => setsearch(event.target.value)} /><i aria-hidden="true" className="search icon"></i></div>
+            <div className="ui left icon input"><input type="text" placeholder="Kerko Terapine..." onChange={event => setsearch(event.target.value)} /><i aria-hidden="true" className="search icon"></i></div>
         </Item.Group>
         <Segment className="sss">
             <Item.Group divided>
