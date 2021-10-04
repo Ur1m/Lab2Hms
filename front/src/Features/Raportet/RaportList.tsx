@@ -22,7 +22,7 @@ export default observer( function RaportList(){
     return (
     <React.Fragment>
         <Item.Group>
-            <div className="ui left icon input"><input type="text" placeholder="Kerko raportin ne baze te paisjes" onChange={event => setsearch(event.target.value)} /><i aria-hidden="true" className="search icon"></i></div>
+            <div className="ui left icon input"><input type="text" placeholder="Kerko raportin" onChange={event => setsearch(event.target.value)} /><i aria-hidden="true" className="search icon"></i></div>
         </Item.Group>
         <Segment className="sss">
             <Item.Group divided >

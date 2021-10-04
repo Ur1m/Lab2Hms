@@ -4,6 +4,7 @@ import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 import * as RiIcons from 'react-icons/ri';
 import * as GiIcons from 'react-icons/gi';
+import * as IconName from 'react-icons/gr';
 
 export const SidebarData = [
   {
@@ -21,19 +22,19 @@ export const SidebarData = [
   {
     title: 'Laboratoret',
     path: '/Laboratori/',
-    icon: <FaIcons.FaRegBuilding />,
+    icon: <FaIcons.FaLaptopMedical />,
     cName: 'nav-text'
   },
   {
     title: 'Ambulacat',
     path: '/Ambulanca/',
-    icon: <FaIcons.FaRegBuilding />,
+    icon: <FaIcons.FaHeartbeat />,
     cName: 'nav-text'
   },
   {
     title: 'Raportet',
     path: '/Raport/',
-    icon: <FaIcons.FaRegBuilding />,
+    icon: <FaIcons.FaFileAlt />,
     cName: 'nav-text'
   },
   // {
@@ -82,7 +83,7 @@ export const SidebarData = [
   {
     title: 'Terapit',
     path: '/Therapy',
-    icon: <FaIcons.FaClock/>,
+    icon: <FaIcons.FaFileUpload/>,
     cName: 'nav-text'
   },
   {
