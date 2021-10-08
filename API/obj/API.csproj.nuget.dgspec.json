@@ -1,39 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\api\\API.csproj": {}
+    "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\api\\API.csproj": {
+    "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\api\\API.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\api\\API.csproj",
-        "packagesPath": "C:\\Users\\PULSE Electronics\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\api\\obj\\",
+        "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\API\\API.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\API\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PULSE Electronics\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Application\\Application.csproj"
+              "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Application\\Application.csproj"
               }
             }
           }
@@ -113,39 +107,33 @@
         }
       }
     },
-    "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Application\\Application.csproj": {
+    "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\PULSE Electronics\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Application\\obj\\",
+        "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Application\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PULSE Electronics\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Domain\\Domain.csproj"
+              "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Presistence\\Presistence.csproj": {
-                "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Presistence\\Presistence.csproj"
+              "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Presistence\\Presistence.csproj": {
+                "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Presistence\\Presistence.csproj"
               }
             }
           }
@@ -200,28 +188,22 @@
         }
       }
     },
-    "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Domain\\Domain.csproj": {
+    "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\PULSE Electronics\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PULSE Electronics\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -268,36 +250,30 @@
         }
       }
     },
-    "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Presistence\\Presistence.csproj": {
+    "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Presistence\\Presistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Presistence\\Presistence.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Presistence\\Presistence.csproj",
         "projectName": "Presistence",
-        "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Presistence\\Presistence.csproj",
-        "packagesPath": "C:\\Users\\PULSE Electronics\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Presistence\\obj\\",
+        "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Presistence\\Presistence.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Presistence\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PULSE Electronics\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\PULSE Electronics\\Desktop\\lab\\labhms\\Domain\\Domain.csproj"
+              "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\hp\\Desktop\\HMS1\\LabHms\\Domain\\Domain.csproj"
               }
             }
           }

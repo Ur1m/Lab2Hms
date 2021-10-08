@@ -21,7 +21,7 @@ import {format} from 'date-fns';
 
       return (
           <Card fluid>
-       <Image src={`assets/i.png`} width={"300px"} height={"300px"} />
+       <Image src={`assets/i.png`} width={"300px"} height={"300px"} centered />
       <Card.Content>
       
         <Card.Description>{"Emri :"+selectedPacienti.emri}</Card.Description>
@@ -44,7 +44,7 @@ import {format} from 'date-fns';
       </Card.Content>
       <Card.Content extra>
         <ButtonGroup widths={2}>
-            <Button onClick={()=>PacientatStore.openForm(selectedPacienti!.pacient_Id)}basic color='blue' content="Edit"/>
+           
             <Button  onClick={()=>closeDetails()}basic color='grey' content="Cancele"/>
         </ButtonGroup>
       </Card.Content>

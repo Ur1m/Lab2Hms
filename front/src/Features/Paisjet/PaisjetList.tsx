@@ -49,7 +49,7 @@ export default observer( function PacientatList () {
                                
                                 onClose={() => setOpen(false)}
                                 onOpen={() => setOpen(true)}>
-                                <Header icon='archive' content='Delete terminin' />
+                                <Header icon='archive' content='Delete Paisjen' />
                                 <Modal.Content>
                                     <p>
                                         Are you sure that you want to delete Paisjen:{selectedPaisja?.emertimi}?

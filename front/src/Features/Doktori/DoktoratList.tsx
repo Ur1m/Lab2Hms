@@ -96,7 +96,7 @@ export default observer(function DoktoratList () {
 <PopUp
                                openPopup={editmode}
                               
-                               title="Pacientat Form">
+                               title="">
                                 
                                    <DoktoriForm/>
                                      </PopUp>
