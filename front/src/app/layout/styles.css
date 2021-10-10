@@ -163,7 +163,7 @@ p::before{
 }
 
 .ui.dropdown>.text {
-  color: white;
+  color:black;/* u kan white  e kom ndryshu black per arsyje me u shfaq selektimi ne drop down*/
 }
 
 .ui.dropdown>.dropdown.icon:before {

@@ -118,8 +118,10 @@ function editf(id:string){
 >
   <DialogTitle id="alert-dialog-slide-title">{"Delete Pacineti"}</DialogTitle>
   <DialogContent>
-    <DialogContentText id="alert-dialog-slide-description">
+    <DialogContentText  id="alert-dialog-slide-description">
+      <p className="text-pop" color="black">
      Are you sure that you want to delete Pacinetin 
+     </p>
     </DialogContentText>
   </DialogContent>
   <DialogActions>

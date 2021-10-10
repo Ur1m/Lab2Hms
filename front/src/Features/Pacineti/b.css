@@ -18,3 +18,11 @@
     padding-right: 150px;
 
 }
+#alert-dialog-slide-description{
+    color:black;
+}
+.text-pop{
+    color: black;
+    -webkit-text-stroke:  black;
+    
+}

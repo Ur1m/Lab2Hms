@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
 import { Button, Header, Icon, Item, Label, Modal, Segment } from 'semantic-ui-react';
 import { IPacienti } from '../../app/models/IPacienti';
+import "b.css";
 import { useStorePacientat } from '../../app/stores/store';
 
 
