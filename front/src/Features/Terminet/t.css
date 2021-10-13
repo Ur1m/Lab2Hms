@@ -19,3 +19,8 @@
 .t{
     margin-top: 110px;
 }
+.text-pop{
+    color: black;
+    -webkit-text-stroke:  black;
+    
+}

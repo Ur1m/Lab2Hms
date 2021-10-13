@@ -130,7 +130,9 @@ export default observer(function Listimi() {
   <DialogTitle id="alert-dialog-slide-title">{"Delete Paisje"}</DialogTitle>
   <DialogContent>
     <DialogContentText id="alert-dialog-slide-description">
+    <p className="text-pop" color="black">
      Are you sure that you want to delete paisjen: {selectedPaisja && selectedPaisja!.emertimi}
+     </p>
     </DialogContentText>
   </DialogContent>
   <DialogActions>

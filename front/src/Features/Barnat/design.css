@@ -132,3 +132,8 @@ h3{
   margin-top: 50px;
 
 }
+.text-pop{
+  color: black;
+  -webkit-text-stroke:  black;
+  
+}

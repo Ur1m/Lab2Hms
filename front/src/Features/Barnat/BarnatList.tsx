@@ -3,6 +3,7 @@ import React from "react";
 import { useEffect } from "react";
 import { Button, Header, Icon, Image, Item, Modal, Segment } from "semantic-ui-react";
 import { useStoreBarnat } from "../../app/stores/store";
+import './design.css';
 
 export default observer( function BaratList () {
     const {BarnatStore}=useStoreBarnat();
@@ -55,8 +56,8 @@ export default observer( function BaratList () {
                                 onOpen={() => setOpen(true)}>
                                 <Header icon='archive' content='Delete Barna' />
                                 <Modal.Content>
-                                    <p>
-                                        Are you sure that you want to delete Paisjen:{b.bName}
+                                <p className="text-pop" color="black">
+                                        Are you sure that you want to delete Barnen:{b.bName}
                                     </p>
                                 </Modal.Content>
                                 <Modal.Actions>

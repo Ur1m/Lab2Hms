@@ -60,3 +60,8 @@
     justify-content: space-around;
     align-items: center;
 }
+.text-pop{
+    color: black;
+    -webkit-text-stroke:  black;
+    
+}

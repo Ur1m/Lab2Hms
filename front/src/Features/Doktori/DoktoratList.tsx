@@ -119,7 +119,9 @@ export default observer(function DoktoratList () {
   <DialogTitle id="alert-dialog-slide-title">{"Delete Mjekun"}</DialogTitle>
   <DialogContent>
     <DialogContentText id="alert-dialog-slide-description">
+    <p className="text-pop" color="black">
      Are you sure that you want to delete Mjekun : {selectedDoktori && selectedDoktori!.emri}
+     </p>
     </DialogContentText>
   </DialogContent>
   <DialogActions>

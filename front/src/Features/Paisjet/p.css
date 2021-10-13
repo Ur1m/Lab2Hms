@@ -63,3 +63,8 @@
  .p h3{
     color:azure;
 }
+.text-pop{
+    color: black;
+    -webkit-text-stroke:  black;
+    
+}

@@ -42,7 +42,7 @@ export default observer( function BarnatDetails ()  {
   }
       return (
           <Card fluid>
-            <Image src={`${selectedBarna.image}`} />
+            <Image src={selectedBarna.image} />
       
       <Card.Content>
      
@@ -74,7 +74,9 @@ export default observer( function BarnatDetails ()  {
         <DialogTitle id="alert-dialog-slide-title">{"Delete Barna"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
+          <p className="text-pop" color="black">
            Are you sure that you want to delete barnen : {selectedBarna.bName}
+           </p>
           </DialogContentText>
         </DialogContent>
         <DialogActions>

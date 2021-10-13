@@ -88,7 +88,7 @@ export default observer( function BarnatDesign  ()  {
                                 onOpen={() => setOpen(true)}>
                                 <Header icon='archive' content='Delete Barnen' />
                                 <Modal.Content>
-                                    <p>
+                                <p className="text-pop" color="black">
                                         Are you sure that you want to delete Barnen:{selectedBarna?.bName}?
                                     </p>
                                 </Modal.Content>

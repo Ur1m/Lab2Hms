@@ -136,7 +136,9 @@ function handleDelete( id: string){
   <DialogTitle id="alert-dialog-slide-title">{"Delete Termini"}</DialogTitle>
   <DialogContent>
     <DialogContentText id="alert-dialog-slide-description">
+    <p className="text-pop" color="black">
      Are you sure that you want to delete Terminin 
+     </p>
     </DialogContentText>
   </DialogContent>
   <DialogActions>
