@@ -10,6 +10,7 @@ using Microsoft.OpenApi.Models;
 using ProcessPayment.Consumer;
 using ProcessPayment.Models;
 using ProcessPayment.Repositories;
+using ProcessPayment.Repositories.DbConfig;
 using ProcessPayment.Services;
 using System;
 using System.Collections.Generic;
@@ -56,11 +57,13 @@ namespace ProcessPayment
                 });
             });
             services.AddMassTransitHostedService();
+            services.Configure<PaymentDbConfig>(Configuration.GetSection("PaymentDbConfig"));
+            services.AddScoped<IDbClient, DbClient>();
 
-            services.AddDbContext<PaymentDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //services.AddDbContext<PaymentDbContext>(options =>
+            //  options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddScoped<PaymentRepository, PaymentRepository>();
+            services.AddScoped<IPaymentRepository,PaymentRepository>();
 
             services.AddScoped<IPaymentService, PaymentService>();
         }

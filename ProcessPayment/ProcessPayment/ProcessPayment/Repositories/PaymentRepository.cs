@@ -1,21 +1,22 @@
-﻿using ProcessPayment.Models;
+﻿using MongoDB.Driver;
+using ProcessPayment.Models;
+using ProcessPayment.Repositories.DbConfig;
 using System.Threading.Tasks;
 
 namespace ProcessPayment.Repositories
 {
-    public class PaymentRepository
+    public class PaymentRepository : IPaymentRepository
     {
-        private readonly PaymentDbContext _dbContext;
+        private readonly IMongoCollection<Payment> _dbConnections;
 
-        public PaymentRepository(PaymentDbContext dbContext)
+        public PaymentRepository(IDbClient dbClient)
         {
-            _dbContext = dbContext;
+            _dbConnections = dbClient.GetPaymentCollection();
         }
 
         public async Task InsertPayment(Payment payment)
         {
-            _dbContext.Payments.Add(payment);
-            await _dbContext.SaveChangesAsync();
+            _dbConnections.InsertOne(payment);
         }
     }
 }

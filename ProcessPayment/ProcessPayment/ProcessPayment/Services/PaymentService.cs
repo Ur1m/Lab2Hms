@@ -9,9 +9,9 @@ namespace ProcessPayment.Services
 {
     public class PaymentService : IPaymentService
     {
-        private readonly PaymentRepository _paymentRepository;
+        private readonly IPaymentRepository _paymentRepository;
 
-        public PaymentService(PaymentRepository paymentRepository)
+        public PaymentService(IPaymentRepository paymentRepository)
         {
             _paymentRepository = paymentRepository;
         }

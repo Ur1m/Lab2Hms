@@ -39,7 +39,7 @@ namespace API.Controllers
                 var endpoint = await _sendEndpointProvider.GetSendEndpoint(new Uri("queue:ProcessPayment"));
                 var payment = new ProcessPaymentDto()
                 {
-                    CardNumber = "32123 123 123 123",
+                    CardNumber = "4242424242424242",
                     Cvc = "421",
                     Month = "05",
                     Year = "2030",
